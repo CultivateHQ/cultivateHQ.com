@@ -116,6 +116,7 @@ So, lots of things to think about and this is by no means an exhaustive list. De
 If you’d like to suggest something that we should include, then we’d love to hear from you.
 
 Further Reading
+
 [TodoMVC](http://todomvc.com/)
 
 [Journey Through The JavaScript MVC Jungle](http://www.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/)
