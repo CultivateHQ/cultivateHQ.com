@@ -10,3 +10,5 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 permalink: pretty
+include: ['_pages']
+relative_permalinks: false
