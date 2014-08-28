@@ -4,7 +4,7 @@
 
 You'll need to have the latest version of jekyll installed:
 
-    gem install jeykll
+    gem install jekyll
 
 To start a server:
 
