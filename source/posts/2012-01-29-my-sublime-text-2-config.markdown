@@ -9,16 +9,16 @@ Sublime Text 2 has been my editor of choice for about a year now. It's a great p
 ### Launching Sublime from the command-line
 Sublime comes with a command-line tool named subl. For convenience, create a symlink to a directory that is in your `$PATH`. I have `/usr/local/bin` in my path, so I have a symlink that allows me to use `sublime some_file.txt`:
 
-{% highlight bash %}
+```bash
 ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
-{% endhighlight %}
+```
 
 ### Bash
 If you want to make Sublime your default editor for things like git commit messages etc. Drop this into `~/.profile`:
 
-{% highlight bash %}
+```bash
 export EDITOR='sublime -w'
-{% endhighlight %}
+```
 
 ### User Preferences
 A summary of my preferences:
@@ -26,7 +26,7 @@ Soft tabs, 2 characters wide; White on Black text theme; Auto save when window l
 
 Add the following snippet to `Preferences -> File Settings - User`:
 
-{% highlight python %}
+```python
 {
   "color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
   "font_face": "Monaco",
@@ -39,5 +39,5 @@ Add the following snippet to `Preferences -> File Settings - User`:
   "save_on_focus_lost": true,
   "highlight_line": true
 }
-{% endhighlight %}
+```
 

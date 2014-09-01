@@ -40,7 +40,7 @@ The algorithm is deterministic. There is a pattern being followed to generate th
 ### Pseudo Random Number Generation in Elixir
 Now that we know what and why a PRNG is, let's look at Elixir. As I mentioned above, Elixir does not implement its own PRNG, instead preferring (as it does on many occasions) to use the Erlang implementation. Erlang is unusual when compared to the other languages I've used random number generation in before, in that it does not seed the PRNG for you. You need to set it yourself. For example, when you ask for a random number in Ruby using Kernel.rand, it automatically seeds the PRNG using the current time and process ID.
 
-{% highlight bash %}
+```bash
 ~ $ irb
 2.1.0 :001 > Kernel.rand
 => 0.6469110224958001
@@ -49,9 +49,9 @@ Now that we know what and why a PRNG is, let's look at Elixir. As I mentioned ab
 2.1.0 :003 > Kernel.rand
 => 0.7674679417203816
 2.1.0 :004 > exit
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
 ~ $ irb
 2.1.0 :001 > Kernel.rand
 => 0.5675955527713897
@@ -59,12 +59,12 @@ Now that we know what and why a PRNG is, let's look at Elixir. As I mentioned ab
 => 0.24136062798733005
 2.1.0 :003 > Kernel.rand
 => 0.6559555351137014
-{% endhighlight %}
+```
 
 
 However Erlang does not do this. When you start a Beam VM and ask for a sequence of random numbers you will get the same result as you do if you restart the Beam VM and ask again.
 
-{% highlight bash %}
+```bash
 ~ $ iex
 iex(1)> :random.uniform
 0.4435846174457203
@@ -72,9 +72,9 @@ iex(2)> :random.uniform
 0.7230402056221108
 iex(3)> :random.uniform
 0.94581636451987
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
 ~ $ iex
 iex(1)> :random.uniform
 0.4435846174457203
@@ -82,7 +82,7 @@ iex(2)> :random.uniform
 0.7230402056221108
 iex(3)> :random.uniform
 0.94581636451987
-{% endhighlight %}
+```
 
 In the above example we open an Interactive Elixir shell (iex) and then ask the underlying Erlang :random module for a random number between 0 and 1 three times. We then close the iex session, open a new iex session and then ask for three random numbers again. As you can see, we get the same sequence of numbers both times. Not so random!
 
@@ -91,7 +91,7 @@ The reason that the results are so predictable is that the same default seed is 
 
 Note: the reason that we call `:random.seed` twice is because the returned value is the old seed value and not the new seed value. By calling it twice we can see that the value hasn't changed because the default is being used. This does not mean that you have to call `:random.seed` twice. :)
 
-{% highlight bash %}
+```bash
 ~ $ iex
 iex(1)> :random.seed
 {3172, 9814, 20125}
@@ -103,14 +103,14 @@ iex(4)> :random.uniform
 0.7230402056221108
 iex(5)> :random.uniform
 0.94581636451987
-{% endhighlight %}
+```
 
 As you can see, we get the same pattern occurring because we have not yet changed the seed. This is handy from a testing point of view. We can use `:random.seed()` in our tests to ensure that we always get the expected results when testing randomised methods. However it is not so handy when we want to have a PRNG that appears to be non-deterministic.
 
 ### Seeding using timestamp
 The first solution we often turn to when looking for a unique number to seed with, is the current timestamp. This is generally unique enough in a single-threaded application. We can do this in Elixir as follows:
 
-{% highlight bash %}
+```bash
 ~ $ iex
 iex(1)> :random.seed(:os.timestamp)
 {1393, 17601, 3899}
@@ -128,11 +128,11 @@ iex(7)> :random.uniform
 0.10262363928084794
 iex(8)> :random.uniform
 0.5813421379555017
-{% endhighlight %}
+```
 
 This time we get a different sequence of random numbers because we are seeding using a different value each time. You will also notice that we did not restart iex between seeding this time. Reseeding is enough to reset the PNRG and so we don't have to restart iex. We can prove this out if we seed multiple times using the default seed.
 
-{% highlight bash %}
+```bash
 iex(1)> :random.seed
 {3172, 9814, 20125}
 iex(2)> :random.uniform
@@ -149,7 +149,7 @@ iex(7)> :random.uniform
 0.7230402056221108
 iex(8)> :random.uniform
 0.94581636451987
-{% endhighlight %}
+```
 
 Job done ... or is it?
 
@@ -160,7 +160,7 @@ The problem with using the timestamp is that it is only unique if each call to `
 
 GOTCHA: when you use `:erlang.now` and it increments the returned timestamp so that you get a unique value, it actually steps forward the Beam VM clock. This means that the Beam VM will be out of step with the system clock until it catches up. This can produce some strange side effects within code running on that same VM. For example, if you ask for 10 unique timestamps in a single tick, the Beam VM will be 9 ticks ahead of the system clock. Providing you don't use `:erlang.now` again for the next 9 ticks, the system clock will catch up with the Beam clock and then start incrementing it again on the 10th tick. `:erlang.now` has a granularity of 1 millionth of a second, so you would have to use it a lot to introduce significant clock skew. However, it is worth bearing this in mind.
 
-{% highlight bash %}
+```bash
 iex(1)> :random.seed(:erlang.now)
 {1393, 19097, 12915}
 iex(2)> :random.uniform
@@ -177,14 +177,14 @@ iex(7)> :random.uniform
 0.4343262239364174
 iex(8)> :random.uniform
 0.3729658432572305
-{% endhighlight %}
+```
 
 So we get our uniqueness guaranteed, but there is a possibility that you might cause clock skew if you need to call `:erlang.now` a lot. There is another option though.
 
 ### Seeding using crypto
 Instead of using the timestamp, we can use the Erlang crypto module to generate some unique values and then present them to `:random.seed` in a tuple like that produced by `:os.timestamp` or `:erlang.now`. The output from `:os.timestamp` or `:erlang.now` is a tuple containing three integers (representing the number of megaseconds, seconds and milliseconds since the epoch of the current system, in case you're interested). We can mimic this by using `:crypto.rand_bytes` and then pattern matching the result into a bitstring (as seen in the excellent Learn You Some Erlang):
 
-{% highlight bash %}
+```bash
 iex(1)> << a :: 32, b :: 32, c :: 32 >> = :crypto.rand_bytes(12)
 <<217, 47, 118, 16, 166, 73, 158, 208, 16, 104, 182, 4>>
 iex(2)> :random.seed(a,b,c)
@@ -205,7 +205,7 @@ iex(9)> :random.uniform
 0.7664941429798051
 iex(10)> :random.uniform
 0.7752787034211441
-{% endhighlight %}
+```
 
 This gives us the unique values that we are looking for each time and does not affect the Beam clock in any way. Win win!
 

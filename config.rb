@@ -53,6 +53,9 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -72,5 +75,14 @@ configure :build do
 end
 
 activate :blog do |blog|
-  blog.prefix = "blog"
+  blog.prefix = "posts"
+  blog.permalink = ":title.html"
+  blog.sources = "posts/:year-:month-:day-:title.html"
+  #blog.layout = "post"
+  #blog.summary_separator = /(READMORE)/
+  #blog.summary_length = 300
+  #blog.tag_template = "tag.html"
+  #blog.calendar_template = "calendar.html"
 end
+
+activate :syntax, :line_numbers => true

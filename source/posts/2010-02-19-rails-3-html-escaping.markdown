@@ -9,18 +9,18 @@ So you've been working on Rails apps for a while, and like all good developers, 
 
 eg. like this:
 
-{% highlight erb %}
+```erb
 <%= h some_string %>
-{% endhighlight %}
+```
 
 ### Rails 3
 Now in Rails 3, all strings are html escaped automatically, so:
 
-{% highlight erb %}
+```erb
 <%= h some_string %>
 # is now
 <%= some_string %>
-{% endhighlight %}
+```
 
 No string by default is considered safe to render, and subsequently are HTML escaped. If you need to render html without it being escaped you need to effectively whitelist it as safe to render. This is done via `.html_safe`
 

@@ -10,7 +10,7 @@ Now, the ActiveRecord internals have been re-written as modules and pushed out i
 
 Below is a basic sample you can tryout in an irb session which includes the `ActiveModel::Validations` module:
 
-{% highlight ruby %}
+```ruby
 require 'active_model'
 
 class Place
@@ -26,6 +26,6 @@ place.valid?
 place.name = "le pub"
 place.valid?
 #> true
-{% endhighlight %}
+```
 
 For any applications which require non-persisting models, or even models that don't use ActiveRecord, it's now a whole lot easier to introduce AR conventions without any pain.
