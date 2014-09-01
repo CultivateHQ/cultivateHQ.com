@@ -1,0 +1,14 @@
+---
+title: Posts
+---
+<ul>
+<% blog.articles.each do |article| %>
+  <li>
+    <article>
+      <h1><%= link_to article.title, article %></h1>
+      <header><%= article.date %></header>
+      <div class="article-body"><%= article.summary %></div>
+    </article>
+  </li>
+  <% end %>
+</ul>

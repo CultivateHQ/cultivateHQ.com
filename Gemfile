@@ -3,6 +3,7 @@
 source 'http://rubygems.org'
 
 gem "middleman", "~>3.3.5"
+gem "nokogiri"
 
 gem "middleman-blog"
 
