@@ -1,3 +1,14 @@
+activate :blog do |blog|
+  blog.prefix = "/posts"
+  blog.permalink = ":title.html"
+  blog.sources = ":year-:month-:day-:title.html"
+  blog.layout = "post"
+  #blog.summary_separator = /(READMORE)/
+  #blog.summary_length = 300
+  #blog.tag_template = "tag.html"
+  #blog.calendar_template = "calendar.html"
+end
+
 ###
 # Compass
 ###
@@ -74,16 +85,6 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-page "/posts/*", :layout => "post"
-
-activate :blog do |blog|
-  blog.prefix = "posts"
-  blog.permalink = ":title.html"
-  blog.sources = "posts/:year-:month-:day-:title.html"
-  #blog.summary_separator = /(READMORE)/
-  #blog.summary_length = 300
-  #blog.tag_template = "tag.html"
-  #blog.calendar_template = "calendar.html"
-end
 
 activate :syntax, :line_numbers => true
+activate :directory_indexes
