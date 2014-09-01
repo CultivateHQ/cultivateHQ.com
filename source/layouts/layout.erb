@@ -14,7 +14,17 @@
   </head>
   
   <body class="<%= page_classes %>">
-  <h1>('Layout' layout)</h1>
+  <header>
+    <div id="logo">Cultivate</div>
+    <nav>
+      <ul>
+        <li><%= link_to 'Our History', '/#our-history' %></li>
+        <li><%= link_to 'What we do', '/#what-we-do' %></li>
+        <li><%= link_to 'Contact', '/#contact' %></li>
+        <li><%= link_to 'Blog', '/posts/' %></li>
+      </ul>
+    </nav>
+  </header>
     <%= yield %>
   </body>
 </html>
