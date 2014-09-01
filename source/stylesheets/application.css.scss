@@ -9,33 +9,62 @@ $break-large: 1200px;
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
-body { background: #EEE;}
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
 
+body {
+  background: #01A9DB;
+  font-family: 'Lato', sans-serif;
+}
+
+a { 
+  color: #086A87;
+  &:hover { color: #01A9DB;}
+}
+
+h1, h2, h3, h4, h5, h6 {font-weight: 300;}
 
 #site-header {
   @include clearfix;
-  #logo { float: left;}
+
+  #logo {
+    float: left;
+    font-size: 2em;
+    font-weight: 100;
+    padding: 0.5em 1em;
+    background: #0B243B;
+    color: white;
+
+    &:hover { background: #01A9DB; }
+  }
 
   nav { 
     float: right;
+    li {
+      display: inline;
 
-    li {display: inline;}
+      a { 
+        color: #0B243B;
+        &:hover { color: #086A87;}
+      }
+    }
   }
+}
 
-  @media screen and (min-width: $break-small) {
-    width: 90%;
-    margin: 0 auto;
-  }
+#message { 
+  color: white;
+  text-shadow: 1px 1px 0 #086A87;
 
-  @media screen and (min-width: $break-large) {
-    max-width: 1280px;
-  }
+  h1 {font-size: 300%;}
+  h2 {font-weight: 700;}
 }
 
 #site-content-area {
   @include clearfix;
   background: white;
-  border: 1px solid #DDD;
+  border-top: 1px solid #086A87;
+}
+
+.wrapper {
   width: 100%;
   padding: 1em;
   margin: 1em;
