@@ -1,2 +1,51 @@
 @import 'normalize';
-@import 'compass';
+@import "compass/css3";
+@import "compass/utilities";
+
+$break-small: 320px;
+$break-medium: 768px;
+$break-large: 1200px;
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+body { background: #EEE;}
+
+
+#site-header {
+  @include clearfix;
+  #logo { float: left;}
+
+  nav { 
+    float: right;
+
+    li {display: inline;}
+  }
+
+  @media screen and (min-width: $break-small) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $break-large) {
+    max-width: 1280px;
+  }
+}
+
+#site-content-area {
+  @include clearfix;
+  background: white;
+  border: 1px solid #DDD;
+  width: 100%;
+  padding: 1em;
+  margin: 1em;
+
+  @media screen and (min-width: $break-small) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $break-large) {
+    max-width: 1280px;
+  }
+}
