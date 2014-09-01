@@ -1,5 +1,4 @@
 ---
-  layout : post
   title  : How to clear an elasticsearch index
   author : Mark Connell
 ---

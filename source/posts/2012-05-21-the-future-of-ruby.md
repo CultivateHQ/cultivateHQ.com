@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "The future of Ruby"
 date:   2012-05-21 10:41:21
 author: Paul Wilson

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Day of the Living Style Guide"
 date:   2014-05-10 10:41:21
 author: Alan Gardner

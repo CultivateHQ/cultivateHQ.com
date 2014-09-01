@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "On the Scaled Agile Framework"
 date:   2014-06-06 10:41:21
 author: Paul Wilson

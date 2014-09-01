@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Grokking Lean UX"
 date:   2014-04-14 10:41:21
 author: Alan Gardner

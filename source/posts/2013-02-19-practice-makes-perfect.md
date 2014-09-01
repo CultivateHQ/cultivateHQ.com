@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Practice Makes Perfect"
 date:   2013-02-19 10:41:21
 author: Paul Wilson

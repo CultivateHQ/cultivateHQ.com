@@ -1,5 +1,4 @@
 ---
-  layout: post
   title: "Rails 3: HTML Escaping"
   author: Mark Connell
 ---

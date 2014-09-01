@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "The Many Faces of Test Driven Development"
 date:   2014-03-20 10:41:21
 author: Paul Wilson

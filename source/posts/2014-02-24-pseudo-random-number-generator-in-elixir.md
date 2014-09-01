@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Pseudo Random Number Generation in Elixir"
 date:   2014-02-24 10:41:21
 author: Alan Gardner

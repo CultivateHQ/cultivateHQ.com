@@ -1,5 +1,4 @@
 ---
-  layout: post
   title: My Sublime Text 2 Config
   author: Mark Connell
 ---

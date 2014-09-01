@@ -1,5 +1,4 @@
 ---
-  layout: post
   title: "Rails 3: Add validations to non-ActiveRecord::Base models"
   author: Mark Connell
 ---
