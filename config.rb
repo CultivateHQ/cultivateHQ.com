@@ -87,4 +87,6 @@ end
 
 
 activate :syntax, :line_numbers => true
+
+# The below will override .html on blog posts as well!! 
 activate :directory_indexes
