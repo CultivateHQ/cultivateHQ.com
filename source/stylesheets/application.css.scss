@@ -9,8 +9,6 @@ $break-large: 1200px;
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
-@import url(//fonts.googleapis.com/css?family=Lato:100,300,700,100italic,300italic,700italic);
-
 body {
   font-family: 'Lato', sans-serif;
 }
@@ -76,8 +74,6 @@ a {
         color: white;
         display: block;
         padding: 0.5em 1em;
-
-        &:hover { background: rgb(11,36,59)}
       }
     }
   }
