@@ -13,6 +13,8 @@ html { box-sizing: border-box; }
 
 body {
   background: #01A9DB;
+  background: url(image-path("workshop.jpg")) no-repeat top center fixed;
+  @include background-size(cover);
   font-family: 'Lato', sans-serif;
 }
 
@@ -35,13 +37,13 @@ a {
   @include clearfix;
 
   #logo {
-    @include border-radius(3px);
     float: left;
     font-size: 2em;
     font-weight: 100;
     padding: 0.5em 0.75em 0.5em 1em;
+    @include border-radius(3px);
     background: rgb(11, 36, 59);
-    background: rgba(11, 36, 59, 0.8);
+    background: rgba(11, 36, 59, 0.5);
     color: white;
     width: 6.75em;
 
@@ -64,15 +66,26 @@ a {
     padding: 0;
     margin: 0;
 
-    li {
-      display: inline;
-      margin-left: 1em;
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      @include border-radius(3px);
+      background: rgb(11, 36, 59);
+      background: rgba(11, 36, 59, 0.5);
+      @include clearfix;
 
+    li {
+      float: left;
       a { 
-        color: #0B243B;
-        &:hover { color: white;}
+        color: white;
+        display: block;
+        padding: 0.5em 1em;
+
+        &:hover { background: rgb(11,36,59)}
       }
     }
+  }
   }
 }
 
