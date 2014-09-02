@@ -1,6 +1,7 @@
 @import 'normalize';
 @import "compass/css3";
 @import "compass/utilities";
+@import "typography";
 
 $break-small: 320px;
 $break-medium: 768px;
@@ -8,12 +9,6 @@ $break-large: 1200px;
 
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
-
-body {
-  font-family: 'Lato', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {font-weight: 300;}
 
 a { 
   @include transition-property(color);
