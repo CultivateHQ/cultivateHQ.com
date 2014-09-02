@@ -12,9 +12,6 @@ html { box-sizing: border-box; }
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
 
 body {
-  background: #01A9DB;
-  background: url(image-path("workshop.jpg")) no-repeat top center fixed;
-  @include background-size(cover);
   font-family: 'Lato', sans-serif;
 }
 
@@ -35,27 +32,25 @@ a {
 
 #site-header {
   @include clearfix;
-
+    background: black;
+    background: rgba(0,0,0, 0.9);
+    padding-bottom: 1em;
+    
   #logo {
     float: left;
     font-size: 2em;
     font-weight: 100;
-    padding: 0.5em 0.75em 0.5em 1em;
     @include border-radius(3px);
-    background: rgb(11, 36, 59);
-    background: rgba(11, 36, 59, 0.5);
     color: white;
-    width: 6.75em;
-
-    &:hover { background: rgb(11,36,59); }
+    width: 5em;
 
     .logo-text {float: left;}
 
     .logo-icon {
       float: left;
-      width: 15%;
-      height: 15%;
-      margin-top: -0.25em;
+      width: 12%;
+      height: 12%;
+      margin-top: -0.3em;
 
       img { width: 100%; }
     }
@@ -65,14 +60,14 @@ a {
     float: right;
     padding: 0;
     margin: 0;
+    font-weight: 100;
 
     ul {
       padding: 0;
       margin: 0;
+      margin-top: 0.15em;
       list-style: none;
       @include border-radius(3px);
-      background: rgb(11, 36, 59);
-      background: rgba(11, 36, 59, 0.5);
       @include clearfix;
 
     li {
@@ -90,10 +85,11 @@ a {
 }
 
 #message { 
+  background: #AAA;
   color: white;
-  text-shadow: 1px 1px 0 #086A87;
+  // text-shadow: 1px 1px 0 #086A87;
 
-  h1 {font-size: 300%;}
+  h1 {font-size: 300%; margin: 0;}
   h2 {font-weight: 700;}
 }
 
