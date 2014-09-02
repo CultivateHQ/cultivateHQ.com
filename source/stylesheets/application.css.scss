@@ -16,35 +16,61 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {font-weight: 300;}
+
 a { 
+  @include transition-property(color);
+  @include transition-duration(0.3s);
   color: #086A87;
   &:hover { color: #01A9DB;}
 }
 
-h1, h2, h3, h4, h5, h6 {font-weight: 300;}
+.posts-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
 #site-header {
   @include clearfix;
 
   #logo {
+    @include border-radius(3px);
     float: left;
     font-size: 2em;
     font-weight: 100;
-    padding: 0.5em 1em;
-    background: #0B243B;
+    padding: 0.5em 0.75em 0.5em 1em;
+    background: rgb(11, 36, 59);
+    background: rgba(11, 36, 59, 0.8);
     color: white;
+    width: 6.75em;
 
-    &:hover { background: #01A9DB; }
+    &:hover { background: rgb(11,36,59); }
+
+    .logo-text {float: left;}
+
+    .logo-icon {
+      float: left;
+      width: 15%;
+      height: 15%;
+      margin-top: -0.25em;
+
+      img { width: 100%; }
+    }
   }
 
   nav { 
     float: right;
+    padding: 0;
+    margin: 0;
+
     li {
       display: inline;
+      margin-left: 1em;
 
       a { 
         color: #0B243B;
-        &:hover { color: #086A87;}
+        &:hover { color: white;}
       }
     }
   }
