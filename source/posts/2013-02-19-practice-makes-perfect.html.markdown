@@ -10,7 +10,7 @@ In December last year, around 3,000 programmers in 160 cities around the world g
 
 Musicians do not practise by only playing symphonies. Marathon runners do not train by running marathons. They engage in directed practise such as playing musical scales or interval runs. A Code Retreat is a community event to help programmers engage in directed practice. They work on improving their code, free of the constraints of time-pressure or having to finish the task.
 
-### Playing the game
+## Playing the game
 
 The Code Retreat format consists of multiple sessions of implementing Conway's Game of Life:
 
@@ -31,7 +31,7 @@ Time pressure can be detrimental to this kind of deliberate practise. Throwing t
 
 The problem, [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life), is chosen as it is fairly complex to implement but easy to understand. A problem that was hard to understand would get in the way of concentrating purely on improving code skills.
 
-### Tell, don't ask
+## Tell, don't ask
 After the first iteration, the facilitators introduce a constraint for each subsequent iteration. As well as keeping the exercise interesting, the constraints are designed to provoke different ways of thinking and working with code. A common constraint is "no return values", which often leads to a more Object Oriented way of working known as Tell Don't Ask.
 
 Code Retreat came out of a discussion at the Code Mash conference in Ohio. [Corey Haines](https://twitter.com/coreyhaines), a well known figure in the [Software Craftsmanship](http://en.wikipedia.org/wiki/Software_craftsmanship) community, helped create the format and is responsible for popularising it since then. For the last two years there has been a Global Day of Code Retreat: Code Retreats on the same day in different cities around the world.

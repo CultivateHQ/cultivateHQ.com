@@ -42,6 +42,6 @@ Person.validators_on(:age)
 #       @options={:only_integer=>false, :allow_nil=>false}>]
 ```
 
-### Notes
+## Notes
 * The `validators` and `validators_on` methods are only found in activemodel-3.0.0.beta1.gem onwards.
 * The specific commit that introduces these methods can be found here: [http://github.com/rails/rails/commit/8f97e9d19abf02b33c5f7c0c1f1d5daf13e28893](http://github.com/rails/rails/commit/8f97e9d19abf02b33c5f7c0c1f1d5daf13e28893)

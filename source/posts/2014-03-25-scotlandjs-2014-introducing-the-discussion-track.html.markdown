@@ -4,26 +4,26 @@ date:   2014-03-25 10:41:21
 author: Peter Aitken
 ---
 
-### Discussion Track
+## Discussion Track
 This year at [ScotlandJS](http://scotlandjs.com/) we are introducing the Discussion Track as an integral part of the event experience.
 
 In the last few months a number of people have been questioning the traditional conference format where speakers share their knowledge and experience from the stage. Many people specifically attend events to learn from other delegates whom they randomly strike up a conversation with in the hallway between talks, this is what we want to amplify. At [ScotlandJS](http://scotlandjs.com/) this year we aim to provide a means that allows you to get the best of both formats.
 
 
-### How will the Discussion Track work?
+## How will the Discussion Track work?
 The discussions will be facilitated, given direction and cover multiple topics.
 
-#### Facilitation:
+### Facilitation:
 Alan Gardner and Matt Wynne have very kindly offered to facilitate these sessions, which will be delivered in a Lean Coffee format (without the coffee). Here participants submit items for discussion then collectively vote on which to discuss.
 
-##### Direction:
+#### Direction:
 [ScotlandJS](http://scotlandjs.com/) has 23 talks chosen by ticket holders. These are the topics that our delegates are most interested in and will provide the subject matter for the Discussion Track.
 
 After a speaker finishes their talk, those with questions or wishing to discuss the subject matter further move over to the Discussion Track. Then during the next speaking slot the discussion will take place.
 
 All videos will be made available after the event if there is a clash between what you want to see and what you want to talk about.
 
-### What should I expect during the Discussion track?
+## What should I expect during the Discussion track?
 Our aim here is to provide a means for you to discover the relationships that will provide the greatest shared value to your continued development and thereby the communities beyond [ScotlandJS](http://scotlandjs.com/).
 
 You come to an event like [ScotlandJS](http://scotlandjs.com/) to learn from speakers and your peers.

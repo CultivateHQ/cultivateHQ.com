@@ -3,7 +3,7 @@
   author: Mark Connell
 ---
 
-### Rails 2
+## Rails 2
 So you've been working on Rails apps for a while, and like all good developers, you've been escaping any content rendered in your views that your application's users might have entered, right?
 
 eg. like this:
@@ -12,7 +12,7 @@ eg. like this:
 <%= h some_string %>
 ```
 
-### Rails 3
+## Rails 3
 Now in Rails 3, all strings are html escaped automatically, so:
 
 ```erb

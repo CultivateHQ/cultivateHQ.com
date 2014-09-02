@@ -7,7 +7,7 @@ author: Mark Connell
 
 Rails 3 introduced a new routing DSL that is a little bit different from the Rails 2 version. This quick guide covers a few examples of the new routes, and how they compare to Rails 2.
 
-### Simple routes
+## Simple routes
 
 Create a basic route that will respond to `http://localhost:300/hello_world`
 
@@ -19,7 +19,7 @@ map.connect 'hello_world', :controller => 'posts', :action => 'index'
 match 'hello_world' => 'posts#index'
 ```
 
-### Resources
+## Resources
 
 A `UsersController` that responds to the typical RESTful actions `/users`, `/users/123`, `/users/123/edit` etc.
 
@@ -59,7 +59,7 @@ resources :games do
 end
 ```
 
-### Root mappings
+## Root mappings
 The `root_url` your app points to eg. `http://localhost:3000/`
 
 ```ruby
@@ -86,7 +86,7 @@ end
 
 One thing to note is that if you are defining a root mapping in a namespace, it doesn't make any assumptions that the controller is in the same namespace in Rails 3.
 
-### Optional params
+## Optional params
 Allows a mapping to be associated with multiple routes eg: `/posts/2010` and `/posts/2010/02`
 
 ```ruby
