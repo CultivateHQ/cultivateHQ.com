@@ -6,7 +6,7 @@ title: Posts
   <li class="posts-list__post">
     <article>
       <h1><%= link_to article.title, article %></h1>
-      <header><%= article.date %></header>
+      <header><%= article.date.strftime('%d %B, %Y') %></header>
       <div class="article-body"><%= article.summary %></div>
     </article>
   </li>
