@@ -7,6 +7,7 @@ This is the codebase for the Cultivate website. We use middleman to generate a s
     git clone git@github.com:CultivateHQ/cultivateHQ.com.git
     cd cultivateHQ
     bundle
+    bower install
     middleman server
 
 All being well, you'll have a server running on [localhost - port 4567](http://0.0.0.0:4567)
