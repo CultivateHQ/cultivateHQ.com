@@ -1,19 +1,7 @@
 $base-font-size: 16px;
 $base-line-height: 24px;
 @include establish-baseline;
-
-
-// body:after{
-//   content: '';
-//   display: block;
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   height: 200%;
-//   width: 100%;
-//   z-index: 10000;
-//   @include debug-vertical-alignment;
-// }
+// @include baseline-grid-overlay;
 
 body {
   font-family: 'Lato', sans-serif;
@@ -36,18 +24,22 @@ h2 {
 
 h3 {
   @include adjust-font-size-to(24px);
+  @include rhythm(1, 0, 0, 1, 24px);
 }
 
 h4 {
   @include adjust-font-size-to(21px);
+  @include rhythm(1, 0, 0, 1, 21px);
 }
 
 h5 {
   @include adjust-font-size-to(18px);
+  @include rhythm(1, 0, 0, 1, 18px);
 }
 
 h6 {
   @include adjust-font-size-to(16px);
+  @include rhythm(1, 0, 0, 1, 16px);
   font-weight: 700;
 }
 
