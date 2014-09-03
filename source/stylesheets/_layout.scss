@@ -6,6 +6,7 @@ $break-large: 1200px;
   width: 100%;
   padding: 1em;
   margin: 1em;
+  @include clearfix;
 
   @media screen and (min-width: $break-small) {
     width: 90%;
