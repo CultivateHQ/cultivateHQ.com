@@ -1,19 +1,19 @@
 $base-font-size: 16px;
-$base-line-height: 30px;
+$base-line-height: 24px;
 @include establish-baseline;
 
 
-body:after{
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 200%;
-  width: 100%;
-  z-index: 10000;
-  @include debug-vertical-alignment;
-}
+// body:after{
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   height: 200%;
+//   width: 100%;
+//   z-index: 10000;
+//   @include debug-vertical-alignment;
+// }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -26,10 +26,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   @include adjust-font-size-to(36px);
+  @include rhythm(1, 0, 0, 1, 36px);
 }
 
 h2 {
-  @include adjust-font-size-to(30px);
+  @include adjust-font-size-to(30px, 3/2);
+  @include rhythm(1, 0, 0, 1, 30px);
 }
 
 h3 {

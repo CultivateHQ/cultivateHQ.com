@@ -32,7 +32,7 @@ a {
     background: rgba(0,0,0, 0.9);
 
   #logo {
-    @include adjust-font-size-to(32px);
+    @include adjust-font-size-to(32px, 3/1);
     float: left;
     font-weight: 100;
     @include border-radius(3px);
@@ -56,7 +56,6 @@ a {
     padding: 0;
     margin: 0;
     font-weight: 100;
-    padding: rhythm(1, 32px) 0;
 
     ul {
       padding: 0;
@@ -67,6 +66,8 @@ a {
 
     li {
       float: left;
+      @include adjust-font-size-to($base-font-size, 3/1);
+
       a {
         color: white;
         display: block;
@@ -81,22 +82,32 @@ a {
   background: #AAA;
   color: white;
   // text-shadow: 1px 1px 0 #086A87;
+  padding-bottom: rhythm(1);
 
-  h1 {font-weight: 100;}
-  h2 {font-weight: 300;}
+  h1 {
+    @include adjust-font-size-to(48px, 2/1);
+    @include rhythm(2, 0, 0, 1, 48px);
+    font-weight: 100;
+  }
+
+  h2 {
+    font-weight: 300;
+  }
 }
 
 #site-content-area {
   @include clearfix;
   background: white;
   border-top: 1px solid #086A87;
-  margin-top: -1px;
+  padding-top: rhythm(1);
+  padding-bottom: rhythm(3);
 }
 
 .wrapper {
   width: 100%;
   padding: 0 1em;
   margin: 0 1em;
+  overflow: hidden;
 
   @media screen and (min-width: $break-small) {
     width: 90%;
