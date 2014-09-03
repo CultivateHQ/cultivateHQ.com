@@ -44,7 +44,12 @@ h6 {
 }
 
 
-p , ul{
+p, ul, ol {
   margin-top: 0;
   margin-bottom: rhythm(1);
+}
+
+blockquote {
+  margin-top: 0;
+  margin-bottom: 0;
 }
