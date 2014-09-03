@@ -6,10 +6,6 @@
 
 *, *:before, *:after { box-sizing: inherit; }
 
-.clearfix{
-  @include clearfix;
-}
-
 a {
   @include transition-property(color);
   @include transition-duration(0.3s);
