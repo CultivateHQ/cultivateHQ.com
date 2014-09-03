@@ -10,7 +10,7 @@
       <div class="wrapper">
         <h1><%= current_page.data.title || current_article.title %></h1>
         <div class="content-column">
-          <% if defined? current_page.date %>
+          <%= current_page.data.author %><% if defined? current_page.date %>,
             <%= current_page.date.strftime('%d %B, %Y') %>
           <% end %>
 
