@@ -1,6 +1,5 @@
 ---
 title:  "The future of Ruby"
-date:   2012-05-21 10:41:21
 author: Paul Wilson
 archive: https://web.archive.org/web/20130314012109/http://www.neo.com/2012/05/21/the-future-of-ruby
 ---

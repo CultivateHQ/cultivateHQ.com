@@ -1,6 +1,5 @@
 ---
 title:  "9 Things to Consider When Choosing a JavaScript MV* Framework"
-date:   2014-06-30 10:41:21
 author: Dan Munckton
 ---
 

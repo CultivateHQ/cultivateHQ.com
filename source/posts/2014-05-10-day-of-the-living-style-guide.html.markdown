@@ -1,6 +1,5 @@
 ---
 title:  "Day of the Living Style Guide"
-date:   2014-05-10 10:41:21
 author: Alan Gardner
 archive: https://web.archive.org/web/20140725022615/http://www.neo.com/2014/05/10/day-of-the-living-style-guide
 ---

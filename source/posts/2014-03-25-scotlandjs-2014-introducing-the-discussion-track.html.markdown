@@ -1,6 +1,5 @@
 ---
 title:  "ScotlandJS 2014 - Introducing the Discussion Track"
-date:   2014-03-25 10:41:21
 author: Peter Aitken
 ---
 
