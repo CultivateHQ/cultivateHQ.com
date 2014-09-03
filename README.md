@@ -13,8 +13,8 @@ All being well, you'll have a server running on [localhost - port 4567](http://0
 
 ## Publishing Changes
 
-Once you've commited changes back to the master branch, run:
+Once your ready to push changes to the live website, run:
 
-    rake publish
+    middleman deploy
 
-This will build the project and deploy it to the gh-pages branch on github.
+This will build the project and deploy it to the cultivatehq.github.io repository

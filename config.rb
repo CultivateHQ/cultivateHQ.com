@@ -9,6 +9,16 @@ activate :blog do |blog|
   #blog.calendar_template = "calendar.html"
 end
 
+activate :deploy do |deploy|
+  deploy.build_before = true
+  deploy.method = :git
+  # Optional Settings
+  deploy.remote   = 'git@github.com:CultivateHQ/cultivatehq.github.io.git'
+  deploy.branch   = 'master'
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+end
+
 ###
 # Compass
 ###
@@ -94,5 +104,5 @@ end
 
 activate :syntax, :line_numbers => true
 
-# The below will override .html on blog posts as well!! 
+# The below will override .html on blog posts as well!!
 activate :directory_indexes
