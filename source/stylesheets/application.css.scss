@@ -1,6 +1,7 @@
 @import 'normalize';
 @import "compass/css3";
 @import "compass/utilities";
+@import "layout";
 @import "typography";
 
 $break-small: 320px;
@@ -89,39 +90,3 @@ a {
   background: white;
   border-top: 1px solid #086A87;
 }
-
-.wrapper {
-  width: 100%;
-  padding: 1em;
-  margin: 1em;
-
-  @media screen and (min-width: $break-small) {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  @media screen and (min-width: $break-large) {
-    max-width: 1200px;
-  }
-}
-
-.content-column {
-  width: 100%;
-  float: none;
-  
-  @media screen and (min-width: $break-medium) {
-    float: left;
-    width: 70%; 
-  }
-}
-.sidebar-column { 
-  width: 100%;
-  float: none;
-  
-  @media screen and (min-width: $break-medium) {
-    float: left;
-    width: 25%; 
-    margin-left: 5%;
-  }
-}
-
