@@ -72,8 +72,15 @@ set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
-# Add bower's directory to sprockets asset path
 after_configuration do
+  # Ensure bower is run before building
+  puts "** Running bower install"
+  unless system('bower install')
+    puts "*** ERROR running bower install ***"
+    exit(1)
+  end
+
+  # Add bower's directory to sprockets asset path
   @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
   sprockets.append_path File.join "#{root}", @bower_config["directory"]
 end

@@ -12,10 +12,6 @@ $break-large: 1200px;
 @import "responsive-nav-fixed";
 
 
-.clearfix{
-  @include clearfix;
-}
-
 a {
   @include transition-property(color);
   @include transition-duration(0.3s);
