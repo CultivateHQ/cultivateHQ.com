@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-  @include adjust-font-size-to(30px, 3/2);
+  @include adjust-font-size-to(30px);
   @include rhythm(1, 0, 0, 1, 30px);
 }
 
