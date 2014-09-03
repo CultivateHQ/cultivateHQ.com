@@ -13,7 +13,7 @@ layout: false
     <priority>1.0</priority>
   </url>
   <url>
-    <loc><%= website_url %>/posts</loc>
+    <loc><%= "#{website_url}/posts/" -%></loc>
     <lastmod><%= Date.today.to_time.iso8601 %></lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -21,7 +21,7 @@ layout: false
 
   <% sitemap.resources.select { |page| page.path =~ /posts\// && page.path != 'posts/index.html' && !page.data.noindex == true }.each do |page| %>
     <url>
-      <loc><%= website_url %><%= page.url %></loc>
+      <loc><%= "#{website_url}#{page.url}" -%></loc>
       <lastmod><%= Date.today.to_time.iso8601 %></lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
