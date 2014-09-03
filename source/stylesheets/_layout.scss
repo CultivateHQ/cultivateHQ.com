@@ -1,6 +1,12 @@
-$break-small: 320px;
-$break-medium: 768px;
-$break-large: 1200px;
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after { box-sizing: inherit; }
+
+.index #message, .posts #site-content-area {
+  margin-top: 72px;  
+}
 
 .wrapper {
   width: 100%;

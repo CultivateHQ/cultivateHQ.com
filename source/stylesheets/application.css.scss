@@ -1,10 +1,16 @@
+$break-small: 320px;
+$break-medium: 768px;
+$break-large: 1200px;
+
+
 @import 'normalize';
 @import "compass";
 @import "mixins";
 @import "layout";
 @import "typography";
+@import "responsive-nav/responsive-nav";
+@import "responsive-nav-fixed";
 
-*, *:before, *:after { box-sizing: inherit; }
 
 .clearfix{
   @include clearfix;
@@ -24,9 +30,13 @@ a {
 }
 
 #site-header {
-  @include clearfix;
-    background: black;
-    background: rgba(0,0,0, 0.9);
+  background: black;
+  background: rgba(0,0,0, 0.9);
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  left: 0;
+  top: 0;
 
   #logo {
     @include adjust-font-size-to(32px, 3/1);
@@ -47,31 +57,35 @@ a {
       img { width: 100%; }
     }
   }
-
-  nav {
+  
+  .nav-collapse { 
     float: right;
     padding: 0;
     margin: 0;
     font-weight: 100;
-
+  
     ul {
-      padding: 0;
-      margin: 0;
+      padding: 0 0 1em 0;
       list-style: none;
       @include border-radius(3px);
       @include clearfix;
-
-    li {
-      float: left;
-      @include adjust-font-size-to($base-font-size, 3/1);
-
-      a {
-        color: white;
-        display: block;
-        padding: 0 1em;
+      
+      @media screen and (min-width: $break-medium) {
+        margin: 1em 0 0 0;
+        padding: 0;
+      }
+  
+      li {
+        float: left;
+        @include adjust-font-size-to($base-font-size);
+    
+        a {
+          color: white;
+          display: block;
+          padding: 0.3em 0.7em;
+        }
       }
     }
-  }
   }
 }
 
