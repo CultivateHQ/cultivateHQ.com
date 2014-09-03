@@ -7,3 +7,9 @@
 <link href='//fonts.googleapis.com/css?family=Lato:100,300,700,100italic,300italic,700italic' rel='stylesheet' type='text/css'>
 <%= stylesheet_link_tag "application" %>
 <%= javascript_include_tag  "all" %>
+
+<script type='text/javascript'>
+  jQuery(document).ready(function () {
+      jQuery('header nav').meanmenu({meanScreenWidth: "768", meanMenuContainer: '#site-header'});
+  });
+</script>
