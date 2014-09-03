@@ -72,6 +72,12 @@ set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
+# Add bower's directory to sprockets asset path
+after_configuration do
+  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+  sprockets.append_path File.join "#{root}", @bower_config["directory"]
+end
+
 set :images_dir, 'images'
 
 set :markdown_engine, :redcarpet
