@@ -8,8 +8,8 @@
 <%= stylesheet_link_tag "application" %>
 <%= javascript_include_tag  "all" %>
 
-<script type='text/javascript'>
-  jQuery(document).ready(function () {
-      jQuery('header nav').meanmenu({meanScreenWidth: "768", meanMenuContainer: '#site-header'});
+<script>
+  $(function() {
+    responsiveNav('.nav-collapse');  
   });
 </script>
