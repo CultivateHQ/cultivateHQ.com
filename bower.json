@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery.meanmenu": "*",
+    "jquery.meanmenu": "CultivateHQ/meanMenu",
     "jquery": "2.1.*"
   }
 }
