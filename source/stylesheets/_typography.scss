@@ -1,17 +1,55 @@
-body { font-family: 'Lato', sans-serif; font-size: 16px;}
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline;
+// @include baseline-grid-overlay;
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  line-height: 1em;
+body {
+  font-family: 'Lato', sans-serif;
 }
 
-h1 { font-size: 225%; margin-bottom: 1.5em;} // 36px/60px
-h2 { font-size: 187.5%; margin-bottom: 1em; } //30px/30px
-h3 { font-size: 150%; margin-bottom: 0.375em; } //24px/30px
-h4 { font-size: 131.25%; margin-bottom: 0.6875em;} //21px/30px
-h5 { font-size: 125%; margin-bottom: 0.5625em;} //18px/30px
-h6 { font-size: 100%; font-weight: 700; margin-bottom: 0;} //16px
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 300;
+}
 
-p, li, div { font-size: 100%; line-height: 1.875em;} // 16px/30px
+h1 {
+  @include adjust-font-size-to(36px);
+  @include rhythm(1, 0, 0, 1, 36px);
+}
 
-p { margin: 0 0 0.875em;}
+h2 {
+  @include adjust-font-size-to(30px);
+  @include rhythm(1, 0, 0, 1, 30px);
+}
+
+h3 {
+  @include adjust-font-size-to(24px);
+  @include rhythm(1, 0, 0, 1, 24px);
+}
+
+h4 {
+  @include adjust-font-size-to(21px);
+  @include rhythm(1, 0, 0, 1, 21px);
+}
+
+h5 {
+  @include adjust-font-size-to(18px);
+  @include rhythm(1, 0, 0, 1, 18px);
+}
+
+h6 {
+  @include adjust-font-size-to(16px);
+  @include rhythm(1, 0, 0, 1, 16px);
+  font-weight: 700;
+}
+
+
+p, ul, ol {
+  margin-top: 0;
+  margin-bottom: rhythm(1);
+}
+
+blockquote {
+  margin-top: 0;
+  margin-bottom: 0;
+}

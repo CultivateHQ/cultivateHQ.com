@@ -4,8 +4,9 @@ $break-large: 1200px;
 
 .wrapper {
   width: 100%;
-  padding: 1em;
-  margin: 1em;
+  padding: 0 1em;
+  margin: 0 1em;
+  overflow: hidden;
   @include clearfix;
 
   @media screen and (min-width: $break-small) {
@@ -21,7 +22,7 @@ $break-large: 1200px;
 .column {
   width: 100%;
   float: none;
-  
+
   @media screen and (min-width: $break-medium) {
     float: left;
   }
@@ -32,19 +33,19 @@ $break-large: 1200px;
     width: 32%;
     margin-left: 2%;
   }
-  
+
   &:first-of-type{ margin-left: 0;}
 }
 .content-column {
   @extend .column;
   @media screen and (min-width: $break-medium) {
-    width: 70%; 
+    width: 70%;
   }
 }
-.sidebar-column { 
+.sidebar-column {
   @extend .column;
   @media screen and (min-width: $break-medium) {
-    width: 25%; 
+    width: 25%;
     margin-left: 5%;
   }
 }
