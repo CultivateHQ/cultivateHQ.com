@@ -3,10 +3,8 @@
 @import "compass/utilities";
 @import "layout";
 @import "typography";
+@import "jquery.meanmenu/meanmenu";
 
-$break-small: 320px;
-$break-medium: 768px;
-$break-large: 1200px;
 
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
