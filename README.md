@@ -4,9 +4,14 @@ This is the codebase for the Cultivate website. We use middleman to generate a s
 
 ## Setting up
 
+middleman is a ruby-based site generator, however there are javascript dependencies using bower.
+You'll need to make sure you have node and npm installed.
+
     git clone git@github.com:CultivateHQ/cultivateHQ.com.git
     cd cultivateHQ
     bundle
+    npm install bower -g
+    bower install
     middleman server
 
 All being well, you'll have a server running on [localhost - port 4567](http://0.0.0.0:4567)
