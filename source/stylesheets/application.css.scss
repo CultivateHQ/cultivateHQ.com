@@ -27,7 +27,6 @@ a {
 
 #site-header {
   background: black;
-  background: rgba(0,0,0, 0.9);
   position: fixed;
   z-index: 3;
   width: 100%;
@@ -51,36 +50,6 @@ a {
       margin-top: -0.3em;
 
       img { width: 100%; }
-    }
-  }
-  
-  .nav-collapse { 
-    float: right;
-    padding: 0;
-    margin: 0;
-    font-weight: 100;
-  
-    ul {
-      padding: 0 0 1em 0;
-      list-style: none;
-      @include border-radius(3px);
-      @include clearfix;
-      
-      @media screen and (min-width: $break-medium) {
-        margin: 1em 0 0 0;
-        padding: 0;
-      }
-  
-      li {
-        float: left;
-        @include adjust-font-size-to($base-font-size);
-    
-        a {
-          color: white;
-          display: block;
-          padding: 0.3em 0.7em;
-        }
-      }
     }
   }
 }

@@ -1,3 +1,32 @@
+.nav-collapse { 
+  float: right;
+  padding: 0;
+  margin: 0;
+  font-weight: 100;
+
+  ul {
+    padding: 0 0 1em 0;
+    list-style: none;
+    @include clearfix;
+
+    @media screen and (min-width: $break-medium) {
+      margin: 1em 0 0 0;
+      padding: 0;
+    }
+
+    li {
+      float: left;
+      @include adjust-font-size-to($base-font-size);
+
+      a {
+        color: white;
+        display: block;
+        padding: 0.3em 0.7em;
+      }
+    }
+  }
+}
+
 .fixed {
   position: fixed;
   width: 100%;
@@ -27,13 +56,15 @@
   .nav-collapse li { width: auto; }
 }
 
-.nav-collapse a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  border-top: 1px solid white;
-  text-decoration: none;
-  padding: 0.3em 1em;
-  color: #fff;
-  width: 100%;
+@media screen and (max-width: $break-medium) {
+  .nav-collapse ul li a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    border-top: 1px solid #444;
+    text-decoration: none;
+    padding: 1em;
+    color: #fff;
+    width: 100%;
+  }
 }
 
 .nav-collapse a:active,
@@ -43,7 +74,7 @@
 
 @media screen and (min-width: $break-medium) {
   .nav-collapse a {
-    border-left: 1px solid white;
+    border-left: 1px solid #444;
     padding: 0.3em 1em;
     text-align: center;
     border-top: 0;
