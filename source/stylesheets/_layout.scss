@@ -5,7 +5,7 @@ html {
 *, *:before, *:after { box-sizing: inherit; }
 
 .index #message, .posts #site-content-area {
-  margin-top: 72px;  
+  margin-top: 72px;
 }
 
 .wrapper {
@@ -23,6 +23,10 @@ html {
   @media screen and (min-width: $break-large) {
     max-width: 1200px;
   }
+}
+
+.row {
+  @include clearfix;
 }
 
 .column {
