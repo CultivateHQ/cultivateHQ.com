@@ -6,8 +6,6 @@
 
 A recent addition to `ActiveModel` is the introduction of a couple of methods for validation reflection.
 
-READMORE
-
 Say we have a sample `Person` class which includes the `ActiveModel::Validations` module so we can validate a couple of attributes:
 
 ```ruby
