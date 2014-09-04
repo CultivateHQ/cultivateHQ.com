@@ -10,6 +10,7 @@ $break-large: 1200px;
 @import "typography";
 @import "responsive-nav/responsive-nav";
 @import "responsive-nav-fixed";
+@import "posts_list";
 
 
 a {
@@ -17,12 +18,6 @@ a {
   @include transition-duration(0.3s);
   color: #086A87;
   &:hover { color: #01A9DB;}
-}
-
-.posts-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 #site-header {

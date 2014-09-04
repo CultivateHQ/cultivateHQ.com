@@ -1,12 +1,16 @@
 ---
-title: Posts
+title: Blog
 ---
 <ul class="posts-list">
 <% blog.articles.each do |article| %>
   <li class="posts-list__post">
     <article>
-      <h1><%= link_to article.title, article %></h1>
-      <header><%= article.data.author %>, <%= article.date.strftime('%d %B, %Y') %></header>
+      <h2><%= link_to article.title, article %></h2>
+      <header>
+        <span class="article-author"><%= article.data.author %></span>
+        ,
+        <span class="article-date"><%= article.date.strftime('%d %B, %Y') %></span>
+      </header>
       <div class="article-body"><%= article.summary %></div>
     </article>
   </li>
