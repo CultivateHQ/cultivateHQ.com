@@ -16,12 +16,12 @@ $break-large: 1200px;
 a {
   @include transition-property(color);
   @include transition-duration(0.3s);
-  color: #086A87;
-  &:hover { color: #01A9DB;}
+  color: #e21d87;
+  &:hover { color: #A40050;}
 }
 
 #site-header {
-  background: black;
+  background: #2A373D;
   position: fixed;
   z-index: 3;
   width: 100%;
@@ -50,7 +50,11 @@ a {
 }
 
 #message {
-  background: #AAA;
+  background: #e21d87 url("/images/inception.jpg") no-repeat top center;
+  @include background-size(cover);
+
+  border-bottom: 1px solid #e21d87;
+
   color: white;
   // text-shadow: 1px 1px 0 #086A87;
   padding-bottom: rhythm(1);
