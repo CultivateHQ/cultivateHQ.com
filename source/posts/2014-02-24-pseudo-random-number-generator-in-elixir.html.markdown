@@ -1,6 +1,7 @@
 ---
 title:  "Pseudo Random Number Generation in Elixir"
 author: Alan Gardner
+description: I recently started learning Elixir and decided for my first "real" project to implement a basic genetic algorithm. I like to do this to kick the tyres on a new language because it's a non-trivial problem that gives you a good idea of what it's like to work with that language.
 ---
 
 I recently started learning Elixir and decided for my first "real" project to implement a basic genetic algorithm. I like to do this to kick the tyres on a new language because it's a non-trivial problem that gives you a good idea of what it's like to work with that language.
