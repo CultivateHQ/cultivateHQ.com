@@ -8,12 +8,6 @@ html {
   margin-top: 72px;
 }
 
-section, footer {
-  clear: both;
-  @include clearfix;
-  border-bottom: 1px solid #DDD;
-}
-
 section:last-of-type {border-bottom: none;}
 
 footer {
@@ -37,6 +31,7 @@ footer {
 }
 
 .row {
+  width: 100%;
   @include clearfix;
 }
 
@@ -69,4 +64,10 @@ footer {
     width: 25%;
     margin-left: 5%;
   }
+}
+
+
+section, footer {
+  border-bottom: 1px solid #DDD;
+  @extend .row;
 }
