@@ -75,7 +75,13 @@ a {
 #site-content-area {
   @include clearfix;
   background: white;
-  border-top: 1px solid #086A87;
   padding-top: rhythm(1);
   padding-bottom: rhythm(3);
+}
+
+footer .vcard { 
+  padding: 1em 0;
+  float: right;
+
+  .org {font-weight: 700; margin-right: 1em;}
 }

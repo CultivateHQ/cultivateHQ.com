@@ -8,6 +8,17 @@ html {
   margin-top: 72px;  
 }
 
+section, footer {
+  clear: both;
+  @include clearfix;
+  border-bottom: 1px solid #DDD;
+}
+
+section:last-of-type {border-bottom: none;}
+
+footer {
+  border-top: 1px solid #DDD;
+}
 .wrapper {
   width: 100%;
   padding: 0 1em;
