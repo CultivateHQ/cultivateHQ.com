@@ -1,4 +1,4 @@
-.nav-collapse { 
+.nav-collapse {
   float: right;
   padding: 0;
   margin: 0;
@@ -22,6 +22,11 @@
         color: white;
         display: block;
         padding: 0.3em 0.7em;
+        text-decoration: none;
+      }
+
+      a:hover, a:focus{
+        text-decoration: underline;
       }
     }
   }
@@ -59,7 +64,7 @@
 @media screen and (max-width: $break-medium) {
   .nav-collapse ul li a {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    border-top: 1px solid #444;
+    border-top: 1px solid #3F525C;
     text-decoration: none;
     padding: 1em;
     color: #fff;
@@ -69,12 +74,12 @@
 
 .nav-collapse a:active,
 .nav-collapse .active a {
-  background: black;
+  background: rgba(0,0,0,0.2);
 }
 
 @media screen and (min-width: $break-medium) {
   .nav-collapse a {
-    border-left: 1px solid #444;
+    border-left: 1px solid #3F525C;
     padding: 0.3em 1em;
     text-align: center;
     border-top: 0;
