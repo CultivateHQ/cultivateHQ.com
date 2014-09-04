@@ -3,8 +3,7 @@ activate :blog do |blog|
   blog.permalink = ":title.html"
   blog.sources = ":year-:month-:day-:title.html"
   blog.layout = "post"
-  blog.summary_separator = /(READMORE)/
-  blog.summary_length = 300
+  blog.summary_generator = Proc.new {|post| post.data.description }
   #blog.tag_template = "tag.html"
   #blog.calendar_template = "calendar.html"
 end
@@ -13,8 +12,7 @@ activate :deploy do |deploy|
   deploy.build_before = true
   deploy.method = :git
   # Optional Settings
-  # deploy.remote   = 'git@github.com:CultivateHQ/cultivatehq.github.io.git'
-  deploy.remote   = 'git@github.com:CultivateHQ/test.deploy.repo.git'
+  deploy.remote   = 'git@github.com:CultivateHQ/cultivatehq.github.io.git'
   deploy.branch   = 'master'
   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
@@ -110,7 +108,7 @@ configure :build do
 end
 
 
-activate :syntax, :line_numbers => true
+activate :syntax, :line_numbers => false
 
 # The below will override .html on blog posts as well!!
 activate :directory_indexes
