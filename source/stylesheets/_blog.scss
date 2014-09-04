@@ -1,14 +1,18 @@
-.posts-list{
+.blog-posts-list {
   list-style: none;
   padding: 0;
   margin: 0;
   @include rhythm(1.5, 0, 0, 0); // We can't edit our title right now, so hack it.
 }
 
-.posts-list__post{
+.blog-posts-list__post {
   @include rhythm(0, 0, 0, 2);
 }
 
-.article-author {
+.blog-post__author {
   font-weight: 400;
+}
+
+.blog-post__body {
+  @include rhythm(1, 0, 0, 1);
 }

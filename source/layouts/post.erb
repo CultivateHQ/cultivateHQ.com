@@ -10,11 +10,20 @@
       <div class="wrapper">
         <h1><%= current_page.data.title || current_article.title %></h1>
         <div class="content-column">
-          <%= current_page.data.author %><% if defined? current_page.date %>,
-            <%= current_page.date.strftime('%d %B, %Y') %>
-          <% end %>
 
-          <%= yield %>
+          <article class="blog-post">
+            <header>
+              <span class="blog-post__author"><%= current_page.data.author %></span>
+              <% if defined? current_page.date %>
+                ,
+                <span class="blog-post__date">
+                  <%= current_page.date.strftime('%d %B, %Y') %>
+                </span>
+              <% end %>
+            </header>
+            <div class="blog-post__body"><%= yield %></div>
+          </article>
+
         </div>
         <div class="sidebar-column">Some Sidebar content here</div>
       </div>
