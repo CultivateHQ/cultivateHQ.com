@@ -1,6 +1,7 @@
 ---
   title: My Sublime Text 2 Config
   author: Mark Connell
+  description: Sublime Text 2 has been my editor of choice for about a year now. It's a great piece of software, but gradually I've been adding my own config options to make it just that little bit nicer for working with on a daily basis. I like it, and the guys in the office like it enough that it's the default config on our pairing machines at the moment.
 ---
 
 Sublime Text 2 has been my editor of choice for about a year now. It's a great piece of software, but gradually I've been adding my own config options to make it just that little bit nicer for working with on a daily basis. I like it, and the guys in the office like it enough that it's the default config on our pairing machines at the moment.
@@ -39,4 +40,3 @@ Add the following snippet to `Preferences -> File Settings - User`:
   "highlight_line": true
 }
 ```
-

@@ -3,8 +3,7 @@ activate :blog do |blog|
   blog.permalink = ":title.html"
   blog.sources = ":year-:month-:day-:title.html"
   blog.layout = "post"
-  blog.summary_separator = /(READMORE)/
-  blog.summary_length = 300
+  blog.summary_generator = Proc.new {|post| post.data.description }
   #blog.tag_template = "tag.html"
   #blog.calendar_template = "calendar.html"
 end
