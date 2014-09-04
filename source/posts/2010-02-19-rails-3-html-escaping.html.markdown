@@ -1,6 +1,7 @@
 ---
   title: "Rails 3: HTML Escaping"
   author: Mark Connell
+  description: So you've been working on Rails apps for a while, and like all good developers, you've been escaping any content rendered in your views that your application's users might have entered, right?
 ---
 
 ## Rails 2
