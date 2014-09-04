@@ -15,4 +15,8 @@
 
 .blog-post__body {
   @include rhythm(1, 0, 0, 1);
+
+  img {
+    max-width: 100%;
+  }
 }
