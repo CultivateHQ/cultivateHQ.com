@@ -19,4 +19,13 @@
   img {
     max-width: 100%;
   }
+
+  [data-twttr-id] {
+    @include rhythm(2, 0, 0, 2);
+
+    > iframe {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
 }
