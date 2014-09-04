@@ -108,7 +108,7 @@ configure :build do
 end
 
 
-activate :syntax, :line_numbers => true
+activate :syntax, :line_numbers => false
 
 # The below will override .html on blog posts as well!!
 activate :directory_indexes
