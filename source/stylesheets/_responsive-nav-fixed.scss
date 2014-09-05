@@ -32,7 +32,7 @@
         display: block;
         width: 100%;
         padding: 0 1em;
-        @include rhythm(0, 1, 1, 0);
+        @include rhythm(0, 0.5, 0.5, 0);
 
         color: white;
         text-decoration: none;
@@ -49,7 +49,7 @@
 
       @media screen and (min-width: $break-medium) {
         a {
-          @include rhythm(0.8, 0.2, 0.2, 0.8); // padding for pleasing border height
+          @include rhythm(0.4, 0.1, 0.1, 0.4); // padding for pleasing border height
           border-right: 1px solid #3F525C;
           border-top: 0;
         }
@@ -87,7 +87,7 @@
 
 .nav-toggle:before {
   color: #fff; /* Edit this to change the icon color */
-  font: normal 55px/55px "lato"; /* Edit font-size (28px) to change the icon size */
+  font: normal 55px/42px "lato"; /* Edit font-size (28px) to change the icon size */
   text-transform: none;
   text-align: center;
   position: absolute;
