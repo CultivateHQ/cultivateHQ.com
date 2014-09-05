@@ -1,6 +1,7 @@
 $break-small: 320px;
 $break-medium: 768px;
 $break-large: 900px;
+$body-offset: 56px; // to account for our nav bar.
 
 
 @import 'normalize';
