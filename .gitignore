@@ -19,3 +19,5 @@
 
 # Ignore the bower folder
 /source/bower_components
+
+.ruby-version
