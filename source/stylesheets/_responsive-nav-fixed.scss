@@ -3,30 +3,61 @@
   padding: 0;
   margin: 0;
   font-weight: 100;
+  width: 100%;
+
+  @media screen and (min-width: $break-medium) {
+    width: auto;
+  }
 
   ul {
-    padding: 0 0 1em 0;
+    padding: 0;
     list-style: none;
     @include clearfix;
 
     @media screen and (min-width: $break-medium) {
-      margin: 1em 0 0 0;
       padding: 0;
     }
 
     li {
       float: left;
+      border-top: 1px solid #3F525C;
       @include adjust-font-size-to($base-font-size);
 
-      a {
-        color: white;
-        display: block;
-        padding: 0.3em 0.7em;
-        text-decoration: none;
+      @media screen and (min-width: $break-medium) {
+        width: auto;
+        border-top: 0;
       }
 
-      a:hover, a:focus{
-        text-decoration: underline;
+      a {
+        display: block;
+        width: 100%;
+        padding: 0 1em;
+        @include rhythm(0, 1, 1, 0);
+
+        color: white;
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+        &:hover, &:focus {
+          text-decoration: underline;
+        }
+      }
+
+      &.active a, a:active {
+        background: rgba(0,0,0,0.2);
+      }
+
+      @media screen and (min-width: $break-medium) {
+        a {
+          @include rhythm(0.8, 0.2, 0.2, 0.8); // padding for pleasing border height
+          border-right: 1px solid #3F525C;
+          border-top: 0;
+        }
+
+        &:last-child a {
+          border-right: 0;
+          padding-right: 0;
+        }
       }
     }
   }
@@ -37,55 +68,6 @@
   width: 100%;
   left: 0;
   top: 0;
-}
-
-.nav-collapse, .nav-collapse ul {
-  list-style: none;
-  width: 100%;
-  float: left;
-}
-
-@media screen and (min-width: $break-medium) {
-  .nav-collapse {
-    float: right;
-    width: auto;
-  }
-}
-
-.nav-collapse li {
-  float: left;
-  width: 100%;
-}
-
-@media screen and (min-width: $break-medium) {
-  .nav-collapse li { width: auto; }
-}
-
-@media screen and (max-width: $break-medium) {
-  .nav-collapse ul li a {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    border-top: 1px solid #3F525C;
-    text-decoration: none;
-    padding: 1em;
-    color: #fff;
-    width: 100%;
-  }
-}
-
-.nav-collapse a:active,
-.nav-collapse .active a {
-  background: rgba(0,0,0,0.2);
-}
-
-@media screen and (min-width: $break-medium) {
-  .nav-collapse a {
-    border-left: 1px solid #3F525C;
-    padding: 0.3em 1em;
-    text-align: center;
-    border-top: 0;
-    float: left;
-    margin: 0;
-  }
 }
 
 
@@ -99,7 +81,7 @@
   text-indent: -300px;
   position: relative;
   overflow: hidden;
-  width: 60px;
+  width: 32px;
   height: 55px;
   float: right;
 }
