@@ -81,8 +81,14 @@ a {
   }
 
   h1 {
+<<<<<<< HEAD
     @include adjust-font-size-to(60px, 2);
     font-weight: 700;
+=======
+    @include adjust-font-size-to(48px, 2/1);
+    @include rhythm(2, 0, 0, 1, 48px);
+    @extend %font-weight-hairline;
+>>>>>>> bfe6cba... Fix font-weight:100 faintness on retina devices.
   }
 
   h2 {
