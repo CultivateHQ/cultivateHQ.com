@@ -1,6 +1,6 @@
 $break-small: 320px;
 $break-medium: 768px;
-$break-large: 1200px;
+$break-large: 900px;
 
 
 @import 'normalize';
@@ -57,7 +57,7 @@ a {
 
   color: white;
   // text-shadow: 1px 1px 0 #086A87;
-  padding-bottom: rhythm(1);
+  padding-bottom: rhythm(2);
 
   h1 {
     @include adjust-font-size-to(48px, 2/1);
