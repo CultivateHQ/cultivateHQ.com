@@ -1,27 +1,20 @@
-html {
-  box-sizing: border-box;
-}
-
-body {
-  padding-top: $body-offset;
-}
-
+html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
 section:last-of-type {border-bottom: none;}
 
-footer {
-  border-top: 1px solid #DDD;
-}
+footer { border-top: 1px solid #DDD; }
+
+body { background: #f0f0f0}
+
 .wrapper {
   width: 100%;
   padding: 0 1em;
   margin: 0 1em;
-  overflow: hidden;
   @include clearfix;
 
   @media screen and (min-width: $break-small) {
-    width: 90%;
+    width: 98%;
     margin: 0 auto;
   }
 
