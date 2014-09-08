@@ -1,5 +1,6 @@
 //= require_tree .
 //= require jquery/dist/jquery.js
+//= require sticky/jquery.sticky.js
 
 $(function() {
 
@@ -17,4 +18,8 @@ $(function() {
     }
   });
 
+});
+
+$(document).ready(function(){
+  $("#site-header").sticky({topSpacing:0});
 });

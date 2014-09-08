@@ -37,6 +37,16 @@ body { background: #f0f0f0}
   }
 }
 
+.column__half {
+  @media screen and (min-width: $break-medium) {
+    width: 49%;
+    margin-left: 2%;
+  }
+
+  &:first-of-type{ margin-left: 0;}
+}
+
+
 .column__third {
   @media screen and (min-width: $break-medium) {
     width: 32%;
@@ -45,6 +55,7 @@ body { background: #f0f0f0}
 
   &:first-of-type{ margin-left: 0;}
 }
+
 .content-column {
   @extend .column;
   @media screen and (min-width: $break-medium) {

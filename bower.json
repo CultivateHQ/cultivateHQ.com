@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "jquery": "2.1.*",
-    "responsive-nav": "~1.0.32"
+    "responsive-nav": "~1.0.32",
+    "sticky": "*"
   }
 }
