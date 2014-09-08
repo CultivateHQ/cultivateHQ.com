@@ -1,10 +1,6 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
-section:last-of-type {border-bottom: none;}
-
-footer { border-top: 1px solid #DDD; }
-
 body { background: #f0f0f0}
 
 .wrapper {
@@ -28,7 +24,12 @@ body { background: #f0f0f0}
   @include clearfix;
 }
 
+section, footer { @extend .row; padding-bottom: 2em; }
+
+img { max-width: 100%;}
+
 .column {
+  @include clearfix;
   width: 100%;
   float: none;
 
@@ -42,17 +43,14 @@ body { background: #f0f0f0}
     width: 49%;
     margin-left: 2%;
   }
-
   &:first-of-type{ margin-left: 0;}
 }
-
 
 .column__third {
   @media screen and (min-width: $break-medium) {
     width: 32%;
     margin-left: 2%;
   }
-
   &:first-of-type{ margin-left: 0;}
 }
 
@@ -68,10 +66,4 @@ body { background: #f0f0f0}
     width: 25%;
     margin-left: 5%;
   }
-}
-
-
-section, footer {
-  border-bottom: 1px solid #DDD;
-  @extend .row;
 }

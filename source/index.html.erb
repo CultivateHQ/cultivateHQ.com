@@ -2,74 +2,55 @@
 title: Welcome to Cultivate
 ---
 
-<section>
-  <h1><a class="internal-anchor" name="what-we-do"></a>What can we do for you?</h1>
-  <p class="leader">Amet cumque itaque pariatur pariatur tempora. Et exercitationem amet magni voluptatibus omnis voluptatibus esse quas ipsa deserunt quaerat, ullam deserunt dolores voluptatum. Esse molestiae sed ipsum reprehenderit velit nemo. Ducimus.</p>
-  <div class="row">
-    <div class="column column__third">
-      <h2>Build</h2>
-      <p>We partner with clients to deliver world-class products through deep expertise in engineering, design and product management.</p>
+<section id="what-we-do">
+  <div class="wrapper">
+    <h1><a class="internal-anchor" name="what-we-do"></a>What can we do for you?</h1>
+    <p class="leader">Amet cumque itaque pariatur pariatur tempora. Et exercitationem amet magni voluptatibus omnis voluptatibus esse quas ipsa deserunt quaerat, ullam deserunt dolores voluptatum. Esse molestiae sed ipsum reprehenderit velit nemo. Ducimus.</p>
+    <div class="row">
+      <div class="column column__third">
+        <h2>Build</h2>
+        <p>We partner with clients to deliver world-class products through deep expertise in engineering, design and product management.</p>
+      </div>
+      <div class="column column__third">
+        <h2>Consultation</h2>
+        <p>Level-up your teams, boost performance and instil best practice.</p>
+      </div>
+      <div class="column column__third">
+        <h2>Education</h2>
+        <p>Customised workshops around Ruby, Lean &amp; Agile, UX/Design, and other technical processes.</p>
+      </div>
     </div>
-    <div class="column column__third">
-      <h2>Consultation</h2>
-      <p>Level-up your teams, boost performance and instil best practice.</p>
-    </div>
-    <div class="column column__third">
-      <h2>Education</h2>
-      <p>Customised workshops around Ruby, Lean &amp; Agile, UX/Design, and other technical processes.</p>
-    </div>
-  </div>
-  <button class='btn center large'>
-    <%= link_to "Let's talk! &raquo;", '/#contact', class: 'internal-link' %>
-  </button>
-</section>
-
-<section>
-  <h1><a class="internal-anchor" name="our-history"></a>Our History</h1>
-  <p>Cultivate’s team were born from a common belief in fundamentally changing the way software consultancy is delivered. Previously Edgecase UK, the team were acquired to form the UK office of Neo (www.neo.com), a global product development studio.</p>
-  <p>Neo brought together some of the best engineering and design consultancies to deliver Lean and Agile services to clients around the world.</p>
-  <p>While Neo still operates under the brand name in the US and Singapore, Cultivate was born to focus on the UK market and continue to deliver world-class engineering, design and business strategy.</p>
-  <p>Previous clients include:</p>
-  <ul class="clients">
-    <li>JP Morgan</li>
-    <li>General Electric</li>
-    <li>Turnstone</li>
-    <li>Housetrip</li>
-    <li>Money Advice Service</li>
-    <li>Ministry of Manpower</li>
-    <li>Viewabill</li>
-    <li>Gov.uk</li>
-    <li>Secret Earth</li>
-    <li>Emerge Adapt</li>
-  </ul>
-</section>
-
-<section>
-  <a class="internal-anchor" name="contact"></a>
-  <h2>
-      We’re passionate about understanding businesses, ideas and people.
-      <strong>Let’s talk about yours.</strong>
-  </h2>
-
-  <div class="row">
-    <div class="column column__third">
-      <h2>Andy</h2>
-      <p>As our 'biz-dev' guy, Andy has a great manner and all round knowlegde of our beliefs, practices and processes</p>
-    </div>
-    <div class="column column__third">
-      <h2>Spencer</h2>
-      <p>Want to talk about UX, lean or agile? Spencer can help.</p>
-    </div>
-    <div class="column column__third">
-      <h2>Paul</h2>
-      <p>If you'd like to talk technical, lean or agile, Paul's your man</p>
+    <div class="call-to-action">
+      <p>To find out how we can help. Start a conversation today.
+      <button class='btn center large'>
+        <%= link_to "Let's talk! &raquo;", '/#contact', class: 'internal-link' %>
+      </button>
+      </p>
     </div>
   </div>
-  <address class="vcard">
-    <div class="email column column__half"><h3><a href="mailto:contact@cultivateHQ.com">contact@cultivateHQ.com</a></h3></div>
-    <div class="tel column column__half"><h3><a href="tel://+448455280757">+44 (0)845 528 0757</a></h3></div>
-  </address>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.1795417019807!2d-3.2015699999999785!3d55.94626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7991a24de13%3A0x5727e05b4321b9f6!2sCodeBase!5e0!3m2!1sen!2suk!4v1409834909187"
-          class="contact-map"
-          frameborder="0"></iframe>
+</section>
+
+<section id="cultivate-history">
+  <div class="wrapper">
+    <a class="internal-anchor" name="our-history"></a>
+    <h1>Our History</h1>
+    <%= image_tag("history-line.png") %>
+    <p>Cultivate’s team were born from a common belief in fundamentally changing the way software consultancy is delivered. Previously Edgecase UK, the team were acquired to form the UK office of Neo (www.neo.com), a global product development studio.</p>
+    <p>Neo brought together some of the best engineering and design consultancies to deliver Lean and Agile services to clients around the world.</p>
+    <p>While Neo still operates under the brand name in the US and Singapore, Cultivate was born to focus on the UK market and continue to deliver world-class engineering, design and business strategy.</p>
+    <p>Previous clients include:</p>
+    <ul class="clients">
+      <li>JP Morgan</li>
+      <li>General Electric</li>
+      <li>Turnstone</li>
+      <li>Housetrip</li>
+      <li>Money Advice Service</li>
+      <li>Ministry of Manpower</li>
+      <li>Viewabill</li>
+      <li>Gov.uk</li>
+      <li>Secret Earth</li>
+      <li>Emerge Adapt</li>
+    </ul>
+  </div>
+  <p>
 </section>
