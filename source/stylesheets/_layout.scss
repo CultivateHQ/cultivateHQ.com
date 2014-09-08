@@ -26,7 +26,8 @@ body { background: #f0f0f0}
 
 section, footer { @extend .row; padding-bottom: 2em; }
 
-img { max-width: 100%;}
+
+section > .wrapper >  img { max-width: 100%; @include rhythm(1,0,0,1)}
 
 .column {
   @include clearfix;
