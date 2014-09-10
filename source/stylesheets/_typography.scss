@@ -11,37 +11,38 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 300;
-  @include text-shadow(1px, 1px, 0, white)
+  @include text-shadow(rgba(white, 0.3) 0 1px 0)
 }
+
 
 h1 {
-  @include adjust-font-size-to(48px);
-  @include rhythm(1, 0, 0, 0, 48px);
-}
-
-h2 {
   @include adjust-font-size-to(36px);
   @include rhythm(1, 0, 0, 0, 36px);
 }
 
-h3 {
+h2 {
   @include adjust-font-size-to(30px);
   @include rhythm(1, 0, 0, 0, 30px);
 }
 
-h4 {
+h3 {
   @include adjust-font-size-to(24px);
   @include rhythm(1, 0, 0, 0, 24px);
 }
 
-h5 {
+h4 {
   @include adjust-font-size-to(21px);
   @include rhythm(1, 0, 0, 0, 21px);
 }
 
-h6 {
+h5 {
   @include adjust-font-size-to(18px);
   @include rhythm(1, 0, 0, 0, 18px);
+}
+
+h6 {
+  @include adjust-font-size-to(16px);
+  @include rhythm(1, 0, 0, 0, 16px);
 }
 
 
@@ -56,3 +57,19 @@ blockquote {
 }
 
 strong { font-weight: 700; color: #e21d87;}
+
+
+
+#message {
+  h1 {
+    @include adjust-font-size-to(48px);
+    @include rhythm(1, 0, 0, 0, 48px);
+    text-shadow: none;
+  }
+
+  h2 {
+    @include adjust-font-size-to(36px);
+    @include rhythm(1, 0, 0, 0, 36px);
+    text-shadow: none;
+  }
+}

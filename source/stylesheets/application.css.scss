@@ -165,7 +165,7 @@ footer { background: #2A373D; color: white;}
 
 .call-to-action {
   padding: 0.5em;
-  @include border-radius(5px);
+  @include border-radius(3px);
   @include clearfix;
   border: 1px solid darken(gold, 10%);
   border: 1px solid rgba(darken(gold, 10%), 0.33);
@@ -177,9 +177,8 @@ footer { background: #2A373D; color: white;}
     margin-bottom: 0;
     @include adjust-font-size-to(30px);
   }
-
-  .btn {float: none; margin: 0 auto;}
 }
+
 
 .person {
   list-style: none;
@@ -189,3 +188,10 @@ footer { background: #2A373D; color: white;}
 }
 
 .email h3, .telephone h3 { text-align: center;}
+
+.service-highlight {
+  padding: 1em;
+  background: #dae7ed;
+  @include border-radius(3px);
+  h3, p { @include rhythm (0,0,0,0);}
+}
