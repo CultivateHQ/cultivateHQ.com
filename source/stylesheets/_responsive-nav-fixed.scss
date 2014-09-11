@@ -1,17 +1,19 @@
 #site-header {
-  @media screen and (max-width: $break-medium) { min-height: 120px};
+  // Not needed for now as only 2 menu items
+  //@media screen and (max-width: $break-medium) { min-height: 120px};
   nav {
     float: right;
     padding: 0;
     margin: 0;
     font-weight: 300;
-    width: 100%;
+    width: auto; // reset to 100% with more menu items 100%
     clear: right;
 
-    @media screen and (min-width: $break-menu) { width: auto; };
+    //@media screen and (min-width: $break-menu) { width: auto; };
 
     li {
-      @media screen and (max-width: $break-menu) { width: 20%;}
+      // Not needed for now as only 2 menu items
+      //@media screen and (max-width: $break-small) { width: 50%;}
       a {
         color: black;
         @media screen and (max-width: $break-menu) { text-align: center;}
@@ -25,7 +27,8 @@
     list-style: none;
     @include clearfix;
     margin-bottom: 0;
-    @media screen and (max-width: $break-menu) { width: 100%;}
+    // Not needed for now as only 2 menu items
+    //@media screen and (max-width: $break-menu) { width: 100%;}
 
     li {
       float: left;
