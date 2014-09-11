@@ -68,22 +68,20 @@ a {
 #message {
   background: #e21d87 url("/images/inception.jpg") no-repeat top center;
   @include background-size(cover);
-
   border-bottom: 1px solid #e21d87;
-
-  color: white;
-  // text-shadow: 1px 1px 0 #086A87;
   padding-bottom: rhythm(2);
 
   h1 {
-    @include adjust-font-size-to(48px, 2/1);
-    @include rhythm(2, 0, 0, 1, 48px);
-    font-weight: 100;
+    @include adjust-font-size-to(60px, 2/1);
+    @include rhythm(2, 0, 0, 1, 60px);
+    font-weight: 700;
+    color: white;
   }
 
   h2 {
     @include adjust-font-size-to(30px, 3/2);
     font-weight: 300;
+    color: white;
   }
 }
 
@@ -158,7 +156,6 @@ footer {
 #work-with-us {
   background: #dae7ed;
   border: 1px solid #cAd7dd;
-  img { float: left; margin:  2em 0.5em 0.25em 0; border: 1px solid #cad7dd}
 }
 
 footer { background: #2A373D; color: white;}
@@ -180,11 +177,17 @@ footer { background: #2A373D; color: white;}
 }
 
 
-.person {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  .text { display: inline-block; margin-left: 0.25em;}
+.people {
+  .person {
+    h2 {margin: 0}
+    img { float: left; margin:  0 0.5em 0em 0; border: 1px solid #cad7dd}
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      .text { display: inline-block; margin-left: 0.25em;}
+    }
+  }
 }
 
 .email h3, .telephone h3 { text-align: center;}
