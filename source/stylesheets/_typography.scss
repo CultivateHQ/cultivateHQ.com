@@ -64,20 +64,3 @@ blockquote {
 }
 
 strong { font-weight: 700; color: #e21d87;}
-
-
-
-#message {
-  h1 {
-    @include adjust-font-size-to(48px);
-    @include rhythm(1, 0, 0, 0, 48px);
-    text-shadow: none;
-  }
-
-  h2 {
-    @include adjust-font-size-to(36px);
-    @include rhythm(1, 0, 0, 0, 36px);
-    text-shadow: none;
-  }
-}
-

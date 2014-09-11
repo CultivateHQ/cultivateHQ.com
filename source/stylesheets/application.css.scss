@@ -74,16 +74,19 @@ a {
   padding-bottom: rhythm(2);
   margin-bottom: 0;
 
+  h1, h2 {
+    color: white;
+    @include text-shadow(rgba(#444, 0.5) -1px -1px 0)
+  }
+
   h1 {
     @include adjust-font-size-to(60px, 2);
     font-weight: 700;
-    color: white;
   }
 
   h2 {
     @include adjust-font-size-to(30px, 1);
     font-weight: 300;
-    color: white;
   }
 }
 
@@ -138,7 +141,7 @@ footer {
     display: inline-block;
     padding: 0.3em 1em;
     color: white;
-    @include text-shadow(1px, 1px, 0, #A40050);
+    @include text-shadow(#A40050 1px 1px 0);
   }
 
   &.center { 
@@ -200,3 +203,5 @@ footer { background: #2A373D; color: white;}
   @include border-radius(3px);
   h3, p { @include rhythm (0,0,0,0);}
 }
+
+#work-with-us {padding-bottom: rhythm(1);}
