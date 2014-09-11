@@ -6,7 +6,7 @@
 }
 
 .blog-posts-list__post {
-  @include rhythm(0, 0, 0, 2);
+  @include rhythm(0, 0, 0, 1);
 }
 
 .blog-post__author {
@@ -14,7 +14,9 @@
 }
 
 .blog-post__body {
-  @include rhythm(1, 0, 0, 1);
+  @include rhythm(0, 0, 0, 0);
+
+  h2 { @include rhythm(0,0,0,0)}
 
   img {
     max-width: 100%;
