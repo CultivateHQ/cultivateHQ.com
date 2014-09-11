@@ -1,4 +1,5 @@
 #site-header {
+  @media screen and (max-width: $break-medium) { min-height: 120px};
   nav {
     float: right;
     padding: 0;
@@ -7,7 +8,7 @@
     width: 100%;
     clear: right;
 
-    @media screen and (min-width: $break-menu) { width: auto;}
+    @media screen and (min-width: $break-menu) { width: auto; };
 
     li {
       @media screen and (max-width: $break-menu) { width: 20%;}
@@ -50,7 +51,6 @@
       }
 
       @media screen and (min-width: $break-medium) {
-
         &:last-child a { border-right: 0; }
       }
     }

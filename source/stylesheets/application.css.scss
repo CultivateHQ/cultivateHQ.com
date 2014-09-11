@@ -31,6 +31,7 @@ a {
   width: 100%;
   left: 0;
   top: 0;
+  height: 90px;
 
   #site-header-sticky-wrapper & { background: rgba(255,255,255, 0.9)}
 
@@ -69,17 +70,18 @@ a {
   background: #e21d87 url("/images/inception.jpg") no-repeat top center;
   @include background-size(cover);
   border-bottom: 1px solid #e21d87;
+  padding-top: rhythm(1);
   padding-bottom: rhythm(2);
+  margin-bottom: 0;
 
   h1 {
-    @include adjust-font-size-to(60px, 2/1);
-    @include rhythm(2, 0, 0, 1, 60px);
+    @include adjust-font-size-to(60px, 2);
     font-weight: 700;
     color: white;
   }
 
   h2 {
-    @include adjust-font-size-to(30px, 3/2);
+    @include adjust-font-size-to(30px, 1);
     font-weight: 300;
     color: white;
   }

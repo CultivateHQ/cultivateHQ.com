@@ -1,7 +1,7 @@
 $base-font-size: 18px;
-$base-line-height: 34px;
+$base-line-height: 30px;
 @include establish-baseline;
-// @include baseline-grid-overlay;
+//@include baseline-grid-overlay;
 
 body {
   font-family: 'Lato', sans-serif;
@@ -21,32 +21,34 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-weight: 700;
   @include adjust-font-size-to(36px);
-  @include rhythm(1, 0, 0, 0, 36px);
+  @include rhythm(0.5, 0, 0, 0, 36px);
 }
 
 h2 {
-  @include adjust-font-size-to(30px);
-  @include rhythm(1, 0, 0, 1, 30px);
+  @include adjust-font-size-to(24px, 1);
+  @include rhythm(0.5, 0, 0, 1, 24px);
 }
 
 h3 {
   font-weight: 700;
-  @include adjust-font-size-to(24px);
-  @include rhythm(1, 0, 0, 0, 24px);
+  @include adjust-font-size-to(21px);
+  @include rhythm(1, 0, 0, 0, 21px);
 }
 
 h4 {
-  @include adjust-font-size-to(21px);
+  @include adjust-font-size-to(18px);
   @include rhythm(1, 0, 0, 0, 21px);
 }
 
 h5 {
   @include adjust-font-size-to(18px);
+  font-weight: 700;
   @include rhythm(1, 0, 0, 0, 18px);
 }
 
 h6 {
   @include adjust-font-size-to(16px);
+  font-style: italic;
   @include rhythm(1, 0, 0, 0, 16px);
 }
 
