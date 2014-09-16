@@ -9,8 +9,11 @@
     @media screen and (min-width: $break-medium){
       width: 31%;
     }
-    @media screen and (min-width: $break-menu){
+    @media screen and (min-width: $break-small) and (max-width: $break-menu){
       width: 50%;
+    }
+    @media screen and (min-width: $break-menu) and (max-width: $break-medium){
+      width: 40%;
     }
   }
 }
