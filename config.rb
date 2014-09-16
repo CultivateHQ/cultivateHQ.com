@@ -38,6 +38,7 @@ end
 #
 # With alternative layout
 page "/posts/index.html", :layout => :post
+page "/key_place.html", :layout => :product
 #
 # A path which all have the same layout
 # with_layout :admin do

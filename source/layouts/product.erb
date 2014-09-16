@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <%= partial "partials/head" %>
+    <%= stylesheet_link_tag "code_highlight" %>
+  </head>
+  <body class="<%= page_classes %>">
+    <%= partial "partials/header" %>
+    <div id="site-content-area">
+      <div class="wrapper">
+        <h1>
+          <img src="<%= current_page.data.icon %>" alt="product-icon" class="product-icon">
+          <%= current_page.data.title %></h1>
+        <div class="product-column">
+          <section id="keyplace" class="product">
+            <article class="product">
+              <header>
+                <h2 class="product-need">
+                  <%= current_page.data.need %>
+                </h2>
+              </header>
+              <%= yield %>
+            </article>
+          </section>
+        </div>
+      </div>
+    </div>
+    <%= partial "partials/footer" %>
+  </body>
+</html>
