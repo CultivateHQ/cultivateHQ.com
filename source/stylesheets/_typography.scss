@@ -9,17 +9,6 @@ body {
 }
 
 em {font-weight: 700;}
-// On non-retina devices, hairline weights are thickened visually due to needing
-// more pixels to antialias over. On retina devices, the resolution makes the
-// antialiased font very crisp — too crisp for our purposes. So we'll thicken
-// it up on retina devices.
-%font-weight-hairline{
-  font-weight: 100;
-
-  @include retina() {
-    -webkit-text-stroke-width: 0.5px;
-  }
-}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
