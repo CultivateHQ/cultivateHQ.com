@@ -78,7 +78,7 @@ Tapping the cog button on the top left, in the navigation bar, of the main passw
 
 ## Security
 
-Your master password is used to securely encrypt the stored the partial passwords and pass numbers on your iPhone. We use [AES encryption](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard), with random [salts](http://en.wikipedia.org/wiki/Salt_(cryptography) and [initialization vectors](http://en.wikipedia.org/wiki/Initialization_vector).
+Your master password is used to securely encrypt the stored the partial passwords and pass numbers on your iPhone. We use [AES encryption](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard), with random [salts](http://en.wikipedia.org/wiki/Salt_(cryptography)) and [initialization vectors](http://en.wikipedia.org/wiki/Initialization_vector).
 
 The master password itself is stretched, salted, and securely hashed before being stored in Apple's secure keychain. We take the password security very seriously.
 
