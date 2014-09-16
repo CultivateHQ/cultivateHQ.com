@@ -1,5 +1,11 @@
 #keyplace {
-  img {float: left; margin: 0 1em 1em 0;}
+  img:first-of-type {
+    float: left;
+    margin: 0 1em 1em 0;
+    border: 10px solid white;
+    @include box-shadow(rgba(black, 0.1) 0 0 16px );
+  }
+
 }
 
 .product-icon { max-width: 1.5em; max-height: 1.5em; float: left; margin-right: 0.25em; }
