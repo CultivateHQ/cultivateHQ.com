@@ -207,3 +207,47 @@ footer { background: #2A373D; color: white;}
 }
 
 #work-with-us {padding-bottom: rhythm(1);}
+
+ul.clients {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  @include clearfix;
+
+  li {
+    float: left;
+    width: 100%;
+
+    @media screen and (max-width: $break-menu) {
+      margin-left: 2%;
+      width: 49%;
+      &:nth-child(2n+1) {clear: left; margin-left: 0}
+      &:first-of-type { margin-left: 0;}
+    }
+
+    @media screen and (min-width: $break-menu) and (max-width: $break-medium){
+      width: 32%;
+      &:nth-child(3n+1) {clear: left; margin-left: 0}
+      &:first-of-type { margin-left: 0;}
+    }
+
+    @media screen and (min-width: $break-medium) and (max-width: $break-large){
+      width: 23.5%;
+      &:nth-child(4n+1) {clear: left; margin-left: 0}
+      &:first-of-type { margin-left: 0;}
+    }
+
+    @media screen and (min-width: $break-large) {
+      margin-left: 2%;
+      width: 18.4%;
+      &:nth-child(5n+1) {clear: left; margin-left: 0}
+    }
+
+    img {
+      vertical-align: middle;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  }
+}
