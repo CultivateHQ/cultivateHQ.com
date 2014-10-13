@@ -53,9 +53,11 @@ a {
 
     .logo-icon {
       float: left;
-      width: 12%;
-      height: 12%;
+      width: 34px;
+      height: 34px;
       margin-top: -0.3em;
+
+      @media screen and (max-width: $break-medium) { width: 21px; height: 21px;}
 
       img { width: 100%; }
     }
