@@ -13,7 +13,6 @@ $break-contact-menu: 630px;
 @import "mixins";
 @import "layout";
 @import "typography";
-@import "responsive-nav/responsive-nav";
 @import "responsive-nav-fixed";
 @import "blog";
 @import "keyplace";
@@ -217,24 +216,32 @@ ul.clients {
   li {
     float: left;
     width: 100%;
+    opacity: 0.4;
+    /* You can't have opacity with PNGs nicely in < IE9 */
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.6;
+      /* You can't have opacity with PNGs nicely in < IE9 */
+    }
 
     @media screen and (max-width: $break-menu) {
       margin-left: 2%;
       width: 49%;
       &:nth-child(2n+1) {clear: left; margin-left: 0}
-      &:first-of-type { margin-left: 0;}
+      &:first-child { margin-left: 0;}
     }
 
     @media screen and (min-width: $break-menu) and (max-width: $break-medium){
       width: 32%;
       &:nth-child(3n+1) {clear: left; margin-left: 0}
-      &:first-of-type { margin-left: 0;}
+      &:first-child { margin-left: 0;}
     }
 
     @media screen and (min-width: $break-medium) and (max-width: $break-large){
       width: 23.5%;
       &:nth-child(4n+1) {clear: left; margin-left: 0}
-      &:first-of-type { margin-left: 0;}
+      &:first-child { margin-left: 0;}
     }
 
     @media screen and (min-width: $break-large) {
@@ -248,6 +255,8 @@ ul.clients {
       width: 100%;
       min-width: 100%;
       max-width: 100%;
+
+
     }
   }
 }

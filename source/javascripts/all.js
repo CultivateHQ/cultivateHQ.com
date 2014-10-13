@@ -1,6 +1,10 @@
-//= require_tree .
+//= require_tree
 //= require jquery/dist/jquery.js
 //= require sticky/jquery.sticky.js
+//= require respond/src/matchmedia.polyfill.js
+//= require respond/src/respond.js
+//= require modernizr.custom.31571.js
+
 
 $(function() {
 
@@ -35,4 +39,11 @@ $(function() {
 
 $(document).ready(function(){
   $("#site-header").sticky({topSpacing:0});
+
+  if(!Modernizr.svg) {
+    $('img[src*="svg"]').attr('src', function() {
+      return $(this).attr('src').replace('.svg', '.png');
+    });
+  }
 });
+

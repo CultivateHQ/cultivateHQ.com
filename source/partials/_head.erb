@@ -5,6 +5,7 @@
 <!-- Use title if it's in the page YAML frontmatter -->
 <title><%= current_page.data.title || "Cultivate" %></title>
 <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+
 <%= stylesheet_link_tag "application" %>
 <%= javascript_include_tag  "all" %>
 
@@ -16,5 +17,4 @@
 
   ga('create', 'UA-54446806-1', 'auto');
   ga('send', 'pageview');
-
 </script>
