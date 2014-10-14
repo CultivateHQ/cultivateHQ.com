@@ -1,10 +1,10 @@
 ---
-layout: post
+description: Interesting things we learnt, reading through the Ruby Standard Libary's ostruct.rb.
 author: Paul Wilson
 title: Lessons from reading ostruct.rb
 ---
 
-During this month's [Scottish Ruby User Group](http://www.scotrug.org) meeting we paired up read some code. We choose the [source for `OpenStruct`](https://github.com/ruby/ruby/blob/trunk/lib/ostruct.rb) as it was small and self-contained enough to get through in the hour or so available.
+During this month's [Scottish Ruby User Group](http://www.scotrug.org) meeting we paired up read some code. We chose the [source for `OpenStruct`](https://github.com/ruby/ruby/blob/trunk/lib/ostruct.rb) as it was small and self-contained enough to get through in the hour or so available.
 
 I expected it to be dull, but it was great fun and we all learnt a lot, mostly about stuff I should have known about Ruby, but had missed or forgotten. Here's some highlights:-
 
