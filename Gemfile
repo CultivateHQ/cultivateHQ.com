@@ -6,6 +6,7 @@ gem "middleman", "~>3.3.5"
 gem "nokogiri"
 
 gem "middleman-blog"
+gem "middleman-breadcrumbs"
 
 gem "middleman-syntax"
 gem "redcarpet"

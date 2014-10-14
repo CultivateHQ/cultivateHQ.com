@@ -10,7 +10,7 @@
 
     @media screen and (min-width: $break-menu) { width: auto; };
     li {
-      @media screen and (max-width: $break-small) { width: 33%;}
+      @media screen and (max-width: $break-small) { width: 25%;}
       a {
         color: black;
         @media screen and (max-width: $break-menu) { text-align: center;}

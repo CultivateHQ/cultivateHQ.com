@@ -31,7 +31,6 @@ a {
   &:hover { color: $cultivate-pink-dark; }
 }
 
-
 #site-header {
   background: white;
   width: 100%;
@@ -186,12 +185,9 @@ footer { background: #2A373D; color: white;}
   border: 1px solid rgba(darken(gold, 10%), 0.33);
   background: gold;
   background: rgba(255,215,0, 0.33);
-
-  p {
-    text-align: center;
-    margin-bottom: 0;
-    @include adjust-font-size-to(30px);
-  }
+  text-align: center;
+  margin-bottom: 0;
+  @include adjust-font-size-to(30px);
 }
 
 
@@ -217,7 +213,10 @@ footer { background: #2A373D; color: white;}
   h3, p { @include rhythm (0,0,0,0);}
 }
 
-#work-with-us {padding-bottom: rhythm(1);}
+#work-with-us {
+  padding-bottom: rhythm(1); 
+  h1 { color: #444 }
+}
 
 ul.clients {
   margin: 0;
@@ -277,8 +276,18 @@ ul.clients {
   width: 25%;
 }
 
+ul.case-studies {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li { 
+    float: left; width: 33%;
+  }
+}
+
 .case-study {
-    p:first-of-type{
+  p:first-of-type{
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     @include adjust-font-size-to(24px);

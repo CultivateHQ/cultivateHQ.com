@@ -64,6 +64,8 @@ GEM
       addressable (~> 2.3.5)
       middleman-core (~> 3.2)
       tzinfo (>= 0.3.0)
+    middleman-breadcrumbs (0.0.3)
+      middleman (>= 3.3.5)
     middleman-core (3.3.5)
       activesupport (~> 4.1.0)
       bundler (~> 1.1)
@@ -147,6 +149,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.2.0)
   middleman (~> 3.3.5)
   middleman-blog
+  middleman-breadcrumbs
   middleman-deploy (~> 0.3.0)
   middleman-livereload (~> 3.1.0)
   middleman-syntax

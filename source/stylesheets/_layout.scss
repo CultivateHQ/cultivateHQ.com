@@ -64,12 +64,29 @@ section > .wrapper >  img { max-width: 100%; min-width: 100%; @include rhythm(1,
   &:first-child{ margin-left: 0;}
 }
 
+.column__twothirds {
+  @media screen and (min-width: $break-medium) {
+    width: 64%;
+    margin-left: 2%;
+  }
+  &:first-child{ margin-left: 0;}
+}
+
 .column__quarter {
   @media screen and (min-width: $break-medium) {
     width: 23.5%;
     margin-left: 2%;
   }
-  &:first-child{ margin-left: 0;}
+
+  &:first-child{ margin-left: 0; width: 25%;}
+}
+
+.column__threequarters {
+  @media screen and (min-width: $break-medium) {
+    width: 73%;
+    margin-left: 2%;
+  }
+  &:first-child{ margin-left: 0; width: 75%;}
 }
 
 .content-column {

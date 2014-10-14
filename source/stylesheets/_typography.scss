@@ -12,16 +12,16 @@ em {font-weight: 700;}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-weight: 300;
+  font-weight: 700;
   @include text-shadow(rgba(white, 0.3) 0 1px 0);
   color: #444;
 }
 
 
 h1 {
-  font-weight: 700;
   @include adjust-font-size-to(36px);
   @include rhythm(0.5, 0, 0, 0, 36px);
+  color: #888;
 }
 
 h2 {
@@ -30,7 +30,6 @@ h2 {
 }
 
 h3 {
-  font-weight: 700;
   @include adjust-font-size-to(21px);
   @include rhythm(1, 0, 0, 0, 21px);
 }
@@ -42,12 +41,12 @@ h4 {
 
 h5 {
   @include adjust-font-size-to(18px);
-  font-weight: 700;
   @include rhythm(1, 0, 0, 0, 18px);
 }
 
 h6 {
   @include adjust-font-size-to(16px);
+  font-weight: 300;
   font-style: italic;
   @include rhythm(1, 0, 0, 0, 16px);
 }

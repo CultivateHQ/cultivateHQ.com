@@ -1,3 +1,5 @@
+activate :breadcrumbs
+
 activate :blog do |blog|
   blog.prefix = "/posts"
   blog.permalink = ":title.html"

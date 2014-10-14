@@ -8,6 +8,9 @@
     <%= partial "partials/header" %>
     <div id="site-content-area">
       <div class="wrapper">
+        <div class="breadcrumbs">
+          <%= breadcrumbs(current_page) %>
+        </div>
         <h1><%= current_page.data.title || current_article.title %></h1>
         <div class="content-column">
 
