@@ -1,20 +1,16 @@
-
 <!doctype html>
 <html>
   <head>
     <%= partial "partials/head" %>
+    <%= stylesheet_link_tag "code_highlight" %>
   </head>
   <body class="<%= page_classes %>">
     <%= partial "partials/header" %>
-    <section id="message">
-      <div class="wrapper">
-        <h1>We build digital products that deliver business success.</h1>
-        <h2>We believe trust, collaboration and frequent market testing are the best way to deliver successful products.</h2>
-      </div>
-    </section>
     <div id="site-content-area">
+      <div class="wrapper">
+        <h1><%= current_page.data.title %></h1>
         <%= yield %>
-        <%= partial "partials/footer" %>
     </div>
+    <%= partial "partials/footer" %>
   </body>
 </html>

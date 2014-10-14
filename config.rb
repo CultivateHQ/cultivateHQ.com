@@ -37,8 +37,10 @@ end
 # page "/path/to/file.html", :layout => false
 #
 # With alternative layout
+page "index.html", :layout => :home
 page "/posts/index.html", :layout => :post
 page "/key_place.html", :layout => :product
+page "/newsletter-signup"
 #
 # A path which all have the same layout
 # with_layout :admin do

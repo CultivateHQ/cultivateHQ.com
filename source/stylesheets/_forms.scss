@@ -1,0 +1,42 @@
+form ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    @include rhythm(0,0,0,0.5);
+    label {
+      display: block;
+    }
+
+    input[type=text], input[type=email] {
+      width: 100%;
+      padding: 0.25em 0.5em;
+      font-weight: 300;
+    }
+
+    input[type=submit]{
+      border: none;
+      color: white;
+      background: $cultivate-pink;
+      padding: 0.5em 1em;
+      @include border-radius(3px);
+
+      &:hover { background: $cultivate-pink-dark;}
+    }
+  }
+}
+
+#mce-error-response {
+  border: 1px solid #FFCACA;
+  padding: 0.5em 1em;
+  background: #FFFAFA;
+  color: red;
+}
+
+#mce-success-response {
+  border: 1px solid #C7CFB7;
+  padding: 0.5em 1em;
+  background: #E7FFE7;
+  color: green;
+}

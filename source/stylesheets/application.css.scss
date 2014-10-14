@@ -7,12 +7,18 @@ $break-large: 900px;
 $break-menu: 595px;
 $break-contact-menu: 630px;
 
+
+// Colours
+$cultivate-pink: #e21d87;
+$cultivate-pink-dark: #A40050;
+
 @import 'font-awesome';
 @import 'normalize';
 @import "compass";
 @import "mixins";
 @import "layout";
 @import "typography";
+@import "forms";
 @import "responsive-nav-fixed";
 @import "blog";
 @import "keyplace";
@@ -21,8 +27,8 @@ $break-contact-menu: 630px;
 a {
   @include transition-property(color);
   @include transition-duration(0.3s);
-  color: #e21d87;
-  &:hover { color: #A40050;}
+  color: $cultivate-pink;
+  &:hover { color: $cultivate-pink-dark; }
 }
 
 
