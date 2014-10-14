@@ -84,4 +84,11 @@ section > .wrapper >  img { max-width: 100%; min-width: 100%; @include rhythm(1,
     width: 25%;
     margin-left: 5%;
   }
+  img {
+    vertical-align: middle;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
 }
