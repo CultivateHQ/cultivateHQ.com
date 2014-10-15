@@ -46,6 +46,8 @@ section > .wrapper >  img { max-width: 100%; min-width: 100%; @include rhythm(1,
   @media screen and (min-width: $break-medium) {
     float: left;
   }
+
+  img {width: 100; min-width: 100%; max-width: 100%; height: auto;}
 }
 
 .column__half {
