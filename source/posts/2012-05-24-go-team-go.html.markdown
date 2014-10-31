@@ -2,7 +2,7 @@
 title:  "Go Team, Go!"
 author: Peter Aitken
 archive: https://web.archive.org/web/20121003083328/http://newcontext.com/2012/04/27/beating-a-skills-shortage
-description: Last year some friends and I took part in a charity event to raise funds for [Maggie’s Cancer Centres](http://www.maggiescentres.org/). This was no ordinary event, this was Maggie’s Monster Bike and Hike, a 24 hour challenge to travel as far as you can between Fort William and Inverness which is about 71 miles.
+description: Last year some friends and I took part in a charity event to raise funds for Maggie’s Cancer Centres. This was no ordinary event, this was Maggie’s Monster Bike and Hike, a 24 hour challenge to travel as far as you can between Fort William and Inverness which is about 71 miles.
 ---
 
 ## When was the last time you did something that stretched you to your limits and pushed you out of your comfort zone?
