@@ -7,7 +7,6 @@ description: >
   personal feeling is that Scala has had a heavy influence on its design. In this
   post I want to explore the similarities and differences to see how true this
   may be.
-published: false
 ---
 
 [Swift](https://developer.apple.com/swift/) is a modern multi-paradigm
