@@ -42,7 +42,7 @@ So, other than the obvious difference that Scala runs on the JVM and Swift
 compiles to native code, how do they compare? Click the image below to access
 the side-by-side comparison:
 
-[![Side-by-Side Comparison of Swift to Scala](2014-10-31-influences-on-swift-s-design/swift_comparison_screenshot.png "click to view the comparison")](http://www.cultivatehq.com/swift-design-influences/)
+[![Side-by-Side Comparison of Swift to Scala](2014-11-03-is-scala-an-influence-on-swift/swift_comparison_screenshot.png "click to view the comparison")](http://www.cultivatehq.com/swift-design-influences/)
 [Side-by-Side Comparison of Swift to Scala](http://www.cultivatehq.com/swift-design-influences/)
 
 Similarities:
