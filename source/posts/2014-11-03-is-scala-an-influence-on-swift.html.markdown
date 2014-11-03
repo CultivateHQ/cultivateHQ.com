@@ -87,7 +87,8 @@ Similarities:
 Differences:
 
 * Their class definition syntax is quite different.
-* Swift has a pass-by-value `struct` type like C/C++.
+* In addition to pass-by-reference `class` types, Swift has a pass-by-value
+  `struct` type like C/C++/C#. Scala only has the former.
 * Swift supports external parameter names for functions, which differ from the
   parameter names inside the function.
 * Scala includes a sequence comprehension syntax.
