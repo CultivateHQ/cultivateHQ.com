@@ -93,6 +93,7 @@ Differences:
   parameter names inside the function.
 * Scala includes a sequence comprehension syntax.
 * Scala has implicit returns, Swift doesn’t. Shame.
+* Scala supports lazy evaluation
 * Swift uses “extensions” to add additional behaviour to existing classes,
   whereas Scala uses Traits and mixins.
 
