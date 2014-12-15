@@ -89,11 +89,20 @@ a {
   h1 {
     @include adjust-font-size-to(60px, 2);
     font-weight: 700;
+
+    @media screen and (max-width: $break-medium){
+      @include adjust-font-size-to(34px, 1.2);
+    }
   }
 
   h2 {
     @include adjust-font-size-to(30px, 1);
     font-weight: 300;
+
+    @media screen and (max-width: $break-medium){
+      @include adjust-font-size-to(24px, 1);
+      margin-bottom: 0;
+    }
   }
 }
 
