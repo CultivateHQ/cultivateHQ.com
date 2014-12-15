@@ -193,6 +193,12 @@ footer {
   background: #dae7ed;
   border: 1px solid #cAd7dd;
   padding-bottom: 1em;
+
+  h1 {
+    @media screen and (max-width: $break-medium) {
+      @include adjust-font-size-to(24px, 1.2);
+    }
+  }
 }
 
 footer { background: #2A373D; color: white;}
@@ -231,11 +237,6 @@ footer { background: #2A373D; color: white;}
   background: #dae7ed;
   @include border-radius(3px);
   h3, p { @include rhythm (0,0,0,0);}
-}
-
-#work-with-us {
-  padding-bottom: rhythm(1);
-  h1 { color: #444 }
 }
 
 ul.clients {
