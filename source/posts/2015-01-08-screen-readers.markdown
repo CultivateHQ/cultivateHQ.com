@@ -6,6 +6,8 @@ description:
 
 This is the first post in a series of posts focusing on accessibility and user experience considerations when developing for the web.
 
+I'm kicking this off with a post demonstrating what a screen reader user experiences.
+
 ## Why a blog post on screen readers?
 Knowing that screen readers exist and people use them, to actually become a screen reader user turned out to be an eye opening experience. I found that tasks which are normally relatively straight-forward, suddenly become just that little bit more tedious. Sometimes things can even be quite difficult to do. In worse-case scenarios, they can simply just be not possible to do.
 
