@@ -51,4 +51,4 @@ Here is a more comphrensive [wikipedia article](http://en.wikipedia.org/wiki/Lis
 ## What Next?
 So hopefully from reading this and watching my short video demo, I've intrigued you enough to go and have a play with a screen reader just to get a feel for how much effort is actually required for a user.
 
-As a final tip, before you enable any of the build in screen readers. It's worth taking a couple of minutes to read the documentation on how to navigate with the screen reader and it disable the reader if you need to!
+As a final tip, before you enable any of the built-in screen readers. It's worth taking a couple of minutes to read the documentation on how to navigate with the screen reader and it disable the reader if you need to!
