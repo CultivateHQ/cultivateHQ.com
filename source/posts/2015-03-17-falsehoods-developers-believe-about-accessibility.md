@@ -35,31 +35,31 @@ Instead of letting this accrue interest from the word go, let's challenge these 
 
 ### Perception
 
-* [Users can see.](http://webaim.org/articles/visual/)
-* [Users can see more than one area of the screen at once.](https://www.youtube.com/watch?v=4ZRVDgeMpXc)
-* [Users can distinguish between colours.](http://24ways.org/2012/colour-accessibility/)
-* [Users can easily ignore motion or colour change if they need to.](https://www.webaccessibility.com/best_practices.php?technology_platform_id=11)
-* [Users can read text that is low contrast.](http://www.w3.org/WAI/EO/Drafts/eval/checks#contrast)
-* [Users can read text that is high contrast.](http://www.w3.org/WAI/EO/Drafts/eval/checks#contrast)
-* [Users can hear.](http://webaim.org/articles/auditory/)
-* [Users can access videos.](https://www.youtube.com/watch?v=yx7hdQqf8lE&t=363)
+* <a href="http://webaim.org/articles/visual/" target="_blank">Users can see.</a>
+* <a href="https://www.youtube.com/watch?v=4ZRVDgeMpXc" target="_blank">Users can see more than one area of the screen at once.</a>
+* <a href="http://24ways.org/2012/colour-accessibility/" target="_blank">Users can distinguish between colours.</a>
+* <a href="https://www.webaccessibility.com/best_practices.php?technology_platform_id=11" target="_blank">Users can easily ignore motion or colour change if they need to.</a>
+* <a href="http://www.w3.org/WAI/EO/Drafts/eval/checks#contrast" target="_blank">Users can read text that is low contrast.</a>
+* <a href="http://www.w3.org/WAI/EO/Drafts/eval/checks#contrast" target="_blank">Users can read text that is high contrast.</a>
+* <a href="http://webaim.org/articles/auditory/" target="_blank">Users can hear.</a>
+* <a href="https://www.youtube.com/watch?v=yx7hdQqf8lE&t=363" target="_blank">Users can access videos.</a>
 
 ### Operation
 
-* [Users will know how to access accessibility features.](http://webaim.org/projects/screenreadersurvey4/#landmarks)
-* [Users use a keyboard.](https://www.youtube.com/watch?v=kJKQmTumFP0)
-* [Users use a mouse.](https://www.youtube.com/watch?v=rl3D8alghog)
-* [Partially sighted users will use a screen reader.](http://joeclark.org/appearances/atmedia2005/atmedia-NOTES-2.html#li-75)
-* [Users can navigate through an interface based on the order elements appear on the page.](http://www.w3.org/TR/WCAG20-TECHS/C27.html)
+* <a href="http://webaim.org/projects/screenreadersurvey4/#landmarks" target="_blank">Users will know how to access accessibility features.</a>
+* <a href="https://www.youtube.com/watch?v=kJKQmTumFP0" target="_blank">Users use a keyboard.</a>
+* <a href="https://www.youtube.com/watch?v=rl3D8alghog" target="_blank">Users use a mouse.</a>
+* <a href="http://joeclark.org/appearances/atmedia2005/atmedia-NOTES-2.html#li-75" target="_blank">Partially sighted users will use a screen reader.</a>
+* <a href="http://www.w3.org/TR/WCAG20-TECHS/C27.html" target="_blank">Users can navigate through an interface based on the order elements appear on the page.</a>
 
 ### Understanding
 
-* [Users can read English.](http://bbc.co.uk/news/uk-21259401)
-* [Users can read to an average standard.](http://www.literacytrust.org.uk/adult_literacy/illiterate_adults_in_england)
-* [Users understand any given word or phrase.](http://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-idioms.html)
-* [Users understand 'basic' technical vocabulary.](https://www.youtube.com/watch?v=o4MwTvtyrUQ)
+* <a href="http://bbc.co.uk/news/uk-21259401" target="_blank">Users can read English.</a>
+* <a href="http://www.literacytrust.org.uk/adult_literacy/illiterate_adults_in_england" target="_blank">Users can read to an average standard.</a>
+* <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/meaning-idioms.html" target="_blank">Users understand any given word or phrase.</a>
+* <a href="https://www.youtube.com/watch?v=o4MwTvtyrUQ" target="_blank">Users understand 'basic' technical vocabulary.</a>
 
-In addition to the above, there are a lot of myths that circulate about accessibility. They can be very destructive — [particularly that one about Javascript](http://webaim.org/projects/screenreadersurvey5/#javascript). They prevent us from using useful techniques like [ARIA Live Regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions). In the worst case, they can cause projects to give up on accessibility or hide functionality from some groups of users.
+In addition to the above, there are a lot of myths that circulate about accessibility. They can be very destructive — <a href="http://webaim.org/projects/screenreadersurvey5/#javascript" target="_blank">particularly that one about Javascript</a>. They prevent us from using useful techniques like <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" target="_blank">ARIA Live Regions</a>. In the worst case, they can cause projects to give up on accessibility or hide functionality from some groups of users.
 
 When I learned about all of this I felt quite dispirited. Most of the techniques I had been applying were inadequate, or totally misguided.
 
@@ -67,7 +67,7 @@ When I learned about all of this I felt quite dispirited. Most of the techniques
 
 The truth is that you can't make a website accessible just by applying techniques. That approach is called _Technical Accessibility,_ and it has a lot of flaws. You have to design with accessibility in mind from the start.
 
-WebAIM has [an excellent series of articles](http://webaim.org/articles/pour/) that outline a _people-focused_ approach to accessibility. It's based on four principles, called POUR:
+WebAIM has <a href="http://webaim.org/articles/pour/" target="_blank">an excellent series of articles</a> that outline a _people-focused_ approach to accessibility. It's based on four principles, called POUR:
 
 * __Perceivable__  
   The user has to be able to __perceive__ your interface. For example, a blind user cannot perceive a visual diagram, so some description or alternative content can be provided.
