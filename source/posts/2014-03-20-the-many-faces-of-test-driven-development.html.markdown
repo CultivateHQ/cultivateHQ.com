@@ -18,4 +18,4 @@ It gives me confidence that my code does what I think it does It confers the abi
 
 Others give more preference to the way tests influence design, and use the mock-heavy GOOS style.
 
-This is fine - we are just choosing different tradeoffs. Put like that, it doesn't seem worth getting caremad about. Does it?
+This is fine — we are just choosing different tradeoffs. Put like that, it doesn't seem worth getting caremad about. Does it?

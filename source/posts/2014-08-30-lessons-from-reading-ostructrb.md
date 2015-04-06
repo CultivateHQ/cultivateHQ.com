@@ -66,11 +66,11 @@ My guess is that this method was not followed as it would have made it harder to
 
 ## Massaging the backtrace
 
-When errors are raised (in [modifiable](https://github.com/ruby/ruby/blob/v2_1_2/lib/ostruct.rb#L155) and [method](https://github.com/ruby/ruby/blob/v2_1_2/lib/ostruct.rb#L181)`_`[missing](https://github.com/ruby/ruby/blob/v2_1_2/lib/ostruct.rb#L187-189)) the backtrace is modified to start at the offending piece of client code. I like this - that's where the debugging programmer needs to look to work out a fix, not in the middle of the library code which has had its contract violated.
+When errors are raised (in [modifiable](https://github.com/ruby/ruby/blob/v2_1_2/lib/ostruct.rb#L155) and [method](https://github.com/ruby/ruby/blob/v2_1_2/lib/ostruct.rb#L181)`_`[missing](https://github.com/ruby/ruby/blob/v2_1_2/lib/ostruct.rb#L187-189)) the backtrace is modified to start at the offending piece of client code. I like this — that's where the debugging programmer needs to look to work out a fix, not in the middle of the library code which has had its contract violated.
 
 ## `define_singleton_method`
 
-[`define_singleton_method`](http://ruby-doc.org/core-1.9.3/Object.html#method-i-define_singleton_method) is method on Object that was introduced in Ruby 1.9, but had passed all us ScotRUG members by. It does what it says - defines a method on an object's singleton class: that is it defines a method on an object instance without affecting other instances of its class. Prior to 1.9, the method would need to be retrieved - messy business.
+[`define_singleton_method`](http://ruby-doc.org/core-1.9.3/Object.html#method-i-define_singleton_method) is method on Object that was introduced in Ruby 1.9, but had passed all us ScotRUG members by. It does what it says — defines a method on an object's singleton class: that is it defines a method on an object instance without affecting other instances of its class. Prior to 1.9, the method would need to be retrieved — messy business.
 
 This is the [current](https://github.com/ruby/ruby/blob/v2_1_2/lib/ostruct.rb#L169-170) way `OpenStruct` dynamically defines methods:-
 
@@ -149,7 +149,7 @@ Delegating to the `@table` `Hash` is straightforward enough. Using `to_enum` to 
 
 The number of attributes stored (`@table.size`) is given to `to_enum` as the return value of a block, because that's how it is optionally done.
 
-Using the return value of a block to get an optional value is a bit unusual. `to_enum` uses this, as it already has optional values in its method signature - arguments to pass to the method that takes the block.
+Using the return value of a block to get an optional value is a bit unusual. `to_enum` uses this, as it already has optional values in its method signature — arguments to pass to the method that takes the block.
 
 
 ## `initialize_copy`

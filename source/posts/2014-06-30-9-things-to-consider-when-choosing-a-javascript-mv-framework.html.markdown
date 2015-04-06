@@ -10,7 +10,7 @@ You may find it useful to consider this list of factors when deciding between se
 ## The problem
 There are lots of JavaScript MV* frameworks to choose from. They don’t all have exactly the same goals and several of them subscribe to fundamentally different design principles.
 
-Conducting a realistic trial of just a few of them is a substantial exercise; without building something moderately complicated, it is difficult to get past the introductory material and really get a feel for a framework. Plus, a lot of the tutorials omit any coverage of testing - presumably to reduce cognitive load on those looking for a basic introduction. Of course, there is TodoMVC, which is a fantastic resource, but comparing pre-made examples only answers some of the questions you need to work through to make an informed choice.
+Conducting a realistic trial of just a few of them is a substantial exercise; without building something moderately complicated, it is difficult to get past the introductory material and really get a feel for a framework. Plus, a lot of the tutorials omit any coverage of testing — presumably to reduce cognitive load on those looking for a basic introduction. Of course, there is TodoMVC, which is a fantastic resource, but comparing pre-made examples only answers some of the questions you need to work through to make an informed choice.
 
 ## What do you need to think about when choosing?
 There is no magic solution for this problem. But, having evaluated several frameworks ourselves, we wanted to share the list of differentiating factors we feel are important. We hope they will be useful for you too.
