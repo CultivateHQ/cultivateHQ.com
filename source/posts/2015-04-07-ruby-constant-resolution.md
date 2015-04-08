@@ -87,7 +87,7 @@ module B
 end
 ```
 
-MyConst is unavailable to module ```C```, even though the inluded module ```B``` is nested within ```A```.
+MyConst is unavailable to module ```C```, even though enclosing module ```B``` includes ```A```.
 
 ```
 uninitialized constant B::C::MyConst (NameError)
@@ -128,7 +128,7 @@ module A
 end
 ```
 
-Still no big surprise here. Re-opening modue ```A``` to define nested ```B``` still works fine.
+Still no big surprise here. Re-opening module ```A``` to define nested ```B``` still works fine.
 
 However:-
 
@@ -160,7 +160,7 @@ There's a more complete writeup of constant resoulution [here](https://valve.git
 
 When trying to resolve a constant, first the interpreter searches up the list of enclosing modules and then searches the _current_ module's ancestors; the first match wins. The ancestors of of modules that enclose the current module do not get involved. 
 
-```Module.nesting``` is affectd by how it is defined in the current context. When it is done in the shorter ```A::B::C``` style the enclosing modules are not included.
+```Module.nesting``` is affected by how it is defined in the current context. When it is done in the shorter ```A::B::C``` style the enclosing modules are not included.
 
 ```
 module A
