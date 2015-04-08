@@ -1,14 +1,15 @@
 ---
 title: "Ruby constant resolution"
 author: Paul Wilson
-descrption: "Module and class nesting is how Ruby does namespacing, but it's not always that well known how constants are resolved"
+description: "Module and class nesting is how Ruby does namespacing, but it's not always that well known how constants are resolved."
 ---
 
 Module and class nesting is how Ruby does namespacing, but it's not always that well known how constants are resolved when we're not using the fully qualified names. Bearing in mind that Ruby classes and modules are themselves constant, it's quite handy to know this stuff.
 
 First of all here are the unsurprising rules:
 
-## Obvious rule: constants defined in outer modules ere available in nested modules, all the way down
+## Obvious rule: constants defined in outer modules are available in nested modules, all the way down
+
 
 ```
 module A
@@ -22,7 +23,7 @@ module A
 end
 ```
 
-If you run the above, it all works. Unqualifed ```MyConst``` works all the way down.
+If you run the above, it all works. Unqualified ```MyConst``` works all the way down.
 
 ```
 module A
@@ -71,6 +72,7 @@ end
 
 ## Surprising rule: including a module (or inheriting a class) does not make that class's constants available to nested modules
 
+
 ```
 module A
   MyConst = "I'm a string"
@@ -91,7 +93,7 @@ MyConst is unavailable to module ```C```, even though the inluded module ```B```
 uninitialized constant B::C::MyConst (NameError)
 ```
 
-The following weird looking code does, however, runs fine.
+The following weird looking code does, however, run fine.
 
 ```
 module A
@@ -100,7 +102,9 @@ end
 
 module B
   include A
-  MyConst = MyConst  
+  # Define MyConst in B to be MyConst from A 
+  # Probably best not to do this at home
+  MyConst = MyConst
   module C
     p [:in_c, MyConst]
   end
@@ -144,7 +148,7 @@ This seemingly equivalent code falls right over.
 uninitialized constant A::B::MyConst (NameError)
 ```
 
-What a shocker! Using the shorter ```A::B``` syntax to define your module (or class - try it) truncates your constant resolution. I bet that whole "it's available in the module I included, but not in 
+What a shocker! Using the shorter ```A::B``` syntax to define your module (or class - try it) truncates your constant resolution.
 
 ## The explanations
 
