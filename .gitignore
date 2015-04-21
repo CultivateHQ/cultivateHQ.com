@@ -21,3 +21,5 @@
 /source/bower_components
 
 .ruby-version
+
+/vendor
