@@ -249,14 +249,8 @@ ul.clients {
   li {
     float: left;
     width: 100%;
-    opacity: 0.4;
+    opacity: 0.6;
     /* You can't have opacity with PNGs nicely in < IE9 */
-    transition: opacity 0.2s ease;
-
-    &:hover {
-      opacity: 0.6;
-      /* You can't have opacity with PNGs nicely in < IE9 */
-    }
 
     @media screen and (max-width: $break-menu) {
       margin-left: 2%;

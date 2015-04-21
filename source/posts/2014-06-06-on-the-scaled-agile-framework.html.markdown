@@ -8,7 +8,7 @@ A few months a ago a I successfully completed the Scaled Agilist Certification c
 
 
 ## A SAFe place
-Agile (aka Extreme Programming) in a corporate environment is tough. Believe me - I've been there. The typical advice is to start small: pick an isolated green-field project, and assign a small Agile team. When well supported and executed, this approach can be highly successful. Sadly, these successes are often limited in scope and short-lived.
+Agile (aka Extreme Programming) in a corporate environment is tough. Believe me — I've been there. The typical advice is to start small: pick an isolated green-field project, and assign a small Agile team. When well supported and executed, this approach can be highly successful. Sadly, these successes are often limited in scope and short-lived.
 
 A single Extreme Programming team, in the corporate world, is vulnerable. I have seen succesful teams derailed by changes in mid-level management from the supportive (or won-over) to a more conservative and bonus-focussed personality. Changing business priorities and reorganisations can sweep away a small project team. Their environment is often hostile, so the team needs strong and politicly savvy leadership. Losing that leader can leave a team wide open to attack.
 
@@ -16,7 +16,7 @@ The Scaled Agile Framework takes an entirely different approach. Rather than dro
 
 
 ## Basic Training for the Conscript Army
-In this world the Scaled Agile Certification course and exam seems to correspond to basic training for the managers. While the "scaled" parts of the framework are covered, there is a lot of emphasis on teaching Agile/Scrum 101 (iterations, done-done, stories, velocity, etc... ) - no prior Agile experience required.
+In this world the Scaled Agile Certification course and exam seems to correspond to basic training for the managers. While the "scaled" parts of the framework are covered, there is a lot of emphasis on teaching Agile/Scrum 101 (iterations, done-done, stories, velocity, etc... ) — no prior Agile experience required.
 
 
 ## Lower expectations
@@ -26,7 +26,7 @@ An Extreme Programming story is finished when it is ready to release to producti
 ## Less threatening
 While SAFe does drive a certain amount of decision making down to self organising teams, a hierarchy is maintained. Executives and Architects feed their "Epics" into the top of the system; they are managed through the Portfolio, Programme, and Team levels out to production. While the nature and title of some jobs may change, I suspect that everyone can stay employed and keep their status.
 
-One of the harder things to convince the business about in an Agile adoption is the practice of releasing early and often. SAFe sidesteps this by defining Potentially Shippable Increments every few sprints - points at which the software could be released but is not necessarily released.
+One of the harder things to convince the business about in an Agile adoption is the practice of releasing early and often. SAFe sidesteps this by defining Potentially Shippable Increments every few sprints — points at which the software could be released but is not necessarily released.
 
 For an Agile and Lean process, though, this would seem to produce a very long feedback cycle between feature inception to release, making Neo-style [Hypotheses Driven Development](http://www.neo.com/2014/04/10/kanban-boards-for-hypothesis-driven-development) next to impossible.
 

@@ -51,7 +51,7 @@ Similarities:
   declaration syntax, with the type annotation occurring after the variable name.
 * No need for semi-colons to terminate statements.
 * Function declarations are
-  structurally similar - with the return type being stated after the parameters -
+  structurally similar — with the return type being stated after the parameters -
   but differ in exact syntax.
 * First-class / higher-order functions, closures
   and a block syntax.
