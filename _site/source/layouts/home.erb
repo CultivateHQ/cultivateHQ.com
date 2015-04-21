@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%= partial "partials/head" %>
+  </head>
+  <body class="<%= page_classes %>">
+    <%= partial "partials/header" %>
+    <section id="message">
+      <div class="wrapper">
+        <h1>We build digital products that deliver business success.</h1>
+        <h2>We believe trust, collaboration and frequent market testing are the best way to deliver successful products.</h2>
+      </div>
+    </section>
+    <div id="site-content-area">
+        <%= yield %>
+        <%= partial "partials/footer" %>
+    </div>
+  </body>
+</html>

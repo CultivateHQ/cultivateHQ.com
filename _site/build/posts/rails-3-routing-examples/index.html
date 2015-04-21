@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- Use title if it's in the page YAML frontmatter -->
+<title>Rails 3: Routing Examples</title>
+<link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+
+<link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+<script src="/javascripts/all.js" type="text/javascript"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54446806-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+    <link href="/stylesheets/code_highlight.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="posts posts_rails-3-routing-examples posts_rails-3-routing-examples_index">
+    <header>
+  <div id="site-header">
+    <div class="wrapper">
+      <a href="/">
+        <div id="logo">
+          <div class="logo-text">
+            Cultivate
+          </div>
+          <div class="logo-icon">
+            <img alt="" src="/images/logo-small.svg" />
+          </div>
+        </div>
+      </a>
+      <div class="contact-info">
+        <ul>
+          <li><a href="tel://+448455280757"><i class="fa fa-phone" aria-label="Telephone"></i><span class="text">+44 (0)845 528 0757</span></a></li>
+          <li><a href="mailto:contact@cultivateHQ.com"><i class="fa fa-envelope" aria-label="Email"></i><span class="text">contact@cultivateHQ.com</span></a></li>
+          <li><a href="http://twitter.com/cultivatehq"><i class="fa fa-twitter" aria-label="Twitter"></i><span class="text">cultivatehq</span></a></li>
+        </ul>
+      </div>
+      <nav>
+        <ul>
+          <li><a class="internal-link" href="/#what-we-do">Services</a></li>
+          <li><a href="/case-studies/">Case Studies</a></li>
+            <li><a class="internal-link" href="/#our-history">History</a></li>
+          <!--
+            <li><a class="internal-link" href="/#our-ethos">Ethos</a></li>
+            <li><a href="/team/">Team</a></li>
+          //-->
+          <li><a href="/posts/">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <div id="site-content-area">
+      <div class="wrapper">
+        <div class="breadcrumbs">
+          <a href="/">Welcome to Cultivate</a> &gt; <a href="/posts/">Blog</a> &gt; <a href="/posts/rails-3-routing-examples/">Rails 3: Routing Examples</a>
+        </div>
+        <h1>Rails 3: Routing Examples</h1>
+        <div class="content-column">
+
+          <article class="blog-post">
+            <header>
+              <span class="blog-post__author">Mark Connell</span>
+                ,
+                <span class="blog-post__date">
+                  15 February, 2010
+                </span>
+            </header>
+            <div class="blog-post__body"><blockquote>
+<p>This post was written prior to Rails 3 being released and may contain information that is now out of date.</p>
+</blockquote>
+
+<p>Rails 3 introduced a new routing DSL that is a little bit different from the Rails 2 version. This quick guide covers a few examples of the new routes, and how they compare to Rails 2.</p>
+
+<h2>Simple routes</h2>
+
+<p>Create a basic route that will respond to <code>http://localhost:300/hello_world</code></p>
+<pre><code class="highlight ruby"><span class="c1"># Rails 2:</span>
+<span class="n">map</span><span class="p">.</span><span class="nf">connect</span> <span class="s1">'hello_world'</span><span class="p">,</span> <span class="ss">:controller</span> <span class="o">=&gt;</span> <span class="s1">'posts'</span><span class="p">,</span> <span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s1">'index'</span>
+
+<span class="c1"># Rails 3:</span>
+<span class="n">match</span> <span class="s1">'hello_world'</span> <span class="o">=&gt;</span> <span class="s1">'posts#index'</span>
+</code></pre>
+
+<h2>Resources</h2>
+
+<p>A <code>UsersController</code> that responds to the typical RESTful actions <code>/users</code>, <code>/users/123</code>, <code>/users/123/edit</code> etc.</p>
+<pre><code class="highlight ruby"><span class="c1"># Rails 2:</span>
+<span class="n">map</span><span class="p">.</span><span class="nf">resources</span> <span class="ss">:users</span>
+
+<span class="c1"># Rails 3:</span>
+<span class="n">resources</span> <span class="ss">:users</span>
+</code></pre>
+
+<p>Add additional <code>member</code> and <code>collection</code> actions to a resource. For a <code>GamesController</code>, adding a download action on a particular game (member) and a favourites action to display a list of favourite games (collection):</p>
+<pre><code class="highlight ruby"><span class="c1"># Rails 2</span>
+<span class="n">map</span><span class="p">.</span><span class="nf">resources</span> <span class="ss">:games</span><span class="p">,</span> <span class="ss">:member</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:download</span> <span class="o">=&gt;</span> <span class="ss">:get</span> <span class="p">},</span> <span class="ss">:collection</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:favourites</span> <span class="o">=&gt;</span> <span class="ss">:get</span> <span class="p">}</span>
+
+<span class="c1"># Rails 3</span>
+<span class="n">resources</span> <span class="ss">:games</span> <span class="k">do</span>
+  <span class="n">get</span> <span class="ss">:download</span><span class="p">,</span>   <span class="ss">:on</span> <span class="o">=&gt;</span> <span class="ss">:member</span>
+  <span class="n">get</span> <span class="ss">:favourites</span><span class="p">,</span> <span class="ss">:on</span> <span class="o">=&gt;</span> <span class="ss">:collection</span>
+<span class="k">end</span>
+</code></pre>
+
+<p><code>member</code>/<code>collection</code> blocks are also available as an alternative to the above:</p>
+<pre><code class="highlight ruby"><span class="c1"># Rails 3</span>
+<span class="n">resources</span> <span class="ss">:games</span> <span class="k">do</span>
+  <span class="n">member</span> <span class="k">do</span>
+    <span class="n">get</span> <span class="ss">:download</span>
+  <span class="k">end</span>
+
+  <span class="n">collection</span> <span class="k">do</span>
+    <span class="n">get</span> <span class="ss">:favourites</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<h2>Root mappings</h2>
+
+<p>The <code>root_url</code> your app points to eg. <code>http://localhost:3000/</code></p>
+<pre><code class="highlight ruby"><span class="c1"># Rails 2</span>
+<span class="n">map</span><span class="p">.</span><span class="nf">root</span> <span class="ss">:controller</span> <span class="o">=&gt;</span> <span class="s1">'posts'</span><span class="p">,</span> <span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s1">'index'</span>
+
+<span class="c1"># Rails 3</span>
+<span class="n">root</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s1">'posts#index'</span>
+</code></pre>
+
+<p>Namespaced root mappings eg. <code>http://localhost:3000/admin</code></p>
+<pre><code class="highlight ruby"><span class="c1"># Rails 2</span>
+<span class="n">map</span><span class="p">.</span><span class="nf">namespace</span> <span class="ss">:admin</span> <span class="k">do</span> <span class="o">|</span><span class="n">admin</span><span class="o">|</span>
+  <span class="n">admin</span><span class="p">.</span><span class="nf">root</span> <span class="ss">:controller</span> <span class="o">=&gt;</span> <span class="s1">'posts'</span>
+<span class="k">end</span>
+
+<span class="c1"># Rails 3</span>
+<span class="n">namespace</span> <span class="ss">:admin</span> <span class="k">do</span>
+  <span class="n">root</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s2">"admin/posts#index"</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>One thing to note is that if you are defining a root mapping in a namespace, it doesn&rsquo;t make any assumptions that the controller is in the same namespace in Rails 3.</p>
+
+<h2>Optional params</h2>
+
+<p>Allows a mapping to be associated with multiple routes eg: <code>/posts/2010</code> and <code>/posts/2010/02</code></p>
+<pre><code class="highlight ruby"><span class="c1"># Rails 2</span>
+<span class="n">map</span><span class="p">.</span><span class="nf">connect</span> <span class="s1">'posts/:year/:month'</span><span class="p">,</span> <span class="ss">:controller</span> <span class="o">=&gt;</span> <span class="s1">'posts'</span><span class="p">,</span>
+            <span class="ss">:month</span> <span class="o">=&gt;</span> <span class="kp">nil</span><span class="p">,</span> <span class="ss">:requirements</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:year</span> <span class="o">=&gt;</span> <span class="sr">/\d{4}/</span> <span class="p">}</span>
+
+<span class="c1"># Rails 3</span>
+<span class="n">match</span> <span class="s1">'posts/:year(/:month)'</span> <span class="o">=&gt;</span> <span class="s1">'posts#index'</span><span class="p">,</span> <span class="ss">:constraints</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:year</span> <span class="o">=&gt;</span> <span class="sr">/\d{4}/</span> <span class="p">}</span>
+</code></pre>
+
+<p>You&rsquo;ll notice that this mapping also makes use of the :constraints option rather than :requirements which would be found in a Rails 2 app.</p>
+</div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+    <section class="work-with-us">
+  <div class="wrapper">
+    <a class="internal-anchor" name="contact"></a>
+    <h1>
+      We’re passionate about understanding businesses, ideas and people.
+      <a href="mailto:contact@cultivateHQ.com">
+        <strong>Let’s talk.</strong>
+      </a>
+    </h1>
+  </div>
+</section>
+
+<footer>
+  <div class="wrapper">
+    <div class="column column__half">
+      <div class="vcard">
+        <div>
+          <span class="company_name">Cultivate Software Ltd.</span>
+          <span class="company_number">Company No. SC357781.</span>
+        </div>
+        <div>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:contact@cultivateHQ.com">contact@cultivateHQ.com</a>&nbsp;
+        </div>
+        <div>
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <a href="tel://+448455280757">+44 (0)845 528 0757</a><br>
+        </div>
+
+        <div>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <a href="https://www.google.com/maps/place/CodeBase/@55.94626,-3.20157,15z/data=!4m2!3m1!1s0x0:0x5727e05b4321b9f6?hl=en-GB">
+            <span class="adr">
+              <span class="street-address">CodeBase</span>
+              <span class="locality">Argyle House</span>
+              <span class="region">Edinburgh</span>
+              <span class="postal-code">EH3 9DR</span>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="column column__half">
+      <div class='signup'>
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+        <a href="/newsletter-signup">
+        Sign up for our Quarterly Newsletter</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--[if IE 7]>
+    <script>
+      $("#site-header nav ul").css({'width': '270px'})
+    </script>
+  <![endif]-->
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script>
+    $(".clients li:first-child").css('margin-left','0');
+    var windowWidth = $(window).width();
+    if (windowWidth >= 900) {
+      $('.clients li:nth-child(5n+1)').css({'margin-left':'0','clear': 'left'});
+    }
+    if (windowWidth > 768 && windowWidth <= 900) {
+      $('.clients li:nth-child(4n+1)').css({'margin-left':'0', 'clear': 'left'});
+    }
+    if (windowWidth > 595 && windowWidth  <= 768) {
+      $('.clients li:nth-child(3n+1)').css({'margin-left':'0', 'clear': 'left'});
+    }
+    if (windowWidth <= 595) {
+      $('.clients li:nth-child(2n+1)').css({'margin-left':'0', 'clear': 'left'});
+    }
+  </script>
+<![endif]-->
+
+  </body>
+</html>

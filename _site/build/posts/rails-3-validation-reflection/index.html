@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<!-- Always force latest IE rendering engine or request Chrome Frame -->
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- Use title if it's in the page YAML frontmatter -->
+<title>Rails 3: Validation Reflection</title>
+<link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+
+<link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+<script src="/javascripts/all.js" type="text/javascript"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54446806-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+    <link href="/stylesheets/code_highlight.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="posts posts_rails-3-validation-reflection posts_rails-3-validation-reflection_index">
+    <header>
+  <div id="site-header">
+    <div class="wrapper">
+      <a href="/">
+        <div id="logo">
+          <div class="logo-text">
+            Cultivate
+          </div>
+          <div class="logo-icon">
+            <img alt="" src="/images/logo-small.svg" />
+          </div>
+        </div>
+      </a>
+      <div class="contact-info">
+        <ul>
+          <li><a href="tel://+448455280757"><i class="fa fa-phone" aria-label="Telephone"></i><span class="text">+44 (0)845 528 0757</span></a></li>
+          <li><a href="mailto:contact@cultivateHQ.com"><i class="fa fa-envelope" aria-label="Email"></i><span class="text">contact@cultivateHQ.com</span></a></li>
+          <li><a href="http://twitter.com/cultivatehq"><i class="fa fa-twitter" aria-label="Twitter"></i><span class="text">cultivatehq</span></a></li>
+        </ul>
+      </div>
+      <nav>
+        <ul>
+          <li><a class="internal-link" href="/#what-we-do">Services</a></li>
+          <li><a href="/case-studies/">Case Studies</a></li>
+            <li><a class="internal-link" href="/#our-history">History</a></li>
+          <!--
+            <li><a class="internal-link" href="/#our-ethos">Ethos</a></li>
+            <li><a href="/team/">Team</a></li>
+          //-->
+          <li><a href="/posts/">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <div id="site-content-area">
+      <div class="wrapper">
+        <div class="breadcrumbs">
+          <a href="/">Welcome to Cultivate</a> &gt; <a href="/posts/">Blog</a> &gt; <a href="/posts/rails-3-validation-reflection/">Rails 3: Validation Reflection</a>
+        </div>
+        <h1>Rails 3: Validation Reflection</h1>
+        <div class="content-column">
+
+          <article class="blog-post">
+            <header>
+              <span class="blog-post__author">Mark Connell</span>
+                ,
+                <span class="blog-post__date">
+                  22 February, 2010
+                </span>
+            </header>
+            <div class="blog-post__body"><p>A recent addition to <code>ActiveModel</code> is the introduction of a couple of methods for validation reflection.</p>
+
+<p>Say we have a sample <code>Person</code> class which includes the <code>ActiveModel::Validations</code> module so we can validate a couple of attributes:</p>
+<pre><code class="highlight ruby"><span class="nb">require</span> <span class="s1">'active_model'</span>
+
+<span class="k">class</span> <span class="nc">Person</span>
+  <span class="kp">include</span> <span class="no">ActiveModel</span><span class="o">::</span><span class="no">Validations</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span>
+  <span class="n">validates</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:presence</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+  <span class="n">validates</span> <span class="ss">:age</span><span class="p">,</span>  <span class="ss">:presence</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="ss">:numericality</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>New to <code>ActiveModel::Validations</code> is the class method <code>validators</code>, which returns an array of <code>Validator</code> objects associated with the model:</p>
+<pre><code class="highlight ruby"><span class="no">Person</span><span class="p">.</span><span class="nf">validators</span>
+<span class="c1">#&gt; [#&lt;ActiveModel::Validations::PresenceValidator:0x101565cc8 @attributes=[:age], @options={}&gt;,</span>
+<span class="c1">#   #&lt;ActiveModel::Validations::NumericalityValidator:0x101562640 @attributes=[:age],</span>
+<span class="c1">#       @options={:only_integer=&gt;false, :allow_nil=&gt;false}&gt;,</span>
+<span class="c1">#   #&lt;ActiveModel::Validations::PresenceValidator:0x1015691c0 @attributes=[:name], @options={}&gt;]</span>
+</code></pre>
+
+<p>Another addition is the class method <code>validators_on</code>, which provides a convenient way of accessing the validators that are associated with a particular attribute on the model:</p>
+<pre><code class="highlight ruby"><span class="no">Person</span><span class="p">.</span><span class="nf">validators_on</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span>
+<span class="c1">#&gt; [#&lt;ActiveModel::Validations::PresenceValidator:0x1015691c0 @attributes=[:name], @options={}&gt;]</span>
+
+<span class="no">Person</span><span class="p">.</span><span class="nf">validators_on</span><span class="p">(</span><span class="ss">:age</span><span class="p">)</span>
+<span class="c1">#&gt; [#&lt;ActiveModel::Validations::PresenceValidator:0x101565cc8 @attributes=[:age], @options={}&gt;,</span>
+<span class="c1">#   #&lt;ActiveModel::Validations::NumericalityValidator:0x101562640 @attributes=[:age],</span>
+<span class="c1">#       @options={:only_integer=&gt;false, :allow_nil=&gt;false}&gt;]</span>
+</code></pre>
+
+<h2>Notes</h2>
+
+<ul>
+<li>The <code>validators</code> and <code>validators_on</code> methods are only found in activemodel-3.0.0.beta1.gem onwards.</li>
+<li>The specific commit that introduces these methods can be found here: <a href="http://github.com/rails/rails/commit/8f97e9d19abf02b33c5f7c0c1f1d5daf13e28893">http://github.com/rails/rails/commit/8f97e9d19abf02b33c5f7c0c1f1d5daf13e28893</a></li>
+</ul>
+</div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+    <section class="work-with-us">
+  <div class="wrapper">
+    <a class="internal-anchor" name="contact"></a>
+    <h1>
+      We’re passionate about understanding businesses, ideas and people.
+      <a href="mailto:contact@cultivateHQ.com">
+        <strong>Let’s talk.</strong>
+      </a>
+    </h1>
+  </div>
+</section>
+
+<footer>
+  <div class="wrapper">
+    <div class="column column__half">
+      <div class="vcard">
+        <div>
+          <span class="company_name">Cultivate Software Ltd.</span>
+          <span class="company_number">Company No. SC357781.</span>
+        </div>
+        <div>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:contact@cultivateHQ.com">contact@cultivateHQ.com</a>&nbsp;
+        </div>
+        <div>
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <a href="tel://+448455280757">+44 (0)845 528 0757</a><br>
+        </div>
+
+        <div>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <a href="https://www.google.com/maps/place/CodeBase/@55.94626,-3.20157,15z/data=!4m2!3m1!1s0x0:0x5727e05b4321b9f6?hl=en-GB">
+            <span class="adr">
+              <span class="street-address">CodeBase</span>
+              <span class="locality">Argyle House</span>
+              <span class="region">Edinburgh</span>
+              <span class="postal-code">EH3 9DR</span>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="column column__half">
+      <div class='signup'>
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+        <a href="/newsletter-signup">
+        Sign up for our Quarterly Newsletter</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--[if IE 7]>
+    <script>
+      $("#site-header nav ul").css({'width': '270px'})
+    </script>
+  <![endif]-->
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script>
+    $(".clients li:first-child").css('margin-left','0');
+    var windowWidth = $(window).width();
+    if (windowWidth >= 900) {
+      $('.clients li:nth-child(5n+1)').css({'margin-left':'0','clear': 'left'});
+    }
+    if (windowWidth > 768 && windowWidth <= 900) {
+      $('.clients li:nth-child(4n+1)').css({'margin-left':'0', 'clear': 'left'});
+    }
+    if (windowWidth > 595 && windowWidth  <= 768) {
+      $('.clients li:nth-child(3n+1)').css({'margin-left':'0', 'clear': 'left'});
+    }
+    if (windowWidth <= 595) {
+      $('.clients li:nth-child(2n+1)').css({'margin-left':'0', 'clear': 'left'});
+    }
+  </script>
+<![endif]-->
+
+  </body>
+</html>

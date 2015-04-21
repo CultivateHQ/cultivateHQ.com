@@ -1,0 +1,25 @@
+<h2 id="rails-2">Rails 2</h2>
+<p>So you’ve been working on Rails apps for a while, and like all good developers, you’ve been escaping any content rendered in your views that your application’s users might have entered, right?</p>
+
+<p>eg. like this:</p>
+
+<p><code>erb
+&lt;%= h some_string %&gt;
+</code></p>
+
+<h2 id="rails-3">Rails 3</h2>
+<p>Now in Rails 3, all strings are html escaped automatically, so:</p>
+
+<p><code>erb
+&lt;%= h some_string %&gt;
+# is now
+&lt;%= some_string %&gt;
+</code></p>
+
+<p>No string by default is considered safe to render, and subsequently are HTML escaped. If you need to render html without it being escaped you need to effectively whitelist it as safe to render. This is done via <code>.html_safe</code></p>
+
+<pre><code>&lt;%= some_string.html_safe %&gt;
+</code></pre>
+
+<p>For a more detailed explanation, checkout:
+<a href="http://yehudakatz.com/2010/02/01/safebuffers-and-rails-3-0/">SafeBuffers and Rails 3.0 by Yehuda Katz</a></p>

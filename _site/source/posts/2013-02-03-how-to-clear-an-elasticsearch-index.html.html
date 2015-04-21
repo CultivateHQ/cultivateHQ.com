@@ -1,0 +1,21 @@
+<p>In the event you need to tear down your elasticsearch index, there is a web API that you can take
+advantage of to make this fairly straight forward:</p>
+
+<p><code>bash
+curl http://localhost:9200/_mapping
+&gt; {"app_name":{"resource": {"123": "some-value"}}}
+</code></p>
+
+<p>Making a GET request like the one above, where <code>localhost:9200</code> is the web interface of your elasticsearch
+server, will return a mapping of all the indexes currently available on the server. To delete a specific mapping,
+simply send a DELETE request to the server with the path to the index tacked on to the URL. eg.</p>
+
+<p><code>bash
+curl -XDELETE http://localhost:9200/app_name/resource/123
+</code></p>
+
+<p>or to delete a parent index and associated child indexes:</p>
+
+<p><code>bash
+curl -XDELETE http://localhost:9200/app_name
+</code></p>

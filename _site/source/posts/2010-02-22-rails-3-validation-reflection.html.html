@@ -1,0 +1,42 @@
+<p>A recent addition to <code>ActiveModel</code> is the introduction of a couple of methods for validation reflection.</p>
+
+<p>Say we have a sample <code>Person</code> class which includes the <code>ActiveModel::Validations</code> module so we can validate a couple of attributes:</p>
+
+<p>```ruby
+require ‘active_model’</p>
+
+<p>class Person
+  include ActiveModel::Validations
+  attr_accessor :name, :age
+  validates :name, :presence =&gt; true
+  validates :age,  :presence =&gt; true, :numericality =&gt; true
+end
+```</p>
+
+<p>New to <code>ActiveModel::Validations</code> is the class method <code>validators</code>, which returns an array of <code>Validator</code> objects associated with the model:</p>
+
+<p><code>ruby
+Person.validators
+#&gt; [#&lt;ActiveModel::Validations::PresenceValidator:0x101565cc8 @attributes=[:age], @options={}&gt;,
+#   #&lt;ActiveModel::Validations::NumericalityValidator:0x101562640 @attributes=[:age],
+#       @options={:only_integer=&gt;false, :allow_nil=&gt;false}&gt;,
+#   #&lt;ActiveModel::Validations::PresenceValidator:0x1015691c0 @attributes=[:name], @options={}&gt;]
+</code></p>
+
+<p>Another addition is the class method <code>validators_on</code>, which provides a convenient way of accessing the validators that are associated with a particular attribute on the model:</p>
+
+<p>```ruby
+Person.validators_on(:name)
+#&gt; [#&lt;ActiveModel::Validations::PresenceValidator:0x1015691c0 @attributes=[:name], @options={}&gt;]</p>
+
+<p>Person.validators_on(:age)
+#&gt; [#&lt;ActiveModel::Validations::PresenceValidator:0x101565cc8 @attributes=[:age], @options={}&gt;,
+#   #&lt;ActiveModel::Validations::NumericalityValidator:0x101562640 @attributes=[:age],
+#       @options={:only_integer=&gt;false, :allow_nil=&gt;false}&gt;]
+```</p>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>The <code>validators</code> and <code>validators_on</code> methods are only found in activemodel-3.0.0.beta1.gem onwards.</li>
+  <li>The specific commit that introduces these methods can be found here: <a href="http://github.com/rails/rails/commit/8f97e9d19abf02b33c5f7c0c1f1d5daf13e28893">http://github.com/rails/rails/commit/8f97e9d19abf02b33c5f7c0c1f1d5daf13e28893</a></li>
+</ul>
