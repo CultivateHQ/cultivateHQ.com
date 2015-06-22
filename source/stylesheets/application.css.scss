@@ -112,6 +112,7 @@ a {
   padding-top: rhythm(1);
 }
 
+
 footer {
   a {
     color: #aAb7bD;
@@ -365,3 +366,5 @@ ul.case-studies {
 
   img {@include border-radius(3px);}
 }
+
+.codebase img {width: 100px !important; min-width: 100px !important; max-width: 100px !important}

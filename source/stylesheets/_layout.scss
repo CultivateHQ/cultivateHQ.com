@@ -47,7 +47,7 @@ section > .wrapper >  img { max-width: 100%; min-width: 100%; @include rhythm(1,
     float: left;
   }
 
-  img {width: 100; min-width: 100%; max-width: 100%; height: auto;}
+  img {width: 100%; min-width: 100%; max-width: 100%; height: auto;}
 }
 
 .column__half {
