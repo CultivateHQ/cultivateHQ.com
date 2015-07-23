@@ -3,9 +3,6 @@ title:  "Seven techniques product leaders can use today to get a project focused
 author: Spencer Turner
 ---
 
-#Seven techniques product leaders can use today to get a project focused.
-
-
 ## Are you frustrated by a culture that hasn't caught up with the digital world? 
 
 Do you feel like you're building the wrong thing? New features fail to engage and delight customers? 
