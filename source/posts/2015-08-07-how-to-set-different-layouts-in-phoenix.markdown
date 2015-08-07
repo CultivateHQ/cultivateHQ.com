@@ -19,10 +19,10 @@ The first way I found which allows you to set the layout file, is to directly pa
 to the `render/3` function:
 
 ```elixir
-  def index(conn, _params) do
-    render conn, "index.html",
-      layout: {MyApp.LayoutView, "admin.html"}
-  end
+def index(conn, _params) do
+  render conn, "index.html",
+    layout: {MyApp.LayoutView, "admin.html"}
+end
 ```
 Which works... However it does mean that if we have a lot of functions that render in our controller, we
 need to duplicate this bit of code.
@@ -32,15 +32,15 @@ need to duplicate this bit of code.
 The next approach is a bit nicer, which reduces the repetition of explicity declaring the layout.
 
 ```elixir
-  defmodule MyApp.Admin.SomeController do
-    use MyApp.Web, :controller
+defmodule MyApp.Admin.SomeController do
+  use MyApp.Web, :controller
 
-    plug :put_layout, "admin.html"
+  plug :put_layout, "admin.html"
 
-    def index(conn, _params) do
-      render conn, "index.html"
-    end
+  def index(conn, _params) do
+    render conn, "index.html"
   end
+end
 ```
 
 This is nice, but we still have some duplication if we have a number of admin controllers.
@@ -53,12 +53,12 @@ it covers all of our admin controllers.
 
 ```elixir
 # web/router.ex
-  pipeline :admin_layout do
-    plug :put_layout, {MyApp.LayoutView, :admin}
-  end
+pipeline :admin_layout do
+  plug :put_layout, {MyApp.LayoutView, :admin}
+end
 
-  scope "/admin", MyApp do
-    pipe_through [:browser, :admin_layout]
-    resources "/some_path", Admin.SomeController
-  end
+scope "/admin", MyApp do
+  pipe_through [:browser, :admin_layout]
+  resources "/some_path", Admin.SomeController
+end
 ```
