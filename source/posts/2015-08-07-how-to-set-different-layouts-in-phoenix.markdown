@@ -16,7 +16,7 @@ For all of the examples below, I'm assuming that there is a file `admin.html.eex
 ## Modify controller functions to render with the specific layout file
 
 The first way I found which allows you to set the layout file, is to directly pass an additional argument
-to the `render/` function:
+to the `render/3` function:
 
 ```elixir
   def index(conn, _params) do
@@ -24,7 +24,7 @@ to the `render/` function:
       layout: {MyApp.LayoutView, "admin.html"}
   end
 ```
-Which works.. However it does mean that if we have a lot of functions that render in our controller, we
+Which works... However it does mean that if we have a lot of functions that render in our controller, we
 need to duplicate this bit of code.
 
 ## Apply the layout at a controller level
@@ -48,7 +48,7 @@ This is nice, but we still have some duplication if we have a number of admin co
 ## Apply the layout at the router
 
 This is my current approach to solving the problem. Create a new pipeline with our plug and use it along
-with the standard `:browser` pipeline.Declaring it as part of the plug pipeline used in the admin routing,
+with the standard `:browser` pipeline. Declaring it as part of the plug pipeline used in the admin routing,
 it covers all of our admin controllers.
 
 ```elixir
