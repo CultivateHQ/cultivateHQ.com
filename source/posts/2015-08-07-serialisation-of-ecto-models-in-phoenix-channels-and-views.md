@@ -10,10 +10,14 @@ I have an Phoenix app that is deliberately over-using channels, to see how far I
 This week I upgraded from 0.13.x to 0.15.0 (through 0.14.x) and hit problems with models that I'd been sending over channels to the Javascript client.
 
 ```
-  def handle_in("project_email_recipients", _, socket) do
-    recipients = ProjectEmailing.project_recipients socket.assigns[:project_id] # Retrieves all the models for the project
-    {:reply, {:ok, %{project_email_recipients: recipients}}, socket}
-  end
+def handle_in("project_email_recipients", _, socket) do
+  # Retrieves all the models for the project
+  recipients = ProjectEmailing.project_recipients(
+    socket.assigns[:project_id])
+  {:reply,
+    {:ok, %{project_email_recipients: recipients}},
+    socket}
+end
 ```
 
 This was serialising  just fine and being received as maniputable JSON at the client. On upgrade it broke. On investigation I discovered that Ecto upgraded from 0.13.1 to 0.14.3. Under 0.13.1, a model's (Project model) ```__meta__``` value looks something like this:
@@ -44,7 +48,8 @@ Implement the ```Poison.Encoder``` protocol for your model. eg
 defimpl Poison.Encoder, for: ProjectStatus.StatusEmail do
   def encode(model, opts) do
     model
-      |> Map.take([:name, :id, :email, :subject, :content, :project_id, :sent_date, :status_date])
+      |> Map.take([:name, :id, :email, :subject, :content,
+                   :project_id, :sent_date, :status_date])
       |> Poison.Encoder.encode(opts)
   end
 end
@@ -56,12 +61,13 @@ Whenever the model is sent as payload on a channel (or as a JSON Object via a vi
 
 Alternatively you might want to save bandwidth by providing just those fields required by the client. This tightly couples the _Phoenix Channel_ code to the client, but you might argue that it's tightly coupled in any case.
 
-eg
+eg if the client only needs the model's ```id``` and ```subject``` fields.
+
 ```
 def handle_in("get_project_status_emails", %{}, socket) do
   status_emails = socket.assigns[:project_id]
-    |> ProjectEmailing.project_status_emails # retrieve the models
-    |> Enum.map(&(Map.take(&1, [:id, :subject]))) # We know that is all that will be displayed
+    |> ProjectEmailing.project_status_emails 
+    |> Enum.map(&(Map.take(&1, [:id, :subject]))) 
   {:reply, {:ok, %{status_emails: status_emails}}, socket}
 end
 ```
