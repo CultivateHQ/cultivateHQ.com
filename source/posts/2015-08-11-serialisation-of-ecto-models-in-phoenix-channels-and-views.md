@@ -3,11 +3,10 @@ author: Paul Wilson
 title: JSON Serialisation of Ecto Models in Phoenix Channels (and views)
 description: This week I upgraded from 0.13.x to 0.15.0 (through 0.14.x) and hit problems with models that I'd been sending over channels to the Javascript client. Here's how it panned out.
 ---
-## Channel / Ecto model issue upgrading to Phoenix 0.15.0 (Ecto 0.14.3)
 
 I have an Phoenix app that is deliberately over-using channels, to see how far I can push it and shake out the gotchas.
 
-This week I upgraded from 0.13.x to 0.15.0 (through 0.14.x) and hit problems with models that I'd been sending over channels to the Javascript client.
+Last week I upgraded from 0.13.x to 0.15.0 (through 0.14.x) and hit problems with models that I'd been sending over channels to the Javascript client.
 
 ```elixir
 def handle_in("project_email_recipients", _, socket) do
