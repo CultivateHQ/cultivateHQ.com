@@ -69,7 +69,7 @@ end
 
 Now the problem at hand is, we want to make the `GET` request to `/`, but we need to add the
 `authorization` header into our request. With the pipe operator (`|>`), this becomes quite an
-easy task actually. We simply add in an addition line for setting our request header:
+easy task actually. We simply add in an additional line for setting our request header:
 
 ```elixir
 put_req_header("authorization", "Basic " <> Base.encode64("admin:secret"))
