@@ -12,7 +12,7 @@ Phoenix by default, doesn't include any authentication. So to add HTTP basic aut
 (or any other type of authentication), you either need to roll your own, or make use
 of some of the many Plug packages that are popping up to help you along.
 
-I wrote [BasicAuth](https://github.com/mconnell/basic_auth), a Plug that lets you add
+I wrote [BasicAuth](https://github.com/cultivatehq/basic_auth), a Plug that lets you add
 Rails-like basic authentication at controller or router level using a snippet like:
 
 ```elixir
@@ -88,6 +88,5 @@ end
 
 This can be tidied up and made a bit nicer, but is everything you need to know in order to
 get started with testing HTTP basic auth. For more details, checkout the
-[README](https://github.com/mconnell/basic_auth/blob/master/README.md) on the BasicAuth
+[README](https://github.com/cultivatehq/basic_auth/blob/master/README.md) on the BasicAuth
 github repository.
-
