@@ -160,5 +160,58 @@ end
 We now have a plug which injects our new header into every request!
 
 ## Publish to Hex
-### Add package details
+
+### Add package metadata
+
+We need to add some helpful metadata to our project. Lets update our `mix.exs` file:
+
+```elixir
+defmodule HelloWorldHeader.Mixfile do
+  use Mix.Project
+
+  def project do
+    [app: :hello_world_header,
+     description: "Demo plug used for tutorial purposes.",
+     package: package,
+     version: "0.0.1",
+     elixir: "~> 1.0",
+     build_embedded: Mix.env == :prod,
+     start_permanent: Mix.env == :prod,
+     deps: deps]
+  end
+
+  def application do
+    [applications: [:logger, :plug, :cowboy]]
+  end
+
+  defp deps do
+    [{:cowboy, "~> 1.0"},
+     {:plug, "~> 0.14 or ~> 1.0"}]
+  end
+
+  defp package do
+    [contributors: ["Mark Connell",],
+     licenses: ["MIT"],
+     links: %{github: "https://github.com/cultivatehq/hello_world_header"},
+     files: ~w(lib mix.exs README.md)]
+  end
+end
+
+```
+
 ### submit to Hex
+
+If you've never submitted a package to hex before, you'll need to register as a new user. More
+details on the process can be found [here](https://hex.pm/docs/publish) if you get stuck.
+
+```bash
+mix hex.user register
+```
+
+Once you're done with that all that's left to do is
+
+```bash
+mix hex.publish
+```
+
+And your package is now published to [hex.pm](https://hex.pm/packages/hello_world_header) for the world to use!
