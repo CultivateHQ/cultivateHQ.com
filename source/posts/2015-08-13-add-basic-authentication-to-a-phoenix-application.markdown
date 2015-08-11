@@ -26,7 +26,7 @@ plug BasicAuth, realm: "Admin Area", username: "admin", password: "secret"
 ```
 
 ## How do you test basic auth in Phoenix?
-Adding in basic auth is fairly straight forward when we use plugs, but if you have tests for
+Adding in basic auth is fairly straightforward when we use plugs, but if you have tests for
 your controllers, you're going to start seeing a whole load of failures because of the
 behaviour change.
 
