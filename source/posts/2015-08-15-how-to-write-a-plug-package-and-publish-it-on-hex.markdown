@@ -190,7 +190,7 @@ defmodule HelloWorldHeader.Mixfile do
   end
 
   defp package do
-    [contributors: ["Mark Connell",],
+    [contributors: ["Mark Connell"],
      licenses: ["MIT"],
      links: %{github: "https://github.com/cultivatehq/hello_world_header"},
      files: ~w(lib mix.exs README.md)]
