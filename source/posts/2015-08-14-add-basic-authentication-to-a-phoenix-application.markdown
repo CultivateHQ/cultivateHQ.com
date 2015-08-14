@@ -17,7 +17,7 @@ Rails-like basic authentication at controller or router level using a snippet li
 
 ```elixir
 # add the package to your mix.exs deps
-{:basic_auth, "~> 1.0.0"}
+{:basic_auth, ">= 0.0.1"}
 ```
 
 ```elixir
