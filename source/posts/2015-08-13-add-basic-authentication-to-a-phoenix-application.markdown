@@ -17,7 +17,7 @@ Rails-like basic authentication at controller or router level using a snippet li
 
 ```elixir
 # add the package to your mix.exs deps
-{:basic_auth, ">= 0.0.1"}
+{:basic_auth, ~> "1.0.0"}
 ```
 
 ```elixir
@@ -72,10 +72,10 @@ Now the problem at hand is, we want to make the `GET` request to `/`, but we nee
 easy task actually. We simply add in an additional line for setting our request header:
 
 ```elixir
-put_req_header("authorization", "Basic " <> Base.encode64("admin:secret"))
+put_req_header(conn, "authorization", "Basic " <> Base.encode64("admin:secret"))
 ```
 
-Dropping that into our previous test case, we get something that looks like:
+Dropping that into our previous test case (removing the first argument as it is piped), we get something that looks like:
 
 ```elixir
 test "GET /" do
