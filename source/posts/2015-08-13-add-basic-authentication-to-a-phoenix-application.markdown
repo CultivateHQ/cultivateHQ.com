@@ -5,7 +5,7 @@ description: Short tutorial on how to add basic authentication to a phoenix web 
 ---
 
 If you are coming from a Rails background, you'll be used to having a convenience
-method `http_basic_authenticate_with` which you can simply throw into your controller
+method `http_basic_authenticate_with`. Which you simply throw into your controller
 and just like magic, have a password protected portion of your web app.
 
 Phoenix by default, doesn't include any authentication. So to add HTTP basic auth
@@ -17,13 +17,16 @@ Rails-like basic authentication at controller or router level using a snippet li
 
 ```elixir
 # add the package to your mix.exs deps
-{:basic_auth, ~> "1.0.0"}
+{:basic_auth, "~> 1.0.0"}
 ```
 
 ```elixir
 # drop this in a controller or router pipeline
 plug BasicAuth, realm: "Admin Area", username: "admin", password: "secret"
 ```
+
+If you're interested in how this works under the covers, here's the
+[implementation](https://github.com/CultivateHQ/basic_auth/blob/master/lib/basic_auth.ex).
 
 ## How do you test basic auth in Phoenix?
 Adding in basic auth is fairly straightforward when we use plugs, but if you have tests for
