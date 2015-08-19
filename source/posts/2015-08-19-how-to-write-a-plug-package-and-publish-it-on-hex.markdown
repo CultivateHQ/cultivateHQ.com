@@ -4,7 +4,7 @@ author: Mark Connell
 description: This is a walkthrough on the process of creating a new plug package and getting it published on Hex.
 ---
 
-Earlier this week, I went through the process of creating a Plug for the first time.
+Last week, I went through the process of creating a Plug for the first time.
 This is a walkthrough documenting that process.
 
 ## Create a new Elixir project
