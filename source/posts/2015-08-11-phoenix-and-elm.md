@@ -139,9 +139,76 @@ OK, so we now have a very simple data API up and running. Let's create a client 
 
 Please note that we'll be glossing over quite a lot in order to keep this section short. If you'd like more information on Elm then I fully recommend starting with the [Pragmatic Studios Elm course](https://pragmaticstudio.com/courses/elm) and then moving on to the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial).
 
-We're going to follow the patterns set out in the Elm Architecture Tutorial to build our Elm application.
+We're going to follow the patterns set out in the Elm Architecture Tutorial to build our Elm application. If you don't already have Elm installed, you can do so from the [Elm installation page](http://elm-lang.org/install).
+
+1. First we'll need to create our base Elm application. Navigate to the directory where you want to create this and do the following:
+
+  ```bash
+  md conman_ui
+
+  cd conman_ui
+
+  elm package install --yes
+  ```
+
+2. That will create a folder for our application, install the Elm core packages (into the elm-stuff folder) and create an application manifest file (elm-package.json). Now, from the root of our new project, create a Main.elm file and open it in our editor of choice. Add the following to that file.
+
+  ```elm
+  module Main where
+
+  import Html
 
 
+  main =
+    Html.text "ConMan is alive!"
+  ```
+
+3. The code above creates a module called Main, imports the Html package and then uses it to output the text "ConMan is alive!". The `main` function is required as the starting point for an Elm application.
+4. In order to use this though, we need to compile it to JavaScript. We can do this from the terminal as follows.
+
+  ```bash
+  elm make --output conman.js Main.elm
+  ```
+
+5. This will compile the Elm code into a JavaScript file called conman.js in the directory in which the command was run.
+6. Now we can create an HTML file that will allow us to use the JavaScript file in the browser. Create a file on the root of the project called `index.html` and add the following code to it.
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>ConMan - Contact Manager</title>
+
+      <script src="conman.js"></script>
+    </head>
+    <body>
+      <script>
+        var app = Elm.fullscreen(Elm.Main);
+      </script>
+    </body>
+  </html>
+  ```
+
+7. Note that we have a `<script>` tag in the `<head>` that gets our `conman.js` file, and another in the `<body>` that runs a function `Elm.fullscreen` passing in our starting point (`Elm.Main`) and storing that in a variable called `app`. `Elm.fullscreen` will run our Elm application fullscreen rather than embedded within a particular DOM element within the page.
+8. Now open the index.html file in a browser and you should see it output "ConMan is alive!"
+
+<TODO: insert image https://www.dropbox.com/s/g24zuspsfzphjqb/Screenshot%202015-08-26%2012.50.54.png?dl=0 >
+
+9. Let's make a slight tweak to our Main.elm file so that we can see the workflow for doing so. Open Main.elm in your editor and change the `main` function to the following.
+
+  ```elm
+  main =
+    view
+
+
+  -- VIEW
+
+  view =
+    Html.text "ConMan is alive!"
+  ```
+
+10. Rather than display the text directly in the `main` function, we can create a `view` function to handle that and then call it from the `main` function. `main` and `view` are the idiomatic names for these functions, although you can name the `view` function anything you like.
+11. Now we can recompile our conman.js file and see that nothing has changed!
 
 
 
