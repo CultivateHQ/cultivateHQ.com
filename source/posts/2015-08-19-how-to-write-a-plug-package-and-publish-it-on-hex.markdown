@@ -29,7 +29,7 @@ mix test
 
 Now that we have our project, we need to create the skeleton for our Plug.
 
-### Sort out depenedencies
+### Sort out dependencies
 
 First, we need to setup our expected dependencies: Plug and Cowboy. Updating
 the application and deps functions, you should end up with a `mix.exs` file
