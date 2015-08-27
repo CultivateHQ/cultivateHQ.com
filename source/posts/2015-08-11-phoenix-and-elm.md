@@ -532,14 +532,72 @@ We're going to follow the patterns set out in the Elm Architecture Tutorial to b
 
 ## Combining Phoenix and Elm
 
+One way or another we now have a Phoenix data API and an Elm client that reads data from that API. Now let's look at ways that we can combine them together.
 
-### Running the two apps independently
+If you've not been following along you can get to the current state of play by doing as follows:
+
+```bash
+git clone git@github.com:cultivate/conman_ui.git
+
+git clone git@github.com:cultivate/conman_data.git
+cd conman_data
+iex -S min phoenix.server
+```
 
 
-### Using the Elm generated JavaScript within the Phoenix app
+### 1. Running the two apps independently
+
+The first way is to work with them as separate apps entirely. This is essentially what we have just now. If you open `conman_ui/index.html` in your browser you will see the following:
+
+<TODO insert image https://www.dropbox.com/s/e7itharktos9ddz/Screenshot%202015-08-27%2008.23.41.png?dl=0 >
+
+This is because the Elm application is not on the same origin as the Phoenix server. We can get around this by adding [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) handling to our Phoenix application.
+
+1. We can use [mschae/cors_plug](https://github.com/mschae/cors_plug) to do this.
+2. Add the following to the Phoenix `mix.exs` file
+
+  ```elixir
+  def deps do
+    # ...
+    {:cors_plug, "~> 0.1.3"},
+    #...
+  end
+  ```
+
+3. Run `mix deps.get` to pull the code and then add the following to the `lib/conman_data/end_point.ex` file just above the call to `plug ConmanData.Router`
+
+  ```elixir
+  plug CORSPlug
+
+  plug ConmanData.Router
+  ```
+
+4. We'll not worry about adding any specific configuration at this point.
+5. If you restart your server `iex -S mix phoenix.server` then you should now see the contact being pulled through correctly.
+
+<TODO insert image https://www.dropbox.com/s/l4bhmpyvlnmcag6/Screenshot%202015-08-27%2012.33.04.png?dl=0 >
+
+This previous approach works well and gives you a great separation of concerns. However if the two are really two parts of the one application, and neither have much function without the other, you could argue that having them as two separate projects in separate version controlled projects is not ideal. To be clear, _I'm not saying this_ I haven't yet made up my mind how best to run these two technologies together. However, let's look at two ways in which our Elm application can live inside our Phoenix application.
 
 
-### Embedding the Elm app inside the Phoenix app
+### 2. Using the Elm generated JavaScript within the Phoenix app
+
+The first way in which we can combine the two is also the simplest. we just vendor the JavaScript file that is built by Elm. You can either compile directly to your Phoenix project's `web/static/vendor` folder, or compile and then manually copy the resulting JavaScript file over. In order to use this file on the site we'll need to make a slight tweak to the Phoenix application.
+
+1. Change the `web/templates/layout/app.html.eex` as follows.
+
+  ```elixir
+
+  ```
+
+2. Now copy the `conman.js` file over from the Elm app to `web/static/vendor` (if you haven't already) and point your browser at [http://localhost:4000](http://localhost:4000) and you should see the contact appearing as before.
+
+<TODO insert image https://www.dropbox.com/s/p0daix3th3muvc5/Screenshot%202015-08-27%2014.38.38.png?dl=0 >
+
+3. We can safely take the CORS Plug back out now if we want to.
+
+
+### 3. Embedding the Elm app inside the Phoenix app
 
 
 
