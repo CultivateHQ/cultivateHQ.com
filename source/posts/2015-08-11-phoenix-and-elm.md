@@ -333,7 +333,7 @@ We're going to follow the patterns set out in the Elm Architecture Tutorial to b
     ]
   ```
 
-22. We've taken all but the `main` method over and added a new `init` function that will allow us to easily generate a new contact Model. Now change your Main.elm file to look like this.
+22. We've taken all but the `main` function over and added a new `init` function that will allow us to easily generate a new contact Model. Now change your Main.elm file to look like this.
 
   ```elm
   module Main where
@@ -345,7 +345,7 @@ We're going to follow the patterns set out in the Elm Architecture Tutorial to b
     view (init "Bobby Tables" "bobby@example.com" "01 234 5678")
   ```
 
-23. Now we just need to import our Contact module and expose the `init` and `view` functions. Then we call the `view` function as before from our main method, but change the input to the view to use our exposed `init` function.
+23. Now we just need to import our Contact module and expose the `init` and `view` functions. Then we call the `view` function as before from our main function, but change the input to the view to use our exposed `init` function.
 24. This is where we need to start introducing more advanced topics. We want to be able to handle HTTP requests and JSON decoding in order to get our contact data from the data API. In order to do that we need introduce concepts such as Signals, Tasks and Effects. Rather than do that (badly) here, I recommend that you follow through the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial), items 5 onwards in particular. We can side-step this a little in our application by utilising a package called StartApp. This will deal with all of the wiring under the cover and give us a simpler interface to work with.
 25. We can start by introducing StartApp to our Main.elm file. We'll use the pattern suggested in the [StartApp documentation](http://package.elm-lang.org/packages/evancz/start-app/2.0.0/StartApp).
 
@@ -445,6 +445,89 @@ We're going to follow the patterns set out in the Elm Architecture Tutorial to b
 35. Phew! OK, so we now have our application wired up with StartApp. Let's run `elm make --output conman.js Main.elm` again and check that everything still works in our browser.
 36. If you're worried that you're seeing the same output in the browser, feel free to change the Contact name, email or phone and recompile to check that everything still works.
 37. The final piece of the puzzle is to introduce our HTTP call and the converting of the returned JSON into a Model to be displayed.
+38. Let's start by changing our Contact.elm file as follows.
+
+  ```elm
+  ...
+
+  import Effects
+  import Task
+
+  import Http
+  import Json.Decode as Json exposing ((:=))
+
+  ...
+
+
+  init =
+    ( Model "" "" ""
+    , fetchContact
+    )
+
+
+  -- UPDATE
+
+  type Action
+    = NoOp
+    | Refresh (Maybe Model)
+
+  update action model =
+    case action of
+      NoOp -> (model, Effects.none)
+
+      Refresh contact ->
+        ( Maybe.withDefault model contact
+        , Effects.none
+        )
+
+  ...
+
+
+  -- EFFECTS
+
+  fetchContact =
+    Http.get decodeContact "http://localhost:4000/api/contacts/1"
+      |> Task.toMaybe
+      |> Task.map Refresh
+      |> Effects.task
+
+
+  decodeContact =
+    let contact =
+          Json.object3 (\name email phone -> (Model name email phone))
+            ("name" := Json.string)
+            ("email" := Json.string)
+            ("phone" := Json.string)
+    in
+        Json.at ["data"] contact
+  ```
+
+39. There's a lot going on here so let's start with the `init` function where we swap out our `Effects.none` for a new function called `fetchContact`. We'll get to that function later, but for now know that it returns an Effect.
+40. We also added a new update Action `Refresh`. This takes a given model wrapped in a [Maybe](http://package.elm-lang.org/packages/elm-lang/core/2.1.0/Maybe) as an argument. All you need to know about the Maybe is that it lets us handle HTTP errors. The body of the function then looks at what it was given. If it was anything other than a valid new state for our model it just returns the current model. Otherwise it updates the current model to the model passed in.
+41. At the bottom we added a new `--EFFECTS` section. The first function we added creates the HTTP request to the given URL and sets up a chain so that, when the call is made, it wraps the response in a Maybe (which let's us handle errors in the `update` function), states that the resulting Maybe should be piped to the `Refresh` update function and then stores this pipeline as an Effect.Action so that it can be queued to be run through the application. You can read more about this type of process on the [Elm Reactivity page](http://elm-lang.org/guide/reactivity).
+42. You'll see that the first argument to the `Http.get` function is our second Effects function `decodeContact`. This function tells Elm how to parse the returned response. It takes the JSON response and spits out a Contact model. It is this model that is given to the `Refresh` action and is the data required to represent the returned contact.
+43. Please note that the URL used her assumes that you have your data API running on `http://localhost:4000` and that you have a contact with an ID of 1. Make any necessary adjustments if this is not the case.
+44. Now we need to update our Main.elm file so that it no longer passes in the hardwired contact details. You could actually leave this as is, but you will see the hardwired contact data flash up first before the HTTP request is made, parsed and the application state updated.
+
+  ```elm
+  app =
+    StartApp.start
+    { init = init
+    , update = update
+    , view = view
+    , inputs = []
+    }
+  ```
+
+45. We'll need to install the HTTP package for our code to work.
+
+  ```bash
+  elm package install evancz/elm-http --yes
+  ```
+
+46. And now we should have everything in place on the ELM side to get the client up and running. To check this out let's fire up our Phoenix data API and then recompile the Main.elm file and refresh the browser. Uh oh, something is wrong, we're not seeing a contact. Checking the browser's console will reveal the cause. We've got a [Cross Origin Resource Sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) issue. We'll deal with that in the next section.
+
+<TODO: insert image https://www.dropbox.com/s/e7itharktos9ddz/Screenshot%202015-08-27%2008.23.41.png?dl=0 >
 
 
 ## Combining Phoenix and Elm
