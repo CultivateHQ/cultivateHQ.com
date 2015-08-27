@@ -586,19 +586,109 @@ The first way in which we can combine the two is also the simplest. we just vend
 
 1. Change the `web/templates/layout/app.html.eex` as follows.
 
-  ```elixir
-
+  ```html.eex
+  <body>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+      var app = Elm.fullscreen(Elm.Main);
+    </script>
+  </body>
   ```
 
-2. Now copy the `conman.js` file over from the Elm app to `web/static/vendor` (if you haven't already) and point your browser at [http://localhost:4000](http://localhost:4000) and you should see the contact appearing as before.
+2. Now copy the `conman.js` file over from the Elm app to `web/static/vendor` (if you haven't already) and point your browser at [http://localhost:4000](http://localhost:4000) and you should see the contact appearing as before (albeit with some Phoenix default styling added in).
 
-<TODO insert image https://www.dropbox.com/s/p0daix3th3muvc5/Screenshot%202015-08-27%2014.38.38.png?dl=0 >
+  <TODO insert image https://www.dropbox.com/s/p0daix3th3muvc5/Screenshot%202015-08-27%2014.38.38.png?dl=0 >
 
 3. We can safely take the CORS Plug back out now if we want to.
+
+This method could be seen to give us the best of both worlds. We still have a clear line of separation between the two apps, but the result of building the Elm application is embedded in the Phoenix application so the project will work for anyone getting our application from version control without them having to necessarily also get the Elm application code.
+
+On the other hand it could be see to be the worst of both worlds, we still have to keep to version controlled projects and anyone working with the front end is going to have to know that the JavaScript must be compiled from the Elm application. The third way allows us to embed the whole Elm application inside our Phoenix application and even hook it into the Phoenix Brunch pipeline so that everything just works.
 
 
 ### 3. Embedding the Elm app inside the Phoenix app
 
+In order to add Elm to the existing Brunch pipeline that Phoenix has, we can use the [Elm Brunch Plugin](https://github.com/madsflensted/elm-brunch). Let's set that up first.
+
+> CAVEAT: you might it better to stop the Phoenix server at this point. If Elm Brunch is not setup properly you can find yourself with an `elm-stuff` folder and `elm-config.json` in the root of your Phoenix project. If that does happen though, simply deleting them and checking the Elm Brunch config should get things back on track.
+
+1. All that Brunch needs in order to know to run a plugin is to add it to our `package.json` as a dependency. Add it before the `javascript-brunch` line as these will get called in order by Brunch.
+
+  ```json
+  {
+    "repository": {
+    },
+    "dependencies": {
+      ...
+      "elm-brunch": "^0.3.0",
+      "javascript-brunch": ">= 1.0 < 1.8",
+      ...
+    }
+  }
+  ```
+
+2. Now run `npm install` in the root of your Phoenix project to install the plugin.
+3. We can now configure the plugin to work with our app inside the `brunch-config.js`. Change the plugins section so that it looks similar to the following.
+
+  ```json
+  // Configure your plugins
+  plugins: {
+    elmBrunch: {
+      elmFolder: 'web/elm',
+      mainModules: ['Main.elm'],
+      outputFolder: '../static/vendor'
+    },
+
+    ...
+  },
+  ```
+
+4. And then your watched list look like the below.
+
+  ```json
+  // Phoenix paths configuration
+  paths: {
+    // Dependencies and current project directories to watch
+    watched: ["deps/phoenix/web/static",
+              "deps/phoenix_html/web/static",
+              "web/static", "test/static",
+              "web/elm/Main.elm", "web/elm/Contact.elm"],
+
+    // Where to compile files to
+    public: "priv/static"
+  },
+  ```
+
+5. As you can probably tell from the configuration we just added, we're going to copy our Elm project into `web/elm`. Before we do this we want to make sure that Brunch isn't going to pick up any JavaScript that might be in our `web/elm` folder. We do this by adjusting the files section to look like the below.
+
+  ```json
+  files: {
+    javascripts: {
+      joinTo: {
+        'js/app.js': /^(web\/static)/
+      }
+    },
+    ...
+  }
+  ```
+
+6. Finally we can take out the existing `conman.js` in `web/static/vendor`. We don't need to do this, but it's always a good sense check that our build pipeline is setup correctly to see the file actually being built.
+7. Now we can create our `web/elm` folder and copy the `Main.elm`, `Contact.elm` and `elm-package.json` files over from our Elm project folder. We don't need the rest of the files. Anything that we need will be built for us.
+8. Once that's all in place, fire up the Phoenix server `iex -S mix phoenix.server` and head to [http://localhost:4000](http://localhost:4000) to see the result ... which is of course the same!
+9. To check that everything is working, let's change the URL we're calling in the `web/elm/Contact.elm` file so that we get a different contact. If you keep the browser and the editor side-by-side whilst you do this you will be able to see it all happen in real time! Oh the giddy excitement!
+
+  ```elm
+  -- EFFECTS
+
+  fetchContact =
+    Http.get decodeContact "http://localhost:4000/api/contacts/2"
+      |> Task.toMaybe
+  ```
 
 
 ## Conclusions
+
+So, there we have it. Three different ways that you can put an Elm in your Phoenix. I've only just started playing about with these technologies so I've yet to come to any strong conclusions about how they best work together. Hopefully this post has at least given you some food for thought as to how you might get these two playing nicely together.
+
+My next move is to add channels into the mix so that we can get a nice flow through the application. When I know more I'll be sure to post it here. If you've been doing anything in this area [I'd love to hear about it](mailto:alan@cultivatehq.com).
+
