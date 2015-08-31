@@ -3,7 +3,7 @@ title:  Building a data client in Elm
 author: Alan Gardner
 ---
 
-> This is Part 2 of a series of working with Phoenix and Elm. [Part 1](#part_1) talks about setting up a basic Phoenix data API and [Part 3](#part_3) talks about combining Phoenix and Elm.
+> This is Part 2 of a series on working with Phoenix and Elm. [Part 1](#part_1) talks about setting up a basic Phoenix data API and [Part 3](#part_3) talks about combining Phoenix and Elm.
 
 > We are using Elm version `0.15.1`.
 
