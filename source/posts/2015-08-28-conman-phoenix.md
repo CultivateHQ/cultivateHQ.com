@@ -20,7 +20,7 @@ author: Alan Gardner
 
 ### Creating a new project
 
-1. Let's create a new Phoenix application to serve as our data API
+1. Let's create a new Phoenix application to serve as the base for our data API.
 
   ```bash
   mix Phoenix.new conman_data
@@ -36,12 +36,12 @@ author: Alan Gardner
   mix test
 
   # startup a server
-  iex -S mix phoenix.server
+  iex -S mix Phoenix.server
   ```
 
 If all has gone according to plan, you should now be able to see the default landing page if you point your browser to [http://localhost:4000](http://localhost:4000).
 
-<TODO: insert image https://www.dropbox.com/s/hhb8nicdz0nlj15/Screenshot%202015-08-26%2011.34.37.png?dl=0>
+<TODO: insert image https://www.dropbox.com/s/pa57gox6eeirckr/Screenshot%202015-09-01%2008.29.45.png?dl=0 >
 
 
 ### Generating a JSON API
@@ -102,9 +102,9 @@ If all has gone according to plan, you should now be able to see the default lan
   mix test
   ```
 
-If we restart our server (`Cmd+c` twice and then `iex -S mix phoenix.server` again) and visit [http://localhost:4000/api/contacts](http://localhost:4000/api/contacts), we should see an empty dataset.
+If we restart our server (`Cmd+c` twice and then `iex -S mix Phoenix.server` again) and visit [http://localhost:4000/api/contacts](http://localhost:4000/api/contacts), we should see an empty dataset.
 
-<TODO: insert image https://www.dropbox.com/s/bufjbw3f0cliop9/Screenshot%202015-08-26%2011.46.23.png?dl=0>
+<TODO: insert image https://www.dropbox.com/s/xu6k3y9bvspiu9z/Screenshot%202015-09-01%2008.41.34.png?dl=0 >
 
 
 ### Seeding the database
@@ -123,12 +123,12 @@ Let's seed some contact data into the database.
 
 If we visit [http://localhost:4000/api/contacts](http://localhost:4000/api/contacts) again we can see that we now have three contacts.
 
-<TODO: insert image>
+<TODO: insert image https://www.dropbox.com/s/cmibunjrbo5a762/Screenshot%202015-09-01%2008.42.23.png?dl=0 >
 
 
 ### Handling CORS errors
 
-If we try to access this API from applications that are not on the same domain as this data API then we will get a [Cross Origin Resource Sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) error. Let's make a quick change to our application to handle that.
+If we try to access this API from applications that are not on the same domain as this data API then we will get a [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) error. Let's make a quick change to our application to handle that.
 
 We can use Michael Schaefermeyer's [cors_plug](https://github.com/mschae/cors_plug) to do this.
 
@@ -142,7 +142,7 @@ We can use Michael Schaefermeyer's [cors_plug](https://github.com/mschae/cors_pl
   end
   ```
 
-2. Run `mix deps.get` to pull the code and then add the following to the `lib/conman_data/end_point.ex` file just above the call to `plug ConmanData.Router`
+2. Run `mix deps.get` to pull the code and then add the following to the `lib/conman_data/endpoint.ex` file just above the call to `plug ConmanData.Router`
 
   ```elixir
   plug CORSPlug
@@ -150,13 +150,14 @@ We can use Michael Schaefermeyer's [cors_plug](https://github.com/mschae/cors_pl
   plug ConmanData.Router
   ```
 
-We'll not worry about adding any specific configuration at this point, so any domain should now be able to access our API with no CORS issues.
+3. We'll not worry about adding any specific configuration at this point, so any domain should now be able to access our API with no CORS issues.
+4. If we restart our server we should now be able to access the data API from domains other than the one the API is running on.
 
 
 ## Conclusion
 
-Creating a basic data API in Phoenix is super simple thanks to the code generator. Not only does it give us exactly what we need right now but it also shows us how we can idiomatically create our own JSON APIs without using the generator. This is one of the things that I really like about Phoenix.
+Creating a basic data API in Phoenix is super simple thanks to the code generator. Not only does it give us exactly what we need right now, but it also shows us how we can idiomatically create our own JSON APIs when we want to stop using the generator. This is one of the things that I really like about Phoenix.
 
-Another thing that I really like about Phoenix is that it has baked in support for running both a web application (on the "/" scope) and a data API (on the "/api" scope) together, and for running different pipelines of plugs on each scope. This will come in quite handy for joining the Phoenix and Elm applications together.
+Another thing that I really like about Phoenix is that it has baked in support for running both a web application (on the "/" scope) and a data API (on the "/api" scope), and for running different pipelines of plugs on each scope. This will come in quite handy for joining the Phoenix and Elm applications together.
 
-This was Part 1 of a series on Phoenix and Elm. [Part 2](#part_2) up next is a run through of how to create a "simple" Elm client that will consume the data from this API. [Part 3](#part_3) will look at how the two can be combined in a single project and [Part 4](#part_4) will see how we can introduce Phoenix channels to the mix (pun partially intended) for some real-time goodness.
+This was Part 1 of a series on Phoenix and Elm. [Part 2](#part_2) up next is a run through of how to create a basic Elm client that will consume the data from this API. [Part 3](#part_3) will look at how the two can be combined in a single project and [Part 4](#part_4) will see how we can introduce Phoenix channels to the mix (pun partially intended) for some real-time goodness.
