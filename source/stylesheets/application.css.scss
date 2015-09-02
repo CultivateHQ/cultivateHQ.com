@@ -379,3 +379,27 @@ ul.case-studies {
     opacity: 1;
   }
 }
+
+.testimonial {
+  border: 1px solid red;
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #dae7ed;
+  border: 1px solid #cAd7dd;
+
+  img {
+    border: 1px solid #cAd7dd;
+    float: left; 
+    width: 100px;
+    height: 100px;
+    margin: 0 0.5em 0.5em 0;
+  }
+  .quote, .author {
+    margin-bottom: 0;
+    @media screen and (min-width: $break-medium) {
+      margin-left: 120px;
+    }
+  }
+
+  .author { font-style: italic; font-size: 0.8em;}
+}
