@@ -3,28 +3,35 @@ title:  Building a data API in Phoenix
 author: Alan Gardner
 ---
 
-> This is Part 1 of a series on working with Phoenix and Elm. [Part 2](#part_2) talks about setting up a basic Elm client that will consume the data we serve from this API and [Part 3](#part_3) talks about combining Phoenix and Elm.
+> I've recently been playing around, with [Phoenix](http://phoenixframework.org) and [Elm](http://elm-lang.org). I'm really enjoying using both and so I thought I would see how easy it would be to combine the two, with Phoenix serving a data API and Elm consuming it.
+> This is Part 1 in a series of 4 posts. In it we will walk through setting up a basic Phoenix data API. [Part 2](#part_2) walks through setting up a basic Elm client that will consume the data we serve from this API and [Part 3](#part_3) talks about combining the Phoenix and Elm projects together. Finally, in [Part 4](part_4), we will add support for Phoenix channels.
 
-> We are using Phoenix version `0.17.0`, Elixir version `1.0.5` and Erlang/OTP version `17`.
-
-## Building the data API
-
-<TODO preamble>
+**We are using Phoenix version `0.17.0`, Elixir version `1.0.5` and Erlang/OTP version `17`.**
 
 
-### Installation
+## What we're going to build
 
-1. Open a terminal and navigate to where you'd like top create your Phoenix project.
-2. If you don't yet have Phoenix installed, you can follow the instructions on the [Phoenix installation page](http://www.phoenixframework.org/docs/installation).
+We're going to build a really simple Contact Manager tool called ConMan. So simple in fact that ConMan will just fetch a single contact from our Phoenix data API and display it using Elm. Whilst this might seem too simple, it's just enough to see all the moving parts of Phoenix and Elm that we need to for this exercise.
 
 
-### Creating a new project
+## Up and running
 
+If you don't yet have Phoenix installed, you can follow the instructions on the [Phoenix installation page](http://www.phoenixframework.org/docs/installation).
+
+
+## Introduction
+
+The aim of this post is to get you up and running quickly with a very simple data API. We're going to use the Phoenix mix generators to do this. The aim is to have something that we can use to demonstrate serving data to our Elm application that we'll build in [Part 2](#part_2) and therefor is not intended to be an exhaustive guide.
+
+
+## Creating a new project
+
+1. Open a terminal and navigate to where you'd like to create your Phoenix project.
 1. Let's create a new Phoenix application to serve as the base for our data API.
 
   ```bash
-  mix Phoenix.new conman_data
   # when prompted, type y to install dependencies
+  mix Phoenix.new conman_data
 
   # cd into the project folder
   cd conman_data
@@ -39,12 +46,12 @@ author: Alan Gardner
   iex -S mix Phoenix.server
   ```
 
-If all has gone according to plan, you should now be able to see the default landing page if you point your browser to [http://localhost:4000](http://localhost:4000).
+If all has gone according to plan, you should now be able to see the default landing page at [http://localhost:4000](http://localhost:4000).
 
 <TODO: insert image https://www.dropbox.com/s/pa57gox6eeirckr/Screenshot%202015-09-01%2008.29.45.png?dl=0 >
 
 
-### Generating a JSON API
+## Generating a JSON API
 
 1. Let's use the built-in Phoenix JSON resource generator to get our Contact API in place.
 
@@ -52,7 +59,7 @@ If all has gone according to plan, you should now be able to see the default lan
   mix phoenix.gen.json Contact contacts name:string email:string phone:string
   ```
 
-2. Add the required resource into our `web/router.ex` file
+2. Add the required resource into our `web/router.ex` file.
 
   ```elixir
   # web/router.ex
@@ -69,7 +76,7 @@ If all has gone according to plan, you should now be able to see the default lan
   end
   ```
 
-3. And update the Contact View and Controller Test to use all of the Contact fields
+3. And ensure that the Contact View and Controller Test use all of the Contact fields.
 
     ```elixir
     # web/views/contact_view.ex:12
@@ -93,7 +100,7 @@ If all has gone according to plan, you should now be able to see the default lan
     end
     ```
 
-4. Now let's run migrations to get the database up-to-date and run the tests again to ensure that we haven't broken anything (note that we get tests for free by using the generator)
+4. Now let's run migrations to get the database up-to-date and run the tests again to ensure that we haven't broken anything (note that we get tests for free by using the generator).
 
   ```bash
   mix ecto.migrate
@@ -107,11 +114,11 @@ If we restart our server (`Cmd+c` twice and then `iex -S mix Phoenix.server` aga
 <TODO: insert image https://www.dropbox.com/s/xu6k3y9bvspiu9z/Screenshot%202015-09-01%2008.41.34.png?dl=0 >
 
 
-### Seeding the database
+## Seeding the database
 
 Let's seed some contact data into the database.
 
-1. Open `priv/repo/seeds.exs` and add the following:
+1. Open `priv/repo/seeds.exs` and add the following.
 
   ```elixir
   ConmanData.Repo.insert!(%ConmanData.Contact{name: "Bobby Tables", email: "bobby@example.com",    phone: "01 234 5678"})
@@ -126,13 +133,13 @@ If we visit [http://localhost:4000/api/contacts](http://localhost:4000/api/conta
 <TODO: insert image https://www.dropbox.com/s/cmibunjrbo5a762/Screenshot%202015-09-01%2008.42.23.png?dl=0 >
 
 
-### Handling CORS errors
+## Handling CORS errors
 
-If we try to access this API from applications that are not on the same domain as this data API then we will get a [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) error. Let's make a quick change to our application to handle that.
+If we try to access this API from applications that are not on the same domain as this data API, then we will get a [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) error. Let's make a quick change to our application to handle that.
 
 We can use Michael Schaefermeyer's [cors_plug](https://github.com/mschae/cors_plug) to do this.
 
-1. Add the following to the Phoenix `mix.exs` file
+1. Add the following to the Phoenix `mix.exs` file.
 
   ```elixir
   def deps do
@@ -142,7 +149,7 @@ We can use Michael Schaefermeyer's [cors_plug](https://github.com/mschae/cors_pl
   end
   ```
 
-2. Run `mix deps.get` to pull the code and then add the following to the `lib/conman_data/endpoint.ex` file just above the call to `plug ConmanData.Router`
+2. Run `mix deps.get` to pull the code and then add the following to the `lib/conman_data/endpoint.ex` file just above the call to `plug ConmanData.Router`.
 
   ```elixir
   plug CORSPlug
@@ -150,14 +157,13 @@ We can use Michael Schaefermeyer's [cors_plug](https://github.com/mschae/cors_pl
   plug ConmanData.Router
   ```
 
-3. We'll not worry about adding any specific configuration at this point, so any domain should now be able to access our API with no CORS issues.
-4. If we restart our server we should now be able to access the data API from domains other than the one the API is running on.
+We'll not worry about adding any specific configuration at this point, so any domain should now be able to access our API with no CORS issues. If we restart our server we should now be able to access the data API from domains other than the one the API is running on.
 
 
 ## Conclusion
 
-Creating a basic data API in Phoenix is super simple thanks to the code generator. Not only does it give us exactly what we need right now, but it also shows us how we can idiomatically create our own JSON APIs when we want to stop using the generator. This is one of the things that I really like about Phoenix.
+Creating a basic data API in Phoenix is super simple thanks to the code generator. Not only does it give us exactly what we need right now, but it also shows us how we can idiomatically create our own JSON APIs in future when we want to stop using the generator. This is one of the things that I really like about Phoenix.
 
 Another thing that I really like about Phoenix is that it has baked in support for running both a web application (on the "/" scope) and a data API (on the "/api" scope), and for running different pipelines of plugs on each scope. This will come in quite handy for joining the Phoenix and Elm applications together.
 
-This was Part 1 of a series on Phoenix and Elm. [Part 2](#part_2) up next is a run through of how to create a basic Elm client that will consume the data from this API. [Part 3](#part_3) will look at how the two can be combined in a single project and [Part 4](#part_4) will see how we can introduce Phoenix channels to the mix (pun partially intended) for some real-time goodness.
+That's all we need to do for Part 1. [Part 2](#part_2) will walk us through the creation of a basic Elm client that will consume the data from this API.
