@@ -11,7 +11,7 @@ author: Alan Gardner
 
 ## TL;DR
 
-If you'd rather just see the code, it's all available on [GitHub](http://github.com/CultivateHQ/conman_ui). You can look at the commit history to see the steps involved.
+If you'd rather just see the code, it's available on [GitHub](http://github.com/CultivateHQ/conman_ui). You can look at the commit history to see the steps involved.
 
 Jump [straight to part 2](#part_2) to carry on with the tutorial.
 
