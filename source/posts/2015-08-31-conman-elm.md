@@ -9,9 +9,11 @@ author: Alan Gardner
 **We are using Elm version `0.15.1`.**
 
 
-## What we're going to build
+## TL;DR
 
-We're going to build a really simple Contact Manager tool called ConMan. So simple in fact that ConMan will just fetch a single contact from our Phoenix data API and display it using Elm. Whilst this might seem too simple, it's just enough to see all the moving parts of Phoenix and Elm that we need to for this exercise.
+If you'd rather just see the code, it's available on [GitHub](http://github.com/CultivateHQ/conman_ui). You can look at the commit history to see the steps involved.
+
+Jump [straight to part 3](#part_3) to carry on with the tutorial.
 
 
 ## Up and running
