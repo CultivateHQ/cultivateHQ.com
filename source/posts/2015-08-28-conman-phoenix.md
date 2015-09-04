@@ -4,9 +4,13 @@ author: Alan Gardner
 ---
 
 > I've recently been playing around with [Phoenix](http://phoenixframework.org) and [Elm](http://elm-lang.org). I'm really enjoying using both and so I thought I would see how easy it is to combine the two, with Phoenix serving a data API and Elm consuming it.
-> This is Part 1 in a series of 4 posts. In it we will walk through setting up a basic Phoenix data API. [Part 2](#part_2) walks through setting up a basic Elm client that will consume the data we serve from this API and [Part 3](#part_3) talks about combining the Phoenix and Elm projects together. Finally, in [Part 4](part_4), we will add support for Phoenix channels.
 
-**We are using Phoenix version `0.17.0`, Elixir version `1.0.5` and Erlang/OTP version `17`.**
+## Road map
+
+* In this post we will walk through setting up a basic Phoenix data API.
+* In the [second post](#part_2) we will get an Elm app talking to the API.
+* In the [third post](#part_3) we will look at ways we can combine the Phoenix and Elm projects together.
+* In the [fourth post](#part_4) we will add support for Phoenix channels.
 
 
 ## TL;DR
@@ -19,6 +23,8 @@ Jump [straight to part 2](#part_2) to carry on with the tutorial.
 ## Up and running
 
 If you don't yet have Phoenix installed, you can follow the instructions on the [Phoenix installation page](http://www.phoenixframework.org/docs/installation).
+
+**We are using Phoenix version `1.0.1`, Elixir version `1.0.5` and Erlang/OTP version `18`.**
 
 
 ## Introduction
