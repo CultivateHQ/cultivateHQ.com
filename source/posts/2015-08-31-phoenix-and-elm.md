@@ -4,12 +4,13 @@ author: Alan Gardner
 ---
 
 > I've recently been playing around, with [Phoenix](http://phoenixframework.org) and [Elm](http://elm-lang.org). I'm really enjoying using both and so I thought I would see how easy it would be to combine the two, with Phoenix serving a data API and Elm consuming it.
-> This is Part 3 in a series of 4 posts. In [Part 1](#part_1) we walked through setting up a basic Phoenix data API. In [Part 2](#part_2) we walked through setting up a basic Elm client that consumed the data from that API. In Part 3 we will walk through combining the Phoenix and Elm projects together. Finally, in [Part 4](part_4), we will add support for Phoenix channels.
 
+## Road map
 
-## What we built
-
-We built a really simple Contact Manager tool called ConMan. So simple in fact that ConMan just fetches a single contact from our Phoenix data API and displays it using Elm. Whilst this might seem too simple, it's enough to see all the moving parts of Phoenix and Elm that we need to for this exercise.
+* In the [first post](#part_1) we walked through setting up a basic Phoenix data API.
+* In the [second post](#part_2) we got an Elm app talking to the API.
+* In this post we will look at ways we can combine the Phoenix and Elm projects together.
+* In the [fourth post](#part_4) we will add support for Phoenix channels.
 
 
 ## Up and running
