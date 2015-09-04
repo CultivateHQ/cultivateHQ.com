@@ -3,10 +3,14 @@ title:  Building a data client in Elm
 author: Alan Gardner
 ---
 
-> I've recently been playing around, with [Phoenix](http://phoenixframework.org) and [Elm](http://elm-lang.org). I'm really enjoying using both and so I thought I would see how easy it would be to combine the two, with Phoenix serving a data API and Elm consuming it.
-> This is Part 2 in a series of 4 posts. In it we will walk through setting up a basic Elm client that will consume the data we serve from the API we built in [Part 1](#part_1). [Part 3](#part_3) talks about combining the Phoenix and Elm projects together, and [Part 4](part_4) walks through adding support for Phoenix channels.
+> I've recently been playing around with [Phoenix](http://phoenixframework.org) and [Elm](http://elm-lang.org). I'm really enjoying using both and so I thought I would see how easy it is to combine the two, with Phoenix serving a data API and Elm consuming it.
 
-**We are using Elm version `0.15.1`.**
+## Road map
+
+* In the [first post](#part_1) we walked through setting up a basic Phoenix data API.
+* In this post we will get an Elm app talking to the API.
+* In the [third post](#part_3) we will look at ways we can combine the Phoenix and Elm projects together.
+* In the [fourth post](#part_4) we will add support for Phoenix channels.
 
 
 ## TL;DR
@@ -23,6 +27,8 @@ If you have been [following along](#part_1), you should now have a basic Phoenix
 If you haven't been following along you can clone the [data API project](http://github.com/CultivateHQ/conman_data) instead, and then follow the instructions in the [README](http://github.com/CultivateHQ/conman_data/README.md) to start the server.
 
 If you haven't got Elm installed, you can can do so from the [Elm install page](http://elm-lang.org/install).
+
+**We are using Elm version `0.15.1`.**
 
 
 ## Introduction
