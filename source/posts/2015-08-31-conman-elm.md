@@ -3,17 +3,29 @@ title:  Building a data client in Elm
 author: Alan Gardner
 ---
 
-> This is Part 2 of a series on working with Phoenix and Elm. [Part 1](#part_1) talks about setting up a basic Phoenix data API and [Part 3](#part_3) talks about combining Phoenix and Elm.
+> I've recently been playing around, with [Phoenix](http://phoenixframework.org) and [Elm](http://elm-lang.org). I'm really enjoying using both and so I thought I would see how easy it would be to combine the two, with Phoenix serving a data API and Elm consuming it.
+> This is Part 2 in a series of 4 posts. In it we will walk through setting up a basic Elm client that will consume the data we serve from the API we built in [Part 1](#part_1). [Part 3](#part_3) talks about combining the Phoenix and Elm projects together, and [Part 4](part_4) walks through adding support for Phoenix channels.
 
-> We are using Elm version `0.15.1`.
+**We are using Elm version `0.15.1`.**
 
-If you have been [following along](#part_1), you should now have a basic Phoenix data API that can serve us contact data.
 
-If you haven't been following along you can [clone the code](http://github.com/CultivateHQ/conman_data) instead. Follow the instructions in the [README](http://github.com/CultivateHQ/conman_data/README.md) to start the server.
+## What we're going to build
 
-OK, so we now have a very simple data API up and running. Let's create a client in Elm that uses the data API we just built. Please note that we'll be glossing over quite a lot in order to keep this section focussed. If you'd like more information on Elm then I fully recommend starting with the [Pragmatic Studios Elm course](https://pragmaticstudio.com/courses/elm) and then moving on to the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial).
+We're going to build a really simple Contact Manager tool called ConMan. So simple in fact that ConMan will just fetch a single contact from our Phoenix data API and display it using Elm. Whilst this might seem too simple, it's just enough to see all the moving parts of Phoenix and Elm that we need to for this exercise.
 
-We're going to follow the patterns set out in the Elm Architecture Tutorial to build our Elm application. If you don't already have Elm installed, you can do so from the [Elm installation page](http://elm-lang.org/install).
+
+## Up and running
+
+If you have been [following along](#part_1), you should now have a basic Phoenix data API that can serve contact data.
+
+If you haven't been following along you can clone the [data API project](http://github.com/CultivateHQ/conman_data) instead, and then follow the instructions in the [README](http://github.com/CultivateHQ/conman_data/README.md) to start the server.
+
+If you haven't got Elm installed, you can can do so from the [Elm install page](http://elm-lang.org/install).
+
+
+## Introduction
+
+We now have a very simple data API up and running, so let's create a client in Elm that uses that API. Please note that we'll be glossing over quite a lot in order to keep this section focussed. If you'd like more information on Elm then I fully recommend starting with the [Pragmatic Studios Elm course](https://pragmaticstudio.com/courses/elm) and then moving on to the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial). We're going to follow the patterns set out in the Elm Architecture Tutorial to build our Elm application.
 
 
 ## 1. Getting something working
@@ -614,10 +626,10 @@ Now that we have a way of fetching a contact, let's do that when we first initia
 
 ## Conclusion
 
-Well that was quite a journey! We've from something fairly straightforward to something quite complex and I appreciate there's been quite a bit of hand waving going on. If you'd like to know more about Elm then I fully recommend starting with the [Pragmatic Studios course](). It gives a great intro to the language and goes more in-depth to various things that I've hand-waved at or glossed over entirely.
+Well that was quite a journey! We've gone from something fairly straightforward to something quite complex and I appreciate there's been quite a bit of hand-waving going on. If you'd like to know more about Elm then I fully recommend starting with the [Pragmatic Studios course](https://pragmaticstudio.com/courses/elm). It gives a great intro to the language and goes into more depth on various things that I've hand-waved at or glossed over entirely.
 
-Following on from that the [Elm Architecture Tutorial]() takes you step by step through Elm's architecture and how to scale from a basic model like we have here to more complex domains. It also covers StartApp, Effects, Http and the like in a much more detail.
+Following on from that the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial) takes you step-by-step through Elm's architecture and how to scale from a basic model, like we have here, to more complex domains. It also covers StartApp, Effects, Http and the like in much more detail.
 
 I'm really enjoying Elm. I like how it structures applications and gives you a nice, clear separation between the data, the states that data can go through and the presentation of that data.
 
-Next up: in [Part 3](#part_3) I'll be demonstrating different ways that our Elm client and our [Phoenix data API](#part_1) can co-exist. Also look out for [Part 4](#part_4) where we'll look at how we can link up Elm to Phoenix channels for some real-time goodness.
+Next up, in [Part 3](#part_3), we'll look at different ways that our Elm client and our [Phoenix data API](#part_1) can co-exist.
