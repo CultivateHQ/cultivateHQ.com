@@ -82,7 +82,7 @@ If all has gone according to plan, you should now be able to see the default lan
     scope "/api", ConmanData do
       pipe_through :api
 
-      resources "/contacts", ContactController
+      resources "/contacts", ContactController, except: [:new, :edit]
     end
   end
   ```
