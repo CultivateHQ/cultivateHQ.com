@@ -66,12 +66,12 @@ If all has gone according to plan, you should now be able to see the default lan
 
   ```elixir
   # web/router.ex
-  defmodule Conman.Router do
-    use Conman.Web, :router
+  defmodule ConmanData.Router do
+    use ConmanData.Web, :router
 
     ...
 
-    scope "/api", Conman do
+    scope "/api", ConmanData do
       pipe_through :api
 
       resources "/contacts", ContactController
