@@ -33,7 +33,7 @@ The aim of this post is to get you up and running quickly with a very simple dat
 
   ```bash
   # when prompted, type y to install dependencies
-  mix Phoenix.new conman_data
+  mix phoenix.new conman_data
 
   # cd into the project folder
   cd conman_data
@@ -45,7 +45,7 @@ The aim of this post is to get you up and running quickly with a very simple dat
   mix test
 
   # startup a server
-  iex -S mix Phoenix.server
+  iex -S mix phoenix.server
   ```
 
 If all has gone according to plan, you should now be able to see the default landing page at [http://localhost:4000](http://localhost:4000).
@@ -113,7 +113,7 @@ If all has gone according to plan, you should now be able to see the default lan
   mix test
   ```
 
-If we restart our server (`Cmd+c` twice and then `iex -S mix Phoenix.server` again) and visit [http://localhost:4000/api/contacts](http://localhost:4000/api/contacts), we should see something like this:
+If we restart our server (`Cmd+c` twice and then `iex -S mix phoenix.server` again) and visit [http://localhost:4000/api/contacts](http://localhost:4000/api/contacts), we should see something like this:
 
 <TODO: insert image https://www.dropbox.com/s/xu6k3y9bvspiu9z/Screenshot%202015-09-01%2008.41.34.png?dl=0 >
 
