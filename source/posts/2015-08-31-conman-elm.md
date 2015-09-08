@@ -128,7 +128,7 @@ We'll start off with the View as that is the simplest to demonstrate. A View is 
 
 ## 3. Exposing functions
 
-Back to the task at hand. We're going to be using quite a few functions from both the Html module. Rather than do what we've been doing so far and explicitly using the Html namespace (i.e. `Html.text`), we'll change the way that we import that module to expose the `text` function instead.
+Back to the task at hand. We're going to be using quite a few functions from the Html module. Rather than do what we've been doing so far and explicitly use the Html namespace (i.e. `Html.text`), we'll change the way that we import that module to expose the `text` function instead.
 
 1. Change your ConMan.elm file to the following:
 
@@ -139,7 +139,7 @@ Back to the task at hand. We're going to be using quite a few functions from bot
 
 
   main =
-  view
+    view
 
 
   -- VIEW
@@ -149,14 +149,14 @@ Back to the task at hand. We're going to be using quite a few functions from bot
   ```
 
 2. If you run `elm make --output conman.js ConMan.elm` it should compile successfully. Refresh your browser to see that it displays exactly as before.
-3. As it happens we'll need to use a few different functions from the `Html` module, and also some from the `Html.Attributes` module. As such we can use the `exposing (..)` syntax to enable us to expose any function from the `Html` and `Html.Attributes` modules.
+3. As it happens we'll need to use a few different functions from the `Html` module (and also some from the `Html.Attributes` module). As such we can use the `exposing (..)` syntax to enable us to expose any function from the `Html` and `Html.Attributes` modules.
 
   ```elm
   import Html exposing (..)
   import Html.Attributes exposing (..)
   ```
 
-4. Be careful when using this approach though as it can start to become confusing as to where a function you are using has been defined. In the case of the `Html` and `Html.Attributes` modules, it should be fairly self-explanatory, as you will see in the next section.
+4. Be careful when using this approach though. Using `exposing (..)` can make it hard to know where a function you are using has been defined. However, in the case of the `Html` and `Html.Attributes` modules, it should be fairly self-explanatory, as you will see in the next section.
 
 ## 4. Building a Contact View
 
