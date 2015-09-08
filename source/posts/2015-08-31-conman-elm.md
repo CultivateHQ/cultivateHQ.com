@@ -95,7 +95,7 @@ We now have a very simple data API up and running, so let's create a client in E
 
 ## 2. Introducing Views
 
-Elm uses a Model-Update_View architecture. The Model describes the current state of the application, Update contains various actions that can be performed on the Model to transition it from the current state into a new state, and the View defines how the Model is displayed.
+Elm uses a Model-Update-View architecture. The Model describes the current state of the application, Update contains various actions that can be performed on the Model to transition it from the current state into a new state, and the View defines how the Model is displayed.
 
 We'll start off with the View as that is the simplest to demonstrate. A View is just a function that returns HTML.
 
@@ -112,7 +112,7 @@ We'll start off with the View as that is the simplest to demonstrate. A View is 
     Html.text "ConMan is alive!"
   ```
 
-2. Rather than display the text directly in the `main` function, we can create a `view` function to handle that and then call it from the `main` function. `main` and `view` are the idiomatic names for these functions, although you can name the `view` function anything you like (also note that another Elm idiom is to have two line breaks between functions rather than one). the `-- VIEW` line is just a comment and has no special significance.
+2. Rather than display the text directly in the `main` function, we can create a `view` function to handle that and then call it from the `main` function. `main` and `view` are the idiomatic names for these functions, although you can name the `view` function anything you like (also note that another Elm idiom is to have two line breaks between functions rather than one). The `-- VIEW` line is just a comment and has no special significance.
 3. Now we can recompile our conman.js file and see that nothing has changed!
 
   ```bash
@@ -123,7 +123,7 @@ We'll start off with the View as that is the simplest to demonstrate. A View is 
 
 <TODO insert image https://www.dropbox.com/s/v5nk0p6hdu97kzp/Screenshot%202015-08-31%2012.38.26.png?dl=0 >
 
-By this point you may be itching to automate this build process using your build pipeline of choice. Feel free to scratch that itch, but be aware that we will doing so using Brunch in [Part 3](#part_3) to fit in with Phoenix.
+> By this point you may be itching to automate this build process using your build pipeline of choice. Feel free to scratch that itch, but be aware that we will doing so using Brunch in [Part 3](#part_3) to fit in with Phoenix.
 
 
 ## 3. Exposing functions
