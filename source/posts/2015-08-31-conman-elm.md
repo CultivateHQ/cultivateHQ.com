@@ -221,7 +221,7 @@ As mentioned in section "2. Introducing Views", Elm uses a Model-Update-View arc
   ```
 
 2. We defined a `type alias` for the Elm `Model` type. This is essentially just saying to the Elm app, when we talk about the Model from now on we are referring to a record that contains three Strings representing the name, email and phone for a contact.
-3. Now we can change our `view` to take a contact as an argument and then use that contact internally to get the data to output.
+3. Now we can change our `view` to take a contact Model as an argument and then use that contact internally to get the data to output.
 
   ```elm
   ...
@@ -242,7 +242,7 @@ As mentioned in section "2. Introducing Views", Elm uses a Model-Update-View arc
       ]
     ]
   ```
-4. Finally we change our main function to build a Model to build a contact with the name, email and phone we had hardwired previously in the View. Then we pass it as an argument to `view`.
+4. Finally we change our main function to build a contact Model with the name, email and phone we had previously hardwired in the View. Then we pass it as an argument to `view`.
 
   ```elm
   ...
@@ -255,10 +255,10 @@ As mentioned in section "2. Introducing Views", Elm uses a Model-Update-View arc
   ...
   ```
 
-5. Note that parentheses in Elm are used to indicate precedence, not to encapsulate parameters, i.e. `view (Model "Bobby Tables" "bobby@example.com" "01 234 5678")` says run `Model "Bobby Tables" "bobby@example.com" "01 234 5678"` and then pass the result to `view`.
+5. Note that parentheses in Elm are used to indicate precedence, not to encapsulate parameters, i.e. `view (Model "Bobby Tables" "bobby@example.com" "01 234 5678")` means run `Model "Bobby Tables" "bobby@example.com" "01 234 5678"` and then pass the result to `view`.
 6. Recompile the ConMan.elm file to JavaScript and refresh your browser. It should look exactly the same.
 
-<TODO insert image https://www.dropbox.com/s/f2fl1mxomkl2lt2/Screenshot%202015-08-31%2014.03.25.png?dl=0 >
+  <TODO insert image https://www.dropbox.com/s/f2fl1mxomkl2lt2/Screenshot%202015-08-31%2014.03.25.png?dl=0 >
 
 
 ## 6. Extracting the Contact
