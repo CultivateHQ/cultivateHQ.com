@@ -256,9 +256,10 @@ As mentioned in section "2. Introducing Views", Elm uses a Model-Update-View arc
   ```
 
 5. Note that parentheses in Elm are used to indicate precedence, not to encapsulate parameters, i.e. `view (Model "Bobby Tables" "bobby@example.com" "01 234 5678")` means run `Model "Bobby Tables" "bobby@example.com" "01 234 5678"` and then pass the result to `view`.
-6. Recompile the ConMan.elm file to JavaScript and refresh your browser. It should look exactly the same.
 
-  <TODO insert image https://www.dropbox.com/s/f2fl1mxomkl2lt2/Screenshot%202015-08-31%2014.03.25.png?dl=0 >
+Recompile the ConMan.elm file to JavaScript and refresh your browser. It should look exactly the same.
+
+<TODO insert image https://www.dropbox.com/s/f2fl1mxomkl2lt2/Screenshot%202015-08-31%2014.03.25.png?dl=0 >
 
 
 ## 6. Extracting the Contact
@@ -300,10 +301,16 @@ We could continue to work with one file here, but it's going to start getting a 
   ```
 
 2. We've taken all but the `main` function from our ConMan module over to our new Contact module.
-3. Now, in the ConMan.elm file, remove the imports for `Html` and `Html.Attributes` because we don't need them any more. Instead we need an import for our new Contact module, exposing the `Model` type and `view` function.
+3. Now, in the ConMan.elm file, remove the imports for `Html` and `Html.Attributes` because we don't need them any more. Instead we need an import for our new Contact module, exposing the `Model` type and `view` function. Your ConMan.elm file should now look like this.
 
   ```elm
+  module ConMan where
+
   import Contact exposing (view, Model)
+
+
+  main =
+    view (Model "Bobby Tables" "bobby@example.com" "01 234 5678")
   ```
 
 Recompile the ConMan.elm file to JavaScript (it will automatically compile any referenced modules such as our Contact module) and refresh your browser. It should look exactly the same.
