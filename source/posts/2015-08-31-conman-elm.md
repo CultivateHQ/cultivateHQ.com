@@ -160,7 +160,7 @@ Back to the task at hand. We're going to be using quite a few functions from the
 
 ## 4. Building a Contact View
 
-Let's now swap out our "ConMan is in a View!" text for something more useful
+Let's now swap out our "ConMan is in a View!" text for something more useful.
 
 1. Replace the current View code with the following:
 
@@ -192,14 +192,7 @@ Let's now swap out our "ConMan is in a View!" text for something more useful
 
 3. Recompile the Elm file to JavaScript again and refresh your browser. You should see the following.
 
-<TODO insert image https://www.dropbox.com/s/f2fl1mxomkl2lt2/Screenshot%202015-08-31%2014.03.25.png?dl=0 >
-
-Please note that instead of using `exposes(..)` we could have given a list of the functions that we were going to use instead.
-
-```elm
-import Html exposing (div, h2, text, span, a)
-import Html.Attributes exposing (class, href)
-```
+  <TODO insert image https://www.dropbox.com/s/f2fl1mxomkl2lt2/Screenshot%202015-08-31%2014.03.25.png?dl=0 >
 
 
 ## 5. Introducing a Model
