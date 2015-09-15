@@ -381,7 +381,6 @@ ul.case-studies {
 }
 
 .testimonial {
-  border: 1px solid red;
   padding: 1em;
   margin-bottom: 1em;
   background: #dae7ed;
@@ -398,6 +397,26 @@ ul.case-studies {
     margin-bottom: 0;
     @media screen and (min-width: $break-medium) {
       margin-left: 120px;
+    }
+  }
+
+  .author { font-style: italic; font-size: 0.8em;}
+}
+
+.client-quote{
+  padding: 1em 0;
+  margin-bottom: 1em;
+  border-top: 1px solid #DDD;
+
+  img {
+    border: 1px solid #cAd7dd;
+    float: left; 
+    width: 150px;
+    margin: 0 0.5em 0.5em 0;
+  }
+  p {
+    @media screen and (min-width: $break-medium) {
+      margin-left: 160px;
     }
   }
 
