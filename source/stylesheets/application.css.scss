@@ -110,6 +110,8 @@ a {
 #site-content-area {
   @include clearfix;
   padding-top: rhythm(1);
+
+  @media screen and (max-width: $break-menu) { padding-top: 0;}
 }
 
 

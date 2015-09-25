@@ -11,10 +11,9 @@
 
     @media screen and (min-width: $break-menu) { width: auto; };
     li {
-      @media screen and (max-width: $break-small) { width: 25%;}
+      @media screen and (max-width: $break-menu) { text-align: center;}
       a {
         color: black;
-        @media screen and (max-width: $break-menu) { text-align: center;}
       }
     }
   }
@@ -34,13 +33,14 @@
       a {
         display: block;
         width: 100%;
-        padding: 0 1em;
+        padding: 0 0.5em;
+        @media screen and (max-width: $break-small) { font-size: 0.9em; padding: 0 0.3em !important; text-align: center;}
         text-decoration: none;
         -webkit-tap-highlight-color: white;
 
         &:hover, &:focus { text-decoration: underline; }
 
-        @media screen and (max-width: $break-medium) { padding: 0 0.5em;}
+        @media screen and (min-width: $break-small) and (max-width: $break-medium) { padding: 0 0.5em;}
       }
 
       &:last-child { a { padding-right: 0} }
