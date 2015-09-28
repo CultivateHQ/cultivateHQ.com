@@ -8,13 +8,13 @@ To apply email [careers@cultivatehq.com](mailto:careers@cultivatehq.com) and tel
 
 ### The Job
 
-Are you a great developer? Want to join a team who care deeply about the quality of their work and their colleagues?
+Are you a developer who wants to join a friendly team who care deeply about the quality of their work?
 
 We care more about passion and curiosity, less about knowledge of one particular framework. For instance, you don’t need to know Rails but it would be helpful if you had experience in similar frameworks, and are willing to learn.
 
 #### Here are some pointers on the kind of things we look for.
 
-* Developers who care about the quality of their work, and that the applications they build are the right ones for their clients.
+* Developers who want the applications they build to be the right ones for their clients.
 * A strong desire to do test driven development and pair programming.
 * Very good communication skills; our developers work closely with clients and users.
 * You should live in, or want to relocate to, Edinburgh.
