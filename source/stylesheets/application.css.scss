@@ -1,27 +1,15 @@
-//General Breakpoints
-$break-small: 320px;
-$break-medium: 768px;
-$break-large: 900px;
-
-//Specific Breakpoints
-$break-menu: 595px;
-$break-contact-menu: 630px;
-
-
-// Colours
-$cultivate-pink: #e21d87;
-$cultivate-pink-dark: #A40050;
-
+@import 'variables';
 @import 'font-awesome';
 @import 'normalize';
-@import "compass";
-@import "mixins";
-@import "layout";
-@import "typography";
-@import "forms";
-@import "responsive-nav-fixed";
-@import "blog";
-@import "keyplace";
+@import 'compass';
+@import 'mixins';
+@import 'layout';
+@import 'typography';
+@import 'forms';
+@import 'responsive-nav';
+@import 'header';
+@import 'blog';
+@import 'keyplace';
 
 
 a {
@@ -31,48 +19,6 @@ a {
   &:hover { color: $cultivate-pink-dark; }
 }
 
-#site-header {
-  background: white;
-  width: 100%;
-  left: 0;
-  top: 0;
-  height: 90px;
-  z-index: 99;
-
-  #site-header-sticky-wrapper & { background: rgba(255,255,255, 0.9)}
-
-  .contact-info {
-    float: right;
-    font-weight: 300;
-  }
-
-  #logo {
-    margin: 0.25em 0;
-    @include adjust-font-size-to(48px);
-    float: left;
-    font-weight: 300;
-    color: black;
-
-    @media screen and (max-width: $break-medium) { margin-top: 0;}
-
-    .logo-text {float: left;}
-
-    .logo-icon {
-      float: left;
-      width: 34px;
-      height: 34px;
-      margin-top: -0.3em;
-
-      @media screen and (max-width: $break-medium) { width: 21px; height: 21px;}
-
-      img { width: 100%; }
-    }
-
-    @media screen and (max-width: $break-medium) {
-      @include adjust-font-size-to(30px, 2/1);
-    }
-  }
-}
 
 #message {
   background: #e21d87 url("/images/inception.jpg") no-repeat top center;
@@ -423,4 +369,22 @@ ul.case-studies {
   }
 
   .author { font-style: italic; font-size: 0.8em;}
+}
+
+.page-contact-info { 
+  @media screen and (min-width: $break-menu) {
+    font-size: 1.5em;
+  }
+
+  ul { 
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+      margin-bottom: 1em;
+
+      i { float: left; margin-right: 0.5em;}
+      span.adr span {display: block;}
+    }
+  }
 }
