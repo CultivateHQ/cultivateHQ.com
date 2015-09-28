@@ -8,7 +8,7 @@ To apply email [careers@cultivatehq.com](mailto:careers@cultivatehq.com) and tel
 
 ### The Job
 
-Are you a developer who wants to join a friendly team who care deeply about the quality of their work?
+Are you a developer who wants to join a friendly team who care deeply about the quality of their work? If so, then we would love you to [get in touch](mailto:careers@cultivatehq.com).
 
 We care more about passion and curiosity, less about knowledge of one particular framework. For instance, you don’t need to know Rails but it would be helpful if you had experience in similar frameworks, and are willing to learn.
 
