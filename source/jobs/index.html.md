@@ -4,9 +4,9 @@ title: Jobs
 
 ## Software Developer
 
-### The Job
+To apply email [careers@cultivatehq.com](mailto:careers@cultivatehq.com) and tell us a bit about you.
 
-_Indicative salary range:  £30,000 to £47,000 (depends on experience)_
+### The Job
 
 Are you a great developer? Want to join a team who care deeply about the quality of their work and their colleagues?
 
@@ -51,3 +51,7 @@ The final stage is pair programming with our developers at our Edinburgh office.
 ### Equal-opportunities
 
 We are an equal opportunities employer and value diversity at our company. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status, or disability status.
+
+### Salary range
+
+Indicative salary range:  £30,000 to £48,000 (depends on experience).
