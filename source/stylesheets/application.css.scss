@@ -303,7 +303,6 @@ ul.case-studies {
   padding-right: 1em;
   @include rhythm(0, 1, 1, 0, 16px);
 
-  p:last-child { margin-bottom: 0;}
 
   .attribution {
     border-top: 1px solid #DDD;
@@ -328,15 +327,20 @@ ul.case-studies {
   }
 }
 
-.testimonial {
+.testimonial, .callout {
   padding: 1em;
   margin-bottom: 1em;
   background: #dae7ed;
   border: 1px solid #cAd7dd;
 
+  p:last-child { margin-bottom: 0;}
+}
+
+
+.testimonial {
   img {
     border: 1px solid #cAd7dd;
-    float: left; 
+    float: left;
     width: 100px;
     height: 100px;
     margin: 0 0.5em 0.5em 0;
@@ -358,7 +362,7 @@ ul.case-studies {
 
   img {
     border: 1px solid #cAd7dd;
-    float: left; 
+    float: left;
     width: 150px;
     margin: 0 0.5em 0.5em 0;
   }
@@ -371,15 +375,15 @@ ul.case-studies {
   .author { font-style: italic; font-size: 0.8em;}
 }
 
-.page-contact-info { 
+.page-contact-info {
   @media screen and (min-width: $break-menu) {
     font-size: 1.5em;
   }
 
-  ul { 
+  ul {
     list-style: none;
     padding-left: 0;
-    
+
     li {
       margin-bottom: 1em;
 
