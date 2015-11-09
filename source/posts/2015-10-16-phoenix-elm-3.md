@@ -28,7 +28,7 @@ We'll start with the View. We want to create a simple representation of an airpl
 It's not the most accurate rendition, but it's just enough for us to demonstrate everything we need to.
 
 <div class="callout">
-  You can grab the necessary styles from <em>web/static/css/seatsaver.css</em> and the required image from <em>web/static/assets/images/seat.png</em>.
+  You can grab the assets from the <a href="https://github.com/CultivateHQ/seat_saver">SeatSaver repo</a>. The necessary styles are in <em>web/static/css/seatsaver.css</em> and the required image is in <em>web/static/assets/images/seat.png</em>.
 </div>
 
 1. Open *web/elm/SeatSaver.elm*.
@@ -58,4 +58,4 @@ What we actually want to display here is a bunch of seats, but in order to do th
 
 ## Summary
 
-We now have a simple view for our Elm application. In [Part 4](out soon) we'll introduce a Model and expand out View.
+We now have a simple view for our Elm application. In [Part 4](/posts/phoenix-elm-4) we'll introduce a Model and expand out View.
