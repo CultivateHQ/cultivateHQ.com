@@ -155,4 +155,4 @@ view model =
 
 ## Summary
 
-Now that we know more about Type Annotations it will be easier for us to understand the `update` function. We'll look at that in [Part 6](out soon).
+Now that we know more about Type Annotations it will be easier for us to understand the `update` function. We'll look at that in [Part 6](/posts/phoenix-elm-6).
