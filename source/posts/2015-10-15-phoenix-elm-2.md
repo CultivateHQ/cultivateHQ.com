@@ -184,4 +184,4 @@ There are several ways that we can combine Phoenix with Elm:
 
 ## Summary
 
-We now have a basic Phoenix application setup and the beginnings of an Elm application embedded inside it. In [Part 3](out soon) we'll start building our Elm application into something a bit more useful.
+We now have a basic Phoenix application setup and the beginnings of an Elm application embedded inside it. In [Part 3](/posts/phoenix-elm-3) we'll start building our Elm application into something a bit more useful.
