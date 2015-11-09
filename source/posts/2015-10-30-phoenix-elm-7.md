@@ -62,4 +62,4 @@ Let's now take a look at what happens when we click on a seat in our browser.
 
 And there we have it. We'll use signal diagrams throughout this tutorial as they're a good way to understand what is going on in the workings of our application. Signals are one of the concepts that I found quite hard to parse at first, but stick with them (and look at the resources mentioned above) and they'll start to click (pun unavoided) after a while.
 
-Next up in [part 8](coming soon) we'll upgrade to the more advanced StartApp so that we can lay the foundations for talking to out Phoenix application.
+Next up in [part 8](/posts/phoenix-elm-8) we'll upgrade to the more advanced StartApp so that we can lay the foundations for talking to out Phoenix application.
