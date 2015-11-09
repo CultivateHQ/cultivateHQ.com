@@ -117,4 +117,4 @@ So what if we wanted to perform some action that didn't directly affect the stat
 
 Now we have the option of either changing the state of the Model, or performing an Effect like an HTTP request or both (or neither in the case of a NoOp).
 
-In [part 9](coming soon) we'll use Effects to get data for our Elm application from our Phoenix application over HTTP.
+In [part 9](/posts/phoenix-elm-9) we'll use Effects to get data for our Elm application from our Phoenix application over HTTP.
