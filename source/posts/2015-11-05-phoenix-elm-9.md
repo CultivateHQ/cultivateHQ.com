@@ -153,9 +153,11 @@ As mentioned in [part 8](/posts/phoenix-elm-8), in order to do HTTP requests in 
 
     When a response is received for the HTTP request, it will be passed to our `decodeSeat` function. The `decodeSeat` function will attempt to parse the response from JSON into a List of Seat records. The result of this is passed as the first argument to `Task.toMaybe`.
 
-    A [Task](http://elm-lang.org/guide/reactivity#tasks) in Elm is used to describe an asynchronous operation that might fail, a perfect example of which is HTTP requests. When the Task is performed it will either succeed or fail. One way of handling failure in Tasks is to defer handling the failure until you plan to handle the success. The `toMaybe` function does this by wrapping the result in a [Maybe](http://package.elm-lang.org/packages/elm-lang/core/2.1.0/Maybe). In this context a Maybe allows you say "This might be a List of Seat records, or it might not." More on this in a little bit.
+    A [Task](http://elm-lang.org/guide/reactivity#tasks) in Elm is used to describe an asynchronous operation that might fail, a perfect example of which is HTTP requests. When the Task is performed it will either succeed or fail. Elm forces you to handle that failure by returning one type for a successful result and another type for a failure result. This means that any function being called with the result cannot know in advance what the type of that result will be. In a statically typed language like Elm, this is a problem.
 
-    Once the result has been converted to a Task by the `Task.toMaybe` function it is then passed to `Task.map SetSeats`. This tells the Task we are building here to convert the result so far into a SetSeats Action with the result as its parameter. In other words, "once you've got the result of the HTTP request and got it into something Elm can use, call the SetSeats action passing in that result".
+    One way of handling failure in Tasks is to defer handling the failure until you plan to handle the success. The `toMaybe` function does this by wrapping the result in a [Maybe](http://package.elm-lang.org/packages/elm-lang/core/2.1.0/Maybe). A Maybe is an [option type](https://en.wikipedia.org/wiki/Option_type). In this context a Maybe allows you say "This might be a List of Seat records, or it might not." More on this in a little bit.
+
+    Once the result has been converted to a Task by the `Task.toMaybe` function it is then passed to `Task.map SetSeats`. This tells the Task we are building here to convert the result so far into a SetSeats Action with the result as its parameter. In other words, "once you've got the result of the HTTP request and parsed it into something Elm can use, call the SetSeats action passing in that result".
 
     Finally we convert the Task we've been building into an Effect by passing it to `Effects.task`. We can think of this as a job being prepared and being put on a queue for StartApp to run.
 
@@ -193,9 +195,9 @@ As mentioned in [part 8](/posts/phoenix-elm-8), in order to do HTTP requests in 
             (newModel, Effects.none)
     ```
 
-    Now we can see how we can use the Maybe we generated in step 1. If the Task completes successfully we will have a List to Seat records (aka a Model). If it fails then we won't. As such the type signature for this Action is `SetSeats (Maybe Model)`. In other words the argument to SeatSeats may be a Model, or it may not.
+    Now we can see how we can use the Maybe we generated in step 1. If the Task completes successfully we will have a List of Seat records (aka a Model). If it fails then we won't. As such the type signature for this Action is `SetSeats (Maybe Model)`. In other words the argument to SeatSeats may be a Model, or it may not.
 
-    In our case statement we then use the `Maybe.withDefault` function to say "if the type of the argument I'm given is anything other than a value of type Model return the current model, otherwise return the given argument". In this case `SetSeats` will either return a NoOp (i.e. `(model, Effects.none)`) if the Task failed or it will replace the existing Model with the List of Seat that we derived from the HTTP response.
+    In our case statement we then use the `Maybe.withDefault` function to say "if the argument I'm given is anything other than a value of type Model return the current model, otherwise return the given argument". As such `SetSeats` will return a NoOp (i.e. `(model, Effects.none)`) if the Task failed or it will replace the existing Model with the List of Seat records if we successfully parsed one from the HTTP response (i.e. `(seats, Effects.none)`).
 
     In this way Elm forces us to handle both success and failure outcomes and protects us from runtime errors.
 
