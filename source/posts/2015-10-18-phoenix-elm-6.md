@@ -15,7 +15,7 @@ description: Adding an update function.
 
 ## Adding an Update
 
-We mentioned in [part 3](add link) that Elm has a *Model - Update - View* architecture. We've looked at the [View](part 3) and the [Model](part 4), so let's turn our attention now to the Update. The best way to get a handle on what the `update` function will need to do is by taking a look at its [type annotation](part 5).
+We mentioned in [part 3](/posts/phoenix-elm-3) that Elm has a *Model - Update - View* architecture. We've looked at the [View](/posts/phoenix-elm-3) and the [Model](/posts/phoenix-elm-4), so let's turn our attention now to the Update. The best way to get a handle on what the `update` function will need to do is by taking a look at its [type annotation](/posts/phoenix-elm-5).
 
 ```haskell
 update : Action -> Model -> Model
@@ -177,4 +177,4 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
 
 This has been a rather long and complex section of the tutorial, but we finally have something that we can interact with. This may seem like a lot of effort to set up something relatively simple, but the pay-offs come further down the line as we add more complexity.
 
-We'll take a brief detour in [Part 7](out soon) to look at Signals. After that we can start to bring in Phoenix to bring our application to life.
+We'll take a brief detour in [Part 7](/posts/phoenix-elm-7) to look at Signals. After that we can start to bring in Phoenix to bring our application to life.
