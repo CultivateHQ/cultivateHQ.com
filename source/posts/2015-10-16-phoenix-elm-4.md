@@ -161,4 +161,4 @@ The Model for our application needs to keep track of a bunch of seats. Each seat
 
 ## Summary
 
-Our View is now closer to what we want to be working with, thanks to introducing a Model. In [Part 5](out soon) we'll introduce Type Annotations.
+Our View is now closer to what we want to be working with, thanks to introducing a Model. In [Part 5](/posts/phoenix-elm-5) we'll introduce Type Annotations.
