@@ -21,7 +21,7 @@ You'll need to have the items below installed in order to follow along:
 * [Elm](http://elm-lang.org/install)
 * [Postgres](http://www.postgresql.org/download/) (or see [the Ecto guide](http://www.phoenixframework.org/docs/ecto-models) if you want to try using something else)
 
-If you're brand new to Phoenix then I would suggest going through the [Guides on the Phoenix site](http://www.phoenixframework.org/docs/overview). That said, we will likely cover everything that you need to know as you need to know it here. There is also a [book](https://pragprog.com/book/phoenix/programming-phoenix) in beta on The Pragmatic Bookshelf.
+If you're brand new to Phoenix then I would suggest going through the [Guides on the Phoenix site](http://www.phoenixframework.org/docs/overview). That said, we will likely cover everything that you need to know as you need to know it here. There is also a [book](https://pragprog.com/book/phoenix/programming-phoenix) on The Pragmatic Bookshelf.
 
 If you're brand new to Elm then I would suggest the [Pragmatic Studio Elm course](https://pragmaticstudio.com/elm) as a great way to get into the language. Also, the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial) is a great way to see how idiomatic Elm applications are constructed.
 
@@ -72,4 +72,4 @@ There are a number of gotchas on the [tutorial project's wiki](https://github.co
 
 ## Summary
 
-We now have a base Phoenix application that we can build on. In Part 2, out soon, we'll see how to add an Elm application into the mix.
+We now have a base Phoenix application that we can build on. In [Part 2](/posts/phoenix-elm-2) we'll see how to add an Elm application into the mix.
