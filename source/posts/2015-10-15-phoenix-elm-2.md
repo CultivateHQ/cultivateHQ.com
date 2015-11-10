@@ -37,7 +37,7 @@ Now that we have a basic Phoenix application in place, let's add a basic Elm app
 
 ### Adding Elm into Phoenix
 
-Let's start by adding an Elm application into out Phoenix application.
+Let's start by adding an Elm application into our Phoenix application.
 
 1. Shutdown the Phoenix server (Ctrl+c twice) so that Brunch doesn't build whilst we're setting things up.
 
