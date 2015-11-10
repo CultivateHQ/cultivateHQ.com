@@ -1,5 +1,5 @@
 ---
-title: Putting an Elm in your Phoenix - part 6
+title: Phoenix with Elm - part 6
 author: Alan Gardner
 description: Adding an update function.
 ---
