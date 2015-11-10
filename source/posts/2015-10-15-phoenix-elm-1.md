@@ -1,5 +1,5 @@
 ---
-title: Putting an Elm in your Phoenix - part 1
+title: Phoenix with Elm - part 1
 author: Alan Gardner
 description: Installing prerequisites and generating a base Phoenix project
 ---
