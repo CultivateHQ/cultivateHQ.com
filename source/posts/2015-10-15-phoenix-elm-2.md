@@ -1,5 +1,5 @@
 ---
-title: Putting an Elm in your Phoenix - part 2
+title: Phoenix with Elm - part 2
 author: Alan Gardner
 description: Getting Phoenix and Elm to play together.
 ---
@@ -17,7 +17,7 @@ description: Getting Phoenix and Elm to play together.
 
 Now that we have a basic Phoenix application in place, let's add a basic Elm application into the mix.
 
-### Putting an Elm in your Phoenixes
+### Getting Elm and Phoenix to play together
 
 There are several ways that we can combine Phoenix with Elm:
 
@@ -184,4 +184,6 @@ There are several ways that we can combine Phoenix with Elm:
 
 ## Summary
 
-We now have a basic Phoenix application setup and the beginnings of an Elm application embedded inside it. In [Part 3](/posts/phoenix-elm-3) we'll start building our Elm application into something a bit more useful.
+We now have a basic Phoenix application setup and the beginnings of an Elm application embedded inside it. In Part 3, coming soon, we'll start building our Elm application into something a bit more useful.
+
+We'll be announcing the rest of the tutorial on Twitter (@cultivatehq using hashtag #phoenixelm), so keep an eye out for updates.
