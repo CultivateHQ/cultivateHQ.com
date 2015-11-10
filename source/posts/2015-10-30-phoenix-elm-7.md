@@ -1,5 +1,5 @@
 ---
-title: Putting an Elm in your Phoenix - part 7
+title: Phoenix with Elm - part 7
 author: Alan Gardner
 description: An introduction to Elm Signals.
 ---
