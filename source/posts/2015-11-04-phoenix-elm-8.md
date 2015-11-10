@@ -1,5 +1,5 @@
 ---
-title: Putting an Elm in your Phoenix - part 8
+title: Phoenix with Elm - part 8
 author: Alan Gardner
 description: Upgrading to a more advanced StartApp.
 ---
