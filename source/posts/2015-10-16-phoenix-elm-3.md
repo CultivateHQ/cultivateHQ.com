@@ -1,5 +1,5 @@
 ---
-title: Putting an Elm in your Phoenix - part 3
+title: Phoenix with Elm - part 3
 author: Alan Gardner
 description: Adding a simple View to the Elm application.
 ---
