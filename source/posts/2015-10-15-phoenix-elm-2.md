@@ -13,13 +13,9 @@ description: Getting Phoenix and Elm to play together.
 </section>
 
 
-## Adding Elm
+## Getting Elm and Phoenix to play together
 
-Now that we have a basic Phoenix application in place, let's add a basic Elm application into the mix.
-
-### Getting Elm and Phoenix to play together
-
-There are several ways that we can combine Phoenix with Elm:
+Now that we have a basic Phoenix application in place, let's add a basic Elm application into the mix. There are several ways that we can combine Phoenix with Elm:
 
 1. Keep the two applications completely separate. This is probably the easiest way to go.
 
@@ -39,7 +35,9 @@ There are several ways that we can combine Phoenix with Elm:
 
     By embedding our Elm application into our Phoenix application we can take advantage of the existing Brunch pipeline to first compile our Elm application into a JavaScript file, and then to have the resulting JavaScript file added to the existing build pipeline so that it is available for our Phoenix application. This has the added bonus of enabling livereload every time you make a change in your Elm application files.
 
-### Embedding Elm into Phoenix
+### Adding Elm into Phoenix
+
+Let's start by adding an Elm application into out Phoenix application.
 
 1. Shutdown the Phoenix server (Ctrl+c twice) so that Brunch doesn't build whilst we're setting things up.
 
@@ -72,8 +70,13 @@ There are several ways that we can combine Phoenix with Elm:
 
     This creates a new Elm module called `SeatSaver` and then imports the `Html` library so that we can use its functions. Every Elm application must have a `main` function that acts as its starting point. In our `main` function we call out to the `text` function in the `Html` library, passing it a string. This will result in that string being written out to the screen when the Elm application is run in a browser.
 
-4. Now let's set up Brunch to automatically build the Elm file for us whenever we save changes to it.
-5. Add [elm-brunch](https://github.com/madsflensted/elm-brunch) to your *package.json* directly after the `"brunch": <version>` line. Brunch runs plugins in the order in which they are found within the *package.json* file, so we put the `elm-brunch` plugin right at the top to ensure that the JavaScript resulting from the Elm compilation is available before any of the other JavaScript plugins start their tasks.
+### Building with Brunch
+
+Now let's set up Brunch to automatically build the Elm file for us whenever we save changes to it.
+
+Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it to compile our Elm application into JavaScript and then package it up with the rest of our application's JavaScript. We're using Brunch because it is included by default with Phoenix. If you are not familiar with Brunch you should still be able to follow along with the instructions below. However, if you want to know more, the [Brunch Guide](https://github.com/brunch/brunch-guide#readme) is the best place to start.
+
+1. Add [elm-brunch](https://github.com/madsflensted/elm-brunch) to your *package.json* directly after the `"brunch": <version>` line. Brunch runs plugins in the order in which they are found within the *package.json* file, so we put the `elm-brunch` plugin right at the top to ensure that the JavaScript resulting from the Elm compilation is available before any of the other JavaScript plugins start their tasks.
 
     ```javascript
     // package.json
@@ -88,8 +91,8 @@ There are several ways that we can combine Phoenix with Elm:
     }
     ```
 
-6. Return to the project root folder `cd ../..` and run `npm install`.
-7. Edit your *brunch-config.json* file as follows, adding our Elm file into the watched list so that live reload will fire after any changes and making sure that `elmBrunch` is the first plugin:
+2. Return to the project root folder `cd ../..` and run `npm install`.
+3. Edit your *brunch-config.json* file as follows, adding our Elm file into the watched list so that live reload will fire after any changes and making sure that `elmBrunch` is the first plugin:
 
     ```javascript
     // brunch-config.json
@@ -116,13 +119,17 @@ There are several ways that we can combine Phoenix with Elm:
     }
     ```
 
-8. Now we need to adjust our Phoenix application to display the HTML output by the Elm application. Change *web/templates/page/index.html.eex* to the following:
+### Hooking up to the frontend
+
+Now we need to adjust our Phoenix application to display the HTML output by the Elm application.
+
+1. Replace *web/templates/page/index.html.eex* with the following:
 
     ```html
     <div id="elm-main"></div>
     ```
 
-9. By making this change we have broken one of our tests. To keep it passing for now, let's make a small tweak to *test/controllers/page_controller_test.exs*.
+2. By making this change we have broken one of our tests. To keep it passing for now, let's make a small tweak to *test/controllers/page_controller_test.exs*.
 
     ```elixir
     test "GET /" do
@@ -131,7 +138,7 @@ There are several ways that we can combine Phoenix with Elm:
     end
     ```
 
-10. Now we can hook up our Elm application by adding the following to the bottom of our *web/static/js/app.js* file:
+3. Now we can hook up our Elm application by adding the following to the bottom of our *web/static/js/app.js* file:
 
     ```javascript
     ...
@@ -145,7 +152,7 @@ There are several ways that we can combine Phoenix with Elm:
       <code>Elm.embed</code> is not the only way to work with an Elm application. We could have avoided using an element to embed the application into by calling <code>Elm.fullscreen(Elm.SeatSaver)</code> instead.
     </div>
 
-11. In order to keep things easier to see, let's also change the *web/templates/layout/app.html.eex*
+4. In order to keep things easier to see, let's also change the *web/templates/layout/app.html.eex*
 
     ```erb
     <!DOCTYPE html>
@@ -172,15 +179,16 @@ There are several ways that we can combine Phoenix with Elm:
     </html>
     ```
 
-12. Firing up the Phoenix server again should build the Elm file and output the JavaScript to *web/static/vendor/seatsaver.js*, which will in turn get compiled into *priv/static/js/app.js* (providing we made no further changes to *brunch-config.json*).
+5. Firing up the Phoenix server again should build the Elm file and output the JavaScript to *web/static/vendor/seatsaver.js*, which will in turn get compiled into *priv/static/js/app.js* (providing we made no further changes to *brunch-config.json*).
 
     ```shell
     iex -S mix phoenix.server
     ```
 
-13. If you point your browser to [http://localhost:4000](http://localhost:4000) now you should see something like this:
+6. If you point your browser to [http://localhost:4000](http://localhost:4000) now you should see something like this:
 
     ![Phoenix with Elm](/images/phoenix-elm/5.png)
+
 
 ## Summary
 
