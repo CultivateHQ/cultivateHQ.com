@@ -1,5 +1,5 @@
 ---
-title: Putting an Elm in your Phoenix - part 9
+title: Phoenix with Elm - part 9
 author: Alan Gardner
 description: Creating a data API in Phoenix and then consuming in Elm over HTTP.
 ---
@@ -208,4 +208,6 @@ As mentioned in [part 8](/posts/phoenix-elm-8), in order to do HTTP requests in 
 
 ## Summary
 
-So that's how we fetch data via HTTP in Elm. However, as we mentioned at the start, this was just a brief detour. We'll rewind this step and use Phoenix's Channels instead in part 10, which should be out soon. Keep an eye on the @cultivatehq Twitter account for notifications.
+So that's how we fetch data via HTTP in Elm. However, as we mentioned at the start, this was just a brief detour. We'll rewind this step and use Phoenix's Channels instead in part 10, which should be out soon.
+
+We'll be announcing the rest of the tutorial on Twitter (@cultivatehq using hashtag #phoenixelm), so keep an eye out for updates.
