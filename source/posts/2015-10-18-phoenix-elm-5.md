@@ -1,5 +1,5 @@
 ---
-title: Putting an Elm in your Phoenix - part 5
+title: Phoenix with Elm - part 5
 author: Alan Gardner
 description: Type Annotations.
 ---
