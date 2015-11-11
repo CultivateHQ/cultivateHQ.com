@@ -12,6 +12,9 @@ description: Getting Phoenix and Elm to play together.
   There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
 </section>
 
+<section class="callout">
+  Thanks to Anthony Verez (@netantho) for some corrections in this post. :)
+</section>
 
 ## Getting Elm and Phoenix to play together
 
@@ -192,6 +195,4 @@ Now we need to adjust our Phoenix application to display the HTML output by the 
 
 ## Summary
 
-We now have a basic Phoenix application setup and the beginnings of an Elm application embedded inside it. In Part 3, coming soon, we'll start building our Elm application into something a bit more useful.
-
-We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates.
+We now have a basic Phoenix application setup and the beginnings of an Elm application embedded inside it. In [Part 3](/posts/phoenix-elm-3) we'll start building our Elm application into something a bit more useful.
