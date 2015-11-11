@@ -161,4 +161,6 @@ The Model for our application needs to keep track of a bunch of seats. Each seat
 
 ## Summary
 
-Our View is now closer to what we want to be working with, thanks to introducing a Model. In [Part 5](/posts/phoenix-elm-5) we'll introduce Type Annotations.
+Our View is now closer to what we want to be working with, thanks to introducing a Model. In Part 5, coming soon, we'll introduce Type Annotations.
+
+We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates!
