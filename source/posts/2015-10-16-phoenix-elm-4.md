@@ -13,17 +13,32 @@ description: Adding a Model and enhancing the View.
 </section>
 
 
-## Adding a Model
+## Adding a Model and enhancing the View
 
 The Model for our application needs to keep track of a bunch of seats. Each seat will have a seat number and a flag to tell us whether it is occupied or not.
 
-1. Let's start with the concept of a Seat. In an object oriented language we'd probably reach for a class to describe a Seat. In Elm we'll use a type. In fact Elm already has a type that we can use for this, called a record. A record allows us to store named key-value pairs like so:
+### Adding a model
 
-    ```haskell
-    { seatNo = 1, occupied = False }
-    ```
+Let's start with the concept of a Seat. A Seat needs to describe the state of a given seat on our airplane. In an object oriented language we'd probably reach for a class to describe a Seat. In Elm we'll use a type. In fact Elm already has a type that we can use for this, called a *record*. A record allows us to store named key-value pairs like so:
 
-    We'll use a record of a given structure for our seat. We can do this using a *type alias*. The type alias will enable us to say "when I talk about a Seat, I'm talking about a record with this expected structure" and we define it like so:
+```haskell
+{ key_1 = value_1, key_2 = value_2 }
+```
+
+We'll use a record of a given structure for our seat. We can do this using a *type alias*. The type alias will enable us to say "when I talk about a Seat, I'm talking about a record with this expected structure" and we define it like so:
+
+```haskell
+type alias Seat =
+  { key_1 : value_1
+  , key_2 : value_2
+  }
+```
+
+<div class="callout">
+  This (I believe) is the idiomatic way to define multi-line collections in Elm. The first item is on the same row as the opening brace, commas start each subsequent line and we finish with the closing brace on a line of its own.
+</div>
+
+1. At the top of our *web/elm/SeatSaver.elm* file under the `main` function, add the following:
 
     ```haskell
     type alias Seat =
@@ -31,8 +46,6 @@ The Model for our application needs to keep track of a bunch of seats. Each seat
       , occupied : Bool
       }
     ```
-
-    This (I believe) is the idiomatic way to define multi-line collections in Elm. The first item is on the same row as the opening brace, commas start each subsequent line and we finish with the closing brace on a line of its own.
 
     We've specified that our Seat type will be a record that contains two items: a seatNo key that will have a value of type Int, and an occupied key that will have a value of type Bool.
 
@@ -112,14 +125,18 @@ The Model for our application needs to keep track of a bunch of seats. Each seat
       Html.text "Woo hoo, I'm in a View"
     ```
 
-5. We now have a Model and some initial state. Let's pass it into our View so that we can display something to our users. In our `main` function we can pass the initial model to the view function as a parameter.
+### Using the Model in the View
+
+We now have a Model and some initial state. Let's pass it into our View so that we can display something to our users.
+
+1. In our `main` function we can pass the initial model to the `view` function as a parameter.
 
     ```haskell
     main =
       view init
     ```
 
-6. Now we can adjust our View to show the Model. We'll represent our list of seats as an unordered list with each seat being represented by a list item. We can use Elm's Html library to do this. Each element is represented by a function that takes two lists as arguments, i.e. `ul [] []`. The first list holds the element's attributes, such as `class`, and the second its contents, which can in turn also be other elements.
+2. Now we can adjust our View to show the Model. We'll represent our list of seats as an unordered list with each seat being represented by a list item. We can use Elm's Html library to do this. Each element is represented by a function that takes two lists as arguments, e.g. `ul [] []`. The first list holds the element's attributes, such as `class`, and the second its contents, which can in turn also be other elements.
 
     ```haskell
     -- VIEW
@@ -142,7 +159,7 @@ The Model for our application needs to keep track of a bunch of seats. Each seat
 
     Both the `ul` and the `li` functions take a `class` as an attribute. This is purely for styling purposes. We'll come back to this in a bit more detail later.
 
-7. Before this code will work we need to change our imports.
+3. Before this code will work we need to change our imports.
 
     ```haskell
     import Html exposing (ul, li, text)
@@ -155,7 +172,7 @@ The Model for our application needs to keep track of a bunch of seats. Each seat
 
     We can expose specific functions from a library by listing them in the `exposing` tuple or we can just make them all available by using the `(..)` syntax instead of indivdually listing them.
 
-8. Looking at <http://localhost:4000> again we should now see our seats displayed.
+4. Looking at <http://localhost:4000> again we should now see our seats displayed.
 
     ![seat list](/images/phoenix-elm/8.png)
 
