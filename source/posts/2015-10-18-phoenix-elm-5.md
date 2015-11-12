@@ -138,9 +138,9 @@ view model =
   List.map seatItem model
 ```
 
-When you try to compile this, you will see the following error:
+When you try to compile this, you will see the following error in your terminal window where the server is running:
 
-![type mismatch](/images/phoenix-elm/9.png)
+![type mismatch](/images/phoenix-elm/error_page.png)
 
 Elm has fantastic error messages. Here it quite clearly tells us that *"The type annotation for `view` does not match its definition."*. What this is telling us is that the `view` function is expected to return Html but has returned List Html instead.
 
