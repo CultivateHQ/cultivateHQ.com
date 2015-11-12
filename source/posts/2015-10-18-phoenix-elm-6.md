@@ -65,19 +65,21 @@ Let's update our Elm application so that we can toggle a Seat from available to 
     update : Action -> Model -> Model
     update action model =
       case action of
-        Toggle seat ->
+        Toggle seatToToggle ->
           let
-            updateSeat s =
-              if s.seatNo == seat.seatNo then { s | occupied <- not seat.occupied } else s
+            updateSeat seatFromModel =
+              if seatFromModel.seatNo == seatToToggle.seatNo then
+                { seatFromModel | occupied <- not seatFromModel.occupied }
+              else seatFromModel
           in
             List.map updateSeat model
     ```
 
     OK, there's a lot going on here, so let's take it line by line. First of all we define an Action called Toggle. The Toggle Action will take an argument of type Seat. That is why we have `Toggle Seat`. We are not declaring two Actions here, otherwise there would have been a `|` between them.
 
-    In our `update` function we have a `case` statement that just has one matcher currently for our `Toggle` Action. The matcher will use `List.map` to call the `updateSeat` function for each seat in the model (remember our model is a List of Seat).
+    In our `update` function we have a `case` statement that just has one matcher currently for our `Toggle` Action. The Action will use `List.map` (in the `in` block at the bottom) to call the `updateSeat` function for each seat in the model (remember our model is a List of Seat).
 
-    The `updateSeat` function is defined in the `let` block, which enables us to define local functions that can be used within the matcher. That function checks to see if the seat passed into it `s` has a seatNo that matches the seatNo of the `seat` passed into the matcher. If it matches, the function returns a new seat record with the occupied boolean flipped to the opposite value. If it doesn't match it just returns a new seat record with the same values as the existing seat record.
+    The `updateSeat` function is defined in the `let` block. The `let` block enables us to define functions that can be used within the local scope. The `updateSeat` function checks to see if the seat passed into it `seatFromModel` has a seatNo that matches the seatNo of the `seatToToggle` passed into the Action. If it matches, the function returns a new seat record with the occupied boolean flipped to the opposite value. If it doesn't match it just returns a new seat record with the same values as the existing `seatFromModel`.
 
     Phew! The upshot of this is that, when the `update` function is called with the Toggle Action and a seat, it will return a new List with the given seat's occupied boolean flipped.
 
