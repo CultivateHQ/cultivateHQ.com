@@ -50,7 +50,9 @@ Let's assume that our Model is an Int that initializes to 0. We have two Actions
 
 From this we can see that the purpose of the update function, for now anyway, is to step the Model from one state to the next.
 
-Let's update our Elm application so that we can toggle a Seat from occupied to available and vice versa.
+## Adding an update function
+
+Let's update our Elm application so that we can toggle a Seat from available to occupied and vice versa.
 
 1. Add the following to your *web/elm/SeatSaver.elm* file. It doesn't matter where you put it, but I typically stick the Update between the Model and View sections.
 
@@ -71,7 +73,7 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
             List.map updateSeat model
     ```
 
-    OK, there's a lot going on here, so let's take it line by line. First of all we define an Action called Toggle. The Toggle Action will take an argument of type Seat which is why we have `Toggle Seat`.
+    OK, there's a lot going on here, so let's take it line by line. First of all we define an Action called Toggle. The Toggle Action will take an argument of type Seat. That is why we have `Toggle Seat`. We are not declaring two Actions here, otherwise there would have been a `|` between them.
 
     In our `update` function we have a `case` statement that just has one matcher currently for our `Toggle` Action. The matcher will use `List.map` to call the `updateSeat` function for each seat in the model (remember our model is a List of Seat).
 
@@ -79,7 +81,12 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
 
     Phew! The upshot of this is that, when the `update` function is called with the Toggle Action and a seat, it will return a new List with the given seat's occupied boolean flipped.
 
-2. We now have our `update` function but we're not using it anywhere. We could at this point start looking at Elm Signals and Mailboxes, at folding and mapping and merging, but let's not. Elm handily provides a wrapper around all of the necessary wiring required to have Actions routed around our application into the Update. This wrapper is called StartApp. Let's add it to our application. Open a terminal window and do the following:
+
+## Introducing StartApp
+
+We now have our `update` function but we're not using it anywhere. We could at this point start looking at Elm Signals and Mailboxes, at folding and mapping and merging, but let's not. Elm handily provides a wrapper around all of the necessary wiring required to have Actions routed around our application into the Update. This wrapper is called StartApp.
+
+1. Let's add it to our application. Open a terminal window and do the following:
 
     ```bash
     # navigate to the web/elm folder where our Elm application lives
@@ -98,7 +105,7 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
     import StartApp.Simple
     ```
 
-3. We need to change our `main` function to use the `start` function from the StartApp.Simple library. This takes as an argument a record with our model, update and view functions, does all the necessary wiring under the covers and returns a Signal of Html values.
+2. We need to change our `main` function to use the `start` function from the StartApp.Simple library. This takes as an argument a record with our model, update and view functions, does all the necessary wiring under the covers and returns a Signal of Html values.
 
     <div class="callout">
       A Signal in Elm is a value that changes over time. We'll deal with them more thoroughly later. For now think of a Signal as a value that changes depending on the current state of our application. Our Signal of Html that the <code>main</code> function returns represents the HTML that shows the current state of our Model.
@@ -114,7 +121,7 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
         }
     ```
 
-4. We need to make one other change to join everything up. The View needs to have a way to pass events such as mouse clicks or key presses back to the Update. In order to do this when using StartApp we need to provide an address to send Actions to so that StartApp knows how to link everything together. We can do this as follows:
+3. We need to make one other change to join everything up. The View needs to have a way to pass events such as mouse clicks or key presses back to the Update. In order to do this when using StartApp we need to provide an address to send Actions to so that StartApp knows how to link everything together. We can do this as follows:
 
     ```haskell
     -- VIEW
@@ -129,9 +136,15 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
       li [ class "seat available" ] [ text (toString seat.seatNo) ]
     ```
 
-    We need to pass the address in as the first argument, which has the type `Signal.Address Action`. Don't worry too much about what is going on here just now. We will cover Signals in more detail later. We then add an argument `address` to the `view` function. Our `seatItem` will need to be set up in the same way so we pass the address to the seatItem when we call it `(seatItem address)`. This may look a little odd at first, but what we are creating here is a [partial function](https://wiki.haskell.org/Partial_functions). In other words, a function where we have already provided one or more of the arguments, but not all of them. `(seatItem address)` returns the `seatItem` function with the first argument `address` pre-filled.
+    We need to pass the address in as the first argument, which has the type `Signal.Address Action`. Don't worry too much about what is going on here just now. We will cover Signals in more detail later. All you need to know for now is that this gives us the "address" that we can send any Actions to from our View. StartApp uses this to route these through to our `update` function. We then add the argument `address` to the `view` function.
 
-5. We now have StartApp set up, but it doesn't yet _do_ anything. Let's change our view so that we can click on a seat in the browser and have that update the model using our Toggle action.
+    Our `seatItem` will need to be set up in the same way so we pass the address to the seatItem when we call it `(seatItem address)`. This may look a little odd at first, but what we are creating here is a [partial function](https://wiki.haskell.org/Partial_functions). In other words, a function where we have already provided one or more of the arguments, but not all of them. `(seatItem address)` returns the `seatItem` function with the first argument `address` pre-filled. The List.map function then provides each item in the model (aka the seat) as the second argument.
+
+## Clicking on a seat
+
+We now have StartApp set up, but it doesn't yet _do_ anything.
+
+1. Let's change our view so that we can click on a seat in the browser and have that update the model using our Toggle action.
 
     ```haskell
     seatItem : Signal.Address Action -> Seat -> Html
@@ -153,7 +166,7 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
 
     When we click on a seat we create a Toggle Action with the seat that was clicked as an argument and send it to the given address. StartApp will handle things from here, picking the Action up and routing it through the `update` function. This in turn will toggle the occupied flag of that seat.
 
-6. Changing the occupied flag is all well and good, but we can't actually tell currently if that has happened or not. So that we get an indication that something has happened let's change the style of the seat based on its occupied status.
+2. Changing the occupied flag is all well and good, but we can't actually tell currently if that has happened or not. So that we get an indication that something has happened let's change the style of the seat based on its occupied status.
 
     ```haskell
     seatItem : Signal.Address Action -> Seat -> Html
@@ -171,7 +184,7 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
 
     We're using a `let` block again to define a local function `occupiedClass` that will return "occupied" if the seat is occupied or "available" if it is not. We then use the `++` function to concatenate the result of calling `occupiedClass` with the existing class string.
 
-7. Now, if you go to your browser, you should be able to click on the seats and see them turn from gray to green and back again!
+3. Now, if you go to your browser, you should be able to click on the seats and see them turn from gray to green and back again!
 
     ![toggling a seat](/images/phoenix-elm/10.png)
 
@@ -180,4 +193,6 @@ Let's update our Elm application so that we can toggle a Seat from occupied to a
 
 This has been a rather long and complex section of the tutorial, but we finally have something that we can interact with. This may seem like a lot of effort to set up something relatively simple, but the pay-offs come further down the line as we add more complexity.
 
-We'll take a brief detour in [Part 7](/posts/phoenix-elm-7) to look at Signals. After that we can start to bring in Phoenix to bring our application to life.
+We'll take a brief detour in Part 7, coming soon, to look at Signals. After that we can start to bring in Phoenix to bring our application to life.
+
+We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates!
