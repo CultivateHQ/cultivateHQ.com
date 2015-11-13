@@ -195,6 +195,4 @@ We now have StartApp set up, but it doesn't yet _do_ anything.
 
 This has been a rather long and complex section of the tutorial, but we finally have something that we can interact with. This may seem like a lot of effort to set up something relatively simple, but the pay-offs come further down the line as we add more complexity.
 
-We'll take a brief detour in Part 7, coming soon, to look at Signals. After that we can start to bring in Phoenix to bring our application to life.
-
-We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates!
+We'll take a brief detour in [Part 7](/posts/phoenix-elm-7) to look at Signals. After that we can start to bring in Phoenix to bring our application to life.
