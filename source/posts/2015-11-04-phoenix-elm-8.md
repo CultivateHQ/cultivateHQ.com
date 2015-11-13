@@ -91,7 +91,7 @@ Let's upgrade our application from *StartApp.Simple* to *StartApp*.
 
     The `in` block now returns `(seats, Effects.none)`.
 
-4. Because our `update` function steps the Model from one state to the next, it too needs to return this tuple of Model and Effects.action.
+4. Because our `update` function steps the Model from one state to the next, it too needs to return this tuple of Model and Effects Action.
 
     ```haskell
     update : Action -> Model -> (Model, Effects Action)
@@ -107,14 +107,14 @@ Let's upgrade our application from *StartApp.Simple* to *StartApp*.
             (List.map updateSeat model, Effects.none)
     ```
 
+    Now we have the option of either changing the state of the Model, or performing an Effect like an HTTP request or both (or neither in the case of a NoOp).
+
 5. If we visit <http://localhost:4000> in our browser our application should look and behave the same as before.
 
     ![toggling a seat](/images/phoenix-elm/10.png)
 
 
 ## Summary
-
-Now we have the option of either changing the state of the Model, or performing an Effect like an HTTP request or both (or neither in the case of a NoOp).
 
 In part 9, coming soon, we'll use Effects to get data for our Elm application from our Phoenix application over HTTP.
 
