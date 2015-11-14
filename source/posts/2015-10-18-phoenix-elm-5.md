@@ -12,12 +12,15 @@ description: Type Annotations.
   There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
 </section>
 
+<section class="callout">
+  Thanks to @tcoopman for some corrections in this post. :)
+</section>
 
 ## Type annotations
 
 So far Elm has been happily inferring the types that we are using in our application, and it will continue to do so. However let's take a moment to look at how we can make it more obvious to others who might read our code what types we are expecting. We can do this by using [*type annotations*](http://elm-lang.org/docs/syntax#type-annotations).
 
-Type annotations are optional in Elm, but they help us, and others that read out code, to better see what is going on. They also allow us to specify the contract for our functions.
+Type annotations are optional in Elm, but they help us, and others that read our code, to better see what is going on. They also allow us to specify the contract for our functions.
 
 A type annotation goes on the line before a function definition and consists of the name of that function, followed by a colon, followed by a list of one or more types. The list of types is separated by `->`. The very last type in this list is always the return type. Elm functions always return one value, so there is always one return type. The other types refer to the type of each parameter being passed into the function.
 
