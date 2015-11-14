@@ -49,7 +49,7 @@ It's not the most accurate rendition, but it's just enough for us to demonstrate
 
     Also Elm idiomatically places two new lines between function definitions.
 
-4. If you check your browser now (start the server with `iex mix phoenix.server` if it's not already running) you should see something like this.
+4. If you check your browser now (start the server with `iex -S mix phoenix.server` if it's not already running) you should see something like this.
 
     ![woo hoo I'm in a View](/images/phoenix-elm/7.png)
 
@@ -58,4 +58,4 @@ What we actually want to display here is a bunch of seats, but in order to do th
 
 ## Summary
 
-We now have a simple view for our Elm application. In [Part 4](/posts/phoenix-elm-4) we'll introduce a Model and expand out View.
+We now have a simple view for our Elm application. In [Part 4](/posts/phoenix-elm-4) we'll introduce a Model and expand our View.
