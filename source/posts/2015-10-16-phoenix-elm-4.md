@@ -170,7 +170,9 @@ We now have a Model and some initial state. Let's pass it into our View so that 
 
     Next we add an import for `Html.Attributes` specifically exposing the `class` function.
 
-    We can expose specific functions from a library by listing them in the `exposing` tuple or we can just make them all available by using the `(..)` syntax instead of indivdually listing them.
+    <div class="callout">
+      We can expose specific functions from a library by listing them in the <code>exposing</code> tuple or we can just make them all available by using the <code>(..)</code> syntax instead of individually listing them (i.e. <code>import Html exposing (..)</code>).
+    </div>
 
 4. Looking at <http://localhost:4000> again we should now see our seats displayed.
 
