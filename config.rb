@@ -43,6 +43,8 @@ page "index.html", :layout => :home
 page "/posts/index.html", :layout => :post
 page "/key_place.html", :layout => :product
 page "/newsletter-signup"
+page "/feed.xml", :layout => false
+
 #
 # A path which all have the same layout
 # with_layout :admin do
