@@ -17,7 +17,7 @@ description: Introducing Effects.
 
 Currently our application only allows us to model a given state and perform actions that result in changes to that state. We create an initial state for our application with the `init` function and thereafter are only able to change that state via the `update` function. The `update` function always returns a new Model and so the only way to do anything other than generate a new Model is to have some kind of side effect happening before we return the new Model. This is bad form in purely functional languages like Elm.
 
-So, what if we wanted to perform some action that didn't directly affect the state of the application? Say, for example, we wanted to perform an HTTP request (an HTTP *response* may change the state of the application, but the initial HTTP _request_ will not). Elm's *StartApp* (as opposed to *StartApp.Simple*) provides [Effects](http://package.elm-lang.org/packages/evancz/elm-effects/2.0.0/Effects) for this purpose. Effects enable us to perform tasks such as HTTP requests and channel the results back through the application in a form that Elm understands.
+So, what if we wanted to perform some action that didn't directly affect the state of the application? Say, for example, we wanted to perform an HTTP request (an HTTP *response* may change the state of the application, but the initial HTTP *request* will not). Elm's *StartApp* (as opposed to *StartApp.Simple*) provides [Effects](http://package.elm-lang.org/packages/evancz/elm-effects/2.0.0/Effects) for this purpose. Effects enable us to perform tasks such as HTTP requests and channel the results back through the application in a form that Elm understands.
 
 Let's upgrade our application from *StartApp.Simple* to *StartApp*.
 
@@ -107,7 +107,7 @@ Let's upgrade our application from *StartApp.Simple* to *StartApp*.
             (List.map updateSeat model, Effects.none)
     ```
 
-    Now we have the option of either changing the state of the Model, or performing an Effect like an HTTP request or both (or neither in the case of a NoOp).
+    Now we have the option of either changing the state of the Model, or performing an Effect like an HTTP request, or both (or neither in the case of a NoOp).
 
 5. If we visit <http://localhost:4000> in our browser our application should look and behave the same as before.
 
@@ -116,6 +116,4 @@ Let's upgrade our application from *StartApp.Simple* to *StartApp*.
 
 ## Summary
 
-In part 9, coming soon, we'll use Effects to get data for our Elm application from our Phoenix application over HTTP.
-
-We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates!
+We have now set up our Elm application to use Effects. This allows for Actions that do things other than change the Model. In [part 9](/posts/phoenix-elm-9) we'll use Effects to get data for our Elm application from our Phoenix application over HTTP.
