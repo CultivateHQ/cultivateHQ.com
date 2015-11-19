@@ -213,6 +213,8 @@ So let's step through the `fetchSeats` function.
 
 So that's how we fetch data via HTTP in Elm. Elm makes a lot of hard tings easy for us. Unfortunately HTTP is one of the "easy" things it makes, at least initially, hard. There is good reason for this though. Elm is forcing us to work in a particular way so that we can protect ourselves from runtime exceptions in our applications.
 
+This is the part of the tutorial that I've found the hardest to explain, mostly because I'm fairly new to a lot of these terms and patterns myself. Perhaps a better explanation can be found in step 5 of the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial/).
+
 As we mentioned at the start, this was just a brief detour. We'll rewind this step and use Phoenix's Channels instead in part 10, which should be out soon.
 
 We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates!
