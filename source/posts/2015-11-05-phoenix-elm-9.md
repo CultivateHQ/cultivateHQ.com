@@ -71,7 +71,7 @@ Rather than hard-wire the seats in the `init` function we want to fetch them fro
     ```
 
 5. Run `mix run priv/repo/seeds.exs` to apply the seeds.
-6. Elm is going to expect our field names to be in camel-case rather than snake-case. To keep things simple we'll just change the `seat_no` key to `seatNo` on line 14 of *web/views/seat_view.ex* and adjust our test on line 22 of *test/controllers/seat_controller_test.exs* to match.
+6. Elm is going to expect our field names to be in camelCase rather than snake_case. To keep things simple we'll just change the `seat_no` key to `seatNo` on line 14 of *web/views/seat_view.ex* and adjust our test on line 22 of *test/controllers/seat_controller_test.exs* to match.
 
     ```elixir
     # web/views/seat_view.ex
