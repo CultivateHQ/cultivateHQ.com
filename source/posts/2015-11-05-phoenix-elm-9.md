@@ -14,7 +14,7 @@ description: Creating a data API in Phoenix and then consuming in Elm over HTTP.
 
 ## Introduction
 
-This part of the tutorial is actually going to be a bit of a detour. We're going to fetch the initial data for our Elm application over HTTP from a data API that we'll create in our Phoenix application. However we're going to do this on a branch of the [seat_saver repo](https://github.com/CultivateHQ/seat_saver) (called *http* for reference), because we're ultimately going to prefer to use [Phoenix Channels](http://www.phoenixframework.org/docs/channels) for this instead. If you're using version control you may wish to do this as well to make it easier to pick up at the start of the next part of the tutorial.
+This part of the tutorial is actually going to be a bit of a detour. We're going to fetch the initial data for our Elm application over HTTP from a data API that we'll create in our Phoenix application. However we're going to do this on a branch of the [seat_saver repo](https://github.com/CultivateHQ/seat_saver) (called *http* for reference), because we're ultimately going to prefer to use [Phoenix Channels](http://www.phoenixframework.org/docs/channels) for this instead. If you're using version control you may wish to do this part as a branch as well to make it easier to revert at the start of the next part of the tutorial.
 
 
 ## Creating a simple data API in Phoenix
@@ -69,7 +69,7 @@ Rather than hard-wire the seats in the `init` function we want to fetch them fro
     ```
 
 5. Run `mix run priv/repo/seeds.exs` to apply the seeds.
-6. Elm is going to expect our field names to be in camelCase rather than snake_case. To keep things simple we'll just change the `seat_no` key to `seatNo` on line 14 of *web/views/seat_view.ex* and adjust our test on line 22 of *test/controllers/seat_controller_test.exs* to match.
+6. Elm is going to expect our field names to be in camel-case rather than snake-case. To keep things simple we'll just change the `seat_no` key to `seatNo` on line 14 of *web/views/seat_view.ex*
 
     ```elixir
     # web/views/seat_view.ex
@@ -78,7 +78,11 @@ Rather than hard-wire the seats in the `init` function we want to fetch them fro
         seatNo: seat.seat_no,
         occupied: seat.occupied}
     end
+    ```
 
+    and adjust our test on line 22 of *test/controllers/seat_controller_test.exs* to match.
+
+    ```elixir
     # test/controllers/seat_controller_text.exs
     test "shows chosen resource", %{conn: conn} do
       seat = Repo.insert! %Seat{}
@@ -94,6 +98,7 @@ Rather than hard-wire the seats in the `init` function we want to fetch them fro
 
     ![Data API](/images/phoenix-elm/11.png)
 
+I'm using a Chrome extension called [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) so your output might not look _exactly_ the same.
 
 ## Fetching data in Elm via HTTP
 
@@ -101,13 +106,13 @@ As mentioned in [part 8](/posts/phoenix-elm-8), in order to do HTTP requests in 
 
 We'll start by changing our `init` function so that it returns a tuple with an empty list for the Model and a function called `fetchSeats`, which we'll create in a minute, as an Effect.
 
-    ```haskell
-    init : (Model, Effects Action)
-    init =
-      ([], fetchSeats)
-    ```
+```haskell
+init : (Model, Effects Action)
+init =
+  ([], fetchSeats)
+```
 
-    This initializes our Model to be an empty List (remember our Model is a List of Seat records) and then calls a function `fetchSeats`. The `fetchSeats` function will return an Effects Action that StartApp will subsequently call in order to make the HTTP request that will, hopefully, provide the seat data from our data API.
+This initializes our Model to be an empty List (remember our Model is a List of Seat records) and then calls a function `fetchSeats`. The `fetchSeats` function will return an Effects Action that StartApp will subsequently call in order to make the HTTP request that will, hopefully, provide the seat data from our data API.
 
 
 ### Building an Effect
@@ -141,22 +146,28 @@ There's a _lot_ going on here, so let's walk through it. The purpose of our `fet
 We are using the Elm `|>` function to make it easier to see the process flow here. `|>` is just an alias for function application, and allows us to write our function inside out.
 
 <div class="callout">
-  Note that Elm's `|>` function is not quite the same as Elixir's pipe operator. In Elixir <code>"some value" |> String.reverse |> String.upcase</code> is just syntactic sugar to make it easier to work with functions that have calls to other functions within their params. At compile time it is converted into <code>String.upcase(String.reverse("some value"))</code>.
+  <p>
+    Note that Elm's <code>|></code> function is not quite the same as Elixir's pipe operator. In Elixir <code>"some value" |> String.reverse |> String.upcase</code> is just syntactic sugar to make it easier to work with functions that have calls to other functions within their params. At compile time it is converted into <code>String.upcase(String.reverse("some value"))</code>.
+  </p>
 
-  In Elm however the `|>` is used to create [partial functions](https://wiki.haskell.org/Partial_functions). In other words, <code>"some value" |> String.reverse |> String.upcase</code> will, in fact, call <code>String.reverse("some value")</code> first and [curry](https://wiki.haskell.org/Currying) <code>String.upcase</code> with the result.
+  <p>
+    In Elm however the <code>|></code> is used to create <a href="https://wiki.haskell.org/Partial_functions">partial functions</a>. In other words, <code>"some value" |> String.reverse |> String.upcase</code> will, in fact, call <code>String.reverse("some value")</code> first and <a href="https://wiki.haskell.org/Currying">curry</a> <code>String.upcase</code> with the result.
+  </p>
 
-  In reality the only practical difference is that, in Elixir, the value being piped is given as the first argument to the subsequent function whereas, in Elm, it is the last argument.
+  <p>
+    In reality the only practical difference is that, in Elixir, the value being piped is given as the first argument to the subsequent function whereas, in Elm, it is the last argument.
+  </p>
 </div>
 
 So let's step through the `fetchSeats` function.
 
 1. `Http.get decodeSeat "http://localhost:4000/api/seats"` creates a function that can be called to perform the HTTP request. Note that it is not called here. It will be called by StartApp when the Effects Action generated by the `fetchSeats` function is run. As the first argument we supply a JSON decoder that will be used to parse the body of a successful response. We define that decoder in the `decodeSeats` function. You can read more about the JSON decoder on the [Elm docs](http://package.elm-lang.org/packages/elm-lang/core/3.0.0/Json-Decode).
 
-2. If we look at the type annotation for [Http.get](http://package.elm-lang.org/packages/evancz/elm-http/3.0.0/Http#get) we can see that what we are returned is `Task Error value`. This means that we will get a `Task` that will either return a value of type `Error` or a `value` of some type other than `Error`. In Elm a [Task](http://elm-lang.org/guide/reactivity#tasks) is an asynchronous operation that might fail, a perfect example of which is an HTTP request. When the Task is performed it will either succeed or fail. If it fails it will have the type Error, if it succeeds it will have the type returned by our JSON decoder. In our case that will be the type Model.
+2. If we look at the type annotation for [Http.get](http://package.elm-lang.org/packages/evancz/elm-http/3.0.0/Http#get) we can see that what we are returned is `Task Error value` This means that we will get a `Task` that will either return a value of type `Error` or a `value` of some type other than `Error`. In Elm a [Task](http://elm-lang.org/guide/reactivity#tasks) is an asynchronous operation that might fail, a perfect example of which is an HTTP request. In our case, when the Task is performed, it will either fail with a type Error, or succeed with the type returned by our JSON decoder, i.e. the type Model.
 
     In this way Elm uses the type system to force us to handle the failure case by returning one type for a successful result and another type for a failure result. This means that any function being called with the result of this HTTP request cannot know in advance what the type of that result will be. The `Task.toMaybe` function lets us handle this uncertainty by wrapping the result in a [Maybe](http://package.elm-lang.org/packages/elm-lang/core/2.1.0/Maybe). A Maybe is an [option type](https://en.wikipedia.org/wiki/Option_type) that enables us to say "This might be a List of Seat records, or it might not." More on this when we come to handle this in the `update` function.
 
-3. Speaking of the `update` function, we already know that this is the only place where we can make changes to the Model, and that is exactly what we need to do here. We want to replace the existing Model, which is currently initialized to an empty List, with the Model we receive from our JSON decoder. We do this by mapping our existing Task, using `Task.map`, to one that takes an Action to be performed, in our case the `SetSeats` Action and any arguments for that Action, i.e. the Maybe-wrapped result from `Task.toMaybe`.
+3. Speaking of the `update` function, we already know that this is the only place where we can make changes to the Model, and that is exactly what we need to do here. We want to replace the existing Model, which is currently initialized to an empty List, with the Model we receive from our JSON decoder. We do this by mapping our existing Task, using `Task.map`, to one that takes an Action to be performed, in our case the `SetSeats` Action, and any arguments for that Action, i.e. the Maybe-wrapped result from `Task.toMaybe`.
 
 4. Finally, in order for StartApp to run the task, we need to wrap it in an Effects Action. The `Effects.task` function does this. The result is an Effects Action that can be returned to our `init` function and used by StartApp. When StartApp runs this it will result in a call to the `update` function with a SetSeats Action that has our new Model derived from the call to the data API. In other words, we are telling Elm "once you've got the result of the HTTP request and parsed it into something you can use, call the SetSeats action passing in that result".
 
@@ -198,13 +209,13 @@ So let's step through the `fetchSeats` function.
             (newModel, Effects.none)
     ```
 
-    Now we can see how we can use the Maybe we used in the `fetchSeats` function. If the Task completes successfully we will have a List of Seat records (aka a Model). If it fails then we won't. As such the type signature for this Action is `SetSeats (Maybe Model)`. In other words the argument to SeatSeats may be a Model, or it may not.
+    Now we can see how we can use the Maybe we introduced in the `fetchSeats` function. If the Task completes successfully we will have a List of Seat records (aka a Model). If it fails then we won't. As such the type annotation for this Action is `SetSeats (Maybe Model)`. In other words the argument to SeatSeats may be a Model, or it may not.
 
     In our case statement we then use the `Maybe.withDefault` function to say "if the argument I'm given is anything other than a value of type Model return the current model, otherwise return the given argument". As such, `SetSeats` will return a NoOp (i.e. `(model, Effects.none)`) if the Task failed or it will replace the existing Model with the List of Seat records if we successfully parsed one from the HTTP response (i.e. `(seats, Effects.none)`).
 
     In this way Elm forces us to handle both success and failure outcomes and protects us from runtime errors.
 
-6. Visiting <http://localhost:4000> in our browser will still display the seats as before, but now the initial data is coming from our data API. As such we should always see the first two seats being displayed as occupied, even on a refresh (you may also see a slight delay before all the seats are displayed).
+6. Visiting <http://localhost:4000> in our browser will still display the seats as before, but now the initial data is coming from our data API. We should always see the first two seats being displayed as occupied, even on a refresh (you may also see a slight delay before all the seats are displayed).
 
     ![Data API](/images/phoenix-elm/12.png)
 
@@ -213,9 +224,9 @@ So let's step through the `fetchSeats` function.
 
 So that's how we fetch data via HTTP in Elm. Elm makes a lot of hard tings easy for us. Unfortunately HTTP is one of the "easy" things it makes, at least initially, hard. There is good reason for this though. Elm is forcing us to work in a particular way so that we can protect ourselves from runtime exceptions in our applications.
 
-This is the part of the tutorial that I've found the hardest to explain, mostly because I'm fairly new to a lot of these terms and patterns myself. Perhaps a better explanation can be found in step 5 of the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial/).
+This is the part of the tutorial that I've found the hardest to explain, mostly because I'm fairly new to a few of these concepts myself. If you'd like to read more on the subject, example 5 in the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial/) is the best place to start.
 
-As we mentioned at the start, this was just a brief detour. We'll rewind this step and use Phoenix's Channels instead in part 10, which should be out soon.
+As we mentioned at the start of this post, this was just a brief detour. We'll rewind this step and use Phoenix's Channels instead in part 10, which should be out soon.
 
 We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates!
 
