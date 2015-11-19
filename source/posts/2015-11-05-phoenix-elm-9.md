@@ -143,19 +143,15 @@ decodeSeats =
 
 There's a _lot_ going on here, so let's walk through it. The purpose of our `fetchSeats` function is to create an Effects Action that StartApp can use to make an HTTP request to our data API. We also need to let StartApp know what we want it to do when we get a response. If it is successful, we want to parse the resulting JSON into a List of Seat records and then replace the existing Model, an empty List, with that List of Seat records. If it fails for any reason, including issues with parsing the JSON, we want to be able to handle that error. We can think of this as a job being prepared and put on a queue for StartApp to run.
 
-We are using the Elm `|>` function to make it easier to see the process flow here. `|>` is just an alias for function application, and allows us to write our function inside out.
+We are using the Elm `|>` function to make it easier to see the process flow here. `|>` is just an alias for function application, and allows us to write our function inside out. The result of calling `Http.get ...` gets passed to `Task.toMaybe`, which in turn gets passed to `Task.map ...`, which then gets passed to `Effects.task`.
 
 <div class="callout">
   <p>
-    Note that Elm's <code>|></code> function is not quite the same as Elixir's pipe operator. In Elixir <code>"some value" |> String.reverse |> String.upcase</code> is just syntactic sugar to make it easier to work with functions that have calls to other functions within their params. At compile time it is converted into <code>String.upcase(String.reverse("some value"))</code>.
+    Note that Elm's <code>|></code> function is not quite the same as Elixir's pipe operator, but they are close enough in purpose for it not to really matter. The only practical difference is that, in Elixir, the value being piped is given as the first argument to the subsequent function whereas, in Elm, it is the last argument.
   </p>
 
   <p>
-    In Elm however the <code>|></code> is used to create <a href="https://wiki.haskell.org/Partial_functions">partial functions</a>. In other words, <code>"some value" |> String.reverse |> String.upcase</code> will, in fact, call <code>String.reverse("some value")</code> first and <a href="https://wiki.haskell.org/Currying">curry</a> <code>String.upcase</code> with the result.
-  </p>
-
-  <p>
-    In reality the only practical difference is that, in Elixir, the value being piped is given as the first argument to the subsequent function whereas, in Elm, it is the last argument.
+    This is because in Elm the <code>|></code> function is actually creating <a href="https://wiki.haskell.org/Partial_functions">partial functions</a>.
   </p>
 </div>
 
