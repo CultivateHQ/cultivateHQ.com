@@ -213,4 +213,4 @@ As mentioned in [part 8](/posts/phoenix-elm-8), in order to do HTTP requests in 
 
 So that's how we fetch data via HTTP in Elm. However, as we mentioned at the start, this was just a brief detour. We'll rewind this step and use Phoenix's Channels instead in part 10, which should be out soon.
 
-We'll be announcing the rest of the tutorial on Twitter (@cultivatehq using hashtag #phoenixelm), so keep an eye out for updates.
+We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates!
