@@ -28,7 +28,7 @@ If you can, please use the versions noted below as it will make following the tu
 * Erlang/OTP 18
 * Elixir 1.1.1
 * Phoenix 1.0.3
-* Elm 0.15.1
+* Elm 0.15.1 (we upgrade to 0.16.0 in [part 10](/posts/phoenix-elm-10))
 
 
 ### Upgrading Phoenix
