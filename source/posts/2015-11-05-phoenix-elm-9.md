@@ -222,7 +222,7 @@ So that's how we fetch data via HTTP in Elm. Elm makes a lot of hard tings easy 
 
 This is the part of the tutorial that I've found the hardest to explain, mostly because I'm fairly new to a few of these concepts myself. If you'd like to read more on the subject, example 5 in the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial/) is the best place to start.
 
-As we mentioned at the start of this post, this was just a brief detour. We'll rewind this step and use Phoenix's Channels instead in part 10, which should be out soon.
+As we mentioned at the start of this post, this was just a brief detour. We'll rewind this step and use Phoenix's Channels instead in [part 10](/posts/phoenix-elm-10), which should be out soon.
 
 We'll be announcing the rest of the tutorial on Twitter ([@cultivatehq](https://twitter.com/cultivatehq) using hashtag [#phoenixelm](https://twitter.com/hashtag/phoenixelm?src=hash)), so keep an eye out for updates!
 
