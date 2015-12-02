@@ -38,6 +38,7 @@ a {
   h1 {
     @include adjust-font-size-to(60px, 2);
     font-weight: 700;
+    border: none;
 
     @media screen and (max-width: $break-medium){
       @include adjust-font-size-to(34px, 1.2);
@@ -134,10 +135,6 @@ footer {
     margin-right: auto;
     display: table;
   }
-}
-
-#cultivate-history {
-  border-top: 1px solid #ddd;
 }
 
 .work-with-us {
@@ -358,6 +355,10 @@ ul.case-studies {
 .client-quote{
   padding: 1em 0;
   border-top: 1px solid #DDD;
+
+  &:first-of-type {
+    border: none;
+  }
 
   img {
     border: 1px solid #cAd7dd;

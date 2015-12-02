@@ -22,6 +22,7 @@ h1 {
   @include adjust-font-size-to(36px);
   @include rhythm(0.5, 0, 0, 0, 36px);
   color: #888;
+  border-bottom: 1px solid #DDD;
 }
 
 h2 {
