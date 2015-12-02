@@ -38,7 +38,7 @@ $(function() {
 });
 
 $(document).ready(function(){
-  $("#site-header").sticky({topSpacing:0});
+  // $("#site-header").sticky({topSpacing:0});
 
   if(!Modernizr.svg) {
     $('img[src*="svg"]').attr('src', function() {
