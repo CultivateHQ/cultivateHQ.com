@@ -6,6 +6,7 @@ activate :blog do |blog|
   blog.sources = ":year-:month-:day-:title.html"
   blog.layout = "post"
   blog.summary_generator = Proc.new {|post| post.data.description }
+  blog.paginate = true
   #blog.tag_template = "tag.html"
   #blog.calendar_template = "calendar.html"
 end

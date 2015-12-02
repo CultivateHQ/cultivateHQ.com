@@ -1,0 +1,34 @@
+<div class="pagination">
+  <ul>
+    <li class="<%= prev_page ? '' : 'active' %>">
+      <% if prev_page %>
+        <%= link_to 'Previous', prev_page.url %>
+      <% else %>
+        <span>Previous</span>
+      <% end %>
+    </li>
+
+    <% (1..num_pages).each do |count| %>
+      <% if page_number == count %>
+        <li class="active">
+          <span><%= count %></span>
+        </li>
+      <% else %>
+        <li>
+          <% page = nil %>
+          <% (count ... page_number).each do page = page ? page.metadata[:locals]['prev_page'] : prev_page; end %>
+          <% (page_number ... count).each do page = page ? page.metadata[:locals]['next_page'] : next_page; end %>
+          <%= link_to "#{count}", page && page.url %>
+        </li>
+      <% end %>
+    <% end %>
+
+    <li class="<%= next_page ? '' : 'active' %>">
+      <% if next_page %>
+        <%= link_to 'Next', next_page.url %>
+      <% else %>
+        <span>Next</span>
+      <% end %>
+    </li>
+  </ul>
+</div>
