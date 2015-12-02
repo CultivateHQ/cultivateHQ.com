@@ -1,0 +1,6 @@
+.work-with-us {
+  h1 {
+    @include adjust-font-size-to(24px, 1);
+    @include rhythm(0.5, 0, 0, 0, 24px);
+  }
+}

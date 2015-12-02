@@ -8,6 +8,7 @@
 @import 'forms';
 @import 'responsive-nav';
 @import 'header';
+@import 'footer';
 @import 'blog';
 @import 'keyplace';
 @import 'pagination';
@@ -26,7 +27,7 @@ a {
   @include background-size(cover);
   border-bottom: 1px solid #e21d87;
   padding-top: rhythm(1);
-  padding-bottom: rhythm(2);
+  padding-bottom: rhythm(1);
   margin-bottom: 0;
 
   h1, h2 {
