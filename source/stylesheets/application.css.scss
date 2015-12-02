@@ -301,6 +301,9 @@ ul.case-studies {
   padding-right: 1em;
   @include rhythm(0, 1, 1, 0, 16px);
 
+  &.leading {
+    @include rhythm(0.5, 1, 1, 0, 16px);
+  }
 
   .attribution {
     border-top: 1px solid #DDD;
