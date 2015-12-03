@@ -380,10 +380,6 @@ ul.case-studies {
 }
 
 .page-contact-info {
-  @media screen and (min-width: $break-menu) {
-    font-size: 1.5em;
-  }
-
   ul {
     list-style: none;
     padding-left: 0;
@@ -391,7 +387,7 @@ ul.case-studies {
     li {
       margin-bottom: 1em;
 
-      i { float: left; margin-right: 0.5em;}
+      i { margin-right: 0.5em;}
       span.adr span {display: block;}
     }
   }
