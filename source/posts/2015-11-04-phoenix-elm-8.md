@@ -101,7 +101,7 @@ Let's upgrade our application from *StartApp.Simple* to *StartApp*.
           let
             updateSeat seatFromModel =
               if seatFromModel.seatNo == seatToToggle.seatNo then
-                { seatFromModel | occupied <- not seatFromModel.occupied }
+                { seatFromModel | occupied = not seatFromModel.occupied }
               else seatFromModel
           in
             (List.map updateSeat model, Effects.none)
