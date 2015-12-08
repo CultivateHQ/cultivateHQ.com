@@ -13,7 +13,7 @@ description: Adding an update function.
 </section>
 
 <section class="callout">
-  Thanks to Anthony Verez (@netantho) for some corrections in this post. :)
+  Thanks to Anthony Verez (@netantho) and Mark Provan (@markprovan) for some corrections in this post. :)
 </section>
 
 ## Adding an Update
@@ -69,11 +69,15 @@ Let's update our Elm application so that we can toggle a Seat from available to 
           let
             updateSeat seatFromModel =
               if seatFromModel.seatNo == seatToToggle.seatNo then
-                { seatFromModel | occupied <- not seatFromModel.occupied }
+                { seatFromModel | occupied = not seatFromModel.occupied }
               else seatFromModel
           in
             List.map updateSeat model
     ```
+
+    <div class="callout">
+      Please note that prior to Elm 0.16.0, updating the occupied flag would have been done as <code>{ seatFromModel | occupied <- not seatFromModel.occupied }</code> with a <code><-</code> rather than a <code>=</code>.
+    </div>
 
     OK, there's a lot going on here, so let's take it line by line. First of all we define an Action called Toggle. The Toggle Action will take an argument of type Seat. That is why we have `Toggle Seat`. We are not declaring two Actions here, otherwise there would have been a `|` between them.
 
