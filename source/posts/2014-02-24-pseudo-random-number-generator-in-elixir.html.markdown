@@ -4,6 +4,11 @@ author: Alan Gardner
 description: I recently started learning Elixir and decided for my first "real" project to implement a basic genetic algorithm. I like to do this to kick the tyres on a new language because it's a non-trivial problem that gives you a good idea of what it's like to work with that language.
 ---
 
+<br>
+<div class="callout">
+  <strong>UPDATE</strong>: since this post was written Erlang 18 was released. Erlang 18 now contains a <code>rand</code> module that provides a seeded PRNG. Calling <code>:rand.uniform</code> instead of <code>:random.uniform</code> negates the need for seeding unless you specifically change the algorithm being used. See <a href="http://erlang.org/doc/man/rand.html">the docs</a> for more info.
+</div>
+
 I recently started learning Elixir and decided for my first "real" project to implement a basic genetic algorithm. I like to do this to kick the tyres on a new language because it's a non-trivial problem that gives you a good idea of what it's like to work with that language.
 
 Genetic algorithms rely pretty heavily on the ability to generate random numbers. They need them to create the initial population of possible solutions, to generate new child solutions and to potentially mutate solutions. The whole purpose of a genetic algorithm is to reduce the risk of getting stuck in local maxima by introducing a random element to the process.
@@ -25,16 +30,25 @@ This presents an obvious problem for a programming language. In order for a comp
 ### True Random Number Generators
 In order to be truly random, a True Random Number Generator (TRNG) must have the following attributes:
 
-Each possible value is equally probable Each number in sequence must be statistically independent (i.e. no values in the sequence affect the generation of any of the other values) Non-deterministic (i.e. the next result can not be predicted) Non-periodic (i.e. no pattern can develop over time) The best way to achieve this is to use data from natural phenomena to generate truly random numbers. As an example of this random.org uses atmospheric noise to generate its truly random numbers. Great, you say. I can harness nature to pluck random elements from my array. I am a golden god!
+* Each possible value is equally probable
+* Each number in sequence must be
+  * statistically independent (i.e. no values in the sequence affect the generation of any of the other values)
+  * Non-deterministic (i.e. the next result can not be predicted)
+  * Non-periodic (i.e. no pattern can develop over time)
+
+The best way to achieve this is to use data from natural phenomena to generate truly random numbers. As an example of this random.org uses atmospheric noise to generate its truly random numbers. Great, you say. I can harness nature to pluck random elements from my array. I am a golden god!
 
 Not so fast. Literally.
 
-Generating truly random numbers is comparatively slow and inefficient when compared to pseudo random number generation, and most problem domains don't call for that level of randomness. Just how crucial is it that the randomly selected background colour for your website has not been used in the last 2^19938 times?
+Generating truly random numbers is comparatively slow and inefficient when compared to pseudo random number generation, and most problem domains don't call for that level of randomness. Just how crucial is it that the randomly selected background colour for your website has not been used in the last 2<sub>^19938</sub> times?
 
 ### Pseudo Random Number Generators
 This brings us to the Pseudo Random Number Generator (PRNG). The job of the PRNG is to provide a "good enough" random number for the task at hand. In general this means two things:
 
-The algorithm is deterministic. There is a pattern being followed to generate the number and therefor it is deterministic by definition. It may be nigh on impossible to figure out in polynomial time, but it is still deterministic. The algorithm is periodic. That is to say that, given enough time, the sequence of numbers being generated will repeat. A good PRNG will have as long a period as possible. The end result is that they are generating numbers that are random enough, and they are doing it much faster than the TRNG equivalent.
+* The algorithm is deterministic. There is a pattern being followed to generate the number and therefore it is deterministic by definition. It may be nigh on impossible to figure out in polynomial time, but it is still deterministic.
+* The algorithm is periodic. That is to say that, given enough time, the sequence of numbers being generated will repeat. A good PRNG will have as long a period as possible.
+
+The end result is that they are generating numbers that are random enough, and they are doing it much faster than the TRNG equivalent.
 
 ## Pseudo Random Number Generation in Elixir
 Now that we know what and why a PRNG is, let's look at Elixir. As I mentioned above, Elixir does not implement its own PRNG, instead preferring (as it does on many occasions) to use the Erlang implementation. Erlang is unusual when compared to the other languages I've used random number generation in before, in that it does not seed the PRNG for you. You need to set it yourself. For example, when you ask for a random number in Ruby using Kernel.rand, it automatically seeds the PRNG using the current time and process ID.
@@ -129,7 +143,7 @@ iex(8)> :random.uniform
 0.5813421379555017
 ```
 
-This time we get a different sequence of random numbers because we are seeding using a different value each time. You will also notice that we did not restart iex between seeding this time. Reseeding is enough to reset the PNRG and so we don't have to restart iex. We can prove this out if we seed multiple times using the default seed.
+This time we get a different sequence of random numbers because we are seeding using a different value each time. You will also notice that we did not restart iex between seeding this time. Reseeding is enough to reset the PRNG and so we don't have to restart iex. We can prove this out if we seed multiple times using the default seed.
 
 ```bash
 iex(1)> :random.seed
@@ -225,4 +239,4 @@ Whatever you are working on, be careful when using `:erlang.now`. If you are thi
 
 ## Acknowledgements
 
-My thanks to Paul Wilson of {{ site.title }}, Gordon Guthrie and Francesco Cesarini of Erlang Solutions and Kenji Rikitake for kindly agreeing to review this post for me. Further thanks to Kenji for the presentation that seeded (pun entirely intended) my understanding of random number generation in Erlang. :)
+My thanks to Paul Wilson (Cultivate), Gordon Guthrie (Basho), Francesco Cesarini (Erlang Solutions) and Kenji Rikitake for kindly agreeing to review this post for me. Further thanks to Kenji for the presentation that seeded (pun entirely intended) my understanding of random number generation in Erlang. :)
