@@ -7,6 +7,8 @@ description: I recently started learning Elixir and decided for my first "real" 
 <br>
 <div class="callout">
   <strong>UPDATE</strong>: since this post was written Erlang 18 was released. Erlang 18 now contains a <code>rand</code> module that provides a seeded PRNG. Calling <code>:rand.uniform</code> instead of <code>:random.uniform</code> negates the need for seeding unless you specifically change the algorithm being used. See <a href="http://erlang.org/doc/man/rand.html">the docs</a> for more info.
+
+  Thanks to José Valim (Plataformatec) for the heads up.
 </div>
 
 I recently started learning Elixir and decided for my first "real" project to implement a basic genetic algorithm. I like to do this to kick the tyres on a new language because it's a non-trivial problem that gives you a good idea of what it's like to work with that language.
