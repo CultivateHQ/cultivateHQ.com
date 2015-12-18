@@ -239,4 +239,4 @@ Whatever you are working on, be careful when using `:erlang.now`. If you are thi
 
 ## Acknowledgements
 
-My thanks to Cultivate MD, Paul Wilson, Gordon Guthrie and Francesco Cesarini of Erlang Solutions and Kenji Rikitake for kindly agreeing to review this post for me. Further thanks to Kenji for the presentation that seeded (pun entirely intended) my understanding of random number generation in Erlang. :)
+My thanks to Paul Wilson (Cultivate), Gordon Guthrie (Basho), Francesco Cesarini (Erlang Solutions) and Kenji Rikitake for kindly agreeing to review this post for me. Further thanks to Kenji for the presentation that seeded (pun entirely intended) my understanding of random number generation in Erlang. :)
