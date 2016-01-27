@@ -50,7 +50,7 @@ The final stage is pair programming with our developers at our Edinburgh office.
 
 ### Equal-opportunities
 
-We are an equal opportunities employer and value diversity at our company. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status, or disability status.
+We are an equal opportunities employer and value diversity at our company. We do not discriminate on the basis of race, religion, colour, national origin, gender, gender identity, sexual orientation, age, marital status, or disability status.
 
 ### Salary range
 
