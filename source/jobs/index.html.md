@@ -8,9 +8,9 @@ To apply email [careers@cultivatehq.com](mailto:careers@cultivatehq.com) and tel
 
 ### The Job
 
-Are you a developer who wants to join a friendly team who care deeply about the quality of their work? If so, then we would love you to [get in touch](mailto:careers@cultivatehq.com).
+Are you a senior developer who wants to join a friendly team who care deeply about the quality of their work? If so, then we would love you to [get in touch](mailto:careers@cultivatehq.com).
 
-We care more about passion and curiosity, less about knowledge of one particular framework. For instance, you don’t need to know Rails but it would be helpful if you had experience in similar frameworks, and are willing to learn.
+The majority of our current projects are in Ruby on Rails and so experience with Rails, at any level, is necessary for this position.
 
 #### Here are some pointers on the kind of things we look for.
 
@@ -20,8 +20,8 @@ We care more about passion and curiosity, less about knowledge of one particular
 * You should live in, or want to relocate to, Edinburgh.
 * Well-rounded developers (polyglot, web, mobile) who are comfortable in the full stack.
 * Know at least one programming language very well and can pick up new languages quickly.
+* Experience with Ruby on Rails.
 * Experience with or an interest in the following are a nice plus:
-    * Ruby on Rails
     * iOS development
     * Functional languages, particularly Elixir and Erlang
     * Front-end web development
