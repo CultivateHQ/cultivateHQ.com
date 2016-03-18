@@ -87,7 +87,7 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
       ...
       "dependencies": {
         "brunch": "^1.8.5",
-        "elm-brunch": "^0.3.0",
+        "elm-brunch": "^0.4.4",
         "babel-brunch": "^5.1.1",
         ...
       }
