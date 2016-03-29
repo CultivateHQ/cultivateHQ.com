@@ -80,7 +80,7 @@ Rather than hard-wire the seats in the `init` function we want to fetch them fro
     end
     ```
 
-    and adjust our test on line 22 of *test/controllers/seat_controller_test.exs* to match.
+    and adjust our test on line 21 of *test/controllers/seat_controller_test.exs* to match.
 
     ```elixir
     # test/controllers/seat_controller_text.exs
@@ -94,7 +94,7 @@ Rather than hard-wire the seats in the `init` function we want to fetch them fro
     ```
 
 7. We can run the tests again using `mix test` to ensure that we haven't broken anything.
-8. Fire up the Phoenix server (`iex -S mix phoenix.server` if you don't already have it running) and you should see the following at <http://localhost:4000/api/seats>
+8. Restart your Phoenix server (CTRL-C twice to shutdown and then `iex -S mix phoenix.server` to start again) and you should see the following at <http://localhost:4000/api/seats>
 
     ![Data API](/images/phoenix-elm/11.png)
 
@@ -218,7 +218,7 @@ So let's step through the `fetchSeats` function.
 
 ## Summary
 
-So that's how we fetch data via HTTP in Elm. Elm makes a lot of hard tings easy for us. Unfortunately HTTP is one of the "easy" things it makes, at least initially, hard. There is good reason for this though. Elm is forcing us to work in a particular way so that we can protect ourselves from runtime exceptions in our applications.
+So that's how we fetch data via HTTP in Elm. Elm makes a lot of hard things easy for us. Unfortunately HTTP is one of the "easy" things it makes, at least initially, hard. There is good reason for this though. Elm is forcing us to work in a particular way so that we can protect ourselves from runtime exceptions in our applications.
 
 This is the part of the tutorial that I've found the hardest to explain, mostly because I'm fairly new to a few of these concepts myself. If you'd like to read more on the subject, example 5 in the [Elm Architecture Tutorial](https://github.com/evancz/elm-architecture-tutorial/) is the best place to start.
 
