@@ -86,9 +86,10 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
     {
       ...
       "dependencies": {
-        "brunch": "^1.8.5",
-        "elm-brunch": "^0.4.4",
-        "babel-brunch": "^5.1.1",
+        "babel-brunch": "~6.0.0",
+        "brunch": "~2.1.3",
+        "elm-brunch": "~0.4.4",
+        "clean-css-brunch": "~1.8.0",
         ...
       }
     }
@@ -135,8 +136,8 @@ Now we need to adjust our Phoenix application to display the HTML output by the 
 2. By making this change we have broken one of our tests. To keep it passing for now, let's make a small tweak to *test/controllers/page_controller_test.exs*.
 
     ```elixir
-    test "GET /" do
-      conn = get conn(), "/"
+    test "GET /", %{conn: conn} do
+      conn = get conn, "/"
       assert html_response(conn, 200) =~ "<div id=\"elm-main\"></div>"
     end
     ```
@@ -167,14 +168,16 @@ Now we need to adjust our Phoenix application to display the HTML output by the 
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Hello Phoenix!</title>
+        <title>Hello SeatSaver!</title>
         <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
       </head>
 
       <body>
-        <div class="container" role="main">
+        <div class="container">
 
-          <%= @inner %>
+          <main role="main">
+            <%= render @view_module, @view_template, assigns %>
+          </main>
 
         </div> <!-- /container -->
         <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
