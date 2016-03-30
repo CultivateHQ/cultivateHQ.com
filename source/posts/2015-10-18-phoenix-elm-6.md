@@ -188,7 +188,7 @@ We now have StartApp set up, but it doesn't yet _do_ anything.
 
 3. Now, if you go to your browser, you should be able to click on the seats and see them turn from gray to green and back again!
 
-    ![toggling a seat](http://g.recordit.co/wNpuUF1fHn.gif)
+    ![toggling a seat](/images/phoenix-elm/wNpuUF1fHn.gif)
 
 
 ## Summary
