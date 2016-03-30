@@ -25,27 +25,15 @@ You'll need to have the items below installed in order to follow along:
 
 If you can, please use the versions noted below as it will make following the tutorial easier. If you can't then check the gotchas on the repo as others may have logged issues for the version that you are using.
 
-* Erlang/OTP 18
-* Elixir 1.1.1 (we upgrade to 1.2 in [part 12](/posts/phoenix-elm-12))
-* Phoenix 1.0.3 (we upgrade to 1.1.3 in [part 12](/posts/phoenix-elm-12))
-* Elm 0.15.1 (we upgrade to 0.16.0 in [part 10](/posts/phoenix-elm-10))
+* Erlang 18.3
+* Elixir 1.2.3
+* Phoenix 1.1.4
+* Elm 0.16.0
 
 
 ### Upgrading Phoenix
 
-You may need to upgrade your version of Phoenix. In that situation you can use the instructions below. Be sure to check the [Phoenix blog](http://www.phoenixframework.org/blog) for any upgrade notes between versions.
-
-```shell
-# find your current version of Phoenix
-mix archive
-
-# then uninstall it
-mix archive.uninstall <old Phoenix archive>
-
-# then install the version that you want
-mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
-```
-
+You may need to upgrade your version of Phoenix. Be sure to check the [Phoenix blog](http://www.phoenixframework.org/blog) for any upgrade notes between versions.
 
 ### Getting up to speed
 

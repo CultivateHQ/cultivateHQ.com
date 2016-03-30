@@ -111,7 +111,7 @@ Let's upgrade our application from *StartApp.Simple* to *StartApp*.
 
 5. If we visit <http://localhost:4000> in our browser our application should look and behave the same as before.
 
-    ![toggling a seat](/images/phoenix-elm/10.png)
+    ![toggling a seat](http://g.recordit.co/wNpuUF1fHn.gif)
 
 
 ## Summary

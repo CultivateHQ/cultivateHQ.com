@@ -75,10 +75,6 @@ Let's update our Elm application so that we can toggle a Seat from available to 
             List.map updateSeat model
     ```
 
-    <div class="callout">
-      Please note that prior to Elm 0.16.0, updating the occupied flag would have been done as <code>{ seatFromModel | occupied <- not seatFromModel.occupied }</code> with a <code><-</code> rather than a <code>=</code>.
-    </div>
-
     OK, there's a lot going on here, so let's take it line by line. First of all we define an Action called Toggle. The Toggle Action will take an argument of type Seat. That is why we have `Toggle Seat`. We are not declaring two Actions here, otherwise there would have been a `|` between them.
 
     In our `update` function we have a `case` statement that just has one matcher currently for our `Toggle` Action. The Action will use `List.map` (in the `in` block at the bottom) to call the `updateSeat` function for each seat in the model (remember our model is a List of Seat).
@@ -90,7 +86,7 @@ Let's update our Elm application so that we can toggle a Seat from available to 
 
 ## Introducing StartApp
 
-We now have our `update` function but we're not using it anywhere. We could at this point start looking at Elm Signals and Mailboxes, at folding and mapping and merging, but let's not. Elm handily provides a wrapper around all of the necessary wiring required to have Actions routed around our application into the Update. This wrapper is called StartApp.
+We now have our `update` function, but we're not using it anywhere. We could at this point start looking at Elm Signals and Mailboxes, at folding and mapping and merging, but let's not. Elm handily provides a wrapper around all of the necessary wiring required to have Actions routed around our application into the Update. This wrapper is called StartApp.
 
 1. Let's add it to our application. Open a terminal window and do the following:
 
@@ -127,7 +123,7 @@ We now have our `update` function but we're not using it anywhere. We could at t
         }
     ```
 
-3. We need to make one other change to join everything up. The View needs to have a way to pass events such as mouse clicks or key presses back to the Update. In order to do this when using StartApp we need to provide an address to send Actions to so that StartApp knows how to link everything together. We can do this as follows:
+3. We need to make one other change to join everything up. The View needs to have a way to pass events such as mouse clicks or key presses back to the Update. In order to do this, when using StartApp, we need to provide an address to send Actions to so that StartApp knows how to link everything together. We can do this as follows:
 
     ```haskell
     -- VIEW
@@ -192,7 +188,7 @@ We now have StartApp set up, but it doesn't yet _do_ anything.
 
 3. Now, if you go to your browser, you should be able to click on the seats and see them turn from gray to green and back again!
 
-    ![toggling a seat](/images/phoenix-elm/10.png)
+    ![toggling a seat](http://g.recordit.co/wNpuUF1fHn.gif)
 
 
 ## Summary
