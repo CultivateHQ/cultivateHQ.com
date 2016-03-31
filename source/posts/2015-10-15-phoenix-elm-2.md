@@ -123,6 +123,23 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
     }
     ```
 
+    <section class="callout">
+      *Windows*: if you're using Windows elm-brunch doesn't yet handle file paths with / instead of \. You can get around this for just now (if you're only developing on a Windows machine) by changing the plugins config as follows:
+
+      <pre>
+        <code>
+        plugins: {
+          elmBrunch: {
+            elmFolder: 'web\/elm',
+            mainModules: ['SeatSaver.elm'],
+            outputFolder: '..\/static\/vendor'
+          },
+          ...
+        },
+        </code>
+      </pre>
+    </section>
+
 ### Hooking up to the frontend
 
 Now we need to adjust our Phoenix application to display the HTML output by the Elm application.
