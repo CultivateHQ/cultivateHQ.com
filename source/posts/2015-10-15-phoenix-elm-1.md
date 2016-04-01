@@ -35,6 +35,10 @@ If you can, please use the versions noted below as it will make following the tu
 
 You may need to upgrade your version of Phoenix. Be sure to check the [Phoenix blog](http://www.phoenixframework.org/blog) for any upgrade notes between versions.
 
+### A note for readers using Windows
+
+This tutorial assumes that you are working on a *nix machine, but I've tried to call out where possible any Windows-specific gotchas. However you will have to parse some things such as file paths as you go (i.e. `web/elm/SeatSaver.elm` becomes `web\elm\SeatSaver.elm` on Windows).
+
 ### Getting up to speed
 
 If you're brand new to Phoenix then I would suggest going through the [Guides on the Phoenix site](http://www.phoenixframework.org/docs/overview). That said, we will likely cover everything that you need to know as you need to know it here. There is also a [book](https://pragprog.com/book/phoenix/programming-phoenix) on The Pragmatic Bookshelf.
@@ -60,6 +64,14 @@ There are a number of gotchas on the [tutorial project's wiki](https://github.co
 
     <div class="callout">
       Make sure that you have Postgres running and that you either have a <em>postgres</em> user set up in Postgres or that you have valid user credentials in both the <em>config/dev.exs</em> and <em>config/test.exs</em> files.
+      <br>
+      <br>
+      If you are running on Windows you will need to make sure that you have the path to the `psql` binary in your Environment Path. See <a href="http://www.computerhope.com/issues/ch000549.htm#0">this guide</a> for instructions on how to change the PATH and add the following to the end of the PATH string (changing as appropriate for your installation):
+      <br>
+      <br>
+      <code>
+        C:\Program Files\PostgreSQL\9.5\bin;
+      </code>
     </div>
 
     Create the database for the project by running:
