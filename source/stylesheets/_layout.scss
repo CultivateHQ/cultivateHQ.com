@@ -26,7 +26,7 @@ body { background: #f0f0f0}
   @include clearfix;
 }
 
-section{ 
+section{
   @extend .row;
   @include rhythm(0,0,2,0);
 }
@@ -111,3 +111,5 @@ section > .wrapper >  img { max-width: 100%; min-width: 100%; @include rhythm(1,
     margin-bottom: 1em;
   }
 }
+
+.foo {background: white}
