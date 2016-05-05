@@ -1,32 +1,18 @@
-<header>
-  <div id="site-header">
-    <div class="wrapper">
-      <a href="/">
-        <div id="logo">
-          <div class="logo-text">
-            Cultivate
-          </div>
-          <div class="logo-icon">
-            <%= image_tag "logo-small.svg", alt: "" %>
-          </div>
-        </div>
-      </a>
-      <div class="contact-info">
+<div id="page">
+  <header id="masthead">
+    <div class="max-width">
+      <a id="site-logo" href="/"><%= image_tag "svg/logo-white.svg", alt: "", width: "114", height: "26" %></a>
+      <a id="mobile-menu-trigger" href="#site-navigation">Menu</a>
+        <nav id="site-navigation">
         <ul>
-          <li><a href="tel://+448455280757"><i class="fa fa-phone" aria-label="Telephone"></i><span class="text">+44 (0)845 528 0757</span></a></li>
-          <li><a href="mailto:contact@cultivateHQ.com"><i class="fa fa-envelope" aria-label="Email"></i><span class="text">contact@cultivateHQ.com</span></a></li>
-          <li><a href="http://twitter.com/cultivatehq"><i class="fa fa-twitter" aria-label="Twitter"></i><span class="text">cultivatehq</span></a></li>
-        </ul>
-      </div>
-      <nav>
-        <ul>
-          <li><%= link_to 'Services', '/#what-we-do', class: 'internal-link' %></li>
-          <li><%= link_to 'Clients', '/clients/' %></li>
-          <li><%= link_to 'About', '/about/'%></li>
+          <li><%= link_to 'Services', '/services/' %></li>
+          <li><%= link_to 'Why Cultivate?', '/clients/' %></li>
+          <li><%= link_to 'About Us', '/about/'%></li>
           <li><%= link_to 'Jobs', '/jobs/' %></li>
           <li><%= link_to 'Blog', '/posts/' %></li>
+          <li><%= link_to 'Contact Us', '/contact/' %></li>
         </ul>
       </nav>
+
     </div>
-  </div>
-</header>
+  </header>

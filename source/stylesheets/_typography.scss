@@ -1,66 +1,32 @@
-$base-font-size: 18px;
-$base-line-height: 30px;
-@include establish-baseline;
-//@include baseline-grid-overlay;
+/* Setup */
+html {
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
 
 body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 400;
+  color: $grey_default;
 }
 
-em {font-weight: 700;}
+#page {
+  @include font-size(19);
+}
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: 300;
+  color: $grey_dark;
+}
+
+#site-navigation a {
+  text-transform: uppercase;
   font-weight: 700;
-  @include text-shadow(rgba(white, 0.3) 0 1px 0);
-  color: #444;
+  color: $white;
+  text-decoration: none;
+  @include font-size(14);
 }
-
-
-h1 {
-  @include adjust-font-size-to(36px);
-  @include rhythm(0.5, 0, 0, 0, 36px);
-  color: #888;
-  border-bottom: 1px solid #DDD;
-}
-
-h2 {
-  @include adjust-font-size-to(24px, 1);
-  @include rhythm(0.5, 0, 0, 1, 24px);
-}
-
-h3 {
-  @include adjust-font-size-to(21px);
-  @include rhythm(1, 0, 0, 0, 21px);
-}
-
-h4 {
-  @include adjust-font-size-to(18px);
-  @include rhythm(1, 0, 0, 0, 21px);
-}
-
-h5 {
-  @include adjust-font-size-to(18px);
-  @include rhythm(1, 0, 0, 0, 18px);
-}
-
-h6 {
-  @include adjust-font-size-to(16px);
-  font-weight: 300;
-  font-style: italic;
-  @include rhythm(1, 0, 0, 0, 16px);
-}
-
-
-p, ul, ol, .highlight, footer address {
-  margin-top: 0;
-  margin-bottom: rhythm(1);
-}
-
-blockquote {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-strong { font-weight: 700; color: #e21d87;}

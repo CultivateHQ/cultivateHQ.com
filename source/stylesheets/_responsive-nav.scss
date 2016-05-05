@@ -1,69 +1,9 @@
-#site-header {
-  border-bottom: 1px solid #DDD;
-  @media screen and (max-width: $break-medium) { min-height: 120px};
-  nav {
-    float: right;
-    padding: 0;
-    margin: 0;
-    font-weight: 300;
-    width: 100%;
-    clear: right;
+#mobile-menu-trigger {
+  display: inline-block;
 
-    @media screen and (min-width: $break-menu) { width: auto; };
-    li {
-      @media screen and (max-width: $break-menu) { text-align: center;}
-      a {
-        color: black;
-      }
+    @include em-min-width(720) {
+      display: none;
     }
-  }
 
-  ul {
-    float: right;
-    padding: 0;
-    list-style: none;
-    @include clearfix;
-    margin-bottom: 0;
-    @media screen and (max-width: $break-menu) { width: 100%;}
 
-    li {
-      float: left;
-      @include adjust-font-size-to($base-font-size);
-
-      a {
-        display: block;
-        width: 100%;
-        padding: 0 0.5em;
-        @media screen and (max-width: $break-small) { font-size: 0.9em; padding: 0 0.3em !important; text-align: center;}
-        text-decoration: none;
-        -webkit-tap-highlight-color: white;
-
-        &:hover, &:focus { text-decoration: underline; }
-
-        @media screen and (min-width: $break-small) and (max-width: $break-medium) { padding: 0 0.5em;}
-      }
-
-      &:last-child { a { padding-right: 0} }
-      &:first-child { a {padding-left: 0 }}
-
-      &.active a, a:active {
-        background: rgba(0,0,0,0.2);
-      }
-
-      @media screen and (min-width: $break-medium) {
-        &:last-child a { border-right: 0; }
-      }
-    }
-  }
 }
-
-
-.contact-info {
-  margin-top: 1em;
-   @include adjust-font-size-to(14px);
-  .text {display: none;}
-  @media screen and (min-width: $break-contact-menu) {
-    .text { display: inline-block; margin-left: 0.25em;}
-  }
-}
-

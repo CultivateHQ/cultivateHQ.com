@@ -1,42 +1,4 @@
-#site-header {
-  background: white;
-  width: 100%;
-  left: 0;
-  top: 0;
-  height: 85px;
-  z-index: 99;
-
-  #site-header-sticky-wrapper & { background: rgba(255,255,255, 0.9)}
-
-  .contact-info {
-    float: right;
-    font-weight: 300;
-  }
-
-  #logo {
-    margin: 0.25em 0;
-    @include adjust-font-size-to(48px);
-    float: left;
-    font-weight: 300;
-    color: black;
-
-    @media screen and (max-width: $break-medium) { margin-top: 0;}
-
-    .logo-text {float: left;}
-
-    .logo-icon {
-      float: left;
-      width: 34px;
-      height: 34px;
-      margin-top: -0.3em;
-
-      @media screen and (max-width: $break-medium) { width: 21px; height: 21px;}
-
-      img { width: 100%; }
-    }
-
-    @media screen and (max-width: $break-medium) {
-      @include adjust-font-size-to(30px, 2/1);
-    }
-  }
+#masthead {
+  background-color: $bg_charcoal;
+  padding: 20px;
 }

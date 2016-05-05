@@ -18,11 +18,11 @@ form ul {
     input[type=submit]{
       border: none;
       color: white;
-      background: $cultivate-pink;
+      //background: $cultivate-pink;
       padding: 0.5em 1em;
       @include border-radius(3px);
 
-      &:hover { background: $cultivate-pink-dark;}
+      //&:hover { background: $cultivate-pink-dark;}
     }
   }
 }
