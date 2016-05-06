@@ -1,5 +1,12 @@
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
 .padding {
   padding: 20px;
+}
+
+.padding-large {
+  padding: 40px 20px;
 }
 
 blockquote {

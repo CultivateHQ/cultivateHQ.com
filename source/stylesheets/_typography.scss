@@ -21,6 +21,15 @@ h1, h2, h3,
 h4, h5, h6 {
   font-weight: 300;
   color: $grey_dark;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+h1 {
+  @include font-size(27);
+  @include em-min-width(720) {
+    @include font-size(55);
+  }
 }
 
 #site-navigation a {

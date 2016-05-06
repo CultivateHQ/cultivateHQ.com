@@ -1,10 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <%= partial "partials/head" %>
-  </head>
+<%= partial "partials/head" %>
+<%= partial "partials/header" %>
   <body class="<%= page_classes %>">
-    <%= partial "partials/header" %>
     <section class="home-testimonial padding">
       <div class="max-width">
         <blockquote class="home-testimonial--quote">
@@ -14,9 +10,6 @@
         <a class="button button--on-dark" href="#">What can Cultivate do for you?</a>
       </div>
     </section>
-    <div id="site-content-area">
-        <%= yield %>
-        <%= partial "partials/footer" %>
-    </div>
-  </body>
-</html>
+    <%# "yield" pulls in index.html.erb %>
+    <%= yield %>
+    <%= partial "partials/footer" %>

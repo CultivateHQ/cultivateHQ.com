@@ -24,3 +24,21 @@
   }
 
 }
+
+.home-callout {
+  background-color: $grey_brand;
+  text-align: center;
+
+  h1, h2, h3,
+  h4, h5, h6 {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    @include font-size(21);
+    @include em-min-width(720) {
+      @include font-size(33);
+    }
+  }
+
+}
