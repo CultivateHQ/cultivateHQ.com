@@ -1,9 +1,31 @@
+
+
 #mobile-menu-trigger {
   display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: $white;
+  text-decoration: none;
+  font-weight: 700;
+  @include font-size(14);
+
+  &:before, &:after {
+    content: '';
+    width: 22px;
+    height: 2px;
+    display: inline-block;
+    background-color: $pink_brand;
+    float: right;
+    margin-left: 6px;
+    margin-top: 3px;
+  }
+
+  &:after {
+    clear: left;
+  }
 
     @include em-min-width(720) {
       display: none;
     }
-
 
 }

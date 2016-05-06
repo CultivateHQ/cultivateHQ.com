@@ -2,3 +2,18 @@
   background-color: $bg_charcoal;
   padding: 20px;
 }
+
+#site-logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+#site-navigation {
+  display: none;
+
+    @include em-min-width(720) {
+      display: inline-block;;
+    }
+
+}
