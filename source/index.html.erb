@@ -4,10 +4,11 @@ title: Welcome to Cultivate
 <section class="home-callout padding-large">
   <div class="max-width">
     <h1>Our team build world-class software products with proven and in-depth expertise in product development, agile and user experience.</h1>
-  </div>  
+  </div>
 </section>
-<section class="home-clients">
-  <ul class="clients">
+<section class="home-clients padding-large">
+  <h2>Our clients cover FTSE100 companies, VC-backed startups and public sector organisations.</h2>
+  <ul class="home-clients-list">
     <li><%= image_tag("clients/general-electric.svg", alt: 'General Electric') %></li>
     <li><%= image_tag("clients/gov-uk.svg", alt: 'GOV.UK') %></li>
     <li><%= image_tag("clients/house-trip.svg", alt: 'House Trip') %></li>
@@ -20,4 +21,4 @@ title: Welcome to Cultivate
     <li><%= image_tag("clients/view-a-bill.svg", alt: 'View-a-Bill') %></li>
   </ul>
 </section>
-<%# Services core %>
+<%= partial "partials/services-core" %>
