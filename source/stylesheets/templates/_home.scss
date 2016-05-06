@@ -1,0 +1,26 @@
+.home-testimonial {
+  background: $grey_dark;
+  color: $white;
+  text-align: center;
+  &.padding {
+    padding-bottom: 50px;
+  }
+}
+
+.home-testimonial--quote {
+  padding: 30px 20px;
+  @include font-size(25);
+
+  @include em-min-width(720) {
+    @include font-size(45);
+  }
+
+  cite {
+    max-width: 80%;
+  }
+
+  img {
+    max-width: 150px;
+  }
+
+}

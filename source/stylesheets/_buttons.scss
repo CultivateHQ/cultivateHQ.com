@@ -1,0 +1,26 @@
+.button {
+  border-radius: 5px;
+  border: 2px solid $green_brand;
+  background-color: $green_brand;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include font-size(14);
+  color: $grey_dark;
+  padding: 14px 17px;
+  font-weight: 700;
+
+    &:hover, &:focus, &:active {
+      color: $grey_dark;
+      background: transparent;
+      border-color: $grey_dark;
+    }
+
+    &.button--on-dark {
+      &:hover, &:focus, &:active {
+        border-color: $white;
+        color: $white;
+      }
+    }
+
+}
