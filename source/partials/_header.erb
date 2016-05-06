@@ -1,18 +1,19 @@
 <div id="page">
-  <header id="masthead">
-    <div class="max-width">
+  <header id="masthead" class="padding">
+    <div class="max-width masthead--inner">
       <a id="site-logo" href="/"><%= image_tag "svg/logo-white.svg", alt: "", width: "114", height: "26" %></a>
-      <a id="mobile-menu-trigger" href="#site-navigation">Menu</a>
-        <nav id="site-navigation">
-        <ul>
-          <li><%= link_to 'Services', '/services/' %></li>
-          <li><%= link_to 'Why Cultivate?', '/clients/' %></li>
-          <li><%= link_to 'About Us', '/about/'%></li>
-          <li><%= link_to 'Jobs', '/jobs/' %></li>
-          <li><%= link_to 'Blog', '/posts/' %></li>
-          <li><%= link_to 'Contact Us', '/contact/' %></li>
-        </ul>
-      </nav>
-
+      <div id="site-navigation">
+        <a id="mobile-menu-trigger" href="#site-navigation">Menu</a>
+        <nav>
+          <ul>
+            <li><%= link_to 'Services', '/services/' %></li>
+            <li><%= link_to 'Why Cultivate?', '/clients/' %></li>
+            <li><%= link_to 'About Us', '/about/'%></li>
+            <li><%= link_to 'Jobs', '/jobs/' %></li>
+            <li><%= link_to 'Blog', '/posts/' %></li>
+            <li><%= link_to 'Contact Us', '/contact/' %></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
