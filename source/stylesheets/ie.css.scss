@@ -5,6 +5,7 @@ $legacy-ie: true;
 @import 'compass';
 @import 'mixins';
 @import 'layout';
+@import 'modules/service_block';
 @import 'templates/home';
 @import 'templates/blog';
 @import 'templates/contact';

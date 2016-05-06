@@ -1,72 +1,21 @@
-.home-testimonial {
-  background: $grey_dark;
-  color: $white;
-  text-align: center;
-  &.padding {
-    padding-bottom: 50px;
-  }
-}
-
-.home-testimonial--quote {
-  padding: 30px 20px;
-  @include font-size(25);
-
-  @include em-min-width(720) {
-    @include font-size(45);
-  }
-
-  cite {
-    max-width: 80%;
-  }
-
-  img {
-    max-width: 150px;
-  }
-
-}
-
-.home-callout {
-  background-color: $grey_brand;
+.services-link {
+  background-color: $grey_mid_brand;
+  color: $grey_dark;
+  font-weight: 700;
+  @include font-size(20);
+  display: block;
+  padding: 20px;
+  min-height: 200px;
+  text-decoration: none;
   text-align: center;
 
-  h1, h2, h3,
-  h4, h5, h6 {
-    margin-bottom: 0;
-  }
-
-  h1 {
-    @include font-size(21);
-    @include em-min-width(720) {
-      @include font-size(33);
+    + .services-link {
+      margin-top: 20px;
     }
-  }
 
-}
-
-.home-clients {
-  text-align: center;
-  background-color: $offwhite;
-}
-
-.home-clients-list {
-  padding: 20px 0 0 0;
-  margin: 0;
-  font-size: 0;
-
-  li {
-    text-align: center;
-    vertical-align: middle;
-    @include font-size(19);
-    display: inline-block;
-    width: 33.3333%;
-    margin: 10px 0;
-    padding: 0 10px;
-  }
-
-  img {
-    width: 100%;
-    max-width: 100px;
-    opacity: .4;
-  }
+    &:hover, &:focus, &:active {
+      background: $grey_dark;
+      color: $white;
+    }
 
 }
