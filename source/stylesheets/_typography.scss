@@ -8,6 +8,7 @@ html {
 
 a, a:hover {
 	text-decoration: none;
+	font-weight: 700;
 }
 
 body {
@@ -28,6 +29,11 @@ h4, h5, h6 {
   padding: 0;
 }
 
+.work-with-us {
+  font-weight: 300;
+  color: $grey_dark;
+}
+
 h1 {
   @include font-size(27);
   @include em-min-width(720) {
@@ -39,6 +45,13 @@ h2 {
   @include font-size(22);
   @include em-min-width(720) {
     @include font-size(43);
+  }
+}
+
+.work-with-us {
+  @include font-size(19);
+  @include em-min-width(720) {
+    @include font-size(39);
   }
 }
 

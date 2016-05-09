@@ -1,0 +1,16 @@
+.work-with-us {
+  background: $grey_light_brand;
+  text-align: center;
+  a {
+    color: $grey_dark;
+    border-bottom: 2px solid $grey_dark;
+    @include transition(border-color,0.2);
+    &:hover {
+      border-color: $pink_brand;
+    }
+  }
+}
+
+#site-footer {
+  background: $grey_dark;
+}
