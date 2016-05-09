@@ -3,17 +3,29 @@
   color: $grey_dark;
   font-weight: 700;
   @include font-size(20);
-  display: block;
-  padding: 50px 20px 50px 20px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
   min-height: 200px;
+  padding: 50px 20px 40px 20px;
   text-decoration: none;
   text-align: center;
   background-repeat: no-repeat;
   background-position: center 50px;
 
     h4 {
-      margin-top: 20px;
+      margin-top: 10px;
       font-weight: 700;
+      color: $grey_default;
+    }
+
+    svg {
+      fill: $grey_default;
+    }
+
+    svg, img {
+      max-width: 100%;
+      height: auto;
     }
 
     + .services-link {
