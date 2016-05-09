@@ -6,6 +6,9 @@ html {
 	text-rendering: optimizeLegibility;
 }
 
+a, a:hover {
+	text-decoration: none;
+}
 
 body {
   font-family: 'Lato', Arial, sans-serif;
@@ -43,6 +46,5 @@ h2 {
   text-transform: uppercase;
   font-weight: 700;
   color: $white;
-  text-decoration: none;
   @include font-size(14);
 }

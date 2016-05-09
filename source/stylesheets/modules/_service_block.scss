@@ -1,10 +1,18 @@
+.services-links {
+  display: table;
+  width: 100%;
+  @include em-min-width(800) {
+    @include flexbox();
+  }
+}
+
 .services-link {
   background-color: $grey_mid_brand;
   color: $grey_dark;
   font-weight: 700;
   @include font-size(20);
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   width: 100%;
   min-height: 200px;
   padding: 50px 20px 40px 20px;
@@ -42,6 +50,22 @@
       svg {
         fill: $white;
       }
+    }
+
+
+    @include em-min-width(600) {
+      min-height: 300px;
+      padding: 80px 20px 50px 20px;
+    }
+
+    @include em-min-width(800) {
+      //width: 33.3333%;
+      margin: 0 10px;
+
+      + .services-link {
+        margin-top: 0;
+      }
+
     }
 
 }
