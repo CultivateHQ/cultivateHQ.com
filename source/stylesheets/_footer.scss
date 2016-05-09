@@ -14,4 +14,14 @@
 #site-footer {
   background: $grey_dark;
   color: $white;
+    .form {
+      input {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+}
+
+.text-half {
+  color: $grey_dark_half;
 }
