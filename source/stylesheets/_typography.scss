@@ -55,6 +55,17 @@ h2 {
   }
 }
 
+
+#site-footer {
+  @include font-size(15);
+  h6 {
+    @include font-size(17);
+    font-weight: 700;
+		color: $white;
+  }
+}
+
+
 #site-navigation a {
   text-transform: uppercase;
   font-weight: 700;

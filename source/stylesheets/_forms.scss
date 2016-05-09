@@ -40,3 +40,14 @@ form ul {
   background: #E7FFE7;
   color: green;
 }
+
+.form {
+  @include placeholder($white);
+  input, textarea {
+    border: 0;
+    outline: none;
+    padding: 15px;
+    background: $grey_default;
+
+  }
+}
