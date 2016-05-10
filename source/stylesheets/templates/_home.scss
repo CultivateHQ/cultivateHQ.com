@@ -7,7 +7,7 @@
   }
 }
 
-.home-testimonial-quote {
+.testimonial-quote {
   padding: 30px 20px;
   @include font-size(25);
 
@@ -20,7 +20,7 @@
     @include font-size(45);
   }
 
-  cite {
+  .testimonial-quote__left {
     max-width: 80%;
   }
 
@@ -32,22 +32,35 @@
     display: table;
     width: 100%;
     direction: rtl;
-      .home-testimonial-quote-inner, cite {
+
+      .testimonial-quote__inner, .testimonial-quote__left {
         display: table-cell;
         direction: ltr;
         vertical-align: middle;
       }
-      cite {
-        width: 180px;
+
+      .testimonial-quote__inner, {
+        padding-left: 30px;
+        text-align: left;
+      }
+
+      .testimonial-quote__left {
+        width: 200px;
         @include font-size(15);
         img {
           margin-top: 0;
         }
       }
-      .home-testimonial-quote-inner {
-        text-align: left;
-        padding-left: 30px;
+
+  }
+
+  @include em-min-width($breakpoint_small_desktop) {
+    .testimonial-quote__left {
+      width: 250px;
+      img {
+        max-width: 200px;
       }
+    }
   }
 
 }

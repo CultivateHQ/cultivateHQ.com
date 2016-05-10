@@ -20,7 +20,7 @@ blockquote {
   font-size: 130%;
   text-align: center;
 
-    cite {
+    cite, .testimonial-quote__left {
       display: block;
       margin: 0 auto;
 
@@ -47,4 +47,22 @@ blockquote {
 .mid-width {
   margin: 0 auto;
   max-width: 1160px;
+}
+
+.min-width {
+  margin: 0 auto;
+  max-width: 920px;
+}
+
+.site-content-area-header {
+  background-color: $pink_brand;
+  color: $white;
+  text-align: center;
+  h1, h2 {
+    color: $white
+  }
+}
+
+.page-content {
+  padding: 60px 0;
 }

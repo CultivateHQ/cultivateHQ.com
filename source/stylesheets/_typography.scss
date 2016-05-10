@@ -34,6 +34,8 @@ h4, h5, h6 {
   padding: 0;
 }
 
+
+
 .work-with-us {
   font-weight: 300;
   color: $grey_dark;
@@ -56,6 +58,18 @@ h2 {
   }
 	@include em-min-width($breakpoint_small_desktop) {
     @include font-size(29);
+  }
+}
+
+h2.subtitle {
+	text-transform: uppercase;
+	font-weight: 400;
+	@include font-size(15);
+  @include em-min-width($breakpoint_tablet) {
+    @include font-size(19);
+  }
+	@include em-min-width($breakpoint_small_desktop) {
+    @include font-size(21);
   }
 }
 
