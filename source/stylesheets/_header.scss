@@ -13,7 +13,7 @@
   vertical-align: middle;
   display: table-cell;
   width: 70%;
-  @include em-min-width(720) {
+  @include em-min-width($breakpoint_tablet) {
     width: 30%;
   }
 }
@@ -24,14 +24,14 @@
   width: 30%;
   text-align: right;
 
-  @include em-min-width(720) {
+  @include em-min-width($breakpoint_tablet) {
     width: 70%;
   }
 
     nav {
       display: none;
 
-      @include em-min-width(720) {
+      @include em-min-width($breakpoint_tablet) {
         display: block;
 
         ul {

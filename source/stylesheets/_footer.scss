@@ -12,12 +12,20 @@
 }
 
 #site-footer {
+  display: inline-block;
+  width: 100%;
   background: $grey_dark;
   color: $white;
     .form {
       input {
         width: 100%;
         margin-bottom: 20px;
+        @include em-min-width($breakpoint_small_desktop) {
+          margin-bottom: 0;
+          margin-right: 10px;
+          width: auto;
+          min-width: 70%;
+        }
       }
     }
     a {
@@ -31,4 +39,26 @@
 
 .footer-copyright {
   margin-top: 30px;
+}
+
+@include em-min-width($breakpoint_tablet) {
+  .footer-signup, .footer-copyright {
+    float: left;
+    width: 50%;
+    margin-top: 0;
+  }
+  .footer-signup {
+    float: right;
+    padding-left: 20px;
+    max-width: 555px;
+  }
+  .footer-copyright {
+    padding-right: 20px;
+  }
+}
+
+@include em-min-width($breakpoint_small_desktop) {
+  .footer-signup, .footer-copyright {
+    padding: 0;
+  }
 }

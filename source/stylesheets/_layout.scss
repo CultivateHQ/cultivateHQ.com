@@ -7,6 +7,9 @@ html { box-sizing: border-box; }
 
 .padding-large {
   padding: 40px 20px;
+  @include em-min-width($breakpoint_tablet) {
+    padding: 60px 20px;
+  }
 }
 
 blockquote {
@@ -34,4 +37,14 @@ blockquote {
 
     }
 
+}
+
+.max-width {
+  margin: 0 auto;
+  max-width: 1340px;
+}
+
+.mid-width {
+  margin: 0 auto;
+  max-width: 1160px;
 }

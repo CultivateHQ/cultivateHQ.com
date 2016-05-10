@@ -11,7 +11,12 @@
   padding: 30px 20px;
   @include font-size(25);
 
-  @include em-min-width(720) {
+  @include em-min-width($breakpoint_tablet) {
+    @include font-size(35);
+    padding: 30px 20px 50px 20px;
+  }
+
+  @include em-min-width($breakpoint_small_desktop) {
     @include font-size(45);
   }
 
@@ -58,7 +63,10 @@
 
   h1 {
     @include font-size(21);
-    @include em-min-width(720) {
+    @include em-min-width($breakpoint_tablet) {
+      @include font-size(27);
+    }
+    @include em-min-width($breakpoint_small_desktop) {
       @include font-size(33);
     }
   }
@@ -83,12 +91,21 @@
     width: 33.3333%;
     margin: 10px 0;
     padding: 0 10px;
+    @include em-min-width($breakpoint_tablet) {
+      width: 25%;
+    }
+    @include em-min-width($breakpoint_small_desktop) {
+      width: 20%;
+    }
   }
 
   img {
     width: 100%;
     max-width: 100px;
     opacity: .4;
+    @include em-min-width($breakpoint_tablet) {
+      max-width: 150px;
+    }
   }
 
 }
