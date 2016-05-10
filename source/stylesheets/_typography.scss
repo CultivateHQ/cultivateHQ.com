@@ -34,7 +34,9 @@ h4, h5, h6 {
   padding: 0;
 }
 
-
+.site-content-area-header h1 {
+	margin-bottom: 3px;
+}
 
 .work-with-us {
   font-weight: 300;
@@ -64,7 +66,7 @@ h2 {
 h2.subtitle {
 	text-transform: uppercase;
 	font-weight: 400;
-	@include font-size(15);
+	@include font-size(14);
   @include em-min-width($breakpoint_tablet) {
     @include font-size(19);
   }

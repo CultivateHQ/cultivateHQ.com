@@ -7,64 +7,6 @@
   }
 }
 
-.testimonial-quote {
-  padding: 30px 20px;
-  @include font-size(25);
-
-  @include em-min-width($breakpoint_tablet) {
-    @include font-size(35);
-    padding: 30px 20px 50px 20px;
-  }
-
-  @include em-min-width($breakpoint_small_desktop) {
-    @include font-size(45);
-  }
-
-  .testimonial-quote__left {
-    max-width: 80%;
-  }
-
-  img {
-    max-width: 150px;
-  }
-
-  @include em-min-width(680) {
-    display: table;
-    width: 100%;
-    direction: rtl;
-
-      .testimonial-quote__inner, .testimonial-quote__left {
-        display: table-cell;
-        direction: ltr;
-        vertical-align: middle;
-      }
-
-      .testimonial-quote__inner, {
-        padding-left: 30px;
-        text-align: left;
-      }
-
-      .testimonial-quote__left {
-        width: 200px;
-        @include font-size(15);
-        img {
-          margin-top: 0;
-        }
-      }
-
-  }
-
-  @include em-min-width($breakpoint_small_desktop) {
-    .testimonial-quote__left {
-      width: 250px;
-      img {
-        max-width: 200px;
-      }
-    }
-  }
-
-}
-
 .home-callout {
   background-color: $grey_brand;
   text-align: center;
