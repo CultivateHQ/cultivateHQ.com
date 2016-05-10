@@ -7,7 +7,7 @@
   }
 }
 
-.home-testimonial--quote {
+.home-testimonial-quote {
   padding: 30px 20px;
   @include font-size(25);
 
@@ -21,6 +21,28 @@
 
   img {
     max-width: 150px;
+  }
+
+  @include em-min-width(680) {
+    display: table;
+    width: 100%;
+    direction: rtl;
+      .home-testimonial-quote-inner, cite {
+        display: table-cell;
+        direction: ltr;
+        vertical-align: middle;
+      }
+      cite {
+        width: 180px;
+        @include font-size(15);
+        img {
+          margin-top: 0;
+        }
+      }
+      .home-testimonial-quote-inner {
+        text-align: left;
+        padding-left: 30px;
+      }
   }
 
 }
