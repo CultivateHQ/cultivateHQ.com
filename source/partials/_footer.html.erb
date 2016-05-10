@@ -1,67 +1,47 @@
 <%# if current_page.data.title != 'Contact' %>
-  <section class="work-with-us padding-large">
-    <div class="max-width">
-        We're passionate about understanding businesses, ideas and people.
-        <a href="/contact/">
-          <%= link_to "Let's Talk", '/contact/' %>
-        </a>
-    </div>
-  </section>
+      <section class="work-with-us padding-large">
+        <div class="max-width">
+            We're passionate about understanding businesses, ideas and people.
+            <a href="/contact/">
+              <%= link_to "Let's Talk", '/contact/' %>
+            </a>
+        </div>
+      </section>
 <%# end %>
-
-<footer id="site-footer" class="padding">
-  <div class="max-width">
-    <h6>Sign up for our Quarterly Newsletter</h6>
-    <p class="text-half">We hate spam as much as you do, so we'll never give or sell your email to anyone else.</p>
-    <form class="form" method="post">
-      <input type="email" placeholder="Email Address">
-      <button class="button button--small">Subscribe</button>
-    </form>
-
-    <!-- <div class="column column__half">
-      <div class="vcard">
-        <div>
-          <span class="company_name">Cultivate Software Ltd.</span>
-          <span class="company_number">Company No. SC357781.</span>
+      <footer id="site-footer" class="padding-large">
+        <div class="max-width">
+          <div class="footer-signup">
+            <h6>Sign up for our Quarterly Newsletter</h6>
+            <p class="text-half">We hate spam as much as you do, so we'll never give or sell your email to anyone else.</p>
+            <form class="form" method="post">
+              <input type="email" placeholder="Email Address">
+              <button class="button button--small button--on-darkt">Subscribe</button>
+            </form>
+          </div>
+          <div class="footer-copyright vcard">
+            <p>&copy; Copyright <span class="company_name">Cultivate Software Ltd 2016</span>. <br>
+              <span class="company_number">Company No. SC357781</span>.</p>
+            <p>
+              <a href="mailto:contact@cultivateHQ.com">contact@cultivateHQ.com</a><br>
+              <a href="tel://+448455280757">+44 (0)845 528 0757</a>
+            </p>
+            <p>
+              <a href="https://www.google.com/maps/place/CodeBase/@55.94626,-3.20157,15z/data=!4m2!3m1!1s0x0:0x5727e05b4321b9f6?hl=en-GB">
+                <span class="adr">
+                  <span class="street-address">CodeBase</span>
+                  <span class="locality">Argyle House</span>
+                  <span class="region">Edinburgh</span>
+                  <span class="postal-code">EH3 9DR</span>
+                </span>
+              </a>
+            </p>
+            <p>
+              <a href="http://thisiscodebase.com">
+                <%= image_tag "codebase.png", alt: "codebase logo", width: "99", height: "27" %>
+              </a>
+            </p>
         </div>
-        <div>
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <a href="mailto:contact@cultivateHQ.com">contact@cultivateHQ.com</a>&nbsp;
-        </div>
-        <div>
-          <i class="fa fa-phone" aria-hidden="true"></i>
-          <a href="tel://+448455280757">+44 (0)845 528 0757</a><br>
-        </div>
-
-        <div>
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          <a href="https://www.google.com/maps/place/CodeBase/@55.94626,-3.20157,15z/data=!4m2!3m1!1s0x0:0x5727e05b4321b9f6?hl=en-GB">
-            <span class="adr">
-              <span class="street-address">CodeBase</span>
-              <span class="locality">Argyle House</span>
-              <span class="region">Edinburgh</span>
-              <span class="postal-code">EH3 9DR</span>
-            </span>
-          </a>
-        </div>
-
-      </div>
-    </div>
-    <div class="column column__half">
-      <div class='signup'>
-        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-        <a href="/newsletter-signup">
-        Sign up for our Quarterly Newsletter</a>
-      </div>
-      <div class="codebase">
-        <a href="http://thisiscodebase.com">
-          <%= image_tag "codebase.png", alt: "codebase-logo" %>
-        </a>
-      </div>
-    </div> -->
-  </div>
-</footer>
-</div> <!-- #page -->
-
+      </footer>
+    </div> <!-- #page -->
   </body>
 </html>
