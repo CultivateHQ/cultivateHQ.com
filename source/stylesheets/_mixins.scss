@@ -210,3 +210,11 @@
   -webkit-order: $val;
   order: $val;
 }
+
+@mixin flex-wrap($val) {
+  -webkit-flex-wrap: $val;
+  -moz-flex-wrap: $val;
+  -ms-flex-wrap: $val;
+  -webkit-flex-wrap: $val;
+  flex-wrap: $val;
+}

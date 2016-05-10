@@ -21,6 +21,10 @@ body {
   @include font-size(19);
 }
 
+.case-study__meta {
+	@include font-size(17);
+}
+
 p {
 	margin: 0 0 20px 0;
 	padding: 0;

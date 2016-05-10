@@ -1,3 +1,32 @@
-.cta {
+.case-studies-wrapper {
+  text-align: center;
+}
 
+.case-studies {
+  display: table;
+  width: 100%;
+  @include em-min-width(800) {
+    @include flexbox();
+  }
+}
+
+.case-study {
+  //display: inline-block;
+  //vertical-align: top;
+  width: 100%;
+  padding: 0 20px 0 20px;
+
+  img, svg {
+    display: block;
+    margin: 0 auto;
+  }
+  h3 a {
+    color: $pink_brand;
+    font-weight: 700;
+    border-bottom: 2px solid $pink_brand;
+    &:hover {
+      border-color: $grey_brand;
+    }
+
+  }
 }
