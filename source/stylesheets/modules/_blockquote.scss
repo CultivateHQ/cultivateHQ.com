@@ -94,6 +94,7 @@
 }
 
 .testimonial-quote-macro {
+  padding-bottom: 50px;
   @include font-size(23);
   @include em-min-width($breakpoint_tablet) {
     @include font-size(33);
