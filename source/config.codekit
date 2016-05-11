@@ -2802,29 +2802,29 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/services\/product-development\/index.html.erb": {
+	"\/services\/product-development.html.erb": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/services\/product-development\/index.html.erb",
+		"inputAbbreviatedPath": "\/services\/product-development.html.erb",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/services\/software-development\/index.html.erb": {
+	"\/services\/software-development.html.erb": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/services\/software-development\/index.html.erb",
+		"inputAbbreviatedPath": "\/services\/software-development.html.erb",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/services\/user-experience\/index.html.erb": {
+	"\/services\/user-experience.html.erb": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/services\/user-experience\/index.html.erb",
+		"inputAbbreviatedPath": "\/services\/user-experience.html.erb",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
