@@ -68,7 +68,28 @@ blockquote {
 }
 
 .row {
+  text-align: center;
   &.row--light {
     background: $grey_light_brand;
+  }
+  h2, h3 {
+    margin-bottom: 30px;
+  }
+}
+
+.divider {
+  position: relative;
+  &:after {
+    position: relative;
+    content: '';
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    margin: 50px auto 40px auto;
+    height: 1px;
+    border-top: 1px solid $grey_mid_brand;
+    @include em-min-width($breakpoint_tablet) {
+      margin: 70px auto;
+    }
   }
 }
