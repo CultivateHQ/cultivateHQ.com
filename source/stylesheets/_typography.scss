@@ -69,7 +69,9 @@ h2 {
   }
 }
 
-.page-content {
+
+
+.page-content, .cta {
 	h2 {
 	  @include font-size(25);
 	  @include em-min-width($breakpoint_tablet) {
@@ -79,6 +81,21 @@ h2 {
 	    @include font-size(35);
 	  }
 	}
+	h3 {
+	  @include font-size(20);
+	  @include em-min-width($breakpoint_tablet) {
+	    @include font-size(23);
+	  }
+		@include em-min-width($breakpoint_small_desktop) {
+	    @include font-size(31);
+	  }
+	}
+
+
+
+}
+
+.page-content {
 	a {
 		color: $pink_brand;
 		border-bottom: 2px solid $pink_brand;
@@ -100,6 +117,14 @@ h2.subtitle {
 	@include em-min-width($breakpoint_small_desktop) {
     @include font-size(21);
   }
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
 }
 
 .shout-out {

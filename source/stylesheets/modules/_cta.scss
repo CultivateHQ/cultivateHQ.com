@@ -6,3 +6,18 @@
 .cta--reverse {
   background: $green_brand;
 }
+
+.cta--background {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: $white;
+  h1, h2, h3,
+  h4, h5, h6 {
+    color: $white;
+  }
+}
+
+.cta-title {
+  margin-bottom: 60px;
+}
