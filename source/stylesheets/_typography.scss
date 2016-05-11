@@ -79,6 +79,15 @@ h2 {
 	    @include font-size(35);
 	  }
 	}
+	a {
+		color: $pink_brand;
+		border-bottom: 2px solid $pink_brand;
+		padding-bottom: 2px;
+		@include transition(border-color,.2);
+		&:hover, &:focus, &:active {
+			border-color: $grey_dark;
+		}
+	}
 }
 
 h2.subtitle {
