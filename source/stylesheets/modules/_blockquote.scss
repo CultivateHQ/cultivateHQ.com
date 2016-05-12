@@ -103,3 +103,24 @@
     }
   }
 }
+
+.pullquote {
+  float: left;
+  line-height: 1.3;
+  text-align: left;
+  margin-left: -20px;
+  padding: 4px 20px;
+  border-left: 4px solid $grey_default_half;
+  @include font-size(21);
+  @include em-min-width($breakpoint_tablet) {
+    @include font-size(31);
+    cite {
+      @include font-size(15);
+    }
+  }
+  cite {
+    @include font-size(13);
+    margin-top: 6px;
+    color: $grey_default_half;
+  }
+}
