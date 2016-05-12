@@ -105,22 +105,32 @@
 }
 
 .pullquote {
+  max-width: 255px;
   float: left;
   line-height: 1.3;
   text-align: left;
-  margin-left: -20px;
-  padding: 4px 20px;
+  margin: 0 0 20px -20px;
+  padding: 0 20px 4px 20px;
   border-left: 4px solid $grey_default_half;
+  @include transition(margin-left,0.2);
+
   @include font-size(21);
   @include em-min-width($breakpoint_tablet) {
-    @include font-size(31);
+    @include font-size(27);
     cite {
       @include font-size(15);
     }
   }
+  @include em-min-width($breakpoint_medium_desktop) {
+    margin-left: -60px
+  }
   cite {
     @include font-size(13);
-    margin-top: 6px;
+    margin-top: 20px;
     color: $grey_default_half;
   }
+}
+
+.twitter-tweet {
+  margin: 0 auto;
 }
