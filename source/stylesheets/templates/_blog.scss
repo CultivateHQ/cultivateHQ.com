@@ -26,6 +26,7 @@
   @include em-min-width($breakpoint_small_desktop) {
     display: table;
     width: 100%;
+    table-layout: fixed;
   }
 }
 
@@ -42,9 +43,10 @@
   padding-bottom: 60px;
   @include em-min-width($breakpoint_small_desktop) {
     margin-top: 0;
-    padding: 80px 0 0 50px;
+    padding-top: 80px;
+    padding-left: 50px;
     display: table-cell;
-    width: 25%;
+    width: 22%;
     vertical-align: top;
   }
 }

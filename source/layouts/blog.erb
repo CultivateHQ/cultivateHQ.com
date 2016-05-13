@@ -15,29 +15,23 @@
           <% end %>
         </div>
       </header>
-
-
-
-          <div class="layout-two-column max-width">
-            <div class="layout-two-column__left">
-              <div class="page-content min-width padding-large page-content--blog">
-                <%= yield %>
-              </div>
-            </div>
-            <div class="layout-two-column__right padding">
-              <aside class="widget">
-                <%= partial 'partials/blog_pagination',
-                      locals: {
-                        prev_page: prev_page,
-                        next_page: next_page,
-                        num_pages: num_pages,
-                        page_number: page_number } %>
-              </aside>
-            </div>
+      <div class="layout-two-column max-width">
+        <div class="layout-two-column__left">
+          <div class="page-content min-width padding-large page-content--blog">
+            <%= yield %>
           </div>
-
-
-
+        </div>
+        <div class="layout-two-column__right padding">
+          <aside class="widget">
+            <%= partial 'partials/blog_pagination',
+                  locals: {
+                    prev_page: prev_page,
+                    next_page: next_page,
+                    num_pages: num_pages,
+                    page_number: page_number } %>
+          </aside>
+        </div>
+      </div>
     </section>
     <%= partial "partials/footer" %>
   </body>
