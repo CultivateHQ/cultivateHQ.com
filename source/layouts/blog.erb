@@ -16,18 +16,27 @@
         </div>
       </header>
 
-          <article class="blog-post">
-            <header>
-              <span class="blog-post__author"><%= current_page.data.author %></span>
-              <% if defined? current_page.date %>
-                ,
-                <span class="blog-post__date">
-                  <%= current_page.date.strftime('%d %B, %Y') %>
-                </span>
-              <% end %>
-            </header>
-            <div class="blog-post__body"><%= yield %></div>
-          </article>
+
+
+          <div class="layout-two-column max-width">
+            <div class="layout-two-column__left">
+              <article class="page-content min-width padding-large page-content--blog">
+                <%= yield %>
+              </article>
+            </div>
+            <div class="layout-two-column__right padding">
+              <aside class="widget">
+                <%= partial 'partials/blog_pagination',
+                      locals: {
+                        prev_page: prev_page,
+                        next_page: next_page,
+                        num_pages: num_pages,
+                        page_number: page_number } %>
+              </aside>
+            </div>
+          </div>
+
+
 
     </section>
     <%= partial "partials/footer" %>
