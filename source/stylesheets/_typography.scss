@@ -142,6 +142,13 @@ h2 {
   }
 }
 
+.blog-post__summary {
+	@include font-size(17);
+}
+
+.meta {
+	@include font-size(15);
+}
 
 #site-footer {
   @include font-size(15);

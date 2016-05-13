@@ -40,8 +40,24 @@
   margin-top: -50px;
   padding-bottom: 60px;
   @include em-min-width($breakpoint_small_desktop) {
+    margin-top: 0;
     display: table-cell;
     width: 20%;
     padding-left: 50px;
   }
+}
+
+.blog-post {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $grey_default_half;
+}
+
+.blog-post__summary {
+  padding-top: 8px;
+}
+
+.meta {
+  margin-top: 6px;
+  color: $grey_default_half;
 }

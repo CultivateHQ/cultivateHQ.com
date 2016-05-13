@@ -8,6 +8,15 @@
       <% end %>
     </li>
 
+    <li class="<%= next_page ? '' : 'active' %>">
+      <% if next_page %>
+        <%= link_to 'Next', next_page.url %>
+      <% else %>
+        <span>Next</span>
+      <% end %>
+    </li>
+
+
     <% (1..num_pages).each do |count| %>
       <% if page_number == count %>
         <li class="active">
@@ -23,12 +32,5 @@
       <% end %>
     <% end %>
 
-    <li class="<%= next_page ? '' : 'active' %>">
-      <% if next_page %>
-        <%= link_to 'Next', next_page.url %>
-      <% else %>
-        <span>Next</span>
-      <% end %>
-    </li>
   </ul>
 </div>
