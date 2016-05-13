@@ -1,22 +1,22 @@
 <div class="pagination">
   <ul>
-    <li class="<%= prev_page ? '' : 'active' %>">
+    <li class="button-pagination <%= prev_page ? '' : 'active' %>">
       <% if prev_page %>
-        <%= link_to 'Previous', prev_page.url %>
+        <%= link_to '&lt; Previous', prev_page.url %>
       <% else %>
-        <span>Previous</span>
+        <span>&lt; Previous</span>
       <% end %>
     </li>
 
-    <li class="<%= next_page ? '' : 'active' %>">
+    <li class="button-pagination <%= next_page ? '' : 'active' %>">
       <% if next_page %>
-        <%= link_to 'Next', next_page.url %>
+        <%= link_to 'Next &gt;', next_page.url %>
       <% else %>
-        <span>Next</span>
+        <span>Next &gt;</span>
       <% end %>
     </li>
-
-
+  </ul>
+  <ul>
     <% (1..num_pages).each do |count| %>
       <% if page_number == count %>
         <li class="active">
@@ -31,6 +31,5 @@
         </li>
       <% end %>
     <% end %>
-
   </ul>
 </div>

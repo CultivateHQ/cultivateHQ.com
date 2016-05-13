@@ -45,3 +45,33 @@
     }
 
 }
+
+
+
+.button-pagination {
+  span, a {
+    border-radius: 5px;
+    border: 2px solid $green_brand;
+    background-color: $green_brand;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include font-size(14);
+    color: $grey_dark;
+    padding: 14px 17px;
+    font-weight: 700;
+    min-width: 127px;
+    text-align: center;
+    &:hover, &:focus, &:active {
+      color: $white;
+      background: $grey_dark;
+      border-color: $grey_dark;
+    }
+  }
+  span, span:hover, span:focus, span:active {
+    color: $grey_dark;
+    border: 2px solid $grey_default_half;
+    background-color: $grey_default_half;
+    opacity: 0.5;
+  }
+}
