@@ -9,6 +9,11 @@ img, svg {
   height: auto;
 }
 
+.fa + span.i {
+  position: absolute;
+  left: -99999em;
+}
+
 .padding {
   padding: 20px;
 }

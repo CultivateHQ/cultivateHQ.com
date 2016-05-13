@@ -1,14 +1,9 @@
-.pagination {
-  ul {
+.social-share {
     padding: 0;
     margin: 0;
     list-style: none;
-    + ul {
-      margin-top: 20px;
-    }
     li {
       display: inline-block;
       margin: 0 5px;
     }
-  }
 }

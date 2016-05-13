@@ -95,7 +95,7 @@ h2 {
 
 }
 
-.page-content {
+.page-content, .pagination-numbering {
 	a {
 		color: $pink_brand;
 		border-bottom: 2px solid $pink_brand;
@@ -157,6 +157,10 @@ h2 {
     font-weight: 700;
 		color: $white;
   }
+}
+
+.widget h3 {
+	@include font-size(27);
 }
 
 

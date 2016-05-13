@@ -15,7 +15,7 @@
 
 .widget {
   background: $offwhite;
-  padding: 30px;
+  padding: 40px 20px;
   text-align: center;
   + .widget {
     margin-top: 20px;
@@ -33,6 +33,7 @@
   @include em-min-width($breakpoint_small_desktop) {
     display: table-cell;
     width: 40%;
+    vertical-align: top;
   }
 }
 
@@ -41,9 +42,10 @@
   padding-bottom: 60px;
   @include em-min-width($breakpoint_small_desktop) {
     margin-top: 0;
+    padding: 80px 0 0 50px;
     display: table-cell;
-    width: 20%;
-    padding-left: 50px;
+    width: 25%;
+    vertical-align: top;
   }
 }
 
