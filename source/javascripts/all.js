@@ -1,12 +1,19 @@
 //= require_tree
 //= require jquery/dist/jquery.js
-//= require sticky/jquery.sticky.js
 //= require respond/src/matchmedia.polyfill.js
-//= require respond/src/respond.js
 //= require modernizr.custom.31571.js
 
 
 $(function() {
+
+  // NEW
+
+  $( '#mobile-menu-trigger' ).on( 'click', function (e) {
+    e.preventDefault();
+    $( '#masthead' ).toggleClass('mobile-menu-on');
+  });
+
+  // END NEW
 
   var navigateToHash = function(hash) {
     var selector = '[name="'+hash+'"]';
@@ -46,4 +53,3 @@ $(document).ready(function(){
     });
   }
 });
-

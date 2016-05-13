@@ -9,24 +9,75 @@
   font-weight: 700;
   @include font-size(14);
 
-  &:before, &:after {
-    content: '';
-    width: 22px;
-    height: 2px;
-    display: block;
-    background-color: $pink_brand;
-    float: right;
-    margin-left: 6px;
-    margin-top: 2px;
-    clear: both;
-  }
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
 
-  &:after {
-    margin-top: -5px;
-  }
+      &:after {
+        font-family: 'FontAwesome';
+        content: '\f0c9';
+        color: $pink_brand;
+        @include font-size(20);
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 4px;
+        font-weight: 400;
+      }
 
     @include em-min-width($breakpoint_tablet) {
       display: none;
+    }
+
+}
+
+
+#masthead {
+
+    &.mobile-menu-on {
+
+      #site-logo {
+        position: fixed;
+        z-index: 2;
+      }
+      #mobile-menu-trigger {
+        position: relative;
+        z-index: 2;
+          &:after {
+            content: '\f00d';
+            color: $grey_dark;
+          }
+      }
+
+        #site-navigation nav {
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding: 80px 0 30px 0;
+          text-align: center;
+          background: $pink_brand;
+          z-index: 1;
+          overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+
+          ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+              display: block;
+              a {
+                display: block;
+                padding: 20px;
+                @include font-size(20);
+              }
+            }
+          }
+        }
+
     }
 
 }
