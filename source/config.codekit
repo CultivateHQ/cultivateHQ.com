@@ -1278,13 +1278,13 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/images\/2014-05-10-style-guide.png": {
+	"\/images\/about\/history-line.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 230953,
-		"inputAbbreviatedPath": "\/images\/2014-05-10-style-guide.png",
-		"outputAbbreviatedPath": "\/images\/2014-05-10-style-guide.png",
+		"initialSize": 14606,
+		"inputAbbreviatedPath": "\/images\/about\/history-line.png",
+		"outputAbbreviatedPath": "\/images\/about\/history-line.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1659,28 +1659,6 @@
 		"initialSize": 104190,
 		"inputAbbreviatedPath": "\/images\/cta\/cta-ux.jpg",
 		"outputAbbreviatedPath": "\/images\/cta\/cta-ux.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/history-line.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 24708,
-		"inputAbbreviatedPath": "\/images\/history-line.png",
-		"outputAbbreviatedPath": "\/images\/history-line.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/logo-small.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 16264,
-		"inputAbbreviatedPath": "\/images\/logo-small.png",
-		"outputAbbreviatedPath": "\/images\/logo-small.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2394,15 +2372,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/partials\/_header.erb",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/partials\/_new-leader.erb": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/partials\/_new-leader.erb",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
