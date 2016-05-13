@@ -1,0 +1,47 @@
+.callout {
+  padding: 30px;
+  background: $offwhite;
+  border: 1px solid $grey_mid_brand;
+  font-weight: 700;
+  color: $grey_dark;
+}
+
+.highlight {
+  display: block;
+  padding: 30px;
+  color: #faf6e4;
+  background-color: #122b3b;
+}
+
+.widget {
+  background: $offwhite;
+  padding: 30px;
+  text-align: center;
+  + .widget {
+    margin-top: 20px;
+  }
+}
+
+.layout-two-column {
+  @include em-min-width($breakpoint_small_desktop) {
+    display: table;
+    width: 100%;
+  }
+}
+
+.layout-two-column__left {
+  @include em-min-width($breakpoint_small_desktop) {
+    display: table-cell;
+    width: 40%;
+  }
+}
+
+.layout-two-column__right {
+  margin-top: -50px;
+  padding-bottom: 60px;
+  @include em-min-width($breakpoint_small_desktop) {
+    display: table-cell;
+    width: 20%;
+    padding-left: 50px;
+  }
+}

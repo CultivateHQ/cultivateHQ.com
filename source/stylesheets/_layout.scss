@@ -1,6 +1,14 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
+img, svg, div, span {
+  max-width: 100%;
+}
+
+img, svg {
+  height: auto;
+}
+
 .padding {
   padding: 20px;
 }

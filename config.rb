@@ -41,7 +41,7 @@ end
 #
 # With alternative layout
 page "index.html", :layout => :home
-page "/posts/index.html", :layout => :post
+page "/posts/index.html", :layout => :blog
 page "/key_place.html", :layout => :product
 page "/newsletter-signup"
 page "/feed.xml", :layout => false
