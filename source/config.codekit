@@ -1476,6 +1476,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/clients\/aquila-insight.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3306,
+		"inputAbbreviatedPath": "\/images\/clients\/aquila-insight.png",
+		"outputAbbreviatedPath": "\/images\/clients\/aquila-insight.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/clients\/emerge-adapt.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1531,6 +1542,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/clients\/jp-morgan.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4096,
+		"inputAbbreviatedPath": "\/images\/clients\/jp-morgan.png",
+		"outputAbbreviatedPath": "\/images\/clients\/jp-morgan.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/clients\/julian_letessier.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1538,6 +1560,17 @@
 		"initialSize": 11127,
 		"inputAbbreviatedPath": "\/images\/clients\/julian_letessier.jpg",
 		"outputAbbreviatedPath": "\/images\/clients\/julian_letessier.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/clients\/living-social.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4608,
+		"inputAbbreviatedPath": "\/images\/clients\/living-social.png",
+		"outputAbbreviatedPath": "\/images\/clients\/living-social.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1560,6 +1593,17 @@
 		"initialSize": 4246,
 		"inputAbbreviatedPath": "\/images\/clients\/money-advice-service.png",
 		"outputAbbreviatedPath": "\/images\/clients\/money-advice-service.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/clients\/nesta.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3021,
+		"inputAbbreviatedPath": "\/images\/clients\/nesta.png",
+		"outputAbbreviatedPath": "\/images\/clients\/nesta.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
