@@ -1,6 +1,9 @@
 #masthead {
   background-color: $bg_charcoal;
   padding: 20px;
+  @include em-min-width($breakpoint_tablet) {
+    padding: 28px 20px;
+  }
 }
 
 .masthead--inner {
@@ -37,13 +40,16 @@
         ul {
           padding: 0;
           margin: 0;
-          
+
           li {
             list-style: none;
             display: inline-block;
             margin-left: 25px;
             &:first-child {
               margin-left: 0;
+            }
+            a {
+              padding-bottom: 8px;
             }
           }
 
@@ -54,5 +60,42 @@
     } // include
 
 
+}
 
+// Nav states
+.jobs {
+  a.nav-jobs {
+    border-bottom: 2px solid $green_brand;
+  }
+}
+
+.services {
+  a.nav-services {
+    border-bottom: 2px solid $green_brand;
+  }
+}
+
+.clients {
+  a.nav-clients {
+    border-bottom: 2px solid $green_brand;
+  }
+}
+
+.about {
+  a.nav-about {
+    border-bottom: 2px solid $green_brand;
+  }
+}
+
+.posts {
+  a.nav-posts {
+    border-bottom: 2px solid $green_brand;
+  }
+}
+
+
+.contact {
+  a.nav-contact {
+    border-bottom: 2px solid $green_brand;
+  }
 }
