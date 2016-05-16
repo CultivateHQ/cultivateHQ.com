@@ -28,6 +28,27 @@
         </div>
         <div class="layout-two-column__right padding">
           <aside class="widget">
+            <div class="pagination">
+             <ul>
+              <li class="button-pagination">
+                <% prev_article = current_article.previous_article %>
+                  <% if prev_article %>
+                  <a href="<%= prev_article.url %>" rel="prev" title="Previous article: <%= prev_article.title %>">&lt; Previous</a>
+                  <% else %>
+                    <span>&lt; Previous</span>
+                  <% end %>
+              </li>
+              <li class="button-pagination">
+                <% next_article = current_article.next_article %>
+                  <% if next_article %>
+                  <a href="<%= next_article.url %>" rel="next" title="Next article: <%= next_article.title %>">Next &gt;</a>
+                  <% else %>
+                    <span>Next &gt;</span>
+                  <% end %>
+              </li>
+            </ul>
+          </aside>
+          <aside class="widget">
             <h3>Share this article</h3>
             <%= partial "partials/social_share" %>
           </aside>
