@@ -2202,6 +2202,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/svg\/icon-product.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3237,
+		"inputAbbreviatedPath": "\/images\/svg\/icon-product.png",
+		"outputAbbreviatedPath": "\/images\/svg\/icon-product.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/svg\/icon-software.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2212,
+		"inputAbbreviatedPath": "\/images\/svg\/icon-software.png",
+		"outputAbbreviatedPath": "\/images\/svg\/icon-software.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/svg\/icon-ux.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4254,
+		"inputAbbreviatedPath": "\/images\/svg\/icon-ux.png",
+		"outputAbbreviatedPath": "\/images\/svg\/icon-ux.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/svg\/logo-white.png": {
 		"fileType": 32768,
 		"ignore": 0,

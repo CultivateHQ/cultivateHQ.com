@@ -1,5 +1,6 @@
 .home-testimonial {
-  background: $grey_dark;
+  background: url(/images/svg/structure.svg) center center no-repeat $grey_dark;
+  background-size: cover;
   color: $white;
   text-align: center;
   &.padding {
