@@ -35,7 +35,7 @@ h1, h2, h3,
 h4, h5, h6 {
   font-weight: 300;
   color: $grey_dark;
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   padding: 0;
 	line-height: 1.1
 }
@@ -88,6 +88,25 @@ h2 {
 	  }
 		@include em-min-width($breakpoint_small_desktop) {
 	    @include font-size(31);
+	  }
+	}
+	h4 {
+	  @include font-size(19);
+	  @include em-min-width($breakpoint_tablet) {
+	    @include font-size(21);
+	  }
+		@include em-min-width($breakpoint_small_desktop) {
+	    @include font-size(27);
+	  }
+	}
+
+	h5 {
+	  @include font-size(18);
+	  @include em-min-width($breakpoint_tablet) {
+	    @include font-size(20);
+	  }
+		@include em-min-width($breakpoint_small_desktop) {
+	    @include font-size(25);
 	  }
 	}
 

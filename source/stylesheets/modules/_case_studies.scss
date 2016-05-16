@@ -1,5 +1,13 @@
 .case-studies-wrapper {
   text-align: center;
+  h2 {
+    margin-bottom: 40px;
+  }
+  @include em-min-width($breakpoint_tablet) {
+      h2 {
+        margin-bottom: 50px;
+      }
+  }
 }
 
 .case-studies {
@@ -8,11 +16,12 @@
   @include em-min-width(800) {
     @include flexbox();
   }
+
+
+
 }
 
 .case-study {
-  //display: inline-block;
-  //vertical-align: top;
   width: 100%;
   padding: 0 20px 0 20px;
 
