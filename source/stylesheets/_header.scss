@@ -50,6 +50,9 @@
             }
             a {
               padding-bottom: 8px;
+              &:hover {
+                border-bottom: 2px solid $pink_brand;
+              }
             }
           }
 

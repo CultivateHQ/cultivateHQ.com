@@ -23,12 +23,31 @@ img, svg {
   @include em-min-width($breakpoint_tablet) {
     padding: 60px 20px;
   }
+  @include em-min-width($breakpoint_small_desktop) {
+    padding: 80px 20px;
+  }
+  @include em-min-width($breakpoint_medium_desktop) {
+    padding: 88px 20px;
+  }
 }
 
 .padding-large-top {
   padding: 40px 20px 0 20px;
   @include em-min-width($breakpoint_tablet) {
     padding: 60px 20px 0 20px;
+  }
+  @include em-min-width($breakpoint_small_desktop) {
+    padding: 80px 20px 0 20px;
+  }
+  @include em-min-width($breakpoint_medium_desktop) {
+    padding: 88px 20px 0 20px;
+  }
+}
+
+.padding-medium {
+  padding: 40px 20px;
+  @include em-min-width($breakpoint_tablet) {
+    padding: 60px 20px;
   }
 }
 

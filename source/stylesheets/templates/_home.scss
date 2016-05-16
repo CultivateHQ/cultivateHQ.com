@@ -3,8 +3,16 @@
   background-size: cover;
   color: $white;
   text-align: center;
-  &.padding {
-    padding-bottom: 50px;
+  &.padding-large {
+    padding-bottom: 70px;
+    @include em-min-width($breakpoint_small_desktop) {
+      padding-top: 100px;
+      padding-bottom: 120px;
+    }
+    @include em-min-width($breakpoint_medium_desktop) {
+      padding-top: 110px;
+      padding-bottom: 130px;
+    }
   }
 }
 
@@ -38,6 +46,9 @@
   padding: 20px 0 0 0;
   margin: 0;
   font-size: 0;
+  @include em-min-width($breakpoint_tablet) {
+    padding-top: 40px;
+  }
 
   li {
     text-align: center;
@@ -52,6 +63,7 @@
     }
     @include em-min-width($breakpoint_small_desktop) {
       width: 20%;
+      padding: 0 5px;
     }
   }
 
@@ -60,7 +72,7 @@
     max-width: 100px;
     opacity: .4;
     @include em-min-width($breakpoint_tablet) {
-      max-width: 150px;
+      max-width: 180px;
     }
   }
 
@@ -70,7 +82,23 @@
   text-align: center;
 
     h2 {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    @include em-min-width($breakpoint_tablet) {
+        h2 {
+          margin-bottom: 60px;
+        }
     }
 
+}
+
+
+// Animation settings for homepage
+@include em-min-width($breakpoint_small_desktop) {
+  body.index {
+
+
+
+
+  }
 }
