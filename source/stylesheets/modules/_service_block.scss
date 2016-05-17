@@ -1,13 +1,14 @@
 .services-links {
+  font-size: 0;
 
   + .services-links {
     margin-top: 20px;
   }
 
-  display: table;
+  //display: table;
   width: 100%;
   @include em-min-width(800) {
-    @include flexbox();
+    //@include flexbox();
   }
 }
 
@@ -23,8 +24,6 @@
   padding: 50px 20px 40px 20px;
   text-decoration: none;
   text-align: center;
-  background-repeat: no-repeat;
-  background-position: center 50px;
 
     h4 {
       margin-top: 10px;
@@ -64,8 +63,9 @@
     }
 
     @include em-min-width(800) {
-      //width: 33.3333%;
-      margin: 0 10px;
+      width: 31.3333%;
+      margin: 0 1%;
+      //margin: 0 10px;
 
       + .services-link {
         margin-top: 0;
@@ -73,4 +73,8 @@
 
     }
 
+}
+
+.services-link__icon {
+  min-height: 130px;
 }
