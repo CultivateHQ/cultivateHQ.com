@@ -2257,6 +2257,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/testimonials\/large\/alastair-williamson-pound.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7599,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/alastair-williamson-pound.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/alastair-williamson-pound.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/testimonials\/large\/edmund-ward.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12870,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/edmund-ward.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/edmund-ward.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/testimonials\/large\/evan-henshaw-plath.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -2264,6 +2286,83 @@
 		"initialSize": 10873,
 		"inputAbbreviatedPath": "\/images\/testimonials\/large\/evan-henshaw-plath.jpg",
 		"outputAbbreviatedPath": "\/images\/testimonials\/large\/evan-henshaw-plath.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/testimonials\/large\/giff-constable.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9112,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/giff-constable.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/giff-constable.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/testimonials\/large\/jeff-gothelf.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12194,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/jeff-gothelf.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/jeff-gothelf.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/testimonials\/large\/john-kat.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7063,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/john-kat.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/john-kat.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/testimonials\/large\/josh-seiden.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 64968,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/josh-seiden.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/josh-seiden.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/testimonials\/large\/julien-letissier.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11326,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/julien-letissier.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/julien-letissier.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/testimonials\/large\/nick-jones.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35903,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/nick-jones.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/nick-jones.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/testimonials\/large\/peter-herlihy.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5645,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/peter-herlihy.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/peter-herlihy.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

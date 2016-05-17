@@ -58,7 +58,7 @@ blockquote {
   .testimonial__cite {
     margin-top: 30px;
     color: $grey_default_half;
-    @include font-size(15);
+    @include font-size(14);
   }
 
   img {
@@ -78,7 +78,7 @@ blockquote {
       }
 
       .testimonial-quote__inner {
-        padding-left: 10px;
+        padding-left: 0;
         text-align: left;
       }
 
@@ -87,6 +87,12 @@ blockquote {
         @include font-size(15);
         img {
           margin-top: 0;
+        }
+      }
+
+      &.testimonial-quote--home {
+        .testimonial-quote__inner {
+          padding-left: 30px;
         }
       }
 
