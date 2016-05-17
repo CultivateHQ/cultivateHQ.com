@@ -130,10 +130,15 @@ h2 {
 			border-color: $grey_dark;
 		}
 	}
+	h2, h3, h4, h5, h6 {
+		a {
+			line-height: 1.4;
+		}
+	}
 
 }
 
-.page-content {
+.page-content:not(.page-content--blog) {
 	p {
 		line-height: 1.6;
 	}
