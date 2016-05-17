@@ -17,7 +17,7 @@
   display: table-cell;
   width: 70%;
   @include em-min-width($breakpoint_tablet) {
-    width: 30%;
+    width: 23%;
   }
 }
 
@@ -28,7 +28,7 @@
   text-align: right;
 
   @include em-min-width($breakpoint_tablet) {
-    width: 70%;
+    width: 77%;
   }
 
     nav {
@@ -50,7 +50,7 @@
             }
             a {
               padding-bottom: 8px;
-              &:hover {
+              &:hover, .hover {
                 border-bottom: 2px solid $pink_brand;
               }
             }

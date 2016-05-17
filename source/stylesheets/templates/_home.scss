@@ -61,7 +61,7 @@
     @include em-min-width($breakpoint_tablet) {
       width: 25%;
     }
-    @include em-min-width($breakpoint_small_desktop) {
+    @include em-min-width($breakpoint_medium_desktop) {
       width: 20%;
       padding: 0 5px;
     }

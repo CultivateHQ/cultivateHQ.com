@@ -44,7 +44,7 @@
       margin-top: 20px;
     }
 
-    &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active, .hover {
       background: $grey_dark;
       color: $white;
       h4 {

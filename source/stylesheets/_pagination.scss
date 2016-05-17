@@ -4,11 +4,11 @@
     margin: 0;
     list-style: none;
     + ul {
-      margin-top: 20px;
+      margin-top: 10px;
     }
     li {
       display: inline-block;
-      margin: 0 5px;
+      margin: 0 5px 10px 5px;
     }
   }
 }

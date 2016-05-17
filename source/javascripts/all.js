@@ -42,4 +42,10 @@ $(document).ready(function(){
       return $(this).attr('src').replace('.svg', '.png');
     });
   }
+
+  // Hover events for touch devices
+	$('.services-link, #site-navigation a, .page-content a, .button').bind('touchstart touchend', function() {
+			$(this).toggleClass('hover');
+	});
+
 });
