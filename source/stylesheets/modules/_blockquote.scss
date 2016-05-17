@@ -1,3 +1,35 @@
+
+blockquote {
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 130%;
+  text-align: center;
+  line-height: 1.2;
+
+    cite, .testimonial-quote__left {
+      display: block;
+      margin: 0 auto;
+
+      img {
+        display: block;
+        margin: 40px auto 20px auto;
+        @include em-min-width($breakpoint_tablet) {
+          margin-left: 0;
+        }
+        border-radius: 100%;
+      }
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 60%;
+      text-transform: uppercase;
+
+    }
+
+}
+
 .testimonial-quote {
   padding: 30px 20px;
   @include font-size(25);
@@ -9,7 +41,7 @@
   }
 
   @include em-min-width($breakpoint_tablet) {
-    @include font-size(33);
+    @include font-size(32);
     padding: 30px 20px 50px 20px;
   }
 
@@ -30,7 +62,8 @@
   }
 
   img {
-    max-width: 150px;
+    max-width: 190px;
+
   }
 
   @include em-min-width(680) {
@@ -45,7 +78,7 @@
       }
 
       .testimonial-quote__inner {
-        padding-left: 30px;
+        padding-left: 10px;
         text-align: left;
       }
 

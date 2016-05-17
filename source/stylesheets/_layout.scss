@@ -51,35 +51,6 @@ img, svg {
   }
 }
 
-
-blockquote {
-  padding: 0;
-  margin: 0;
-  font-weight: 300;
-  font-style: italic;
-  font-size: 130%;
-  text-align: center;
-  line-height: 1.2;
-
-    cite, .testimonial-quote__left {
-      display: block;
-      margin: 0 auto;
-
-      img {
-        display: block;
-        margin: 40px auto 20px auto;
-        border-radius: 100%;
-      }
-
-      font-style: normal;
-      font-weight: 400;
-      font-size: 60%;
-      text-transform: uppercase;
-
-    }
-
-}
-
 .max-width {
   margin: 0 auto;
   max-width: 1340px;
