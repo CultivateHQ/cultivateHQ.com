@@ -1342,6 +1342,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/case-studies\/mas1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 306096,
+		"inputAbbreviatedPath": "\/images\/case-studies\/mas1.jpg",
+		"outputAbbreviatedPath": "\/images\/case-studies\/mas1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/case-studies\/mas2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 183341,
+		"inputAbbreviatedPath": "\/images\/case-studies\/mas2.jpg",
+		"outputAbbreviatedPath": "\/images\/case-studies\/mas2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/case-studies\/mas3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 227918,
+		"inputAbbreviatedPath": "\/images\/case-studies\/mas3.jpg",
+		"outputAbbreviatedPath": "\/images\/case-studies\/mas3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/case-studies\/secret-earth1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
