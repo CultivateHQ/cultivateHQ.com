@@ -2646,6 +2646,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/partials\/services_secondary_ruby_elixir_clients.erb": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/partials\/services_secondary_ruby_elixir_clients.erb",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/partials\/services_secondary_software_dev_ux_clients.erb": {
 		"fileType": 8192,
 		"ignore": 0,
