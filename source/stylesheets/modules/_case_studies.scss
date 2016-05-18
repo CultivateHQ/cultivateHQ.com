@@ -29,13 +29,15 @@
     display: block;
     margin: 0 auto;
   }
-  h3 a {
-    color: $pink_brand;
-    font-weight: 700;
-    border-bottom: 2px solid $pink_brand;
-    &:hover {
-      border-color: $grey_brand;
+  h3 {
+    margin: 10px 0;
+    a {
+      color: $pink_brand;
+      font-weight: 700;
+      border-bottom: 2px solid $pink_brand;
+      &:hover {
+        border-color: $grey_brand;
+      }
     }
-
   }
 }
