@@ -1206,6 +1206,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/clients\/aquila-insight.erb": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/clients\/aquila-insight.erb",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/clients\/example-layout-options.erb": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1267,6 +1276,17 @@
 		"initialSize": 14606,
 		"inputAbbreviatedPath": "\/images\/about\/history-line.png",
 		"outputAbbreviatedPath": "\/images\/about\/history-line.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/case-studies\/aquila1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 334620,
+		"inputAbbreviatedPath": "\/images\/case-studies\/aquila1.jpg",
+		"outputAbbreviatedPath": "\/images\/case-studies\/aquila1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
