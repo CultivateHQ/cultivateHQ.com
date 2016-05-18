@@ -1,26 +1,5 @@
-  <div class="services-links max-width">
-    <a class="services-link services-link--product" href="/services/product-development/">
-      <div class="services-link__icon">
-        <svg class="icon-product" width="77" height="115.3">
-          <use xlink:href="#icon-product"></use>
-        </svg>
-      </div>
-      <h4>Product Development</h4>
-    </a>
-    <a class="services-link services-link--software" href="/services/software-development/">
-      <div class="services-link__icon">
-        <svg class="icon-software" width="177" height="103.4">
-          <use xlink:href="#icon-software"></use>
-        </svg>
-      </div>
-      <h4>Software Development</h4>
-    </a>
-    <a class="services-link services-link--clients" href="/clients/">
-      <div class="services-link__icon">
-        <svg class="icon-clients" width="121" height="90.6">
-          <use xlink:href="#clients"></use>
-        </svg>
-      </div>
-      <h4>Our Clients</h4>
-    </a>
+  <div class="services-links max-width">  
+    <%= partial "partials/service_links/product_development" %>
+    <%= partial "partials/service_links/software_development" %>
+    <%= partial "partials/service_links/clients" %>
   </div>
