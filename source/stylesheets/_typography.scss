@@ -153,6 +153,13 @@ h2 {
 		top: 2px;
     padding-bottom: 0;
   }
+	li a {
+		display: inline;
+		top: auto;
+		vertical-align: inherit;
+		overflow: auto;
+		white-space: normal;
+	}
 }
 
 .subtitle, h2.subtitle {

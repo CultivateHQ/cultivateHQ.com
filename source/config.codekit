@@ -2101,167 +2101,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/products\/key_place\/a_bank_password.png": {
-		"fileType": 32768,
+	"\/images\/services\/scottish-ruby-conference.jpg": {
+		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 37234,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/a_bank_password.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/a_bank_password.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/key_place_icon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 21762,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/key_place_icon.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/key_place_icon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_add_password.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 35227,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_add_password.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_add_password.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_change_master_password.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 57916,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_change_master_password.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_change_master_password.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_check_password.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 28671,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_check_password.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_check_password.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_delete_password.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 47941,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_delete_password.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_delete_password.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_delete_password_list.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 42874,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_delete_password_list.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_delete_password_list.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_edit_password.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 35797,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_edit_password.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_edit_password.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_empty.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 43301,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_empty.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_empty.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_passnumber.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 51836,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_passnumber.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_passnumber.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_password_list.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 42388,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_password_list.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_password_list.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_password_validation.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 39846,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_password_validation.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_password_validation.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_set_master_password.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 40099,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_set_master_password.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_set_master_password.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/kp_show_password.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 52557,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/kp_show_password.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/kp_show_password.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/products\/key_place\/password-scratch-screen-1.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 54409,
-		"inputAbbreviatedPath": "\/images\/products\/key_place\/password-scratch-screen-1.png",
-		"outputAbbreviatedPath": "\/images\/products\/key_place\/password-scratch-screen-1.png",
+		"initialSize": 241191,
+		"inputAbbreviatedPath": "\/images\/services\/scottish-ruby-conference.jpg",
+		"outputAbbreviatedPath": "\/images\/services\/scottish-ruby-conference.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3109,6 +2955,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/services\/product-development.html.erb",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/services\/ruby-development.html.erb": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/services\/ruby-development.html.erb",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
