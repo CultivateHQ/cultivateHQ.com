@@ -39,9 +39,17 @@
       }
     }
 
-    &.button-extended {
+    &.button--extended {
       padding-left: 30px;
       padding-right: 30px;
+      @include em-min-width($breakpoint_tablet) {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      @include em-min-width($breakpoint_small_desktop) {
+        padding-left: 45px;
+        padding-right: 45px;
+      }
     }
 
 }
