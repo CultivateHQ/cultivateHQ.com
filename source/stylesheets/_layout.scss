@@ -16,6 +16,9 @@ img, svg {
 
 .padding {
   padding: 20px;
+  @include em-min-width($breakpoint_medium_desktop) {
+    padding: 20px 30px;
+  }
 }
 
 .padding-large {
@@ -27,7 +30,7 @@ img, svg {
     padding: 80px 20px;
   }
   @include em-min-width($breakpoint_medium_desktop) {
-    padding: 88px 20px;
+    padding: 88px 30px;
   }
 }
 
@@ -40,7 +43,7 @@ img, svg {
     padding: 80px 20px 0 20px;
   }
   @include em-min-width($breakpoint_medium_desktop) {
-    padding: 88px 20px 0 20px;
+    padding: 88px 30px 0 30px;
   }
 }
 
@@ -49,6 +52,9 @@ img, svg {
   @include em-min-width($breakpoint_tablet) {
     padding: 60px 20px;
   }
+  @include em-min-width($breakpoint_medium_desktop) {
+    padding: 60px 30px;
+  }
 }
 
 .padding-medium-top {
@@ -56,21 +62,33 @@ img, svg {
   @include em-min-width($breakpoint_tablet) {
     padding: 60px 20px 20px 20px;
   }
+  @include em-min-width($breakpoint_medium_desktop) {
+    padding: 60px 30px 20px 30px;
+  }
 }
 
 .max-width {
   margin: 0 auto;
   max-width: 1340px;
+  @include em-min-width($breakpoint_medium_desktop) {
+    max-width: 1360px;
+  }
 }
 
 .mid-width {
   margin: 0 auto;
   max-width: 1160px;
+  @include em-min-width($breakpoint_medium_desktop) {
+    max-width: 1180px;
+  }
 }
 
 .min-width {
   margin: 0 auto;
   max-width: 960px;
+  @include em-min-width($breakpoint_medium_desktop) {
+    max-width: 980px;
+  }
 }
 
 .micro-width {
