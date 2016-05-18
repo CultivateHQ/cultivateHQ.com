@@ -1463,6 +1463,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/case-studies\/viewabill5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 74883,
+		"inputAbbreviatedPath": "\/images\/case-studies\/viewabill5.jpg",
+		"outputAbbreviatedPath": "\/images\/case-studies\/viewabill5.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/clients\/1part-carbon.png": {
 		"fileType": 32768,
 		"ignore": 0,
