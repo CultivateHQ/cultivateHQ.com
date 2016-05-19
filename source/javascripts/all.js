@@ -48,4 +48,32 @@ $(document).ready(function(){
 			$(this).toggleClass('hover');
 	});
 
+  // IE9 (or less) detection
+  if ( ie9 ) {
+		$("body").addClass("ie9");
+  }
+
+  if ( $('body').is('.ie9') ) {
+    $('[placeholder]').focus(function () {
+    var input = $(this);
+    if (input.val() === input.attr('placeholder')) {
+        input.val('');
+        input.removeClass('placeholder');
+    }
+    }).blur(function () {
+        var input = $(this);
+        if (input.val() === '' || input.val() === input.attr('placeholder')) {
+            input.addClass('placeholder');
+            input.val(input.attr('placeholder'));
+        }
+      }).blur().parents('form').submit(function () {
+      $(this).find('[placeholder]').each(function () {
+          var input = $(this);
+          if (input.val() === input.attr('placeholder')) {
+              input.val('');
+          }
+      });
+    });
+  }
+
 });

@@ -11,19 +11,22 @@
 }
 
 .case-studies {
-  display: table;
-  width: 100%;
-  @include em-min-width(800) {
-    @include flexbox();
-  }
-
-
-
+  font-size: 0;
 }
 
 .case-study {
   width: 100%;
   padding: 0 20px 0 20px;
+
+  h3 {
+    @include font-size(19);
+  }
+
+  @include em-min-width($breakpoint_small_desktop) {
+    width: 33.333%;
+    display: inline-block;
+    vertical-align: top;
+  }
 
   img, svg {
     display: block;

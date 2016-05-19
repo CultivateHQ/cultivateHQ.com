@@ -32,6 +32,8 @@ Usually, just taking a look at another page and cloning it will be enough for yo
 
 Aside from the blog posts, all pages will need HTML tweaks to keep the desired look and feel.
 
+### Shout outs
+
 If you want to create a "Shout out" panel, with the larger text (see About Us) as an example.
 
 You can use this code to create a shout out div...
@@ -55,4 +57,18 @@ e.g.
         <p>Content in here</p>
       </div>
 	</div>
+	
+### Blog Posts	
+
+For blog posts, I've kept it backwards compatible with all of the posts, code snippets work in the same way and so does the use of 
+
+	<section class="callout">
+		Content in here
+	</section>
+	
+Which gets put in a little grey box.
+
+### Full Width content
+
+In order to get a full width rows, you need to break the content div. For example:
 
