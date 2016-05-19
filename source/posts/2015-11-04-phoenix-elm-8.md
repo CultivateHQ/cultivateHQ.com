@@ -1,7 +1,7 @@
 ---
 title: Phoenix with Elm - part 8
 author: Alan Gardner
-description: Introducing Effects.
+description: Currently our application only allows us to model a given state and perform actions that result in changes to that state. We create an initial state for our application with the init function and thereafter are only able to change that state via the update function.
 ---
 
 <section class="callout">

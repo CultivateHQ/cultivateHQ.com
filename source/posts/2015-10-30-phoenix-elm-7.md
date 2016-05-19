@@ -1,7 +1,7 @@
 ---
 title: Phoenix with Elm - part 7
 author: Alan Gardner
-description: An introduction to Elm Signals.
+description: Let's take a moment to talk about what is happening behind the scenes in our Elm application.
 ---
 
 <section class="callout">

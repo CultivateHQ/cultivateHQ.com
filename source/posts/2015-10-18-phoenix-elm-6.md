@@ -1,7 +1,7 @@
 ---
 title: Phoenix with Elm - part 6
 author: Alan Gardner
-description: Adding an update function.
+description: We mentioned in part 3 that Elm has a Model - Update - View architecture. We've looked at the View and the Model, so let's turn our attention now to the Update. The best way to get a handle on what the update function will need to do is by taking a look at its type annotation.
 ---
 
 <section class="callout">
