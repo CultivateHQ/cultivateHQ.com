@@ -11,4 +11,26 @@
       margin: 0 5px 10px 5px;
     }
   }
+
+  .pagination-numbering {
+    li {
+      margin: 0 1px;
+    }
+    a, span {
+      @include font-size(14);
+      background: $grey_light_brand;
+      border-radius: 3px;
+      padding: 2px 9px;
+      display: inline-block;
+    }
+    a {
+      color: $pink_brand;
+      &:hover, a:active, a:focus {
+        background: $pink_brand;
+        color: $white;
+      }
+    }
+  }
+
+
 }

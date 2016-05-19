@@ -1775,39 +1775,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/people\/andy.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 39589,
-		"inputAbbreviatedPath": "\/images\/people\/andy.jpg",
-		"outputAbbreviatedPath": "\/images\/people\/andy.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/people\/paul.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 51572,
-		"inputAbbreviatedPath": "\/images\/people\/paul.jpg",
-		"outputAbbreviatedPath": "\/images\/people\/paul.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/people\/spencer.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 71168,
-		"inputAbbreviatedPath": "\/images\/people\/spencer.jpg",
-		"outputAbbreviatedPath": "\/images\/people\/spencer.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/images\/phoenix-elm\/1.png": {
 		"fileType": 32768,
 		"ignore": 0,

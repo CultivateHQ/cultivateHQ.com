@@ -20,6 +20,9 @@ blockquote {
         display: block;
         margin: 40px auto 20px auto;
         border-radius: 100%;
+        @include em-min-width($breakpoint_tablet) {
+          margin-left: 0;
+        }
       }
 
       font-style: normal;
@@ -31,13 +34,7 @@ blockquote {
 
 }
 
-blockquote:not(.testimonial-quote--home) {
-      img {
-        @include em-min-width($breakpoint_tablet) {
-          margin-left: 0;
-        }
-      }
-  }
+
 
 .testimonial-quote {
   padding: 30px 20px;
@@ -56,6 +53,11 @@ blockquote:not(.testimonial-quote--home) {
 
   &.testimonial-quote--home {
     @include transition(opacity,0.4);
+    @include em-min-width($breakpoint_tablet) {
+      img {
+        margin-left: auto;
+      }
+    }
     @include em-min-width($breakpoint_small_desktop) {
       @include font-size(45);
     }
