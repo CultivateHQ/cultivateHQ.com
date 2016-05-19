@@ -70,5 +70,28 @@ Which gets put in a little grey box.
 
 ### Full Width content
 
-In order to get a full width rows, you need to break the content div. For example:
+In order to get a full width rows, you need to break the content div. For example, they should be a outer div and an inner div, one for the page layout one to set a minimum width, so you'd close those off then insert your row or testimonial code
 
+#### Row
+
+	<div class="row row--image-feature">IMAGE</div>
+	
+#### Testimonial
+	<blockquote class="testimonial-quote-macro">
+   	 <div class="min-width">
+    	<div class="testimonial-quote__image">IMAGE</div>
+     	 Quote
+     	 <cite>Cite</cite>
+   	   </div>
+  	</blockquote>	
+  	
+ Then you'll need to re-open the page layout divs again e.g.
+ 
+ 	<div class="page-content padding-large-top">
+    	<div class="min-width">
+    	Content
+    	</div>
+    </div>
+    
+  	
+       	
