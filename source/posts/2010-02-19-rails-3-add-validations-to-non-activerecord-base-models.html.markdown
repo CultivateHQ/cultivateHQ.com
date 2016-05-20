@@ -2,6 +2,7 @@
   title: "Rails 3: Add validations to non-ActiveRecord::Base models"
   author: Mark Connell
   description: Prior to Rails 3, if you wanted to add validations to models which didn't inherit from `ActiveRecord::Base`, you'd probably resort to using a gem/plugin that re-implements much of the behaviour or has some dirty hooks into the ActiveRecord private API.
+  tags: mark
 ---
 
 Prior to Rails 3, if you wanted to add validations to models which didn't inherit from `ActiveRecord::Base`, you'd probably resort to using a gem/plugin that re-implements much of the behaviour or has some dirty hooks into the ActiveRecord private API.

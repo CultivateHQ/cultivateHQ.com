@@ -2,6 +2,7 @@
 title:  "How to add and test HTTP basic authentication in a Phoenix web application"
 author: Mark Connell
 description: Short tutorial on how to add basic authentication to a phoenix web app.
+tags: mark
 ---
 
 If you are coming from a Rails background, you'll be used to having a convenience

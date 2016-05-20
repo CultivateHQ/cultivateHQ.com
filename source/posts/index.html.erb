@@ -5,21 +5,6 @@ pageable: true
 per_page: 10
 ---
 
-
-<ul>
-  <% blog.tags.each do |tag, articles| %>
-    <li>
-      <h5><%= link_to tag, tag %></h5>
-      <ul>
-        <% articles.each do |article| %>
-          <li><a href="<%= article.url %>"><%= article.title %></a></li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
-</ul>
-
-
   <% page_articles.each do |article| %>
       <article class="blog-post">
         <h2><%= link_to article.title, article %></h2>

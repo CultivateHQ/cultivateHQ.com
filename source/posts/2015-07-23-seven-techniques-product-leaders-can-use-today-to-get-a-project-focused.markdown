@@ -1,11 +1,12 @@
 ---
 title:  "Seven techniques product leaders can use today to get a project focused"
 author: Spencer Turner
+tags: spencer
 ---
 
-## Are you frustrated by a culture that hasn't caught up with the digital world? 
+## Are you frustrated by a culture that hasn't caught up with the digital world?
 
-Do you feel like you're building the wrong thing? New features fail to engage and delight customers? 
+Do you feel like you're building the wrong thing? New features fail to engage and delight customers?
 
 Are you fighting against a culture of inertia? Trying to sell processes to people who don't understand the business value? Are you in a project that's become too big to fail?
 
@@ -14,7 +15,7 @@ This blog post is a few tried and tested techniques, I've found useful to help g
 ## 1. Understand the 'Why'.
 Nothing exists in a vacuum. It's vital we understand the goal. Products need a purpose, both at a project and functionality level. What are you trying to achieve and what business value it will bring? This may not be a quantitative value, it could be as fluffy as more customer happiness.
 
-Innovation games are a great way to get at the why, and work well in workshops with a broad spread of stakeholders. These games often surface misunderstandings, leading to discussion and consensus. 
+Innovation games are a great way to get at the why, and work well in workshops with a broad spread of stakeholders. These games often surface misunderstandings, leading to discussion and consensus.
 
 Here are a few examples I've games found valuable in this context:
 
@@ -37,16 +38,16 @@ Using the below format, working in pairs, define the elevator pitch for your pro
 </pre>
 
 ###Design The Product Box
-What differentiates your product? People buy benefits, not features. Imagine your product was competing for attention on a shelf full of similar products, [design a box](http://www.innovationgames.com/product-box/) to get users to buy your product over the others. 
+What differentiates your product? People buy benefits, not features. Imagine your product was competing for attention on a shelf full of similar products, [design a box](http://www.innovationgames.com/product-box/) to get users to buy your product over the others.
 
 
 
 ## 2. Focus on outcomes not features.
-We work at an amazing time, in an industry full of smart people who want to do great work. Technology has come far enough that we can create incredible solutions to complex problems. 
+We work at an amazing time, in an industry full of smart people who want to do great work. Technology has come far enough that we can create incredible solutions to complex problems.
 
-We don't need to have the answers any more, we need to know how to ask the questions. If you can ask for an outcome not a feature, you'll have a happier team, and a better product. 
+We don't need to have the answers any more, we need to know how to ask the questions. If you can ask for an outcome not a feature, you'll have a happier team, and a better product.
 
-Gojko Adzic's [Impact Mapping](http://www.impactmapping.org/about.php) technique is a favourite of mine for getting stakeholders talking about outcomes not features. 
+Gojko Adzic's [Impact Mapping](http://www.impactmapping.org/about.php) technique is a favourite of mine for getting stakeholders talking about outcomes not features.
 
 The idea is to start with Why (as discussed above, you can use the assets generated to feed into this activity as reference)
 
@@ -75,11 +76,11 @@ This is where your 'scope' is, options, features you could build, or activities 
 ## 3. Make your metrics actionable.
 Great metrics should be actionable and drive changes. The question you should be asking is 'What will you do differently based on your results?'
 
-One of my takeaways from the [Lean Analytics](http://leananalyticsbook.com/one-metric-that-matters/) book was 'One Metric That Matters'. This doesn't mean you won't track anything else, but it does mean you know what the one metric really driving your business is. 
+One of my takeaways from the [Lean Analytics](http://leananalyticsbook.com/one-metric-that-matters/) book was 'One Metric That Matters'. This doesn't mean you won't track anything else, but it does mean you know what the one metric really driving your business is.
 
 The book breaks down metrics based on what phase your business is in (Empathy, Stickiness, Virality, Revenue and Scale), and also by what kind of business you're in, to help you figure out what metric might be appropriate.
 
-If you haven't read it already, it's a great book. You should read it. 
+If you haven't read it already, it's a great book. You should read it.
 
 ## 4. Don't forget the past (Check-in regularly).
 
@@ -87,7 +88,7 @@ If you haven't read it already, it's a great book. You should read it.
 
 It's easy to create lots of learning, capture it, file it somewhere and forget about it. Not deliberately, not maliciously, not lazily – just we're busy doing, time moves on and we forget we have these items we can refer back to when we tell our stories.
 
-Keep referring back to your learnings. Some assets we might check back in with: 
+Keep referring back to your learnings. Some assets we might check back in with:
 
 - Inception Learnings
 - Project Pre-mortem
@@ -115,7 +116,7 @@ Seek out better ways of delivering, and ruthlessly cut things that aren't active
 ## 7. Seek forgiveness not permission.
 If you feel you should do something, do it.
 
-In many organisations if you ask, you'll likely be told no. It's a default position, no-one's assessed it. If you just do it, you can prove the approach's value, and if you have to, apologise later. 
+In many organisations if you ask, you'll likely be told no. It's a default position, no-one's assessed it. If you just do it, you can prove the approach's value, and if you have to, apologise later.
 
 I find this powerful in archaic organisations that aren't easily convinced to change.
 

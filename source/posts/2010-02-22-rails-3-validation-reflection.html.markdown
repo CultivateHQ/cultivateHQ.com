@@ -2,6 +2,7 @@
   title: "Rails 3: Validation Reflection"
   author: Mark Connell
   description: A recent addition to `ActiveModel` is the introduction of a couple of methods for validation reflection.
+  tags: mark
 ---
 
 A recent addition to `ActiveModel` is the introduction of a couple of methods for validation reflection.

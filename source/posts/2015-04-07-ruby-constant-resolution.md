@@ -2,6 +2,7 @@
 title: "Ruby constant resolution"
 author: Paul Wilson
 description: "Module and class nesting is how Ruby does namespacing, but it's not always that well known how constants are resolved."
+tags: paul
 ---
 
 Module and class nesting is how Ruby does namespacing, but it's not always that well known how constants are resolved when we're not using the fully qualified names. Bearing in mind that Ruby classes and modules are themselves constant, it's quite handy to know this stuff.
@@ -102,7 +103,7 @@ end
 
 module B
   include A
-  # Define MyConst in B to be MyConst from A 
+  # Define MyConst in B to be MyConst from A
   # Probably best not to do this at home
   MyConst = MyConst
   module C
@@ -158,7 +159,7 @@ There's a more complete writeup of constant resoulution [here](https://valve.git
 [Module.nesting + Module.ancestors]
 ```
 
-When trying to resolve a constant, first the interpreter searches up the list of enclosing modules and then searches the _current_ module's ancestors; the first match wins. The ancestors of of modules that enclose the current module do not get involved. 
+When trying to resolve a constant, first the interpreter searches up the list of enclosing modules and then searches the _current_ module's ancestors; the first match wins. The ancestors of of modules that enclose the current module do not get involved.
 
 ```Module.nesting``` is affected by how it is defined in the current context. When it is done in the shorter ```A::B::C``` style the enclosing modules are not included.
 

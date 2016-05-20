@@ -2,6 +2,7 @@
 title: Phoenix with Elm - part 2
 author: Alan Gardner
 description: Getting Phoenix and Elm to play together.
+tags: alan
 ---
 
 <section class="callout">

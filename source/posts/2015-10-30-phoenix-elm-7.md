@@ -2,6 +2,7 @@
 title: Phoenix with Elm - part 7
 author: Alan Gardner
 description: Let's take a moment to talk about what is happening behind the scenes in our Elm application.
+tags: alan
 ---
 
 <section class="callout">
