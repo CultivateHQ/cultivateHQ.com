@@ -58,7 +58,7 @@ blockquote {
         margin-left: auto;
       }
     }
-    @include em-min-width($breakpoint_small_desktop) {
+    @include em-min-width-and-height($breakpoint_small_desktop,$breakpoint_laptop_height) {
       @include font-size(45);
     }
   }

@@ -5,11 +5,11 @@
   text-align: center;
   &.padding-large {
     padding-bottom: 70px;
-    @include em-min-width($breakpoint_small_desktop) {
+    @include em-min-width-and-height($breakpoint_small_desktop,680) {
       padding-top: 100px;
       padding-bottom: 120px;
     }
-    @include em-min-width($breakpoint_medium_desktop) {
+    @include em-min-width-and-height($breakpoint_medium_desktop,680) {
       padding-top: 110px;
       padding-bottom: 130px;
     }

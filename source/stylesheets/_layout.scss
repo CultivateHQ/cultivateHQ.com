@@ -23,13 +23,13 @@ img, svg {
 
 .padding-large {
   padding: 40px 20px;
-  @include em-min-width($breakpoint_tablet) {
+  @include em-min-width-and-height($breakpoint_tablet,$breakpoint_laptop_height) {
     padding: 60px 20px;
   }
-  @include em-min-width($breakpoint_small_desktop) {
+  @include em-min-width-and-height($breakpoint_small_desktop,$breakpoint_laptop_height) {
     padding: 80px 20px;
   }
-  @include em-min-width($breakpoint_medium_desktop) {
+  @include em-min-width-and-height($breakpoint_medium_desktop,$breakpoint_laptop_height) {
     padding: 88px 30px;
   }
 }
