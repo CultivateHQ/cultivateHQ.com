@@ -9,6 +9,7 @@ per_page: 10
   <div class="layout-two-column__left">
     <div class="page-content min-width padding-large page-content--blog">
         <% blog.tags.each do |tag, articles| %>
+        <%# blog.tags[tag].each do |articles| %> 
           <% articles.each do |article| %>
               <article class="blog-post">
                 <h2><%= link_to article.title, article %></h2>
