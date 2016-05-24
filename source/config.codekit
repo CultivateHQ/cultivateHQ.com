@@ -2914,11 +2914,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/posts\/tags\/index.html.erb": {
+	"\/posts\/tag.html.erb": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/posts\/tags\/index.html.erb",
+		"inputAbbreviatedPath": "\/posts\/tag.html.erb",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

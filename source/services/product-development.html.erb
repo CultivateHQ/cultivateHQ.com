@@ -48,5 +48,9 @@ title: "Product Development"
 <%= partial "partials/cta" %>
 <div class="row padding-medium">
   <h3>Related Services</h3>
-  <%= partial "partials/services_secondary" %>
+  <div class="services-links max-width">
+    <%= partial "/partials/service_links/software_development" %>
+    <%= partial "/partials/service_links/user_experience" %>
+    <%= partial "/partials/service_links/clients" %>
+  </div>  
 </div>
