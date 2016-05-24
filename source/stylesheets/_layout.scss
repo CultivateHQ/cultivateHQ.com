@@ -104,7 +104,10 @@ img, svg {
 }
 
 .site-content-area-header {
-  background-color: $pink_brand;
+  background: url(/images/svg/structure-sub.svg) center center no-repeat $pink_brand;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   color: $white;
   text-align: center;
   h1, h2 {
