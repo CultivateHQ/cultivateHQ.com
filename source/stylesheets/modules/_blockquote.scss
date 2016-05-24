@@ -37,18 +37,21 @@ blockquote {
 
 
 .testimonial-quote {
-  padding: 30px 20px;
+  padding: 0 20px;
   @include font-size(25);
 
   + .testimonial-quote {
     margin-top: 10px;
-    padding-top: 60px;
+    padding-top: 20px;
     border-top: 1px solid $grey_light_brand;
   }
 
   @include em-min-width($breakpoint_tablet) {
     @include font-size(32);
-    padding: 30px 20px 50px 20px;
+    padding: 30px 20px 30px 20px;
+    + .testimonial-quote {
+      padding-top: 30px;
+    }
   }
 
   &.testimonial-quote--home {
