@@ -67,6 +67,13 @@ img, svg {
   }
 }
 
+.padding-large-bottom {
+  padding: 0 20px 40px 20px;
+  @include em-min-width($breakpoint_medium_desktop) {
+    padding: 0 30px 40px 30px;
+  }
+}
+
 .max-width {
   margin: 0 auto;
   max-width: 1340px;
