@@ -16,7 +16,9 @@
 
 .case-study {
   width: 100%;
-  padding: 0 20px 0 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+
 
   h3 {
     @include font-size(19);
@@ -26,6 +28,24 @@
     width: 33.333%;
     display: inline-block;
     vertical-align: top;
+  }
+
+
+    .case-studies--core & {
+      background: $grey_light_brand;
+      @include transition(background,.3);
+      &:hover {
+        background: $offwhite;
+      }
+    }
+
+
+  @include em-min-width($breakpoint_small_desktop) {
+    .case-studies--core & {
+      width: 31.333%;
+      margin-left: 1%;
+      margin-right: 1%;
+    }
   }
 
   img, svg {
