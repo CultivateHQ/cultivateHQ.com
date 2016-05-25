@@ -2,8 +2,9 @@
 title: "Why Cultivate?"
 subtitle: "What it’s like to work with us"
 ---
-<article class="page-content min-width padding-large">
+<article>
 
+<div class="page-content min-width padding-large">
   <blockquote class="testimonial-quote">
     <span class="testimonial-quote__inner">
       I’ve worked with the folks at Cultivate first hand. While they excel at agile product development, where they really shine is in striving to continually understand changing client and customer needs and incorporating those learnings, in real time, into their work. This results not only in products built and designed well but also ones that demonstrably impact their clients’ businesses
@@ -28,6 +29,16 @@ subtitle: "What it’s like to work with us"
     <div class="testimonial-quote__left"><%= image_tag "images/testimonials/large/evan-henshaw-plath.jpg", alt: "Photo of Evan Henshaw-Plath" %></div>
   </blockquote>
 
+</div>
+
+  <section class="row row--light case-studies-wrapper padding-medium">
+    <div class="max-width">
+      <h2>Client Case Studies</h2>
+      <%= partial "partials/case_studies_featured" %>
+    </div>
+  </section>
+
+<div class="page-content min-width padding-medium">
   <blockquote class="testimonial-quote">
     <span class="testimonial-quote__inner">
       I very much felt like a Client when working with them and that being so, I found that the team always kept a close eye on the user needs, asking questions, challenging everything that didn't make until the value and rationale was abundantly clear. The organisation as a whole are very uncomfortable creating anything that doesn't deliver value and I commend that attitude.
@@ -83,12 +94,6 @@ subtitle: "What it’s like to work with us"
      </span>
      <div class="testimonial-quote__left"><%= image_tag "images/testimonials/large/edmund-ward.jpg", alt: "Photo of Edmund Ward" %></div>
   </blockquote>
-
+</div>
 </article>
 <%= partial "partials/cta" %>
-<section class="case-studies-wrapper padding-medium">
-  <div class="max-width">
-    <h2>Client Case Studies</h2>
-    <%= partial "partials/case_studies_featured" %>
-  </div>
-</section>

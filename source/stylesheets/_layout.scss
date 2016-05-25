@@ -106,12 +106,19 @@ img, svg {
 .site-content-area-header {
   background: url(/images/svg/structure-sub.svg) center center no-repeat $pink_brand;
   background-size: cover;
-  background-position: center center;
   background-attachment: fixed;
   color: $white;
   text-align: center;
   h1, h2 {
     color: $white
+  }
+}
+
+body.clients_index .site-content-area-header {
+  background: url(/images/svg/logo-montage.svg) center center no-repeat $pink_brand;
+  background-size: cover;
+  @include em-min-width($breakpoint_medium_desktop) {
+    background-size: contain;
   }
 }
 
