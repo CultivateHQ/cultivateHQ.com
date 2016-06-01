@@ -55,6 +55,7 @@ blockquote {
   }
 
   &.testimonial-quote--home {
+    padding-bottom: 40px;
     @include transition(opacity,0.4);
     @include em-min-width($breakpoint_tablet) {
       img {

@@ -1,21 +1,21 @@
 <ul class="social-share">
 	<li>
-		<a target="blank" title="<%= current_page.data.title %>" href="https://twitter.com/share?text=<%= current_page.data.title %>%20-%20&amp;url=<%= url_for current_page, :relative => false %>&amp;via=cultivatehq" onclick="window.open('https://twitter.com/share?text=<%= current_page.data.title %>%20-%20&amp;url=<%= url_for current_page, :relative => false %>&mp;via=cultivatehq','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;">
+		<a target="blank" title="<%= current_page.data.title %>" href="https://twitter.com/share?text=<%= current_page.data.title %>%20-%20&amp;url=http://www.cultivatehq.com<%= url_for current_page, :relative => false %>&amp;via=cultivatehq" onclick="window.open('https://twitter.com/share?text=<%= current_page.data.title %>%20-%20&amp;url=http://www.cultivatehq.com<%= url_for current_page, :relative => false %>&amp;via=cultivatehq','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;">
 			<i class="fa fa-twitter"></i><span class="i">Twitter</span>
 		</a>
 	</li>
 	<li>
-		<a onclick="window.open('https://plus.google.com/share?url=<%= url_for current_page, :relative => false %>','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=<%= url_for current_page, :relative => false %>">
+		<a onclick="window.open('https://plus.google.com/share?url=http://www.cultivatehq.com<%= url_for current_page, :relative => false %>','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=http://www.cultivatehq.com<%= url_for current_page, :relative => false %>">
 			<i class="fa fa-google-plus"></i><span class="i">Google+</span>
 		</a>
 	</li>
 	<li>
-		<a target="blank" title="<?php echo urlencode( get_the_title() ); ?>" href="http://www.facebook.com/share.php?u=<%= url_for current_page, :relative => false %>" onclick="window.open('http://www.facebook.com/share.php?u=<%= url_for current_page, :relative => false %>','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;">
+		<a target="blank" title="<?php echo urlencode( get_the_title() ); ?>" href="http://www.facebook.com/share.php?u=http://www.cultivatehq.com<%= url_for current_page, :relative => false %>" onclick="window.open('http://www.facebook.com/share.php?u=http://www.cultivatehq.com<%= url_for current_page, :relative => false %>','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;">
 			<i class="fa fa-facebook"></i><span class="i">Facebook</span>
 		</a>
 	</li>
 	<li>
-		<a href="http://pinterest.com/pin/create/button/?url=<%= url_for current_page, :relative => false %>&amp;media=<?php echo esc_url( $image_single[0] ); ?>&amp;description=<?php echo urlencode( get_the_title() ); ?>" target="_blank">
+		<a href="http://pinterest.com/pin/create/button/?url=http://www.cultivatehq.com<%= url_for current_page, :relative => false %>&amp;media=<?php echo esc_url( $image_single[0] ); ?>&amp;description=<?php echo urlencode( get_the_title() ); ?>" target="_blank">
 			<i class="fa fa-pinterest"></i><span class="i">Pinterest</span>
 		</a>
 	</li>
