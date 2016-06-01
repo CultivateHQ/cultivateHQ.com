@@ -2182,6 +2182,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/testimonials\/large\/chris-greening.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12824,
+		"inputAbbreviatedPath": "\/images\/testimonials\/large\/chris-greening.jpg",
+		"outputAbbreviatedPath": "\/images\/testimonials\/large\/chris-greening.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/testimonials\/large\/edmund-ward.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
