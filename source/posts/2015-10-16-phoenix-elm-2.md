@@ -58,7 +58,7 @@ Let's start by adding an Elm application into our Phoenix application.
 
     # install the core and html Elm packages (leave off the -y if you want to see what's happening)
     elm package install -y
-    elm package install evancz/elm-html -y
+    elm package install elm-lang/html -y
     ```
 
 3. Create a file called *SeatSaver.elm* in the *web/elm* folder and add the following:
@@ -89,7 +89,7 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
       "dependencies": {
         "babel-brunch": "~6.0.0",
         "brunch": "~2.1.3",
-        "elm-brunch": "~0.4.4",
+        "elm-brunch": "~0.5.0",
         "clean-css-brunch": "~1.8.0",
         ...
       }
@@ -164,14 +164,14 @@ Now we need to adjust our Phoenix application to display the HTML output by the 
 
     ```javascript
     ...
-    var elmDiv = document.getElementById('elm-main')
-      , elmApp = Elm.embed(Elm.SeatSaver, elmDiv);
+    const elmDiv = document.getElementById('elm-main')
+        , elmApp = Elm.SeatSaver.embed(elmDiv);
     ```
 
-    This grabs the `div` we just set up by its ID and then calls `Elm.embed` passing in the name of our module `Elm.SeatSaver` and the div that we just captured.
+    This grabs the `div` we just set up by its ID and then calls `Elm.SeatSaver.embed` passing in the div that we just captured.
 
     <div class="callout">
-      <code>Elm.embed</code> is not the only way to work with an Elm application. We could have avoided using an element to embed the application into by calling <code>Elm.fullscreen(Elm.SeatSaver)</code> instead.
+      <code>Elm.<module>.embed</code> is not the only way to work with an Elm application. We could have avoided using an element to embed the application into by calling <code>Elm.SeatSaver.fullscreen()</code> instead.
     </div>
 
 4. In order to keep things easier to see, let's also change the *web/templates/layout/app.html.eex*

@@ -41,7 +41,7 @@ Let's add type annotations to our existing functions.
 1. Add the following above the `main` function:
 
     ```haskell
-    main : Html.Html
+    main : Html.Html a
     ```
 
     Our main function takes no arguments and returns Html. We're having to prefix the Html type with `Html.` because it is defined in the Html library. To save us from having to do that each time, let's tweak the import so we use the `(..)` syntax instead rather than naming each function that we want to use.
@@ -53,7 +53,7 @@ Let's add type annotations to our existing functions.
     Now we can change our `main` function's type annotation to
 
     ```haskell
-    main : Html
+    main : Html a
     ```
 
 2. The next function is the `init` function (we don't have to add type annotations to type definitions as they already state their expected types). The `init` function takes no arguments and returns a Model.
@@ -65,25 +65,25 @@ Let's add type annotations to our existing functions.
 3. The `view` function takes a Model as an argument and returns Html.
 
     ```haskell
-    view : Model -> Html
+    view : Model -> Html a
     ```
 
 4. Last but not least, the `seatItem` function takes a Seat as an argument and returns Html.
 
     ```haskell
-    seatItem : Seat -> Html
+    seatItem : Seat -> Html a
     ```
 
 5. The end result should look like this:
 
     ```haskell
-    module SeatSaver where
+    module SeatSaver exposing (..)
 
     import Html exposing (..)
     import Html.Attributes exposing (class)
 
 
-    main : Html
+    main : Html a
     main =
       view init
 
@@ -119,11 +119,11 @@ Let's add type annotations to our existing functions.
 
     -- VIEW
 
-    view : Model -> Html
+    view : Model -> Html a
     view model =
       ul [ class "seats" ] (List.map seatItem model)
 
-    seatItem : Seat -> Html
+    seatItem : Seat -> Html a
     seatItem seat =
       li [ class "seat available" ] [ text (toString seat.seatNo) ]
     ```
@@ -137,7 +137,7 @@ Type annotations, as mentioned above, are optional. Elm will infer our types for
 For example, let's change our `view` function to the following:
 
 ```haskell
-view : Model -> Html
+view : Model -> Html a
 view model =
   List.map seatItem model
 ```
@@ -151,7 +151,7 @@ Elm has fantastic error messages. Here it quite clearly tells us that *"The type
 Returning the `view` function to its original definition will fix this error.
 
 ```haskell
-view : Model -> Html
+view : Model -> Html a
 view model =
   ul [ class "seats" ] (List.map seatItem model)
 ```

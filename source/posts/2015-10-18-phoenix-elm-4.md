@@ -83,7 +83,7 @@ type alias Seat =
 4. Adding a comment to demark the section, we should end up with something that looks like this.
 
     ```haskell
-    module SeatSaver where
+    module SeatSaver exposing (..)
 
     import Html
 
