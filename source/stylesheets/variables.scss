@@ -1,13 +1,25 @@
-//General Breakpoints
-$break-small: 320px;
-$break-medium: 768px;
-$break-large: 900px;
+// Breakpoints
+$breakpoint_tablet : 720;
+$breakpoint_small_desktop : 960;
+$breakpoint_medium_desktop : 1080;
+$breakpoint_laptop_height: 680;
 
-//Specific Breakpoints
-$break-menu: 595px;
-$break-contact-menu: 630px;
 
-// Colours
-$cultivate-pink: #e21d87;
-$cultivate-pink-dark: #A40050;
+// Background Colours
+$bg_charcoal      : #1d2223;
 
+
+// Font Colours
+$pink_brand         : #e14164;
+$green_brand        : #c6d148;
+$grey_default       : #3d4344;
+$grey_dark          : #23292a;
+$offwhite           : #fafafa;
+$white              : #fff;
+$black              : #000;
+$green_brand        : #c6d148;
+$grey_brand         : #b9c3c6;
+$grey_mid_brand     : #cfd6d8;
+$grey_light_brand   : #eaedee;
+$grey_dark_half     : #a8a9a9;
+$grey_default_half  : #9faeb2;

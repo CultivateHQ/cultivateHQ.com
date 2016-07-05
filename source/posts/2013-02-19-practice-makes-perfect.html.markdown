@@ -2,6 +2,7 @@
 title:  "Practice Makes Perfect"
 author: Paul Wilson
 description: In December last year, around 3,000 programmers in 160 cities around the world gave up their Saturday to write code — code they deliberately threw away. They were not being weird or frivolous. They were there to take part in The Global Day of Code Retreat, and improve their craft.
+tags: paul
 ---
 
 > This article originally appeared in the February 2013 version of [Test Magazine](http//www.testmagazine.co.uk).

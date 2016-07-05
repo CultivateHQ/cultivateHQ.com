@@ -1,7 +1,8 @@
 ---
 title: Phoenix with Elm - part 9
 author: Alan Gardner
-description: Creating a data API in Phoenix and then consuming in Elm over HTTP.
+description: This part of the tutorial is actually going to be a bit of a detour. We're going to fetch the initial data for our Elm application over HTTP from a data API that we'll create in our Phoenix application.
+tags: alan
 ---
 
 <section class="callout">

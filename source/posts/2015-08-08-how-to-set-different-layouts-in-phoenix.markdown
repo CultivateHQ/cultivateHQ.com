@@ -2,6 +2,7 @@
 title:  "How to set different layouts in Phoenix"
 author: Mark Connell
 description: Quick guide on setting alternative layouts within a phoenix web application.
+tags: mark
 ---
 
 > This post is based on behaviour in Elixir 1.0.5 & Phoenix 0.15.

@@ -1,0 +1,11 @@
+.breadcrumbs {
+  background: $grey_dark;
+  color: $grey_light_brand;
+  a {
+    color: $grey_light_brand;
+    &:hover {
+      color: $grey_dark_half;
+    }
+  }
+
+}

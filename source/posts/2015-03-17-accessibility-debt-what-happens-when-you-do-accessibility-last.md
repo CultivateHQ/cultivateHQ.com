@@ -2,6 +2,7 @@
 title:  "Accessibility Debt: What Happens When You Do Accessibility Last"
 author: Caden Lovelace
 description: "By leaving our assumptions about disabled users unchallenged until the end of a project, we don't only do a bad job, we also create technical debt."
+tags: caden
 ---
 
 Here's how you probably make an accessible website:

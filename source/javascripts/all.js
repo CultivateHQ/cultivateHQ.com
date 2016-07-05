@@ -1,10 +1,7 @@
-//= require_tree
-//= require jquery/dist/jquery.js
-//= require sticky/jquery.sticky.js
-//= require respond/src/matchmedia.polyfill.js
-//= require respond/src/respond.js
-//= require modernizr.custom.31571.js
 
+//= require jquery/dist/jquery.js
+//= require modernizr.custom.31571.js
+//= require scripts.js
 
 $(function() {
 
@@ -45,5 +42,38 @@ $(document).ready(function(){
       return $(this).attr('src').replace('.svg', '.png');
     });
   }
-});
 
+  // Hover events for touch devices
+	$('.services-link, #site-navigation a, .page-content a, .button').bind('touchstart touchend', function() {
+			$(this).toggleClass('hover');
+	});
+
+  // IE9 (or less) detection
+  if ( ie9 ) {
+		$("body").addClass("ie9");
+  }
+
+  if ( $('body').is('.ie9') ) {
+    $('[placeholder]').focus(function () {
+    var input = $(this);
+    if (input.val() === input.attr('placeholder')) {
+        input.val('');
+        input.removeClass('placeholder');
+    }
+    }).blur(function () {
+        var input = $(this);
+        if (input.val() === '' || input.val() === input.attr('placeholder')) {
+            input.addClass('placeholder');
+            input.val(input.attr('placeholder'));
+        }
+      }).blur().parents('form').submit(function () {
+      $(this).find('[placeholder]').each(function () {
+          var input = $(this);
+          if (input.val() === input.attr('placeholder')) {
+              input.val('');
+          }
+      });
+    });
+  }
+
+});

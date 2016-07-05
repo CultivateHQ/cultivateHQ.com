@@ -1,66 +1,231 @@
-$base-font-size: 18px;
-$base-line-height: 30px;
-@include establish-baseline;
-//@include baseline-grid-overlay;
+/* Setup */
+html {
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+a, a:hover {
+	text-decoration: none;
+	font-weight: 700;
+}
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 400;
+  color: $grey_default;
+	line-height: 1.5;
+}
+
+#page {
+  @include font-size(19);
+}
+
+.case-study__meta {
+	@include font-size(17);
+}
+
+p {
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
   font-weight: 300;
+  color: $grey_dark;
+  margin: 0 0 20px 0;
+  padding: 0;
+	line-height: 1.1
 }
 
-em {font-weight: 700;}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-weight: 700;
-  @include text-shadow(rgba(white, 0.3) 0 1px 0);
-  color: #444;
+.site-content-area-header h1 {
+	margin-bottom: 3px;
 }
 
+.work-with-us {
+  font-weight: 300;
+  color: $grey_dark;
+}
 
 h1 {
-  @include adjust-font-size-to(36px);
-  @include rhythm(0.5, 0, 0, 0, 36px);
-  color: #888;
-  border-bottom: 1px solid #DDD;
+  @include font-size(27);
+  @include em-min-width($breakpoint_tablet) {
+    @include font-size(45);
+  }
+	@include em-min-width($breakpoint_small_desktop) {
+    @include font-size(55);
+  }
 }
 
 h2 {
-  @include adjust-font-size-to(24px, 1);
-  @include rhythm(0.5, 0, 0, 1, 24px);
-}
-
-h3 {
-  @include adjust-font-size-to(21px);
-  @include rhythm(1, 0, 0, 0, 21px);
-}
-
-h4 {
-  @include adjust-font-size-to(18px);
-  @include rhythm(1, 0, 0, 0, 21px);
-}
-
-h5 {
-  @include adjust-font-size-to(18px);
-  @include rhythm(1, 0, 0, 0, 18px);
-}
-
-h6 {
-  @include adjust-font-size-to(16px);
-  font-weight: 300;
-  font-style: italic;
-  @include rhythm(1, 0, 0, 0, 16px);
+  @include font-size(22);
+  @include em-min-width($breakpoint_tablet) {
+    @include font-size(25);
+  }
+	@include em-min-width($breakpoint_small_desktop) {
+    @include font-size(29);
+  }
 }
 
 
-p, ul, ol, .highlight, footer address {
-  margin-top: 0;
-  margin-bottom: rhythm(1);
+
+.page-content, .cta {
+	h2 {
+	  @include font-size(25);
+	  @include em-min-width($breakpoint_tablet) {
+	    @include font-size(27);
+	  }
+		@include em-min-width($breakpoint_small_desktop) {
+	    @include font-size(29);
+	  }
+		@include em-min-width($breakpoint_medium_desktop) {
+	    @include font-size(35);
+	  }
+	}
+	h3 {
+	  @include font-size(20);
+	  @include em-min-width($breakpoint_tablet) {
+	    @include font-size(22);
+	  }
+		@include em-min-width($breakpoint_small_desktop) {
+	    @include font-size(27);
+	  }
+		@include em-min-width($breakpoint_medium_desktop) {
+	    @include font-size(31);
+	  }
+	}
+	h4 {
+	  @include font-size(19);
+	  @include em-min-width($breakpoint_tablet) {
+	    @include font-size(21);
+	  }
+		@include em-min-width($breakpoint_small_desktop) {
+	    @include font-size(27);
+	  }
+	}
+
+	h5 {
+	  @include font-size(18);
+	  @include em-min-width($breakpoint_tablet) {
+	    @include font-size(20);
+	  }
+		@include em-min-width($breakpoint_small_desktop) {
+	    @include font-size(25);
+	  }
+	}
+
+
+
 }
 
-blockquote {
-  margin-top: 0;
-  margin-bottom: 0;
+.page-content {
+	a {
+		color: $pink_brand;
+		border-bottom: 2px solid $pink_brand;
+		padding-bottom: 2px;
+		@include transition(border-color,.2);
+		&:hover, &:focus, &:active {
+			border-color: $grey_dark;
+		}
+	}
+	h2, h3, h4, h5, h6 {
+		a {
+			line-height: 1.4;
+		}
+	}
+
 }
 
-strong { font-weight: 700; color: #e21d87;}
+.page-content:not(.page-content--blog) {
+	p {
+		line-height: 1.6;
+	}
+  a {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    position: relative;
+		top: 2px;
+    padding-bottom: 0;
+  }
+	li a {
+		display: inline;
+		top: auto;
+		vertical-align: inherit;
+		overflow: auto;
+		white-space: normal;
+	}
+}
+
+.subtitle, h2.subtitle {
+	text-transform: uppercase;
+	font-weight: 400;
+	@include font-size(14);
+  @include em-min-width($breakpoint_tablet) {
+    @include font-size(19);
+  }
+	@include em-min-width($breakpoint_small_desktop) {
+    @include font-size(21);
+  }
+}
+
+.breadcrumbs {
+	@include font-size(13);
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.shout-out {
+	text-align: center;
+	@include font-size(21);
+	@include em-min-width($breakpoint_tablet) {
+    @include font-size(25);
+  }
+}
+
+.work-with-us {
+  @include font-size(19);
+  @include em-min-width($breakpoint_tablet) {
+    @include font-size(25);
+  }
+}
+
+.blog-post__summary {
+	@include font-size(17);
+}
+
+.meta {
+	@include font-size(15);
+}
+
+#site-footer {
+  @include font-size(15);
+  h6 {
+    @include font-size(17);
+    font-weight: 700;
+		color: $white;
+  }
+}
+
+.widget h3 {
+	@include font-size(27);
+}
+
+
+#site-navigation a {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $white;
+  @include font-size(14);
+}

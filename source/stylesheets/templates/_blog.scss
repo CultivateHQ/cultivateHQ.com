@@ -1,0 +1,63 @@
+.callout {
+  padding: 30px;
+  background: $offwhite;
+  border: 1px solid $grey_mid_brand;
+  font-weight: 700;
+  color: $grey_dark;
+}
+
+.highlight {
+  display: block;
+  padding: 30px;
+  color: #faf6e4;
+  background-color: #122b3b;
+}
+
+.widget {
+  background: $offwhite;
+  padding: 40px 20px;
+  text-align: center;
+  + .widget {
+    margin-top: 20px;
+  }
+}
+
+.layout-two-column {
+  @include em-min-width($breakpoint_small_desktop) {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+}
+
+.layout-two-column__left {
+  @include em-min-width($breakpoint_small_desktop) {
+    display: table-cell;
+    width: 40%;
+    vertical-align: top;
+  }
+}
+
+.layout-two-column__right {
+  margin-top: -50px;
+  padding-bottom: 60px;
+  @include em-min-width($breakpoint_small_desktop) {
+    margin-top: 0;
+    padding-top: 110px;
+    padding-left: 50px;
+    display: table-cell;
+    width: 22%;
+    vertical-align: top;
+  }
+}
+
+.blog-post {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $grey_default_half;
+}
+
+.meta {
+  margin-top: 6px;
+  color: $grey_default_half;
+}

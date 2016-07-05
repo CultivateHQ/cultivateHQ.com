@@ -1,84 +1,67 @@
-<% if current_page.data.title != 'Contact' %>
-  <section class="work-with-us">
-    <div class="wrapper">
-      <a class="internal-anchor" name="contact"></a>
-      <h1>
-        We’re passionate about understanding businesses, ideas and people.
-        <a href="/contact/">
-          <strong>Let’s talk.</strong>
-        </a>
-      </h1>
-    </div>
-  </section>
-<% end %>
+<%# if current_page.data.title != 'Contact' %>
+      <section class="work-with-us padding-medium">
+        <div class="max-width">
+            We're passionate about understanding businesses, ideas and people.
 
-<footer>
-  <div class="wrapper">
-    <div class="column column__half">
-      <div class="vcard">
-        <div>
-          <span class="company_name">Cultivate Software Ltd.</span>
-          <span class="company_number">Company No. SC357781.</span>
+              <%= link_to "Let's Talk", '/contact/' %>
+
         </div>
-        <div>
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <a href="mailto:contact@cultivateHQ.com">contact@cultivateHQ.com</a>&nbsp;
+      </section>
+<%# end %>
+      <footer id="site-footer" class="padding-medium">
+        <div class="max-width">
+          <div class="footer-signup">
+            <h6>Sign up for our Quarterly Newsletter</h6>
+            <p class="text-half">We hate spam as much as you do, so we'll never give or sell your email to anyone else.</p>
+
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+            <form action="//cultivateHQ.us2.list-manage.com/subscribe/post?u=4d5f2d95ff2698d62e8e34026&amp;id=a9d9de8ed8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form" target="_blank">
+            <div id="mc_embed_signup_scroll">
+            <div id="mce-responses" class="clear">
+          		<div class="response" id="mce-error-response" style="display:none"></div>
+          		<div class="response" id="mce-success-response" style="display:none"></div>
+          	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4d5f2d95ff2698d62e8e34026_a9d9de8ed8" tabindex="-1" value=""></div>
+
+              </div>
+            <div class="mc-field-group">
+            	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address" required>
+              <button name="subscribe" id="mc-embedded-subscribe" class="button button--small button--on-dark">Subscribe</button>
+            </div>
+
+            </form>
+            </div>
+
+            <!--End mc_embed_signup-->
+          </div>
+          <div class="footer-copyright vcard">
+            <p>&copy; Copyright <span class="company_name">Cultivate Software Ltd 2016</span>. <br>
+              <span class="company_number">Company No. SC357781</span>.</p>
+            <p>
+              <a href="mailto:contact@cultivateHQ.com">contact@cultivateHQ.com</a><br>
+              <a href="tel://+448455280757">+44 (0)845 528 0757</a><br>
+              <a href="http://twitter.com/cultivatehq"><i class="fa fa-twitter" aria-label="Twitter"></i> cultivatehq</a>
+            </p>
+            <p>
+              <a href="https://www.google.com/maps/place/CodeBase/@55.94626,-3.20157,15z/data=!4m2!3m1!1s0x0:0x5727e05b4321b9f6?hl=en-GB">
+                <span class="adr">
+                  <span class="street-address">CodeBase</span>
+                  <span class="locality">Argyle House</span>
+                  <span class="region">Edinburgh</span>
+                  <span class="postal-code">EH3 9DR</span>
+                </span>
+              </a>
+            </p>
+            <p>
+              <a href="http://thisiscodebase.com">
+                <%= image_tag "codebase.png", alt: "codebase logo", width: "99", height: "27" %>
+              </a>
+            </p>
+          </div>
         </div>
-        <div>
-          <i class="fa fa-phone" aria-hidden="true"></i>
-          <a href="tel://+448455280757">+44 (0)845 528 0757</a><br>
-        </div>
+      </footer>
+    </div> <!-- #page -->
 
-        <div>
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          <a href="https://www.google.com/maps/place/CodeBase/@55.94626,-3.20157,15z/data=!4m2!3m1!1s0x0:0x5727e05b4321b9f6?hl=en-GB">
-            <span class="adr">
-              <span class="street-address">CodeBase</span>
-              <span class="locality">Argyle House</span>
-              <span class="region">Edinburgh</span>
-              <span class="postal-code">EH3 9DR</span>
-            </span>
-          </a>
-        </div>
-
-      </div>
-    </div>
-    <div class="column column__half">
-      <div class='signup'>
-        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-        <a href="/newsletter-signup">
-        Sign up for our Quarterly Newsletter</a>
-      </div>
-      <div class="codebase">
-        <a href="http://thisiscodebase.com">
-          <%= image_tag "codebase.png", alt: "codebase-logo" %>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!--[if IE 7]>
-    <script>
-      $("#site-header nav ul").css({'width': '270px'})
-    </script>
-  <![endif]-->
-
-<!--[if (gte IE 6)&(lte IE 8)]>
-  <script>
-    $(".clients li:first-child").css('margin-left','0');
-    var windowWidth = $(window).width();
-    if (windowWidth >= 900) {
-      $('.clients li:nth-child(5n+1)').css({'margin-left':'0','clear': 'left'});
-    }
-    if (windowWidth > 768 && windowWidth <= 900) {
-      $('.clients li:nth-child(4n+1)').css({'margin-left':'0', 'clear': 'left'});
-    }
-    if (windowWidth > 595 && windowWidth  <= 768) {
-      $('.clients li:nth-child(3n+1)').css({'margin-left':'0', 'clear': 'left'});
-    }
-    if (windowWidth <= 595) {
-      $('.clients li:nth-child(2n+1)').css({'margin-left':'0', 'clear': 'left'});
-    }
-  </script>
-<![endif]-->
+    <script>var ie9 = false;</script>
+    <!--[if lte IE 9 ]><script> var ie9 = true; </script><![endif]-->

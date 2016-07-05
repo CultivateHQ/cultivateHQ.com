@@ -2,6 +2,7 @@
 title:  "9 Things to Consider When Choosing a JavaScript MV* Framework"
 author: Dan Munckton
 description: You may find it useful to consider this list of factors when deciding between several JavaScript MV* frameworks. We’re not going to lecture you about which solution you should choose – we’ll leave that up to you.
+tags: dan
 ---
 
 ## tl;dr

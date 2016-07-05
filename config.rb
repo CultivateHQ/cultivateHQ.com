@@ -7,7 +7,7 @@ activate :blog do |blog|
   blog.layout = "post"
   blog.summary_generator = Proc.new {|post| post.data.description }
   blog.paginate = true
-  #blog.tag_template = "tag.html"
+  blog.tag_template = "posts/tag.html"
   #blog.calendar_template = "calendar.html"
 end
 
@@ -41,8 +41,8 @@ end
 #
 # With alternative layout
 page "index.html", :layout => :home
-page "/posts/index.html", :layout => :post
-page "/key_place.html", :layout => :product
+page "/posts/index.html", :layout => :blog
+page "/posts/tag.html", :layout => :blog
 page "/newsletter-signup"
 page "/feed.xml", :layout => false
 

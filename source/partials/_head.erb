@@ -1,21 +1,25 @@
-<meta charset="utf-8">
-<!-- Always force latest IE rendering engine or request Chrome Frame -->
-<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<!-- Use title if it's in the page YAML frontmatter -->
-<title><%= current_page.data.title || "Cultivate" %></title>
-<link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
-<link rel="feed" type="application/atom+xml" href="/feed.xml" title="Atom Feed">
-<%= stylesheet_link_tag "application" %>
-<%= javascript_include_tag  "all" %>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Cultivate" %></title>
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="feed" type="application/atom+xml" href="/feed.xml" title="Atom Feed">
+    <link rel="icon" href="/favicon.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <%= stylesheet_link_tag "application" %>
+    <!--[if (lt IE 9) & (!IEMobile)]>
+      <%= stylesheet_link_tag "ie" %>
+    <![endif]-->
+    <%= javascript_include_tag  "all" %>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-54446806-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
+      ga('create', 'UA-54446806-1', 'auto');
+      ga('send', 'pageview');
+    </script>
