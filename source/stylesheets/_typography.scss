@@ -123,11 +123,10 @@ h2 {
 .page-content {
 	a {
 		color: $pink_brand;
-		border-bottom: 2px solid $pink_brand;
 		padding-bottom: 2px;
-		@include transition(border-color,.2);
+    text-decoration: underline;
+    font-weight: 400;
 		&:hover, &:focus, &:active {
-			border-color: $grey_dark;
 		}
 	}
 	h2, h3, h4, h5, h6 {
@@ -150,7 +149,6 @@ h2 {
     text-overflow: ellipsis;
     vertical-align: bottom;
     position: relative;
-		top: 2px;
     padding-bottom: 0;
   }
 	li a {
