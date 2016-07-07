@@ -114,14 +114,6 @@ img, svg {
   }
 }
 
-body.clients_index .site-content-area-header {
-  background: url(/images/svg/logo-montage.svg) center center no-repeat $pink_brand;
-  background-size: cover;
-  @include em-min-width($breakpoint_medium_desktop) {
-    background-size: contain;
-  }
-}
-
 .page-content {
   p + ul {
     margin-top: -15px;

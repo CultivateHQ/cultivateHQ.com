@@ -71,6 +71,9 @@
     width: 100%;
     max-width: 100px;
     opacity: .4;
+
+    body.clients & {opacity: 0.8;}
+
     @include em-min-width($breakpoint_tablet) {
       max-width: 180px;
     }
