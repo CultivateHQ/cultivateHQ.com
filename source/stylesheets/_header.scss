@@ -86,6 +86,12 @@
       }
     }
 
+    .testimonials{
+      a.nav-testimonials{
+        border-bottom: 2px solid $green_brand;
+      }
+    }
+
     .about {
       a.nav-about {
         border-bottom: 2px solid $green_brand;

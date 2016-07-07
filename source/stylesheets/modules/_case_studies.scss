@@ -14,15 +14,27 @@
   font-size: 0;
 }
 
+
 .case-study {
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
 
 
+  &.see-all {
+    min-height: 305px;
+
+    .fa {
+      margin-top: 60px;
+      @include font-size(120);
+      color: $grey_brand;
+    }
+  }
+
   h3 {
     @include font-size(19);
   }
+
 
   @include em-min-width($breakpoint_small_desktop) {
     width: 33.333%;
