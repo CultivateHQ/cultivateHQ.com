@@ -3,42 +3,46 @@ title: "38 Degrees"
 subtitle: "Real-Time Opinion Tracking in Elixir"
 ---
 <article>
-  <div class="page-content padding-medium">
+  <div class="page-content padding-medium-top">
     <div class="shout-out divider min-width">
-        <%= image_tag("clients/00-38-degrees-redraw.jpg", alt: '38 Degrees', class: 'case-study-image' ) %>
+      <%= image_tag("svg/38degrees.svg", alt: '38 Degrees', class: 'case-study-image') %>
       <p>38 Degrees is an independent political-activism organisation with over 2.5 million members. Cultivate partnered with their team on the continued development of a real-time opinion tracking tool for televised debates.</p>
     </div>
-      
-  <div class="row row--image-feature">
-    <%= image_tag("case-studies/38-degrees-placeholder.jpg", alt: 'Screenshot of 38 Degrees') %>
   </div>
 
-    <div class="min-width">
-     <h2>Real-time concurrent user data</h2>
-      <p>The product allows thousands of users to give their opinion on live televised debates, in real-time. It gauges and displays opinions relating to the key topics on discussion, and uses independent experts to check the reality of ‘facts’ delivered throughout the debate. Users can access the application across web and mobile devices, sharing their views with thousands of other users from the comfort of their own home.</p>
-    </div>
-    
-                
-<div class="row row--image-feature">
-    <%= image_tag("case-studies/38-degrees-placeholder2.jpg", alt: 'Screenshot of 38 Degrees') %>
+  <div class="row row--image-feature padding-medium">
+    <%= image_tag("case-studies/38-degrees.jpg", alt: 'Screenshot of 38 Degrees') %>
   </div>
-    
+
+  <div class="min-width">
+    <h2>Real-time concurrent user data</h2>
+    <p>The product allows thousands of users to give their opinion on live televised debates, in real-time. It gauges and displays opinions relating to the key topics on discussion, and uses independent experts to check the reality of ‘facts’ delivered throughout the debate. Users can access the application across web and mobile devices, sharing their views with thousands of other users from the comfort of their own home.</p>
+  </div>
+
+
+  <div class="row row--image-feature padding-medium">
+    <%= image_tag("case-studies/38-degrees2.jpg", alt: 'Screenshot of 38 Degrees') %>
+  </div>
+
+  <div class="page-content padding-medium-top">
     <div class="min-width">
-     <h2>Going live</h2>
+      <h2>Going live</h2>
       <p>Our team worked closely with 38 Degrees to deliver the project on a tight deadline for the EU referendum debate, which was broadcasting live from Wembley Arena to millions of viewers. It was of paramount importance that the application worked faultlessly during the live debate.
       <p>In order to give 38 Degrees confidence, we load tested the application to ensure that it would handle the large number of expected users. During the debate the product successfully served thousands of concurrent users, who cast over 1.3 million votes in real-time.</p>
     </div>
- 
-        <blockquote class="testimonial-quote-macro">
+  </div>
+
+  <blockquote class="testimonial-quote-macro">
     <div class="min-width">
-        <div class="testimonial-quote__image"><%= image_tag "images/testimonials/large/james-rees.jpg", alt: "Photo of James Rees" %></div>
+      <div class="testimonial-quote__image"><%= image_tag "images/testimonials/large/james-rees.jpg", alt: "Photo of James Rees" %></div>
       <p>Cultivate are awesome.</p>
       <cite>James Rees<br>Technical Director, 38 Degrees</cite>
     </div>
   </blockquote>
 
-  <div class="min-width">
-     <h2>Why Elixir and Phoenix?</h2>
+  <div class="page-content padding-medium-top">
+    <div class="min-width">
+      <h2>Why Elixir and Phoenix?</h2>
       <p>Due to the highly concurrent nature of the tool, Elixir was a perfect choice. Its fault tolerant nature allowed 38 Degrees to feel comfortable in the ability to rapidly scale the product without the worry of it failing at critical moments.</p>
       <p>Elixir benefits from being built on top of the Erlang virtual machine (BEAM) which was originally designed to ensure telephone systems worked faultlessly without any drop outs. Its battle-tested scalability and concurrency is perfect for dealing with thousands of active users, without significant investments in bandwidth and CPU time. The Phoenix web framework and its fantastic support for web sockets allowed us to display real time user sentiment on graphs and the opinion tracker, and display changing user behaviour in real-time.</p>
     </div>
@@ -46,7 +50,7 @@ subtitle: "Real-Time Opinion Tracking in Elixir"
 
   <blockquote class="testimonial-quote-macro">
     <div class="min-width">
-        <div class="testimonial-quote__image"><%= image_tag "images/testimonials/large/bex-hay.jpg", alt: "Photo of Bex Hay" %></div>
+      <div class="testimonial-quote__image"><%= image_tag "images/testimonials/large/bex-hay.jpg", alt: "Photo of Bex Hay" %></div>
       <p>Cultivate are awesome.</p>
       <cite>Bex Hay<br>Campaigns Manager, 38 Degrees</cite>
     </div>
