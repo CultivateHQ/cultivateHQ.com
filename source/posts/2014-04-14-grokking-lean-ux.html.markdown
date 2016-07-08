@@ -17,7 +17,7 @@ Fast-forward to 2014 and I've now done a few Lean UX style projects. The team wo
 
 Lean UX is not just about UX. It's about communication.
 
-When people ask what I do at Neo, one thing I say is that we build software collaboratively with clients rather than build it for them. But this is not quite true. We build the software at our desks, whereas we collaborate around the whiteboard. The collaborative bit is the design, and by that I mean the product design, not just the visual design. In other words design is how we communicate with the client. The client stipulates their problems and together we design solutions. We build a shared language around the product based on that collaborative design process.
+When people ask what I do at work, one thing I say is that we build software collaboratively with clients rather than build it for them. But this is not quite true. We build the software at our desks, whereas we collaborate around the whiteboard. The collaborative bit is the design, and by that I mean the product design, not just the visual design. In other words design is how we communicate with the client. The client stipulates their problems and together we design solutions. We build a shared language around the product based on that collaborative design process.
 
 I've come to realise that Lean UX is not just about welcoming designers to the iterative development process. Nor is it just to introduce developers to the design process. It is also about communication.
 

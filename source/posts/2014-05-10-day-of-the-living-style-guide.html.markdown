@@ -1,7 +1,6 @@
 ---
 title:  "Day of the Living Style Guide"
 author: Alan Gardner
-archive: https://web.archive.org/web/20140725022615/http://www.neo.com/2014/05/10/day-of-the-living-style-guide
 description: A style guide or style manual is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization or field. The implementation of a style guide provides uniformity in style and formatting within a document and across multiple documents.
 tags: alan
 ---
