@@ -29,7 +29,7 @@ While SAFe does drive a certain amount of decision making down to self organisin
 
 One of the harder things to convince the business about in an Agile adoption is the practice of releasing early and often. SAFe sidesteps this by defining Potentially Shippable Increments every few sprints — points at which the software could be released but is not necessarily released.
 
-For an Agile and Lean process, though, this would seem to produce a very long feedback cycle between feature inception to release, making Neo-style [Hypotheses Driven Development](http://www.neo.com/2014/04/10/kanban-boards-for-hypothesis-driven-development) next to impossible.
+For an Agile and Lean process, though, this would seem to produce a very long feedback cycle between feature inception to release, making Hypotheses Driven Development next to impossible.
 
 ## My conclusion
 Rolling out a SAFe programme does seem to be a realistic way to bring some of the efficiency benefits of Agile Software Development to the corporate world, in a way that can stick. It is reasonable to roll back some expectations around quality and feedback cycles.
