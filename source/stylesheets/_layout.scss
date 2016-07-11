@@ -147,6 +147,10 @@ img, svg {
   h2, h3 {
     margin-bottom: 60px;
   }
+
+  &.top-spaced {
+    margin-top: 30px;
+  }
 }
 
 .row--image-feature:not(.padding-medium) {

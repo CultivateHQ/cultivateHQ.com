@@ -1,21 +1,21 @@
 /* Setup */
 html {
-	font-size: 62.5%;
-	-webkit-text-size-adjust: 100%;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a, a:hover {
-	text-decoration: none;
-	font-weight: 700;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 body {
   font-family: 'Lato', Arial, sans-serif;
   font-weight: 400;
   color: $grey_default;
-	line-height: 1.5;
+  line-height: 1.5;
 }
 
 #page {
@@ -23,12 +23,12 @@ body {
 }
 
 .case-study__meta {
-	@include font-size(17);
+  @include font-size(17);
 }
 
 p {
-	margin: 0 0 20px 0;
-	padding: 0;
+  margin: 0 0 20px 0;
+  padding: 0;
 }
 
 h1, h2, h3,
@@ -37,11 +37,11 @@ h4, h5, h6 {
   color: $grey_dark;
   margin: 0 0 20px 0;
   padding: 0;
-	line-height: 1.1
+  line-height: 1.1
 }
 
 .site-content-area-header h1 {
-	margin-bottom: 3px;
+  margin-bottom: 3px;
 }
 
 .work-with-us {
@@ -54,7 +54,7 @@ h1 {
   @include em-min-width($breakpoint_tablet) {
     @include font-size(45);
   }
-	@include em-min-width($breakpoint_small_desktop) {
+  @include em-min-width($breakpoint_small_desktop) {
     @include font-size(55);
   }
 }
@@ -64,7 +64,7 @@ h2 {
   @include em-min-width($breakpoint_tablet) {
     @include font-size(25);
   }
-	@include em-min-width($breakpoint_small_desktop) {
+  @include em-min-width($breakpoint_small_desktop) {
     @include font-size(29);
   }
 }
@@ -72,76 +72,76 @@ h2 {
 
 
 .page-content, .cta {
-	h2 {
-	  @include font-size(25);
-	  @include em-min-width($breakpoint_tablet) {
-	    @include font-size(27);
-	  }
-		@include em-min-width($breakpoint_small_desktop) {
-	    @include font-size(29);
-	  }
-		@include em-min-width($breakpoint_medium_desktop) {
-	    @include font-size(35);
-	  }
-	}
-	h3 {
-	  @include font-size(20);
-	  @include em-min-width($breakpoint_tablet) {
-	    @include font-size(22);
-	  }
-		@include em-min-width($breakpoint_small_desktop) {
-	    @include font-size(27);
-	  }
-		@include em-min-width($breakpoint_medium_desktop) {
-	    @include font-size(31);
-	  }
-	}
-	h4 {
-	  @include font-size(19);
-	  @include em-min-width($breakpoint_tablet) {
-	    @include font-size(21);
-	  }
-		@include em-min-width($breakpoint_small_desktop) {
-	    @include font-size(27);
-	  }
-	}
+  h2 {
+    @include font-size(25);
+    @include em-min-width($breakpoint_tablet) {
+      @include font-size(27);
+    }
+    @include em-min-width($breakpoint_small_desktop) {
+      @include font-size(29);
+    }
+    @include em-min-width($breakpoint_medium_desktop) {
+      @include font-size(35);
+    }
+  }
+  h3 {
+    @include font-size(20);
+    @include em-min-width($breakpoint_tablet) {
+      @include font-size(22);
+    }
+    @include em-min-width($breakpoint_small_desktop) {
+      @include font-size(27);
+    }
+    @include em-min-width($breakpoint_medium_desktop) {
+      @include font-size(31);
+    }
+  }
+  h4 {
+    @include font-size(19);
+    @include em-min-width($breakpoint_tablet) {
+      @include font-size(21);
+    }
+    @include em-min-width($breakpoint_small_desktop) {
+      @include font-size(27);
+    }
+  }
 
-	h5 {
-	  @include font-size(18);
-	  @include em-min-width($breakpoint_tablet) {
-	    @include font-size(20);
-	  }
-		@include em-min-width($breakpoint_small_desktop) {
-	    @include font-size(25);
-	  }
-	}
+  h5 {
+    @include font-size(18);
+    @include em-min-width($breakpoint_tablet) {
+      @include font-size(20);
+    }
+    @include em-min-width($breakpoint_small_desktop) {
+      @include font-size(25);
+    }
+  }
 
 
 
 }
 
-.page-content {
-	a {
-		color: $pink_brand;
-		padding-bottom: 2px;
+.page-content, .shout-out {
+  a, a:visited {
+    color: $pink_brand;
+    padding-bottom: 2px;
     text-decoration: underline;
     font-weight: 400;
-		&:hover, &:focus, &:active {
-		}
-	}
-	h2, h3, h4, h5, h6 {
-		a {
-			line-height: 1.4;
-		}
-	}
+    &:hover, &:focus, &:active {
+    }
+  }
+  h2, h3, h4, h5, h6 {
+    a {
+      line-height: 1.4;
+    }
+  }
 
 }
 
 .page-content:not(.page-content--blog) {
-	p {
-		line-height: 1.6;
-	}
-  a {
+  p {
+    line-height: 1.6;
+  }
+  a, a:visited {
     display: inline-block;
     max-width: 100%;
     white-space: nowrap;
@@ -151,43 +151,43 @@ h2 {
     position: relative;
     padding-bottom: 0;
   }
-	li a {
-		display: inline;
-		top: auto;
-		vertical-align: inherit;
-		overflow: auto;
-		white-space: normal;
-	}
+  li a {
+    display: inline;
+    top: auto;
+    vertical-align: inherit;
+    overflow: auto;
+    white-space: normal;
+  }
 }
 
 .subtitle, h2.subtitle {
-	text-transform: uppercase;
-	font-weight: 400;
-	@include font-size(14);
+  text-transform: uppercase;
+  font-weight: 400;
+  @include font-size(14);
   @include em-min-width($breakpoint_tablet) {
     @include font-size(19);
   }
-	@include em-min-width($breakpoint_small_desktop) {
+  @include em-min-width($breakpoint_small_desktop) {
     @include font-size(21);
   }
 }
 
 .breadcrumbs {
-	@include font-size(13);
+  @include font-size(13);
 }
 
 .text-center {
-	text-align: center;
+  text-align: center;
 }
 
 .text-left {
-	text-align: left;
+  text-align: left;
 }
 
 .shout-out {
-	text-align: center;
-	@include font-size(21);
-	@include em-min-width($breakpoint_tablet) {
+  text-align: center;
+  @include font-size(21);
+  @include em-min-width($breakpoint_tablet) {
     @include font-size(25);
   }
 }
@@ -200,11 +200,11 @@ h2 {
 }
 
 .blog-post__summary {
-	@include font-size(17);
+  @include font-size(17);
 }
 
 .meta {
-	@include font-size(15);
+  @include font-size(15);
 }
 
 #site-footer {
@@ -212,12 +212,12 @@ h2 {
   h6 {
     @include font-size(17);
     font-weight: 700;
-		color: $white;
+    color: $white;
   }
 }
 
 .widget h3 {
-	@include font-size(27);
+  @include font-size(27);
 }
 
 
