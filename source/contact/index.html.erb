@@ -4,7 +4,31 @@ title: Contact
 
 
 <article class="page-content min-width padding-large">
-
+  <div class="contact-form-wrapper">
+    <h2>Say Hello</h2>
+    <div class="contact-form">
+      <form action="https://formspree.io/contact@cultivatehq.com" method="POST">
+        <input type="hidden" name="_subject" value="New Website Contact" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_next" value="//cultivatehq.com/contact/thanks" />
+        <div class="contact-form--row">
+          <label class="contact-form--label" for="name">Your Name</label>
+          <input class="contact-form--input" type="text" name="name">
+        </div>
+        <div class="contact-form--row">
+          <label class="contact-form--label" for="email">Your Email Address</label>
+          <input class="contact-form--input" type="email" name="_replyto">
+        </div>
+        <div class="contact-form--row">
+          <label class="contact-form--label" for="email">Your Message</label>
+          <textarea class="contact-form--input" type="message" name="message"></textarea>
+        </div>
+        <div class="contact-form--row contact-form--submit">
+          <button name="submit" type="submit" class="button button--small">send</button>
+        </div>
+      </form>
+    </div>
+  </div>
   <div class="shout-out">
     <p>
     <span class="contact-method">

@@ -28,3 +28,41 @@
 .contact-method:last-of-type::after {
    content: "";
 }
+
+.contact-form-wrapper {
+  display: table;
+  margin: 0 auto;
+  padding-bottom: 40px;
+
+  &.thanks { text-align: center;}
+}
+
+.contact-form {
+  padding: 3rem;
+  border: 10px solid $grey_light_brand;
+;
+
+}
+
+.contact-from--row {
+  display: table-row;
+}
+
+.contact-form--submit {
+  text-align: right;
+}
+
+.contact-form--label { 
+  display: block;
+}
+
+.contact-form--input {
+  margin-bottom: 1rem;
+  width: 260px;
+  @include em-min-width($breakpoint_tablet) {
+    width: 400px;
+  }
+  @include em-min-width($breakpoint_medium_desktop) {
+    width: 600px;
+  }
+}
