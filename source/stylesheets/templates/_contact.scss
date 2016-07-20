@@ -11,3 +11,20 @@
     height: 850px;
   }
 }
+
+
+.contact-method {
+  display: block;
+  @include em-min-width($breakpoint_tablet) {
+    display: inline;
+  }
+}
+.contact-method::after {
+  @include em-min-width($breakpoint_tablet) {
+    content: " \2003 |  \2003"
+  }
+}
+
+.contact-method:last-of-type::after {
+   content: "";
+}
