@@ -119,9 +119,9 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
 
       plugins: {
         elmBrunch: {
-          elmFolder: 'web/elm',
-          mainModules: ['SeatSaver.elm'],
-          outputFolder: '../static/vendor'
+          elmFolder: "web/elm",
+          mainModules: ["SeatSaver.elm"],
+          outputFolder: "../static/vendor"
         },
         ...
       },
