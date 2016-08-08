@@ -26,10 +26,10 @@ You'll need to have the items below installed in order to follow along:
 
 If you can, please use the versions noted below as it will make following the tutorial easier. If you can't then check the gotchas on the repo as others may have logged issues for the version that you are using.
 
-* Erlang 18.3
-* Elixir 1.2.3
-* Phoenix 1.1.4
-* Elm 0.16.0
+* Erlang 19.0.2
+* Elixir 1.3.2
+* Phoenix 1.2.0
+* Elm 0.17.0
 
 
 ### Upgrading Phoenix
