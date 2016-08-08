@@ -64,7 +64,7 @@ Let's start by adding an Elm application into our Phoenix application.
 3. Create a file called *SeatSaver.elm* in the *web/elm* folder and add the following:
 
     ```haskell
-    module SeatSaver where
+    module SeatSaver exposing (..)
 
     import Html
 
@@ -80,7 +80,13 @@ Now let's set up Brunch to automatically build the Elm file for us whenever we s
 
 Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it to compile our Elm application into JavaScript and then package it up with the rest of our application's JavaScript. We're using Brunch because it is included by default with Phoenix. If you are not familiar with Brunch you should still be able to follow along with the instructions below. However, if you want to know more, the [Brunch Guide](https://github.com/brunch/brunch-guide#readme) is the best place to start.
 
-1. Add [elm-brunch](https://github.com/madsflensted/elm-brunch) to your *package.json* directly after the `"brunch": <version>` line. Brunch runs plugins in the order in which they are found within the *package.json* file, so we put the `elm-brunch` plugin right at the top to ensure that the JavaScript resulting from the Elm compilation is available before any of the other JavaScript plugins start their tasks.
+1. Return to the root of the project from *web/elm*, if you haven't already.
+
+    ```shell
+    cd ../..
+    ```
+
+2. Add [elm-brunch](https://github.com/madsflensted/elm-brunch) to your project by running `npm i --save-dev elm-brunch`.
 
     ```javascript
     // package.json
@@ -89,15 +95,14 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
       "dependencies": {
         "babel-brunch": "~6.0.0",
         "brunch": "~2.1.3",
-        "elm-brunch": "~0.5.0",
+        "elm-brunch": "~0.7.0",
         "clean-css-brunch": "~1.8.0",
         ...
       }
     }
     ```
 
-2. Return to the project root folder `cd ../..` and run `npm install`.
-3. Edit your *brunch-config.json* file as follows, adding our Elm file into the watched list so that live reload will fire after any changes and making sure that `elmBrunch` is the first plugin:
+2. Edit your *brunch-config.json* file as follows, adding our Elm file into the watched list so that live reload will fire after any changes and making sure that `elmBrunch` is the first plugin:
 
     ```javascript
     // brunch-config.json
@@ -106,8 +111,8 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
       paths: {
         watched: [
           ...
-          "test/static",
-          "web/elm/SeatSaver.elm"
+          'test/static',
+          'web/elm/SeatSaver.elm'
         ],
         ...
       },
@@ -125,21 +130,48 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
     ```
 
     <section class="callout">
-      *Windows*: if you're using Windows elm-brunch doesn't yet handle file paths with / instead of \. You can get around this for just now (if you're only developing on a Windows machine) by changing the plugins config as follows:
-
-      <pre>
-        <code>
-        plugins: {
-          elmBrunch: {
-            elmFolder: 'web\/elm',
-            mainModules: ['SeatSaver.elm'],
-            outputFolder: '..\/static\/vendor'
-          },
-          ...
-        },
-        </code>
-      </pre>
+      *Windows*: if you're using Windows elm-brunch doesn't yet handle file paths with / instead of \\. You can get around this for just now (if you're only developing on a Windows machine) by changing the plugins config as follows:
     </section>
+
+    ```javascript
+    plugins: {
+      elmBrunch: {
+        elmFolder: 'web\/elm',
+        mainModules: ['SeatSaver.elm'],
+        outputFolder: '..\/static\/vendor'
+      },
+      ...
+    },
+    ```
+
+    <section class="callout">
+      Note that you can now use NPM to install Elm and configure <code>elm-brunch</code> to use the local version of Elm. This has several advantages:
+
+      <ol>
+        <li>You can specify a particular version of Elm to use.</li>
+        <li>You can bundle Elm with your project to make it easier for others to get up and running with the correct version.</li>
+      </ol>
+
+      For example:
+    </section>
+
+    ```shell
+    # from the terminal
+    npm i --save-dev elm@0.17.0
+
+    # in brunch-config.json
+    {
+      ...
+      plugins: {
+        ...
+        elmBrunch: {
+          executablePath: './node_modules/elm/binwrappers'
+        }
+        },
+        ...
+      }
+    }
+    ```
 
 ### Hooking up to the frontend
 
@@ -165,7 +197,7 @@ Now we need to adjust our Phoenix application to display the HTML output by the 
     ```javascript
     ...
     const elmDiv = document.getElementById('elm-main')
-        , elmApp = Elm.SeatSaver.embed(elmDiv);
+        , elmApp = Elm.SeatSaver.embed(elmDiv)
     ```
 
     This grabs the `div` we just set up by its ID and then calls `Elm.SeatSaver.embed` passing in the div that we just captured.
