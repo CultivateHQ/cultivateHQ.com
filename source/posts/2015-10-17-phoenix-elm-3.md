@@ -19,7 +19,7 @@ tags: alan
 OK so now we have a basic Phoenix application into which we've embedded a simple Elm application. Let's start to flesh out our Elm application a little. Elm has a *Model - Update - View* architecture. Let's take a look at what that means:
 
 1. *Model* Elm keeps its state in one single place, the Model. The Model is immutable.
-2. *Update* Elm has an update function that steps the model from one state to the next. It takes an Action to be performed and the current model and then swaps out the current model for a new one.
+2. *Update* Elm has an update function that steps the model from one state to the next. It receives a Message (detailing a task to be performed) and the current model, and then swaps out the current model for a new one.
 3. *View* A representation of the current model that can be displayed to the user, be that HTML, SVG or some other visual representation.
 
 We'll start with the View. We want to create a simple representation of an airplane with seats that we can book. Something like this.
@@ -48,7 +48,7 @@ It's not the most accurate rendition, but it's just enough for us to demonstrate
 
     A few other things to note here are that `--VIEW` is just a standard Elm comment and has no special value. We're going to put all of our Elm code in one file in this tutorial to keep it easier to see what's going on. These comments will help us to find things as we add more code.
 
-    Also Elm idiomatically places two new lines between function definitions.
+    Also, in Elm, we idiomatically place two new lines between function definitions.
 
 4. If you check your browser now (start the server with `iex -S mix phoenix.server` if it's not already running) you should see something like this.
 
