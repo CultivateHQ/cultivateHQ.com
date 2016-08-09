@@ -47,7 +47,7 @@ update msg model =
     Decrement -> model - 1
 ```
 
-Let's assume that our Model is an Int that initializes to 0. We have two messages, `Increment` and `Decrement`. When the update function is called it is passed a Msg and the current Model. It will then pattern match on the given Msg to produce a new Model, either adding 1 or subtracting 1 from the current value of the Model accordingly.
+Let's assume that our Model is an Int that initializes to 0. We have two possible `Msg` types, `Increment` and `Decrement`. When the update function is called it is passed a Msg and the current Model. It will then pattern match on the given Msg's type to find a function to call. If the Msg type is `Increment` then a new Model will be produced by adding 1 to the current Model. If it is `Decrement` then 1 will be subtracted from the current Model instead.
 
 From this we can see that the purpose of the `update` function, for now anyway, is to step the Model from one state to the next.
 
@@ -55,7 +55,7 @@ From this we can see that the purpose of the `update` function, for now anyway, 
 
 Let's update our Elm application so that we can toggle a Seat from available to occupied and vice versa.
 
-1. Add the following to your *web/elm/SeatSaver.elm* file. It doesn't matter where you put it, but I typically stick the Update between the Model and View sections.
+1. Add the following to your *web/elm/SeatSaver.elm* file. It doesn't matter where you put it, but I typically stick the Update section between the Model and View sections.
 
     ```haskell
     -- UPDATE
@@ -82,20 +82,20 @@ Let's update our Elm application so that we can toggle a Seat from available to 
 
     The `updateSeat` function is defined in the `let` block. The `let` block enables us to define functions that can be used within the local scope. The `updateSeat` function checks to see if the seat passed into it `seatFromModel` has a seatNo that matches the seatNo of the `seatToToggle` passed into the Msg. If it matches, the function returns a new seat record with the occupied boolean flipped to the opposite value. If it doesn't match it just returns a new seat record with the same values as the existing `seatFromModel`.
 
-    Phew! The upshot of this is that, when the `update` function is called with the Toggle Msg and a seat, it will return a new List with the given seat's occupied boolean flipped.
+    Phew! The upshot of this is that, when the `update` function is called with the Toggle message and a seat, it will return a new List with the given seat's occupied boolean flipped.
 
 
 ## Introducing Html.App
 
 We now have our `update` function, but we're not using it anywhere. We could at this point start looking at Elm Signals and Mailboxes, at folding and mapping and merging, but let's not. Elm handily provides a wrapper around all of the necessary wiring required to have Msgs routed around our application into the Update. This wrapper is called Html.App.
 
-1. Let's import it in our *web/elm/SeatSaver.elm* file.
+1. Let's import it into our *web/elm/SeatSaver.elm* file.
 
     ```haskell
     import Html.App as Html
     ```
 
-    The `as Html` part allows us to create an alias so that calls to Html.App.<function> can be done as Html.<function>. Don't worry, this doesn't overwrite any existing Html module functions are there are no name clashes between these two modules. This is the idiomatic way to import the `Html.App` module.
+    The `as Html` part allows us to create an alias so that calls to Html.App.<function> can be done as Html.<function>. Don't worry, this doesn't overwrite any existing Html module functions and there are no name clashes between these two modules. This is the idiomatic way to import the `Html.App` module.
 
 2. We need to change our `main` function to use the `beginnerProgram` function from the Html.App module. This takes as an argument a record with our init, update and view functions, does all the necessary wiring under the covers and returns `Program Never` values.
 
@@ -131,24 +131,40 @@ We now have our `beginnerProgram` set up, but it doesn't yet _do_ anything.
         [ text (toString seat.seatNo) ]
     ```
 
-    We've added an `onClick` function to our attributes, which takes the Msg to be sent (and the current seat) as its argument.
+    We've added an `onClick` function to our attributes, which takes the Msg to be sent, and the current seat, as its argument.
 
     <div class="callout">
       Our <code>Toggle</code> Msg needs to have the clicked Seat as an argument. However the <code>onClick</code> function can only accept one argument. So how do we get the Seat in there? We can do this in the same way as we would in maths, by denoting precedence of function execution with parentheses. When we write <code>onClick (Toggle seat)</code> what we are doing is creating a [partial function](https://wiki.haskell.org/Partial_functions) that binds the clicked seat to the Toggle function call. In other words, we create a Toggle function where we have already provided the Seat argument. This technique is known as [currying](https://en.wikipedia.org/wiki/Currying).
     </div>
 
-    We need to import the onClick event for this to work.
+2. We need to import the onClick event for this to work.
 
     ```haskell
     import Html.Events exposing (onClick)
     ```
 
-    When we click on a seat we create a Toggle Msg with the seat that was clicked as an argument. 'beginnerProgram` will handle things from here, picking the Msg up and routing it through the `update` function. This in turn will toggle the occupied flag of that seat.
+3. We also need to change the type annotation of this function now. Before we added the onClick event we were passing out plain HTML strings. Now we are passing out HTML that can result in Messages being called. If you try to compile the file as it currently stands, you will get the following error:
 
-2. Changing the occupied flag is all well and good, but we can't actually tell currently if that has happened or not. So that we get an indication that something has happened let's change the style of the seat based on its occupied status.
+    ![seatItem type error](/images/phoenix-elm/type_error.png)
+
+    As before the error messages are very helpful. They are telling us that both of our View functions state that they will return values of type `Html String` when in fact they are now returning values of `Html Msg`.
+
+    Change the type annotations as follows to enable the file to compile again:
 
     ```haskell
-    seatItem : Seat -> Html
+    view : Model -> Html Msg
+    ```
+
+    ```haskell
+    seatItem : Seat -> Html Msg
+    ```
+
+4. When we click on a seat we create a Toggle Msg with the seat that was clicked as an argument. 'beginnerProgram` will handle things from here, picking the Msg up and routing it through the `update` function. This in turn will toggle the occupied flag of that seat.
+
+5. Changing the occupied flag is all well and good, but we can't actually tell currently if that has happened or not. So that we get an indication that something has happened, let's change the style of the seat based on its occupied status.
+
+    ```haskell
+    seatItem : Seat -> Html Msg
     seatItem seat =
       let
         occupiedClass =
@@ -161,7 +177,7 @@ We now have our `beginnerProgram` set up, but it doesn't yet _do_ anything.
           [ text (toString seat.seatNo) ]
     ```
 
-    We're using a `let` block again to define a local function `occupiedClass` that will return "occupied" if the seat is occupied or "available" if it is not. We then use the `++` function to concatenate the result of calling `occupiedClass` with the existing class string.
+    We're using a `let` block again to define a local function. `occupiedClass` will return "occupied" if the seat is occupied or "available" if it is not. We then use the `++` function to concatenate the result of calling `occupiedClass` with the existing class string.
 
 3. Now, if you go to your browser, you should be able to click on the seats and see them turn from gray to green and back again!
 
