@@ -10,7 +10,7 @@ tags: alan
 
   The tutorial walks through the creation of a very basic seat saving application, like one you'd use when booking a flight for example. The application will do just enough to demonstrate the mechanisms for getting the two technologies talking to each other.
 
-  There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
+  There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver-017) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
 </section>
 
 
@@ -29,7 +29,7 @@ We'll start with the View. We want to create a simple representation of an airpl
 It's not the most accurate rendition, but it's just enough for us to demonstrate everything we need to.
 
 <div class="callout">
-  You can grab the assets from the <a href="https://github.com/CultivateHQ/seat_saver">SeatSaver repo</a>. The necessary styles are in <em>web/static/css/seatsaver.css</em> and the required image is in <em>web/static/assets/images/seat.png</em>.
+  You can grab the assets from the <a href="https://github.com/CultivateHQ/seat_saver-017">SeatSaver repo</a>. The necessary styles are in <em>web/static/css/seatsaver.css</em> and the required image is in <em>web/static/assets/images/seat.png</em>.
 </div>
 
 1. Open *web/elm/SeatSaver.elm*.
