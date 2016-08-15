@@ -111,8 +111,8 @@ Brunch is an HTML5 build tool sort of like Grunt or Gulp. We're going to use it 
       paths: {
         watched: [
           ...
-          'test/static',
-          'web/elm/SeatSaver.elm'
+          "test/static",
+          "web/elm/SeatSaver.elm"
         ],
         ...
       },
