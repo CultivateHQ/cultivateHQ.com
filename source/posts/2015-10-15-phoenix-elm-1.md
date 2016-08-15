@@ -49,7 +49,7 @@ If you're brand new to Elm then I would suggest the [Pragmatic Studio Elm course
 
 ### Gotchas
 
-There are a number of gotchas on the [tutorial project's wiki](https://github.com/CultivateHQ/seat_saver-017/wiki). We'll add to them over time. If you come across any it would be great if you could raise an [issue](https://github.com/CultivateHQ/seat_saver-017/issues) so that we can update. Thanks in advance!
+There are a number of gotchas on the [tutorial project's README](https://github.com/CultivateHQ/seat_saver-017#gotchas). We'll add to them over time. If you come across any it would be great if you could raise an [issue](https://github.com/CultivateHQ/seat_saver-017/issues) so that we can update. Thanks in advance!
 
 
 ## Creating a Phoenix project
