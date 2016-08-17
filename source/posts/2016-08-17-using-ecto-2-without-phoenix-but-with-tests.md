@@ -1,7 +1,7 @@
 ---
 author: Paul Wilson
 title: Using Ecto 2, without Phoenix, but with tests
-description: I believe most users of Ecto, use it within a Phoenix project. This is a step-by-step guide to using Ecto by itself, using an example project. Includes tests.
+description: Using Ecto without Phoenix is a bit fiddly to set up. This is a step-by-step tutorial to getting through that.
 ---
 
 My guess is that the majority of people using [Ecto](https://hexdocs.pm/ecto/Ecto.html) are using it from [Phoenix](http://www.phoenixframework.org). Through [Phoenix Ecto](https://github.com/phoenixframework/phoenix_ecto), they get a lot of the boilerplate code generated for them. Using _Ecto_ by itself, means that you need to deal with that boilerplate.
