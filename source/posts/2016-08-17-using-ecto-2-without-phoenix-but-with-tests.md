@@ -10,6 +10,8 @@ There are a couple of reasons that you would want to use _Ecto_ this way. The mo
 
 To be fair, most of the information is in [this Hex Docs](https://hexdocs.pm/ecto/Ecto.html) page, but I believe there is some value in presenting a worked example that includes `ExUnit` tests. This will also serve as the basis for a subsequent post on testing database interactions taking place in OTP processes.
 
+The example code is also in [this](https://github.com/CultivateHQ/ecto_todos) repository.
+
 ## Setting Up
 
 Let's create our example, supervised, application; something to hold a _to do list_. 
@@ -262,6 +264,6 @@ We need to checkout the repo, before running the test. Add to 'lib/todos/todo_it
   end
 ```
 
-It all passes! Hooray.
+It all passes! Hooray. You are up to [here](https://github.com/CultivateHQ/ecto_todos/tree/without-process) in the example repository.
 
 Next up - testing database interaction in other processes.
