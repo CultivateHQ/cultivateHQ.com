@@ -5,12 +5,12 @@ description: I believe most users of Ecto, use it within a Phoenix project. This
 ---
 
 
-[Outline]
+[Outline - roughly what I'm going to say ]
 
 * I'd bet that most people use Ecto within a Phoenix _application_. 
-* Phoenix helps you with the Ecto setup through (Phoenix Ecto)[https://github.com/phoenixframework/phoenix_ecto]
+* Phoenix helps you with the Ecto setup through [Phoenix Ecto](https://github.com/phoenixframework/phoenix_ecto); standalone, you're on your own.
 * Standalone - there's a few things you need to do yourself
-* Most of the information is in (this Hex Docs)[https://hexdocs.pm/ecto/Ecto.html] document, but thought it would be worthwhile to work through an example adding setup for ExUnit tests
+* Most of the information is in [this Hex Docs](https://hexdocs.pm/ecto/Ecto.html) document, but thought it would be worthwhile to work through an example adding setup for ExUnit tests
 
 [Why standalone]
 
@@ -18,26 +18,34 @@ description: I believe most users of Ecto, use it within a Phoenix project. This
 * Because you are writing Phoenix a web application, but are using Umbrella application to separate out the  the _persistence_ layer.
 
 
-[Below pasted from notes]
+[Below is the tutorial]
 
 ## basic setup
+
+Let's create our example application; something to hold a _to do list_. 
 
 ```
 mix new --sup todos
 cd todos
+```
+
+Add Ecto and Postgres (assuming Postgres) to mix.exs dependencies and application to _mix.exs_.
 
 ```
-mix.exs
-```
+  def application do
+    [applications: [:logger, :ecto, :postgrex],
+     mod: {Todos, []}]
+  end
+
   defp deps do
-    [{:ecto, "~> 2.0.4"},
+    [
+      {:ecto, "~> 2.0.4"},
       {:postgrex, ">= 0.0.0"},
     ]
   end
 ```
-also add to apps
 
-`mix deps.get`
+We need to create our Repo ourselves. Make the file _lib/todos/repo.ex_ with the following content.
 
 ```
 defmodule Todos.Repo do
@@ -45,17 +53,22 @@ defmodule Todos.Repo do
 end
 ```
 
+A _Repo_ is a Supervisor; we need to add it to our application's supervision tree. In _lib/todos.ex_ add to the application supervisor.
 
-config/config.exs
-
-Uncomment and add repos 
 ```
-config :todos, :ecto_repos, [Todos.Repo]
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
 
-import_config "#{Mix.env}.exs"
+    children = [
+      supervisor(Todos.Repo, []), # <--- Add this line
+    ]
+
+    opts = [strategy: :one_for_one, name: Todos.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
 ```
 
-Add dev.exs
+The _Repo_ will be looking for configuration. Let's put our development config in _config/dev.exs_. I'm using the same assumptions as Phoenix: that there's a dev database server on localhost with a super-user called 'postgres' with an easy-to-guess password.
 
 ```
 use Mix.Config
@@ -69,21 +82,29 @@ config :todos, Todos.Ecto.Repo,[
 ]
 ```
 
-
-In lib/todos.ex
-
-```
-    children = [
-      supervisor(Todos.Repo, [])
-    ]
-
-    opts = [strategy: :one_for_one, name: Todos.Supervisor]
-    Supervisor.start_link(children, opts)
+We'll need to ensure that `dev.exs` is compiled by including it in `config/config.exs`. While we're in that file we will configure the `Mix tasks` to use the correct Repo.
 
 ```
-`mix ecto.create`
+config :todos, :ecto_repos, [Todos.Repo] # Required for Mix tasks, such as mix ecto.gen.migration
 
-` mix ecto.gen.migration AddTodos`
+import_config "#{Mix.env}.exs" # Should just need to uncomment this line
+```
+
+On the command line, we should be able to successfully run the following.
+
+```
+mix deps.get
+mix ecto.create
+```
+
+Now let's add our _todos_ table, to hold our "to do" list. 
+
+```
+mix ecto.gen.migration AddTodos
+```
+
+This will create the directories _priv/repo/migrations/_. Within migrations edit file called _[timestamp]_add_todos.exs, to create the table.
+
 
 ```
 defmodule Todos.Repo.Migrations.AddTodos do
@@ -100,7 +121,9 @@ defmodule Todos.Repo.Migrations.AddTodos do
 end
 ```
 
-lib/todos/todo.ex
+We'll also want to create the schema that maps to the table. My preference is to follow the boilerplate used by _Phoenix Ecto_. Let's create the file _lib/todos/todo.ex_
+
+
 ```
 defmodule Todos.Todo do
   use Ecto.Schema
@@ -124,9 +147,35 @@ defmodule Todos.Todo do
 end
 ```
 
-# tests and functionality
+We can apply the migration by running:
 
-./config/test.exs
+```
+mix ecto.migrate
+```
+
+Let's give it a bit of a spin:
+
+
+```
+$ iex -S mix
+iex(1)> Todos.Todo.changeset(%Todos.Todo{}, 
+  %{item: "Check from iex"}) |> Todos.Repo.insert 
+{:ok,
+ %Todos.Todo{__meta__: #Ecto.Schema.Metadata<:loaded, "todos">,
+  completed: false, id: 2, ... }}
+
+
+iex(2)> Todos.Todo |> Todos.Repo.all
+
+ %Todos.Todo{__meta__: #Ecto.Schema.Metadata<:loaded, "todos">,
+  completed: false, id: 2, ... }]
+iex(3)> 
+
+```
+
+# Tests and functionality
+
+Now we are ready to add some functionality and, of course, some tests. As I've been cheerfully ignoring Michael Feather's [definition of unit tests](http://www.artima.com/weblogs/viewpost.jsp?thread=126923) since 2005, let's set up the test database. Add _config/test.exs_
 
 ```
 use Mix.Config
@@ -141,17 +190,22 @@ config :todos, Todos.Repo,[
 ]
 ```
 
-./test/test/helper.exs
+Run
+
+```
+MIX_ENV=test mix ecto.create
+MIX_ENV=test mix ecto.migrate
+```
+
+We want to use the `Repo` in Sandbox mode, so that we can take run concurrent tests, and also be sure that database changes are transient. Add to the bottom of `test/test_helper.exs`
 
 ```
 ExUnit.start()
 Ecto.Adapters.SQL.Sandbox.mode(HolidayTracking.Ecto.Repo, :manual)
 ```
 
-`MIX_ENV=test mix ecto.create`
+Let's write a test in _test/todos/todo_items_test.exs_
 
-
-Write the test
 ```
 defmodule Todos.TodoItemsTest do
   alias Todos.{TodoItems}
@@ -168,9 +222,7 @@ defmodule Todos.TodoItemsTest do
 end
 ```
 
-Implement
-
-lib/todos/todo_items.ex
+The test will fail, because we have not written an implementation. Let's do that in `lib/todos/todo_items.ex`.
 
 ```
 defmodule Todos.TodoItems do
@@ -189,43 +241,12 @@ defmodule Todos.TodoItems do
 end
 ```
 
-`mix test`
+Run
 
 ```
- 1) test adding and retrieving todo items (Todos.TodoItemsTest)
-     test/todos/todo_items_test.exs:5
-     ** (DBConnection.OwnershipError) cannot find ownership process for #PID<0.209.0>.
-     
-     When using ownership, you must manage connections in one
-     of the three ways:
-     
-     ... 
-```
-Add set up to test
-
-```
-  setup do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo)
-  end
+mix test
 ```
 
-### Process
+It all passes! Hooray.
 
-* See final versions
-* Have to create process per test
-* 
-
-If we try and re-use a process in the supervision tree, in 2nd test
-```
-  1) test completing items (Todos.TodoItemsTest)
-     test/todos/todo_items_test.exs:22
-     ** (exit) exited in: GenServer.call(#PID<0.177.0>, {:add, "Find bucket"}, 5000)
-         ** (EXIT) exited in: GenServer.call(#PID<0.200.0>, {:checkout, #Reference<0.0.3.792>, true, 15000}, 5000)
-             ** (EXIT) shutdown: "owner #PID<0.199.0> exited with: shutdown"
-     stacktrace:
-       (elixir) lib/gen_server.ex:604: GenServer.call/3
-       test/todos/todo_items_test.exs:23: (test)
-
-
-```
-
+Next up - testing database interaction in other processes.
