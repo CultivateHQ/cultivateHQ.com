@@ -37,7 +37,7 @@ After the first iteration, the facilitators introduce a constraint for each subs
 
 Code Retreat came out of a discussion at the Code Mash conference in Ohio. [Corey Haines](https://twitter.com/coreyhaines), a well known figure in the [Software Craftsmanship](http://en.wikipedia.org/wiki/Software_craftsmanship) community, helped create the format and is responsible for popularising it since then. For the last two years there has been a Global Day of Code Retreat: Code Retreats on the same day in different cities around the world.
 
-On December 8, 2012, Neo hosted and facilitated the Edinburgh chapter of Global Day of Code Retreat. After the first zero-constraints session, also known as The Warm Up session, we introduced a single constraint per session.
+On December 8, 2012, we hosted and facilitated the Edinburgh chapter of Global Day of Code Retreat. After the first zero-constraints session, also known as The Warm Up session, we introduced a single constraint per session.
 
 1. _Ping Pong_: One member of the pair writes a failing test and it is up to the other member to implement the test. Pairs that were more experienced with TDD swapped roles, while those who were new to that discipline did not. This is a good ice-breaker and gets people comfortable with pairing.
 
