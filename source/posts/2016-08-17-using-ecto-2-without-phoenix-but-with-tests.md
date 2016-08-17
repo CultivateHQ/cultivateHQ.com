@@ -4,25 +4,15 @@ title: Using Ecto 2, without Phoenix, but with tests
 description: I believe most users of Ecto, use it within a Phoenix project. This is a step-by-step guide to using Ecto by itself, using an example project. Includes tests.
 ---
 
+My guess is that the majority of people using [Ecto](https://hexdocs.pm/ecto/Ecto.html) are using it from [Phoenix](http://www.phoenixframework.org). Through [Phoenix Ecto](https://github.com/phoenixframework/phoenix_ecto), they get a lot of the boilerplate code generated for them. Using _Ecto_ by itself, means that you need to deal with that boilerplate.
 
-[Outline - roughly what I'm going to say ]
+There are a couple of reasons that you would want to use _Ecto_ this way. The most obvious is that you are writing something without a web frontend, but that needs database access. Another is that you have (correctly) decided that mixing your persistence tier up with your web framework is unhygienic: you are using an [Umbrella project](http://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-apps.html) to separate out your persistence, domain, and web tiers.
 
-* I'd bet that most people use Ecto within a Phoenix _application_. 
-* Phoenix helps you with the Ecto setup through [Phoenix Ecto](https://github.com/phoenixframework/phoenix_ecto); standalone, you're on your own.
-* Standalone - there's a few things you need to do yourself
-* Most of the information is in [this Hex Docs](https://hexdocs.pm/ecto/Ecto.html) document, but thought it would be worthwhile to work through an example adding setup for ExUnit tests
+To be fair, most of the information is in [this Hex Docs](https://hexdocs.pm/ecto/Ecto.html) page, but I believe there is some value in presenting a worked example that includes `ExUnit` tests. This will also serve as the basis for a subsequent post on testing database interactions taking place in OTP processes.
 
-[Why standalone]
+## Setting Up
 
-* Because you're writing a non-phoenix web thing, that needs access to the database
-* Because you are writing Phoenix a web application, but are using Umbrella application to separate out the  the _persistence_ layer.
-
-
-[Below is the tutorial]
-
-## basic setup
-
-Let's create our example application; something to hold a _to do list_. 
+Let's create our example, supervised, application; something to hold a _to do list_. 
 
 ```
 mix new --sup todos
@@ -73,7 +63,7 @@ The _Repo_ will be looking for configuration. Let's put our development config i
 ```
 use Mix.Config
 
-config :todos, Todos.Ecto.Repo,[
+config :todos, Todos.Repo,[
   adapter: Ecto.Adapters.Postgres,
   database: "todos_dev",
   username: "postgres",
@@ -201,14 +191,14 @@ We want to use the `Repo` in Sandbox mode, so that we can take run concurrent te
 
 ```
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(HolidayTracking.Ecto.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Todos.Repo, :manual)
 ```
 
 Let's write a test in _test/todos/todo_items_test.exs_
 
 ```
 defmodule Todos.TodoItemsTest do
-  alias Todos.{TodoItems}
+  alias Todos.TodoItems
   use ExUnit.Case
 
   test "adding and retrieving todo items" do
@@ -245,6 +235,31 @@ Run
 
 ```
 mix test
+```
+
+It fails. But happily it tells us exactly why it fails:
+
+```
+
+  1) test adding and retrieving todo items (Todos.TodoItemsTest)
+     test/todo_items_test.exs:5
+     ** (DBConnection.OwnershipError) cannot find ownership process for #PID<0.218.0>.
+     
+     When using ownership, you must manage connections in one
+     of the three ways:
+     
+       * By explicitly checking out a connection
+       * By explicitly allowing a spawned process
+       * By running the pool in shared mode
+
+```
+
+We need to checkout the repo, before running the test. Add to 'lib/todos/todo_items.ex'
+
+```
+  setup do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo, self)
+  end
 ```
 
 It all passes! Hooray.
