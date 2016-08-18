@@ -260,7 +260,7 @@ We need to checkout the repo, before running the test. Add to 'lib/todos/todo_it
 
 ```
   setup do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo, self)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo)
   end
 ```
 
