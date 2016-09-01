@@ -10,7 +10,7 @@ tags: alan
 
   The tutorial walks through the creation of a very basic seat saving application, like one you'd use when booking a flight for example. The application will do just enough to demonstrate the mechanisms for getting the two technologies talking to each other.
 
-  There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
+  There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver-017) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
 </section>
 
 
@@ -26,10 +26,10 @@ You'll need to have the items below installed in order to follow along:
 
 If you can, please use the versions noted below as it will make following the tutorial easier. If you can't then check the gotchas on the repo as others may have logged issues for the version that you are using.
 
-* Erlang 18.3
-* Elixir 1.2.3
-* Phoenix 1.1.4
-* Elm 0.16.0
+* Erlang 19.0.2
+* Elixir 1.3.2
+* Phoenix 1.2.0
+* Elm 0.17.0
 
 
 ### Upgrading Phoenix
@@ -49,7 +49,7 @@ If you're brand new to Elm then I would suggest the [Pragmatic Studio Elm course
 
 ### Gotchas
 
-There are a number of gotchas on the [tutorial project's wiki](https://github.com/CultivateHQ/seat_saver/wiki). We'll add to them over time. If you come across any it would be great if you could raise an [issue](https://github.com/CultivateHQ/seat_saver/issues) so that we can update. Thanks in advance!
+There are a number of gotchas on the [tutorial project's README](https://github.com/CultivateHQ/seat_saver-017#gotchas). We'll add to them over time. If you come across any it would be great if you could raise an [issue](https://github.com/CultivateHQ/seat_saver-017/issues) so that we can update. Thanks in advance!
 
 
 ## Creating a Phoenix project

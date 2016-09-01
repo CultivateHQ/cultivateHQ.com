@@ -10,7 +10,7 @@ tags: alan
 
   The tutorial walks through the creation of a very basic seat saving application, like one you'd use when booking a flight for example. The application will do just enough to demonstrate the mechanisms for getting the two technologies talking to each other.
 
-  There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
+  There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver-017) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
 </section>
 
 <section class="callout">
@@ -19,7 +19,7 @@ tags: alan
 
 ## Type annotations
 
-So far Elm has been happily inferring the types that we are using in our application, and it will continue to do so. However let's take a moment to look at how we can make it more obvious to others who might read our code what types we are expecting. We can do this by using [*type annotations*](http://elm-lang.org/docs/syntax#type-annotations).
+So far Elm has been happily inferring the types that we are using in our application, and it will continue to do so. However let's take a moment to look at how we can make it more obvious to others who might read our code what types we are expecting. We can do this by using [*type annotations*](http://guide.elm-lang.org/types/).
 
 Type annotations are optional in Elm, but they help us, and others that read our code, to better see what is going on. They also allow us to specify the contract for our functions.
 
@@ -41,10 +41,12 @@ Let's add type annotations to our existing functions.
 1. Add the following above the `main` function:
 
     ```haskell
-    main : Html.Html
+    main : Html.Html String
     ```
 
-    Our main function takes no arguments and returns Html. We're having to prefix the Html type with `Html.` because it is defined in the Html library. To save us from having to do that each time, let's tweak the import so we use the `(..)` syntax instead rather than naming each function that we want to use.
+    Our main function takes no arguments and returns an Html String, i.e. collection of HTML represented as String values.
+
+    We're having to prefix the Html type with `Html.` here because the `Html` function is defined in the `Html` library. To save us from having to do that each time, let's tweak the Html import so we use the `(..)` syntax instead rather than naming each function that we want to use.
 
     ```haskell
     import Html exposing (..)
@@ -53,7 +55,7 @@ Let's add type annotations to our existing functions.
     Now we can change our `main` function's type annotation to
 
     ```haskell
-    main : Html
+    main : Html String
     ```
 
 2. The next function is the `init` function (we don't have to add type annotations to type definitions as they already state their expected types). The `init` function takes no arguments and returns a Model.
@@ -62,28 +64,28 @@ Let's add type annotations to our existing functions.
     init : Model
     ```
 
-3. The `view` function takes a Model as an argument and returns Html.
+3. The `view` function takes a Model as an argument and returns an Html String.
 
     ```haskell
-    view : Model -> Html
+    view : Model -> Html String
     ```
 
-4. Last but not least, the `seatItem` function takes a Seat as an argument and returns Html.
+4. Last but not least, the `seatItem` function takes a Seat as an argument and returns an Html String.
 
     ```haskell
-    seatItem : Seat -> Html
+    seatItem : Seat -> Html String
     ```
 
 5. The end result should look like this:
 
     ```haskell
-    module SeatSaver where
+    module SeatSaver exposing (..)
 
     import Html exposing (..)
     import Html.Attributes exposing (class)
 
 
-    main : Html
+    main : Html String
     main =
       view init
 
@@ -119,11 +121,11 @@ Let's add type annotations to our existing functions.
 
     -- VIEW
 
-    view : Model -> Html
+    view : Model -> Html String
     view model =
       ul [ class "seats" ] (List.map seatItem model)
 
-    seatItem : Seat -> Html
+    seatItem : Seat -> Html String
     seatItem seat =
       li [ class "seat available" ] [ text (toString seat.seatNo) ]
     ```
@@ -137,21 +139,21 @@ Type annotations, as mentioned above, are optional. Elm will infer our types for
 For example, let's change our `view` function to the following:
 
 ```haskell
-view : Model -> Html
+view : Model -> Html String
 view model =
   List.map seatItem model
 ```
 
 When you try to compile this, you will see the following error in your terminal window where the server is running:
 
-![type mismatch](/images/phoenix-elm/error_page.png)
+![type mismatch](/images/phoenix-elm/error_page_new.png)
 
-Elm has fantastic error messages. Here it quite clearly tells us that *"The type annotation for `view` does not match its definition."*. What this is telling us is that the `view` function is expected to return Html but has returned List Html instead.
+Elm has fantastic error messages. Here it quite clearly tells us that *"The type annotation for `view` does not match its definition."*. What this is telling us is that the `view` function is expected to return a value of type `Html String` but has returned a value of `List Html` instead.
 
 Returning the `view` function to its original definition will fix this error.
 
 ```haskell
-view : Model -> Html
+view : Model -> Html String
 view model =
   ul [ class "seats" ] (List.map seatItem model)
 ```
