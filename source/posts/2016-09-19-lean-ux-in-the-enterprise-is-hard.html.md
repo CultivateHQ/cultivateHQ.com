@@ -37,40 +37,33 @@ If you’re lucky, someone did point out the elephant, and there are some outcom
 ![Innovate](lean_illustrations/innovate.PNG)
 ### The executives initiate a ‘Digital Transformation’ with a ‘Digital First Strategy’ powered by ‘innovation teams.’ Go forth and innovate…
 
-Then – nothing happens, people are trying to start, but your business have limited or no in-house capability. 
-
+Then – nothing happens, people are trying to start, but your business have limited or no in-house capability.
 The executives are informed - and take decisive action.
 
 ![Consultants](lean_illustrations/consultants.PNG)
 ### Consultants are hired. In Droves. 
 
-From different companies with different approaches! (And no direction)
-
-
+From different companies with different approaches! (And with no clear direction.)
 
 ![Chicken](lean_illustrations/chicken.PNG)
-### An agile approach is adopted by the dev team.  
+### An agile approach is adopted by the dev team.
 
 Standups are 30 minutes long and some people are not allowed to talk as they are chickens (No one explains what a chicken is (or that it’s an outdated concept) - just that these high-level execs are chickens, and therefore can’t speak.)
 
-No-one is entirely sure if Digital Transformation trumps existing KPIs / initiatives etc. but carry on doing anyway. 
+No-one is entirely sure if Digital Transformation trumps existing KPIs / initiatives etc. but carry on doing anyway.
 
 ![Buzzwords](lean_illustrations/buzzwords.PNG)
 ### Consultants attempt to engage with and educate the executives using lots of domain specific terminology.
 
-Innovation, resonate, customer development, minimum viable product, sprint, story points, iteration, burn down, burn up, assumptions, hypothesis, experiment, kanban, swim-lanes, six-sigma, lean, cynefin, real options. 
+> Innovation, resonate, customer development, minimum viable product, sprint, story points, iteration, burn down, burn up, assumptions, hypothesis, experiment, kanban, swim-lanes, six-sigma, lean, cynefin, real options. 
 
-The execs are excited. They talk about experiments, customer centricity, learning, being lean and agile…
-
-It’s a top down directive. Yay!
-
-Go forth and be lean… 
+The execs are excited. They talk about experiments, customer centricity, learning, being lean and agile… It’s a top down directive. Yay! Go forth and be lean… 
 
 ![Books](lean_illustrations/books.PNG)
-###Books are bought,  “Lean UX, Sprint, The Lean Enterprise”
+###Books are bought - Lean UX, Sprint, The Lean Enterprise
 Maybe they're even read, possibly superficially understood
 
-We’re ready, we’ve got mapped our assumptions, captured our hypothesis,  we’ve co-designed our MVP.  
+We’re ready, we’ve got mapped our assumptions, captured our hypothesis,  we’ve co-designed our MVP.
 
 ### You are 100% encouraged and ‘empowered’ to be both Lean and Agile.
 
@@ -129,9 +122,9 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <ul>
-          <li>Small, hard in a large org.</li> 
-          <li>Dedicated (often not, this can be changed)</li>
-          <li>Co-Located. Geographically hard sometimes</li>
+          <li>Small. Hard in a large organisation</li> 
+          <li>Dedicated. Often not (this can be changed)</li>
+          <li>Co-Located. Geography and makes this hard</li>
         </ul>
       </td>
     </tr>
@@ -155,8 +148,8 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <ul>
-          <li>Very hard for a traditional business to understand!</li>
-          <li>Very hard for them to execute on.</li> 
+          <li>Very hard for a traditional business to understand</li>
+          <li>Very hard for them to execute on</li> 
         </ul>
         <p>
         What have you been doing? 
@@ -185,7 +178,7 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <p>
-        Teams may be problem focused, but organisational silos may still have conflicting KPIs/desires/requirements
+        Teams may be problem focused, but organisational silos often still have conflicting KPIs/desires/requirements
         </p>
       </td>
     </tr>
@@ -197,7 +190,7 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <p>
-        Risk to people’s 
+        Risk to people’s:
         </p>
         <ul>
           <li>position</li>
@@ -226,7 +219,7 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <p>
-        Everyone wants to see the entire concept and wants their idea included
+        Everyone wants to see the entire concept and wants their idea included so a small design inventory is very hard to achieve. 
         </p>
       </td>
     </tr>
@@ -238,10 +231,10 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <ul>
-          <li>We did user research 2 years ago.</li>
-          <li>We can’t show users … Our product is secret.</li>
+          <li>We did user research 2 years ago</li>
+          <li>We can’t show users … Our product is secret</li>
           <li>Users are too important / busy</li>
-          <li>I KNOW what the users want, just build what’s in my head.</li>
+          <li>I KNOW what the users want, just build what’s in my head</li>
         </ul>
       </td>
     </tr>
@@ -253,7 +246,7 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <p>
-        You often can’t pick your team, they are assigned and changed in and out. 
+         Often you can’t pick your team, they are assigned and changed in and out. Worse still people are promoted to a role without the skills or experience to deliver.
         </p>
       </td>
     </tr>
@@ -290,10 +283,10 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <p>
-        Failure sounds bad, because we don’t explain.
+        Failure sounds bad.
         </p>
         <p>
-        There is no failing, only massaging of truth into success. No-one fails, failure is unacceptable. (Tree of monkeys)
+        Therefore, there is no failing, only massaging of truth into success.
         </p>
       </td>
     </tr>

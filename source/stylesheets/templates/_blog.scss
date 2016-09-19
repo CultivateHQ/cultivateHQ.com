@@ -63,9 +63,35 @@
 }
 
 // Page Specific hacks
-.posts_lean-ux-in-the-enterprise-is-hard_index .page-content--blog-post img {
-  @include em-min-width($breakpoint_tablet) {
-    margin-top: 2em;
-    width: 50%;
+.posts_lean-ux-in-the-enterprise-is-hard_index .page-content--blog-post {
+  img {
+    @include em-min-width($breakpoint_tablet) {
+      margin-top: 2em;
+      width: 50%;
+    }
   }
+
+  table { 
+    margin-bottom: 2em;
+  }
+
+  td, th { 
+    border: 1px solid #DDD;
+    vertical-align: middle;
+    padding: 0.25em;
+    @include em-min-width($breakpoint_tablet) {
+      padding: 0.5em 1em;
+    }
+
+    p:last-child { margin-bottom: 0;}
+    ul {
+        padding-bottom: 0;
+        -webkit-margin-after: 0;
+          li {
+            padding-left: 1em;
+          }
+      }
+  }
+
+  th { padding: 1em;}
 }
