@@ -35,8 +35,8 @@ GEM
     eventmachine (1.0.7)
     execjs (2.2.1)
     ffi (1.9.3)
-    font-awesome-sass (4.2.0)
-      sass (~> 3.2)
+    font-awesome-sass (4.6.2)
+      sass (>= 3.2)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -121,7 +121,7 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (3.1.2)
     rouge (1.6.2)
-    sass (3.4.2)
+    sass (3.4.22)
     sprockets (2.12.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -148,7 +148,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder
-  font-awesome-sass (~> 4.2.0)
+  font-awesome-sass
   json (~> 1.8.3)
   middleman (~> 3.3.5)
   middleman-blog
