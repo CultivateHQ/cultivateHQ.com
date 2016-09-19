@@ -1,9 +1,7 @@
 ---
 author: Spencer Turner
-title: Lean UX hasn't been embraced by large organisations, it's not them, it's us!
-description: "Many large organisations say they want to use a Lean UX approach. In my experience, they don’t find it easy to execute in reality. 
-
-Why is this? I believe we’re not helping adoption happen – we’re not following our own advice or approach, I say we can do better."
+title: Large organizations find Lean UX hard, it’s not them, it’s us!
+description: "Many large organisations say they want to use a Lean UX approach. In my experience, they don’t find it easy to execute in reality. Why is this? I believe we’re not helping adoption happen – we’re not following our own advice or approach, I say we can do better."
 ---
 
 Many large organisations say they want to use a Lean UX approach. In my experience, they don’t find it easy to execute in reality. 
@@ -15,52 +13,50 @@ I talked about this at UXScotland and again at UXCambridge. I promised to write 
 This blog post will cover why we're not getting large organisations adopting Lean UX the next will look at what we can do to help.
 
 ##So why is Lean UX so hard for large organisations?  
-##I’d like to start with a short story.
+I’d like to start with a short story.
 
-### Your competitors appear to be innovating. 
 ![X-Corp](lean_illustrations/xcorp.PNG)
+### Your competitors appear to be innovating. 
 
 They’re talking at conferences about how successful and lean they are, how they’re innovating and iterating on new customer centric products.  
 
-### The executives get scared. 
 ![Doomed](lean_illustrations/doomed.PNG)
+### The executives get scared. 
 
-### What’s everyone else doing? 
 ![Everyone Else](lean_illustrations/everyone-else.PNG)
+### What’s everyone else doing? 
 
 “Digital Transformation”, and a “Digital First Strategy”? Why aren’t we doing that?  
 
-### No one points out the elephant in the room
 ![Elephant](lean_illustrations/elephant.PNG)
-
+### No one points out the elephant in the room
 “What *is* an innovative digital first strategy - what does that mean for our business?”
 
-### The executives initiate a ‘Digital Transformation’ with a ‘Digital First Strategy’ powered by ‘innovation teams.’
 If you’re lucky, someone did point out the elephant, and there are some outcomes or goals defined! 
 
-### Go forth and innovate…
 ![Innovate](lean_illustrations/innovate.PNG)
+### The executives initiate a ‘Digital Transformation’ with a ‘Digital First Strategy’ powered by ‘innovation teams.’ Go forth and innovate…
 
 Then – nothing happens, people are trying to start, but your business have limited or no in-house capability. 
 
 The executives are informed - and take decisive action.
 
-### Consultants are hired. In Droves. 
 ![Consultants](lean_illustrations/consultants.PNG)
+### Consultants are hired. In Droves. 
 
 From different companies with different approaches! (And no direction)
 
 
 
-### An agile approach is adopted by the dev team.  
 ![Chicken](lean_illustrations/chicken.PNG)
+### An agile approach is adopted by the dev team.  
 
 Standups are 30 minutes long and some people are not allowed to talk as they are chickens (No one explains what a chicken is (or that it’s an outdated concept) - just that these high-level execs are chickens, and therefore can’t speak.)
 
 No-one is entirely sure if Digital Transformation trumps existing KPIs / initiatives etc. but carry on doing anyway. 
 
-### Consultants attempt to engage with and educate the executives using lots of domain specific terminology.
 ![Buzzwords](lean_illustrations/buzzwords.PNG)
+### Consultants attempt to engage with and educate the executives using lots of domain specific terminology.
 
 Innovation, resonate, customer development, minimum viable product, sprint, story points, iteration, burn down, burn up, assumptions, hypothesis, experiment, kanban, swim-lanes, six-sigma, lean, cynefin, real options. 
 
@@ -68,20 +64,22 @@ The execs are excited. They talk about experiments, customer centricity, learnin
 
 It’s a top down directive. Yay!
 
-Go forth and be lean… Books are bought,  “Lean UX, Sprint, The Lean Enterprise”, maybe even read, possibly even superficially understood
+Go forth and be lean… 
 
 ![Books](lean_illustrations/books.PNG)
+###Books are bought,  “Lean UX, Sprint, The Lean Enterprise”
+Maybe they're even read, possibly superficially understood
 
 We’re ready, we’ve got mapped our assumptions, captured our hypothesis,  we’ve co-designed our MVP.  
 
 ### You are 100% encouraged and ‘empowered’ to be both Lean and Agile.
 
 But wait...there's some small print!
-“Within the constraints of a quarterly profit reporting cycle, and working with IT’s six month lead time, 
-assuming you have budget in place a year in advance.”
 
-### Oh and, there are a few ‘rules’
+> "Within the constraints of a quarterly profit reporting cycle, and working with IT’s six month lead time, assuming you have budget in place a year in advance."
+
 ![Rules](lean_illustrations/rules.PNG)
+### Oh and, there are a few ‘rules’
 
 We’re not a startup, we can’t do all that startup stuff, so:
 
@@ -95,7 +93,6 @@ We’re not a startup, we can’t do all that startup stuff, so:
 Sound Familiar?
 
 ## The Lean UX 'Principles' 
-
 So, with this familiar story in mind, let's look at the Lean UX Principles and the issues I've seen in implementing them.
 
 <table>

@@ -61,3 +61,11 @@
   margin-top: 6px;
   color: $grey_default_half;
 }
+
+// Page Specific hacks
+.posts_lean-ux-in-the-enterprise-is-hard_index .page-content--blog-post img {
+  @include em-min-width($breakpoint_tablet) {
+    margin-top: 2em;
+    width: 50%;
+  }
+}

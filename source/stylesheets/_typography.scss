@@ -13,7 +13,7 @@ a, a:hover {
 
 body {
   font-family: 'Lato', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: $grey_default;
   line-height: 1.5;
 }
@@ -86,6 +86,7 @@ h2 {
   }
   h3 {
     @include font-size(20);
+    font-weight: 700;
     @include em-min-width($breakpoint_tablet) {
       @include font-size(22);
     }
@@ -93,7 +94,7 @@ h2 {
       @include font-size(27);
     }
     @include em-min-width($breakpoint_medium_desktop) {
-      @include font-size(31);
+      @include font-size(27);
     }
   }
   h4 {
@@ -115,9 +116,6 @@ h2 {
       @include font-size(25);
     }
   }
-
-
-
 }
 
 .page-content, .shout-out {
