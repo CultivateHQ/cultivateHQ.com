@@ -77,7 +77,7 @@ with
 
 #### Only use Nerves specific aliases and system target in `prod`
 
-The generated `mix.exs` is configured to build with the target (eg `rpi`) compilers and system. In `prod` and `test` mode you don't need to do that.
+The generated `mix.exs` is configured to build with the target (eg `rpi`) compilers and system. In `dev` and `test` mode you don't need to do that.
 
 In the [`mix.exs` `project`](https://github.com/CultivateHQ/cultivatarmobile/blob/nerves-post/apps/fw/mix.exs#L6-L19) replace
 
