@@ -1,6 +1,6 @@
 ---
 author: Spencer Turner
-title: Large organizations find Lean UX hard, it’s not them, it’s us!
+title: Large organisations find Lean UX hard, it’s not them, it’s us!
 description: "Many large organisations say they want to use a Lean UX approach. In my experience, they don’t find it easy to execute in reality. Why is this? I believe we’re not helping adoption happen – we’re not following our own advice or approach, I say we can do better."
 ---
 
