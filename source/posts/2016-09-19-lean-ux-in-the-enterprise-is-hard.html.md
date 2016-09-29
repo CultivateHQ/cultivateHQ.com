@@ -295,4 +295,4 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
 
 ## OK, enough of the problems, how can we fix it? 
 
-In the next blog posts (coming soon), I'll talk about some of the things I think we can do to help get things working. 
+In the next [blog post](/posts/lean-ux-focus-on-outcomes/)(s), I'll talk about some of the things I think we can do to help get things working. 
