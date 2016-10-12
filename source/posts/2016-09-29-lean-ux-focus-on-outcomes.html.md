@@ -96,5 +96,5 @@ I believe it's our job to help guide our organisations to success, and I genuine
 ### Life is change - Revisit your outcomes
 Life, business, the world - everything really aren't static – they're constantly changing. I'd suggest revisting your outcomes quarterly to review if they are still current. In lean terms should we 'Persevere, Pivot or Kill'?
 
-Maybe by now you're thinking, "that's all well and good, but I can't get our leaders to think about outcomes."  in the next post in this series (coming next week) we'll look at how you can 'Extend your remit'.
+Maybe by now you're thinking, "that's all well and good, but I can't get our leaders to think about outcomes."  in the next post in this series we'll look at how you can [Extend your remit](/posts/lean-ux-extend-your-remit/).
 
