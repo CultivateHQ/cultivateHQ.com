@@ -81,5 +81,4 @@ Liz Keogh's [Capability based planning](https://lizkeogh.com/2013/09/05/capabili
 
 Jeff Patton's work on [story mapping](http://jpattonassociates.com/user-story-mapping/) is well worth reading around (He talks about 'abilities' which seem similar to capabilities in Liz's terms). 
 
-It's no coincidence that most of the things on this page are ways of mapping. For me, visually representing information makes it less confusing and intimidating, and more coherent. Of course beyond helping us better understand the situation as individuals, the real power is that you can see it **as a group**...
-
+It's no coincidence that most of the things on this page are ways of mapping. For me, visually representing information makes it less confusing and intimidating, and more coherent. Of course beyond helping us better understand the situation as individuals, the real power is that you can see it **as a group**.
