@@ -43,6 +43,7 @@ We work in an industry with many memes, acronyms, and domain specific terminolog
 
 Do we need to use these terms? Do they add real value to our conversations?
 
+
 | Industry Term(s) | Less intimidating Langauge |
 |---|---|
 | Customer Development / User Research | Talking to people to find out what they want or do. |
@@ -52,6 +53,7 @@ Do we need to use these terms? Do they add real value to our conversations?
 | Mockup, wireframe, paper prototype | Quick, cheap ways to test ideas without commiting to the cost of writing a full application |
 | Hypotheses, Assumptions | Thinking about the problem we're trying to solve|
 | Experiments, Metrics | Learning and measuring |
+
 
 I'm not suggesting we don't use terms as a shorthand, once we know everyone feels comfortable with the underlying concept. I am suggesting we need to conciously not exlude or alienate people by assuming they understand and are comfortable using our terminology.
 

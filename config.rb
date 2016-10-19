@@ -1,5 +1,6 @@
 activate :breadcrumbs
 
+
 activate :blog do |blog|
   blog.prefix = "/posts"
   blog.permalink = ":title.html"
@@ -95,7 +96,7 @@ end
 set :images_dir, 'images'
 
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
 
 # Build-specific configuration
 configure :build do
