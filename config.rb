@@ -1,5 +1,5 @@
-activate :breadcrumbs
-
+activate :breadcrumbs do
+end
 
 activate :blog do |blog|
   blog.prefix = "/posts"
@@ -14,7 +14,7 @@ end
 
 activate :deploy do |deploy|
   deploy.build_before = true
-  deploy.method = :git
+  deploy.deploy_method = :git
   # Optional Settings
   deploy.remote   = 'git@github.com:CultivateHQ/cultivatehq.github.io.git'
   deploy.branch   = 'master'
@@ -87,10 +87,12 @@ after_configuration do
     puts "*** ERROR running bower install ***"
     exit(1)
   end
+end
 
+activate :sprockets do |c|
   # Add bower's directory to sprockets asset path
   @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  sprockets.append_path File.join "#{root}", @bower_config["directory"]
+  c.imported_asset_path = File.join "#{root}", @bower_config["directory"]
 end
 
 set :images_dir, 'images'
