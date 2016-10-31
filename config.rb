@@ -87,13 +87,14 @@ after_configuration do
     puts "*** ERROR running bower install ***"
     exit(1)
   end
+  activate :sprockets do |c|
+    # Add bower's directory to sprockets asset path
+    @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+    c.imported_asset_path = File.join "#{root}", @bower_config["directory"], "/js"
+  end
 end
 
-activate :sprockets do |c|
-  # Add bower's directory to sprockets asset path
-  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  c.imported_asset_path = File.join "#{root}", @bower_config["directory"]
-end
+
 
 set :images_dir, 'images'
 
