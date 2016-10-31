@@ -1,5 +1,5 @@
 ---
-title: Large organisations find Lean UX hard, it’s not them, it’s us! - navigate the politics.
+title: Large organisations find Lean UX hard, it’s not them, it’s us! - Part Five: Navigate The Politics.
 author: Spencer Turner
 description: This is part five of the blog post series "Large organisations find Lean UX hard, it’s not them, it’s us!", based on my talks at UXCambridge and UXScotland. In this post we'll look at how we might more effectively navigate the politics of large organisations.
 ---
