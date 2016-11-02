@@ -12,7 +12,7 @@ description = gets.strip
 date = Time.now.strftime('%Y-%m-%d')
 file_suffix = title.downcase.gsub(/\s+/, '-').gsub(/[^a-z0-9-]/, '')
 
-file = "source/posts/#{date}-#{file_suffix}.md"
+file = "source/posts/#{date}-#{file_suffix}.html.md"
 
 p [title, file_suffix, date, file]
 
