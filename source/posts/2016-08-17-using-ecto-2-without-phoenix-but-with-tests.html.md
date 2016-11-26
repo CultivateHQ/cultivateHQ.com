@@ -14,7 +14,7 @@ The example code is also in [this](https://github.com/CultivateHQ/ecto_todos) re
 
 ## Setting Up
 
-Let's create our example, supervised, application; something to hold a _to do list_. 
+Let's create our example, supervised, application; something to hold a _to do list_.
 
 ```
 mix new --sup todos
@@ -89,7 +89,7 @@ mix deps.get
 mix ecto.create
 ```
 
-Now let's add our _todos_ table, to hold our "to do" list. 
+Now let's add our _todos_ table, to hold our "to do" list.
 
 ```
 mix ecto.gen.migration AddTodos
@@ -150,8 +150,8 @@ Let's give it a bit of a spin:
 
 ```
 $ iex -S mix
-iex(1)> Todos.Todo.changeset(%Todos.Todo{}, 
-  %{item: "Check from iex"}) |> Todos.Repo.insert 
+iex(1)> Todos.Todo.changeset(%Todos.Todo{},
+  %{item: "Check from iex"}) |> Todos.Repo.insert
 {:ok,
  %Todos.Todo{__meta__: #Ecto.Schema.Metadata<:loaded, "todos">,
   completed: false, id: 2, ... }}
@@ -161,7 +161,7 @@ iex(2)> Todos.Todo |> Todos.Repo.all
 
  %Todos.Todo{__meta__: #Ecto.Schema.Metadata<:loaded, "todos">,
   completed: false, id: 2, ... }]
-iex(3)> 
+iex(3)>
 
 ```
 
@@ -246,18 +246,18 @@ It fails. But happily it tells us exactly why it fails:
   1) test adding and retrieving todo items (Todos.TodoItemsTest)
      test/todo_items_test.exs:5
      ** (DBConnection.OwnershipError) cannot find ownership process for #PID<0.218.0>.
-     
+
      When using ownership, you must manage connections in one
      of the three ways:
-     
+
        * By explicitly checking out a connection
        * By explicitly allowing a spawned process
        * By running the pool in shared mode
 
 ```
 
-We need to checkout the repo, before running the test. Add to 'lib/todos/todo_items.ex'
 
+We need to checkout the repo, before running the test. Add to `test/todos/todo_items_test.ex`
 ```
   setup do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo)
@@ -267,3 +267,8 @@ We need to checkout the repo, before running the test. Add to 'lib/todos/todo_it
 It all passes! Hooray. You are up to [here](https://github.com/CultivateHQ/ecto_todos/tree/without-process) in the example repository.
 
 Next up - testing database interaction in other processes.
+
+
+**Updates**
+
+* Corrected mistake pointed out by [Henricus Louwhoff](https://twitter.com/zenricus/status/801142515059556353)
