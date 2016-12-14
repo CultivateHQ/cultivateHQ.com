@@ -1,6 +1,8 @@
 .cta {
   text-align: center;
   background: $grey_dark;
+
+  h4 { color: white }
 }
 
 .cta--reverse {
@@ -34,4 +36,6 @@
   border-top: 1px solid #eaedee;
   border-bottom: 1px solid #eaedee;
   margin: 4rem 0;
+
+  h4 { color: $grey_dark }
 }
