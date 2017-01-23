@@ -20,9 +20,6 @@
     width: 33.3333%;
     margin: 10px 0;
     padding: 0 10px;
-    @include em-min-width($breakpoint_tablet) {
-      width: 25%;
-    }
     @include em-min-width($breakpoint_medium_desktop) {
       width: 20%;
       padding: 0 5px;
@@ -52,7 +49,7 @@
     li {
       padding: 0;
       @include em-min-width($breakpoint_tablet) {
-        padding: 0 0.5em;
+        padding: 0 0.25em;
         width: 16%;
       }
       /* Reset LI styling */
