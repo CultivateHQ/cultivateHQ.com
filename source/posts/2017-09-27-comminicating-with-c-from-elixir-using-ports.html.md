@@ -26,7 +26,7 @@ defp deps do
 end
 ```
 
-And we are going to want to include `elixir_make` as a project compiler with the line `compilers: [:elixir_make | Mix.compilers],` as in
+And we are going to want to include `elixir_make` as a project compiler with the line `compilers: [:elixir_make | Mix.compilers],`:
 
 ```elixir
 def project do
@@ -41,7 +41,7 @@ def project do
 end
 ```
 
-Next we will need an simple `Makefile` in the project root.
+Next we will need a `Makefile` in the project root.
 
 ```
 CFLAGS= -g
@@ -277,7 +277,7 @@ iex>
 
 Notice that the string is coming through as a character list, rather than a binary.
 
-That is us up communicating to a C program with Elixir. The example project is [here](https://github.com/paulanthonywilson/portynif/tree/master/apps/porty) with some more Elixir Code and a test.
+Now we have communication between a C program and Elixir. The example project is [here](https://github.com/paulanthonywilson/portynif/tree/master/apps/porty), with some tested Elixir code.
 
 A real port would of course be more sophisticated and involve encoding commands and data into the messages.
 
