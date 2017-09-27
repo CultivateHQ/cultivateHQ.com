@@ -6,7 +6,9 @@ description: On occasion your Elixir is going to want to interact with an extern
 
 On occasion your Elixir is going to want to interact with an external program. This may be for speed, but more likely you are going to want to take advantage of a library that has been written in C. The most common options are using [Ports](http://erlang.org/doc/tutorial/c_port.html) and [Native Interface Functions (NIFs)](http://erlang.org/doc/tutorial/nif.html).
 
-Let's write a simple port example with a C application that just echoes back whatever is sent to it. Warning: there's going to be a lot more `C` than Elixir.
+Let's write a simple port example with a C application that just echoes back whatever is sent to it. Warning: there's going to be a lot more C than Elixir.
+
+(The examples were developed with Elixir 1.5.1 and Erlang 20.1, though it really should not make any difference. The C is standard ANSI with some POSIX headers.)
 
 ## Step 1 - Create our Mix project with some C inside
 
@@ -14,7 +16,7 @@ Let's write a simple port example with a C application that just echoes back wha
 mix new porty --sup
 ```
 
-[`elixir_make`](https://hex.pm/packages/elixir_make) simplifies compiling from a `Makefile` as part your Elixir compilation, so let's includes that in our `mix.exs` `deps`.
+[`elixir_make`](https://hex.pm/packages/elixir_make) simplifies compiling from a `Makefile` as part your Elixir compilation, so let's include that in our `mix.exs` `deps` and them run `mix deps.get`.
 
 ```elixir
 defp deps do
@@ -39,7 +41,7 @@ def project do
 end
 ```
 
-Next we will need an simple `Makefile` in the project route
+Next we will need an simple `Makefile` in the project root.
 
 ```
 CFLAGS= -g
@@ -62,7 +64,7 @@ clean:
 	rm -f priv/c $(OBJ) $(BEAM_FILES)
 ```
 
-This will compile `C` files in the directory `src/` and create an executable in the directory `priv/c`. So, we'd better give it something to compile
+This will compile C files in the directory `src/` and create an executable in the directory `priv/c`. So, we'd better give it something to compile
 
 `src/echo.c`
 
@@ -84,7 +86,7 @@ Now if we run `mix compile` we should get an executable `priv/c/echo`. Calling `
 
 ### Reading from `STDIN`
 
-We have our executable, but it is not suitable for communicating over `erlang ports`, which use `STDIN` and `STDOUT` for communication with the Erlang VM. Let's write a `C` function for reading a fixed number of bytes from `STDIN`.
+We have our executable, but it is not suitable for communicating over _erlang ports_, which use `STDIN` and `STDOUT` for communication with the Erlang VM. Let's write a C function for reading a fixed number of bytes from `STDIN`.
 
 ```c
 #include <unistd.h>
@@ -113,7 +115,7 @@ int read_fixed(char* buffer, int len) {
 }
 ```
 
-Bytes are read from stdin up to `len` characters using the Unix [read](https://linux.die.net/man/2/read) function into the `buffer. The code is a little more complicated than otherwise, as we are handling the case of a read being interrupted by a signal. Checking for 0 being returned from read is very important, otherwise when you close the port (or the Erlang VM node) the read loop will become infinite turning the process into a CPU eating zombie.
+Bytes are read from stdin up to `len` characters using the Unix [read](https://linux.die.net/man/2/read) function into the `buffer`. The code is a little more complicated than otherwise, as we are handling the case of a read being interrupted by a signal. Checking for 0 being returned from read is very important, otherwise when you close the port (or the Erlang VM node) the read loop will become infinite, turning the process into a CPU-eating zombie.
 
 To round it all off, here's a function to read a fixed length message from `STDIN` and zero-terminate the buffer.
 
@@ -157,7 +159,7 @@ int poll_input() {
 `poll` above will block for 5 seconds (5,000 milliseconds) for data to become available, specified by the `POLLIN` flag. It will return 1 (`POLLIN`) if data is available, or 0 in case of timeout.
 
 
-Now we should be able to read messages from our Elixir program, and do something with them. For now let's just print them to stderr.
+Now we should be able to read messages from our Elixir program, and do something with them. For now let's just print them to `STDERR`. (Printing to `STDERR` is helpful for developemnt and debugging; like `IO.inspect`s, we will remove these from the final version.
 
 ```c
 
@@ -196,7 +198,9 @@ true
 iex> Port.close(port)
 ```
 
-Note that we set the packet size to 2 above. This is how we configure the port to prepend the length of the message using two bytes at the beginning.
+Note a couple of things:
+ * We set the packet size to 2 above. This is how we configure the port to prepend the length of the message using two bytes at the beginning.
+ * We find the executable with `:code_priv_dir(:porty) ++ '/c/echo'`. This will allow us to find it even when we are packaged for a release.
 
 ### Writing back to Elixir through `STDOUT`
 
@@ -228,7 +232,7 @@ void write_back(char* msg) {
 }
 ```
 
-We are not ready to string it all together, and echo back what has been sent to us.
+We are now ready to string it all together, and echo back what has been sent to us instead of printing to `STDERR`.
 
 ```c
 int main(int argc, char *argv[]) {
@@ -252,7 +256,7 @@ int main(int argc, char *argv[]) {
 Let's give it one more spin. Note that messages coming from the port are received as messages to the owning process.
 
 ```
-iex
+iex -S mix
 
 iex> Process.flag(:trap_exit, true)
 false
@@ -271,9 +275,11 @@ iex> flush
 iex>
 ```
 
-That is us up communicating to a `C` program with Elixir. The example project is [here](https://github.com/paulanthonywilson/portynif/tree/master/apps/porty) with some more Elixir Code and tests. As you can perhaps guess from the project, next up is doing something similar using a `NIF`.
+Notice that the string is coming through as a character list, rather than a binary.
 
-A real example would of course be more sophisticated and involve encoding commands and data into the messages.
+That is us up communicating to a C program with Elixir. The example project is [here](https://github.com/paulanthonywilson/portynif/tree/master/apps/porty) with some more Elixir Code and a test.
+
+A real port would of course be more sophisticated and involve encoding commands and data into the messages.
 
 ## References
 
