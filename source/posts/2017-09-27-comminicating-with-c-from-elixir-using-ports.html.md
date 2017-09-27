@@ -94,7 +94,7 @@ We have our executable, but it is not suitable for communicating over _erlang po
 #include <errno.h>
 #include <stdlib.h>
 
-int read_fixed(char* buffer, int len) {
+int read_fixed(char *buffer, int len) {
   int read_count = 0;
   while(read_count < len) {
     int this_read = read(STDIN_FILENO, buffer + read_count, len - read_count);
@@ -131,7 +131,7 @@ We can now read data for a certain length from `STDIN`, but how do we know what 
 ```c
 int to_read_length() {
   unsigned char size_header[2];
-  int r = read_fixed((char *) size_header, 2);
+  int r = read_fixed((char*) size_header, 2);
   if(r < 0) {
     return -1;
   }
@@ -224,7 +224,7 @@ Similar concerns to the reading, apply concerning signal interruptions. A closed
 When writing we also need to prepend the size of the message using the first two bytes.
 
 ```c
-void write_back(char* msg) {
+void write_back(char *msg) {
   unsigned long len = strlen(msg);
   char size_header[2] = {(len >> 8 & 0xff), (len & 0xff)};
   write_fixed(size_header, 2, "header write");
