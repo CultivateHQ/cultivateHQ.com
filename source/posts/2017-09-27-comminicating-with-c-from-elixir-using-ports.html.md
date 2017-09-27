@@ -288,3 +288,4 @@ The following resources were useful while investigating this:
 * [The Erlang Port Documentation](http://erlang.org/doc/tutorial/c_port.html)
 * [Ports vs. NIFs](https://spin.atomicobject.com/2015/03/16/elixir-native-interoperability-ports-vs-nifs/) by Tony Baker at [Atomic Object](https://atomicobject.com) was a good starting point, but is now quite out of date.
 * [The Elixir ALE project](https://github.com/fhunleth/elixir_ale) uses Ports to communicate with hardware on Linux. The source code is great for poking around.
+* Reading the documentation of [read](https://linux.die.net/man/2/read), [write](https://linux.die.net/man/2/write) and [poll](https://linux.die.net/man/2/poll) helped.
