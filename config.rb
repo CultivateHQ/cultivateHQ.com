@@ -2,14 +2,14 @@ activate :breadcrumbs do
 end
 
 activate :blog do |blog|
-  blog.prefix = "/posts"
-  blog.permalink = ":title.html"
-  blog.sources = ":year-:month-:day-:title.html"
-  blog.layout = "post"
-  blog.summary_generator = Proc.new {|post| post.data.description }
+  blog.prefix = '/posts'
+  blog.permalink = ':title.html'
+  blog.sources = ':year-:month-:day-:title.html'
+  blog.layout = 'post'
+  blog.summary_generator = proc { |post| post.data.description }
   blog.paginate = true
-  blog.tag_template = "posts/tag.html"
-  #blog.calendar_template = "calendar.html"
+  blog.tag_template = 'posts/tag.html'
+  # blog.calendar_template = "calendar.html"
 end
 
 activate :deploy do |deploy|
@@ -18,8 +18,15 @@ activate :deploy do |deploy|
   # Optional Settings
   deploy.remote   = 'git@github.com:CultivateHQ/cultivatehq.github.io.git'
   deploy.branch   = 'master'
-  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
-  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+
+  # commit strategy: can be :force_push or :submodule, default: :force_push
+  #
+  # deploy.strategy = :submodule
+
+  # commit message (can be empty),
+  # default: Automated commit at `timestamp` by middleman-deploy `version`
+  #
+  # deploy.commit_message = 'custom-message'
 end
 
 ###
@@ -41,11 +48,11 @@ end
 # page "/path/to/file.html", :layout => false
 #
 # With alternative layout
-page "index.html", :layout => :home
-page "/posts/index.html", :layout => :blog
-page "/posts/tag.html", :layout => :blog
-page "/newsletter-signup"
-page "/feed.xml", :layout => false
+page 'index.html', layout: :home
+page '/posts/index.html', layout: :blog
+page '/posts/tag.html', layout: :blog
+page '/newsletter-signup'
+page '/feed.xml', layout: false
 
 #
 # A path which all have the same layout
@@ -82,13 +89,13 @@ set :js_dir, 'javascripts'
 
 after_configuration do
   # Ensure bower is run before building
-  puts "** Running bower install"
+  puts '** Running bower install'
   unless system('bower install')
-    puts "*** ERROR running bower install ***"
+    puts '*** ERROR running bower install ***'
     exit(1)
   end
   @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  sprockets.append_path File.join "#{root}", @bower_config["directory"]
+  sprockets.append_path File.join root.to_s, @bower_config['directory']
 end
 
 activate :sprockets
@@ -96,7 +103,10 @@ activate :sprockets
 set :images_dir, 'images'
 
 set :markdown_engine, :redcarpet
-set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
+set :markdown, tables: true,
+               autolink: true,
+               gh_blockcode: true,
+               fenced_code_blocks: true
 
 # Build-specific configuration
 configure :build do
@@ -116,8 +126,7 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-
-activate :syntax, :line_numbers => false
+activate :syntax, line_numbers: false
 
 # The below will override .html on blog posts as well!!
 activate :directory_indexes
