@@ -74,3 +74,12 @@ Add this line to the .emacs.d/init.el file and reload spacemacs to pick up the c
 ```
 
 The important part here is lines-tail, which will highlight and characters that are beyond the 80 character limit.
+
+## Auto Insert Newline
+
+To insert a new line automatically at the end of the file, add the following lines to the user-config section of the .spacemacs file:
+
+(setq-default
+ require-final-newline t
+ mode-require-final-newline t
+)
