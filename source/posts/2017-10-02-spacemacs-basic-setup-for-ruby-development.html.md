@@ -1,7 +1,7 @@
 ---
 author: Valerie Dryden
 title: Spacemacs Basic Setup for Ruby Development
-description: Brief intro into how to set up Spacemacs for Ruby development, including RSpec and Rubocop.
+description: Brief introduction on how to set up Spacemacs for Ruby development, including RSpec and Rubocop.
 ---
 
 # Spacemacs: Basic Setup for Ruby Development
