@@ -100,3 +100,5 @@ We often want to [insert a newline](https://stackoverflow.com/questions/729692/w
 ## Fun in Space
 
 I'm really enjoy using Spacemacs - I'm always accidentally finding new shortcuts and cool bits and bobs that make life a little easier. I hope this guide helps you get set up and you have a lot of fun, too!
+
+![Val in Space](/images/posts/val-spacemacs.jpg "Val in Space")
