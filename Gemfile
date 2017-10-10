@@ -14,7 +14,7 @@ gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy',
 gem 'middleman-livereload'
 gem 'middleman-sprockets', '~> 4.0.0.rc'
 gem 'middleman-syntax'
-
+gem 'middleman-alias'
 gem 'nokogiri'
 gem 'redcarpet'
 gem 'rubocop'

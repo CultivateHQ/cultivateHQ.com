@@ -126,7 +126,11 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
+
 activate :syntax, line_numbers: false
 
 # The below will override .html on blog posts as well!!
 activate :directory_indexes
+
+#Activate the alias(redirect) plugin
+activate :alias
