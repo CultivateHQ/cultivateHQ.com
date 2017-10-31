@@ -10,8 +10,8 @@ We recently needed to serve requests via HTTPS locally in our Elixir app. We fou
 To get started, create a new mix app:
 
 ```bash
-mix new https
-cd https
+mix new secure_app
+cd secure_app
 ```
 
 Add `cowboy` and `plug` as dependencies in the `mix.exs` file:
@@ -28,10 +28,10 @@ Add `cowboy` and `plug` as dependencies in the `mix.exs` file:
 
 Run `mix deps.get` in the command line to install these dependencies. We'll write a very simple plug for this example, similar to the one in the Plug documentation. You can check [How to write a plug package and publish it on hex](/posts/how-to-write-a-plug-package-and-publish-it-on-hex/) for more information on writing Plugs.
 
-In `lib/https/hello_plug.ex`, we write this code:
+In `lib/secure_app/hello_plug.ex`, we write this code:
 
 ```elixir
-defmodule Https.HelloPlug do
+defmodule SecureApp.HelloPlug do
   import Plug.Conn
 
   def init(options), do: options
@@ -44,17 +44,17 @@ defmodule Https.HelloPlug do
 end
 ```
 
-We want to start our Plug application under the supervision tree:
+We want to start our Plug application under the supervision tree, so in `lib/secure_app.ex` we write:
 
 ```elixir
-defmodule Https do
+defmodule SecureApp do
   use Application
 
   def start(_type, _args) do
     children = [
       Plug.Adapters.Cowboy.child_spec(
         :http,
-        Https.HelloPlug,
+        SecureApp.HelloPlug,
         [],
         port: 8080
       )
@@ -63,6 +63,17 @@ defmodule Https do
     Supervisor.start_link(children, strategy: :one_for_one)
   end
 end
+```
+
+Finally, add the module to our `mix.exs` file:
+
+```elixir
+  def application do
+    [
+      extra_applications: [:logger],
+      mod: {SecureApp, []}
+    ]
+  end
 ```
 
 If we run the app with `mix run --no-halt` and visit http://localhost:8080 in a web browser, we'll see our "Hello world" message.
@@ -84,13 +95,13 @@ def start(_type, _args) do
   cowboy_options = [
     keyfile: "priv/keys/localhost.key",
     certfile: "priv/keys/localhost.cert",
-    otp_app: :https
+    otp_app: :secure_app
   ]
 
   children = [
     Plug.Adapters.Cowboy.child_spec(
       :https,
-      Https.HelloPlug,
+      SecureApp.HelloPlug,
       [],
       cowboy_options
     )
