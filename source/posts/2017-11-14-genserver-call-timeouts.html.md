@@ -7,7 +7,7 @@ description: What exactly happens when `GenServer.call/3` times out? Let's find 
 There is a [GitHub repository](https://github.com/CultivateHQ/elixir_call_timeouts) that accompanies this post.
 
 
-By law, every OTP tutorial must include an exercise in which you build your own version of `GenServer` before the astonishing revelation that OTP provides a better thought-out that you should use. So, you will already know that `GenServer.call` is implemented something like
+By law, every OTP tutorial must include an exercise in which you build your own version of `GenServer` before the astonishing revelation that OTP provides a better thought-out one. So, you will already know that `GenServer.call` is implemented something like
 
 ```elixir
 def call(server, request, timeout \\ 5_000) do
@@ -29,7 +29,7 @@ Of course there's a bit more to it than that, but [it's pretty damned close](htt
 
 ## Forcing a time-out
 
-In the accompanying code we have a [](https://github.com/CultivateHQ/elixir_call_timeouts/blob/master/lib/timesout.ex) which is designed to time-out if you call `yawn` with a value greater than 99 (milliseconds). Note that the default time-out is 5 seconds, but life is too short to wait that long.
+In the accompanying code we have a GenServer, [Timesout](https://github.com/CultivateHQ/elixir_call_timeouts/blob/master/lib/timesout.ex), which is designed to time-out if you call `yawn` with a value greater than 99 (milliseconds). Note that the default time-out is 5 seconds, but life is too short to wait that long.
 
 ```elixir
   @timeout 100
