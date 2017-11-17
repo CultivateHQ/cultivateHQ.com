@@ -29,7 +29,7 @@ Of course there's a bit more to it than that, but [it's pretty damned close](htt
 
 ## Forcing a time-out
 
-In the accompanying code we have a GenServer, [Timesout](https://github.com/CultivateHQ/elixir_call_timeouts/blob/master/lib/timesout.ex), which is designed to time-out if you call `yawn` with a value greater than 99 (milliseconds). Note that the default time-out is 5 seconds, but life is too short to wait that long.
+In the accompanying code we have a `GenServer``, [Timesout](https://github.com/CultivateHQ/elixir_call_timeouts/blob/master/lib/timesout.ex), which is designed to time-out if you call `yawn` with a value greater than 99 (milliseconds). Note that the default time-out is 5 seconds, but life is too short to wait that long.
 
 ```elixir
   @timeout 100
@@ -47,7 +47,7 @@ So ..
 
 ```elixir
 $ iex -s mix
-iex(1)> .yawn(110)
+iex(1)> Timesout.yawn(110)
 ** (exit) exited in: GenServer.call(, {:yawn, 110}, 100)
     ** (EXIT) time out
     (elixir) lib/gen_server.ex:774: GenServer.call/3
@@ -72,7 +72,7 @@ The following illustrates the time-out killing the client.
 ```elixir
 iex(1)> self
 #PID<0.181.0>
-iex(2)> spawn_link(fn -> .yawn(110) end)
+iex(2)> spawn_link(fn -> Timesout.yawn(110) end)
 #PID<0.184.0>
 ** (EXIT from #PID<0.181.0>) evaluator process exited with reason: exited in: GenServer.call(, {:yawn, 110}, 100)
     ** (EXIT) time out
@@ -89,13 +89,13 @@ The `Timesout` server keeps a count of all the number of calls that it has proce
 
 
 ```elixir
-iex(1)> :sys.get_state()
+iex(1)> :sys.get_state(Timesout)
 0
-iex(2)> .yawn(110)
+iex(2)> Timesout.yawn(110)
 ** (exit) exited in: GenServer.call(, {:yawn, 110}, 100)
     ** (EXIT) time out
     (elixir) lib/gen_server.ex:774: GenServer.call/3
-iex(2)> :sys.get_state()
+iex(2)> :sys.get_state(Timesout)
 1
 
 ```
@@ -104,11 +104,11 @@ Although the call timed-out, the operation still completed. This is important if
 a blocked call will continue to block the GenServer even after a time-out.
 
 ```elixir
-iex(1)> .yawn(60_000)
+iex(1)> Timesout.yawn(60_000)
 ** (exit) exited in: GenServer.call(, {:yawn, 60000}, 100)
     ** (EXIT) time out
     (elixir) lib/gen_server.ex:774: GenServer.call/3
-iex(1)> .yawn(1)
+iex(1)> Timesout.yawn(1)
 ** (exit) exited in: GenServer.call(, {:yawn, 1}, 100)
     ** (EXIT) time out
     (elixir) lib/gen_server.ex:774: GenServer.call/3
@@ -116,7 +116,7 @@ iex(1)> .yawn(1)
 
 ## Replying early
 
-A GenServer call can reply before the end of the `handle_call/3` function. In our example [](https://github.com/CultivateHQ/elixir_call_timeouts/blob/master/lib/timesout.ex) we also have
+A GenServer call can reply before the end of the `handle_call/3` function. In our example [Timesout](https://github.com/CultivateHQ/elixir_call_timeouts/blob/master/lib/timesout.ex) we also have
 
 ```elixir
   def before_you_sleep(sleep) do
@@ -133,7 +133,7 @@ A GenServer call can reply before the end of the `handle_call/3` function. In ou
 Blocking after the reply will not provoke a time-out in that call.
 
 ```elixir
-iex(1)> .before_you_sleep(10_000)
+iex(1)> Timesout.before_you_sleep(10_000)
 {:previous_call_count, 0}
 ```
 
@@ -146,7 +146,7 @@ iex(1)> self
 #PID<0.181.0>
 iex(2)> spawn_link(fn ->
 ...(2)>   try do
-...(2)>     .yawn(110)
+...(2)>     Timesout.yawn(110)
 ...(2)>   catch
 ...(2)>     :exit, value ->
 ...(2)>       IO.inspect {:caught_an_exit, value}
@@ -162,7 +162,7 @@ iex(3)> self
 However remember that the server will also not die: the reply message will be sent to the client and if unhandled will clutter the mailbox. This also occurs when `iex` prevents exits:
 
 ```elixir
-iex(1)> .yawn(110)
+iex(1)> Timesout.yawn(110)
 ** (exit) exited in: GenServer.call(, {:yawn, 110}, 100)
     ** (EXIT) time out
     (elixir) lib/gen_server.ex:774: GenServer.call/3
