@@ -29,7 +29,7 @@ Of course there's a bit more to it than that, but [it's pretty damned close](htt
 
 ## Forcing a time-out
 
-In the accompanying code we have a `GenServer``, [Timesout](https://github.com/CultivateHQ/elixir_call_timeouts/blob/master/lib/timesout.ex), which is designed to time-out if you call `yawn` with a value greater than 99 (milliseconds). Note that the default time-out is 5 seconds, but life is too short to wait that long.
+In the accompanying code we have a `GenServer`, [Timesout](https://github.com/CultivateHQ/elixir_call_timeouts/blob/master/lib/timesout.ex), which is designed to time-out if you call `yawn` with a value greater than 99 (milliseconds). Note that the default time-out is 5 seconds, but life is too short to wait that long.
 
 ```elixir
   @timeout 100
@@ -100,8 +100,7 @@ iex(2)> :sys.get_state(Timesout)
 
 ```
 
-Although the call timed-out, the operation still completed. This is important if your call has effects, is not idempotent, and you would consider retrying. It also means that
-a blocked call will continue to block the GenServer even after a time-out.
+Although the call timed-out, the operation still completed. This is important if your call has effects, is not idempotent, and you would consider retrying. It also means that a blocked call will continue to block the GenServer even after a time-out.
 
 ```elixir
 iex(1)> Timesout.yawn(60_000)
