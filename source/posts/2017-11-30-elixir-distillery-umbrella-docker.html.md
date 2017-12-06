@@ -1,0 +1,370 @@
+---
+title: Building a Phoenix app with Umbrella for releasing with Docker
+author: Fernando Briano
+description: A tutorial to understand how Phoenix, Umbrella, Distillery and Docker fit together.
+tags: elixir
+---
+
+This tutorial goes through the process of building *Elixir* and *Phoenix* apps within an *Umbrella* project, releasing it with *Distillery* and containerizing it with *Docker*, ready for deploying in production. There's an [accompanying repository](https://github.com/CultivateHQ/paraguas) for this tutorial, but you'll find commits related to each part linked in the article whenever it's relevant.
+
+## Opening the umbrella
+
+From a common pattern when building Erlang applications, came `umbrella`. Umbrella projects are a way to break apart different parts of a project into smaller isolated applications. This was implemented into Mix (Elixir's build tool for creating, compiling and testing applications and managing its dependencies) [in Elixir 0.9.0](https://elixir-lang.org/blog/2013/05/23/elixir-v0-9-0-released/#umbrella-projects).
+
+When you create a new project in Elixir using mix, you can pass the `--umbrella` parameter to implement this pattern. The command itself is pretty self-explanatory:
+
+```bash
+$ mix new paraguas --umbrella
+* creating .gitignore
+* creating README.md
+* creating mix.exs
+* creating apps
+* creating config
+* creating config/config.exs
+
+Your umbrella project was created successfully.
+Inside your project, you will find an apps/ directory
+where you can create and host many apps:
+
+    cd paraguas
+    cd apps
+    mix new my_app
+
+Commands like "mix compile" and "mix test" when executed
+in the umbrella project root will automatically run
+for each application in the apps/ directory.
+```
+
+[\[GITHUB REPO\]: What the code looks like now](https://github.com/CultivateHQ/paraguas/commit/cc2589243ea8e19af5ace4d9cb04b793977f7e1c).
+
+## Adding Phoenix to the mix
+
+[Phoenix](http://phoenixframework.org/) is a web development framework written in Elixir. This post assumes you've already [installed Phoenix](https://hexdocs.pm/phoenix/installation.html) and its dependencies. To create the app, we'll do it inside `paraguas/apps`. We won't use Ecto (database wrapper) for this example, so we can skip the database setup and focus on the build process:
+
+```bash
+$ cd apps
+$ mix phoenix.new phoenix_app --no-ecto
+```
+
+We can now run the web app from the umbrella project root:
+
+```bash
+$ mix phx.server
+```
+
+[\[GITHUB REPO\]:What was added (GitHub)](https://github.com/CultivateHQ/paraguas/commit/20a5716d0cc1a5f08d4b1c0f4186650b3457742d).
+
+We're going to add [basic_auth](https://github.com/cultivatehq/basic_auth) to the web app for ExtraSecurity™ (and as an example to document how to use environment variables further ahead). We start by adding the dependency in `paraguas/apps/phoenix_app/mix.exs`:
+
+```elixir
+defp deps do
+[
+  ...,
+  {:basic_auth, "~> 2.2.2"}
+]
+```
+
+Then add the corresponding configuration in the `dev.exs`, `test.exs` and `prod.exs` files:
+
+```elixir
+# paraguas/apps/phoenix_app/config/dev.exs
+config :phoenix_app, authentication: [
+  username: "user",
+  password: "password",
+  realm:    "Development Realm"
+]
+```
+I used this same configuration ☝ for `text.exs`.
+
+```elixir
+# paraguas/apps/phoenix_app/config/prod.exs
+config :phoenix_app, authentication: [
+  username: "${BASIC_AUTH_USERNAME}",
+  password: "${BASIC_AUTH_PASSWORD}",
+  realm:    "${BASIC_AUTH_REALM}"
+]
+```
+
+Finally, add BasicAuth to the router pipeline:
+
+```elixir
+# paraguas/apps/phoenix_app/web/router.ex
+pipeline :authentication do
+  plug BasicAuth, use_config: {:phoenix_app, :authentication}
+end
+
+scope "/", PhoenixApp do
+  pipe_through [:browser, :authentication]
+ get "/", PageController, :index
+end
+```
+
+Run `mix deps.get` and `mix phx.server` again to start the web app with basic auth enabled. As you can see, we set simple credentials for the development environment and will load proper credentials from environment variables in production. Remember to fix your default Phoenix test to use authentication.
+
+[\[GITHUB REPO\]: Adding basic_auth](https://github.com/CultivateHQ/paraguas/commit/240d140badbd092e6d50cb10942b743471a3d9d2)
+
+Now, let's create another app to interact with our web app so we can take advantage of umbrella. Again, we're building a very simple app so we can focus on build details further ahead.
+
+```bash
+# paraguas/apps
+$ mix new greeter
+```
+
+We're just going to write a `hello/1` method in our greeter, to greet a given name:
+
+```elixir
+
+defmodule Greeter do
+  def hello(name), do: "Hello #{name}"
+end
+
+```
+
+Our web app is going to use this code to greet people. So we need to add it as a dependency in the Phoenix app. Since we're using umbrella, this is rather simple:
+
+```elixir
+# paraguas/apps/phoenix_app/mix.exs
+  defp deps do
+    [
+      ...,
+      {:basic_auth, "~> 2.2"},
+      {:greeter, in_umbrella: true}
+    ]
+  end
+```
+
+After tying it all together, I created a [Phoenix channel](https://hexdocs.pm/phoenix/channels.html) for JavaScript to interact with our Greeter app through Phoenix:
+
+![Phoenix App](/images/posts/umbrella.gif "Phoenix App")
+
+[\[GITHUB REPO\]: Implement Phoenix channel to send Greeter hello to frontend](https://github.com/CultivateHQ/paraguas/commit/03dbfc4a537b8b00cf6c1437703fb74d2061d6b8).
+
+Now that we have a couple of "functional" Elixir apps in an umbrella project, it's time to work on the release.
+
+## Distillation for release
+
+Distillery is a release management tool for Elixir projects. It produces a release from our mix projects which can be deployed independently of dependencies and Erlang/Elixir installations. We add distillery as a dependency in our Umbrella app:
+
+```elixir
+defp deps do
+  [{:distillery, "~> 1.5", runtime: false}]
+end
+```
+
+Then run `mix deps.get` and `mix release.init`. This adds a `rel` directory with a `config.exs` file. You should check this file and run `mix help release.init` to learn more about it. Find out more in [distillery's Getting Started guide](https://hexdocs.pm/distillery/getting-started.html).
+
+We're now ready to build a release with `mix release`:
+
+```bash
+$ mix release
+==> Assembling release..
+==> Building release paraguas:0.1.0 using environment dev
+==> You have set dev_mode to true, skipping archival phase
+==> Release successfully built!
+    You can run it in one of the following ways:
+      Interactive: _build/dev/rel/paraguas/bin/paraguas console
+      Foreground: _build/dev/rel/paraguas/bin/paraguas foreground
+      Daemon: _build/dev/rel/paraguas/bin/paraguas start
+```
+
+The release was built and we can run it with any of the last three commands printed out to the console. So let's try that:
+
+```bash
+./_build/dev/rel/paraguas/bin/paraguas foreground
+```
+
+Nothing seems to be happening. If we check the processes in our system, we can see Erlang is running, but we can't see the application in our browser. We still need to [configure Phoenix with distillery](https://hexdocs.pm/distillery/use-with-phoenix.html).
+
+First we need to edit `paraguas/apps/phoenix_app/config/prod.exs` and add the `server`, `root` and `version` options:
+
+```elixir
+config :phoenix_app, PhoenixApp.Endpoint,
+  http: [:inet6, port: {:system, "PORT"}],
+  url: [host: "localhost", port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  root: ".",
+  version: Application.spec(:phoenix_app, :vsn)
+```
+
+Following the distillery guide for Phoenix, we need to build the release, wich requires the static assets to be built. In `paraguas/apps/phoenix_app` run:
+
+```bash
+# build assets in production mode.
+$ ./node_modules/brunch/bin/brunch b -p
+# compressess and tags assets for proper caching.
+$ MIX_ENV=prod mix phoenix.digest
+```
+
+In the project root:
+
+```bash
+# Actually generate a release for a production environment
+$ MIX_ENV=prod mix release
+```
+
+Now you can run the production build:
+
+```bash
+./_build/prod/rel/paraguas/bin/paraguas foreground
+```
+
+However, this will trigger the following error:
+
+```
+server can't start because :port in config is nil, please use a valid port number
+```
+
+So far we have two Elixir apps in an umbrella project and a distillery release which builds. We can run the app in development with `mix phx.server` and run the tests with `mix test` from the root app. But there's still some more set up we need to work on to get it working for production.
+
+## VM Configuration for environment variables
+
+If you look at the `config/prod.exs` file in our Phoenix App, there's a PORT variable which we're not setting anywhere. We can load environment variables into our release. We also need to set the authentication variables values for `basic_auth`. To do this, we can use [Distillery's vm.args](https://hexdocs.pm/distillery/getting-started.html#vm-configuration).
+
+>Distillery will automatically generate a vm.args file for you, which configures the VM with a name and secure cookie, however there are times where you may want to provide your own, but still take advantage of metadata provided by Distillery. In this case, you would put set vm_args: "path/to/file" in your environment or release configuration, and define a file (...) at the path you provided
+
+We'll add a `vm.args` file in the `rel` directory and add the file to `rel/config.exs`:
+
+```elixir
+release :paraguas do
+  set version: "0.1.0"
+  set applications: [
+    :runtime_tools,
+    greeter: :permanent,
+    phoenix_app: :permanent
+  ]
+  set vm_args: "rel/vm.args"
+end
+```
+
+And in our vm.args file:
+
+```
+## Application configuration with REPLACE_OS_VARS=true
+-phoenix_app port ${PORT}
+```
+
+We need to use REPLACE_OS_VARS so we can use environment variables for configuration. These will replace `${VAR}` in our configuration code. We need to set the port, cookie, and basic_auth variables. Let's build a new release to make sure our latest changes are applied:
+
+```bash
+$ MIX_ENV=prod mix release
+```
+
+And now we should run our relase with:
+
+```bash
+$ REPLACE_OS_VARS=true \
+  PORT=4000 \
+  COOKIE=cookie \
+  BASIC_AUTH_USERNAME=user \
+  BASIC_AUTH_PASSWORD=password \
+  BASIC_AUTH_REALM="Our realm" \
+  _build/prod/rel/paraguas/bin/paraguas foreground
+```
+
+[\[GITHUB REPO\]: Add distillery and configs](https://github.com/CultivateHQ/paraguas/commit/04b0d8658db4ec4469c8e1ec322f7a36021d293f)
+
+## Containerize with Docker
+
+<section class="callout">
+  Check <a href="/posts/docker/">our blog post about Docker</a> if you need help getting started.
+</section>
+
+The final step for this tutorial is to dockerize the project so it's available for deploy in <em>Amazon Web Services</em>, <em>OpenShift</em>, <em>Kubernetes</em> or any other container deployment platform.
+
+We built 2 docker images. One that builds the release, and a second one to run it. For the build container we're using [alpine-elixir-phoenix](https://hub.docker.com/r/bitwalker/alpine-elixir-phoenix/), an image that provides Elixir, Node, Hex, everything we need to run a Phoenix application. For the second container we're using [alpine](https://hub.docker.com/_/alpine/), a minimal image based on Alpine Linux.
+
+The first part of our Dockerfile looks like this then:
+
+```dockerfile
+# Alias this container as builder:
+FROM bitwalker/alpine-elixir-phoenix as builder
+
+WORKDIR /paraguas
+
+ENV MIX_ENV=prod
+
+# Umbrella
+COPY mix.exs mix.lock ./
+COPY config config
+
+# Our Greeter App
+COPY apps/greeter/config apps/greeter/config/
+COPY apps/greeter/mix.exs apps/greeter/
+
+# Phoenix App
+COPY apps/phoenix_app/mix.exs apps/phoenix_app/
+COPY apps/phoenix_app/config apps/phoenix_app/config/
+
+RUN mix do deps.get, deps.compile
+
+COPY apps apps
+
+# Build assets in production mode:
+WORKDIR /paraguas/apps/phoenix_app
+RUN npm install && ./node_modules/brunch/bin/brunch build --production
+
+WORKDIR /paraguas/apps/phoenix_app
+RUN MIX_ENV=prod mix phx.digest
+
+WORKDIR /paraguas
+COPY rel rel
+RUN mix release --env=prod --verbose
+```
+
+It's pretty self-explanatory and we're basically doing the same stuff we went through before in our machines. Now for the release part:
+
+```dockerfile
+FROM alpine:3.6
+
+RUN apk upgrade --no-cache && \
+    apk add --no-cache bash openssl
+    # we need bash and openssl for Phoenix
+
+EXPOSE 4000
+
+ENV PORT=4000 \
+    MIX_ENV=prod \
+    REPLACE_OS_VARS=true \
+    SHELL=/bin/bash
+
+WORKDIR /paraguas
+
+COPY --from=builder /paraguas/_build/prod/rel/paraguas/releases/0.1.0/paraguas.tar.gz .
+
+RUN tar zxf paraguas.tar.gz && rm paraguas.tar.gz
+
+RUN chown -R root ./releases
+
+USER root
+
+CMD ["/paraguas/bin/paraguas", "foreground"]
+```
+
+We can now build these containers with:
+
+```bash
+$ docker build -t paraguas:0.1.0
+```
+
+If everything went well, we now have a working image:
+
+```bash
+$ docker images
+REPOSITORY                        TAG                 IMAGE ID            CREATED              SIZE
+paraguas                          0.1.0               32146e78bc11        About a minute ago   71.2MB
+```
+
+Finally, our code is available to run in ac sontainer. Remember we need to pass in the environment variables to our distillery release. So either source them from an .env file, or pass them as parameters to the `docker run` command:
+
+```bash
+$ docker run --rm -ti \
+             -p 4000:4000 \
+             -e COOKIE=a_cookie \
+             -e BASIC_AUTH_USERNAME=username \
+             -e BASIC_AUTH_PASSWORD=password \
+             -e BASIC_AUTH_REALM=realm \
+             paraguas
+```
+
+You can check the final source code in [cultivateHQ/paraguas](https://github.com/CultivateHQ/paraguas/). And If you have any feedback or questions about this post, tweet at us [@cultivatehq](http://twitter.com/cultivatehq).
