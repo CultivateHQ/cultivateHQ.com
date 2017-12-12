@@ -1,35 +1,37 @@
-<div class="pagination">
-  <ul>
-    <li class="button-pagination <%= prev_page ? '' : 'active' %>">
-      <% if prev_page %>
-        <%= link_to '&lt; Previous', prev_page.url %>
-      <% else %>
-        <span>&lt; Previous</span>
-      <% end %>
-    </li>
+<% if num_pages > 1 %>
+  <div class="pagination">
+    <ul>
+      <li class="button-pagination <%= prev_page ? '' : 'active' %>">
+        <% if prev_page %>
+          <%= link_to '&lt; Previous', prev_page.url %>
+        <% else %>
+          <span>&lt; Previous</span>
+        <% end %>
+      </li>
 
-    <li class="button-pagination <%= next_page ? '' : 'active' %>">
-      <% if next_page %>
-        <%= link_to 'Next &gt;', next_page.url %>
-      <% else %>
-        <span>Next &gt;</span>
+      <li class="button-pagination <%= next_page ? '' : 'active' %>">
+        <% if next_page %>
+          <%= link_to 'Next &gt;', next_page.url %>
+        <% else %>
+          <span>Next &gt;</span>
+        <% end %>
+      </li>
+    </ul>
+    <ul class="pagination-numbering">
+      <% (1..num_pages).each do |count| %>
+        <% if page_number == count %>
+          <li class="active">
+            <span><%= count %></span>
+          </li>
+        <% else %>
+          <li>
+            <% page = nil %>
+            <% (count ... page_number).each do page = page ? page.metadata[:locals]['prev_page'] : prev_page; end %>
+            <% (page_number ... count).each do page = page ? page.metadata[:locals]['next_page'] : next_page; end %>
+            <%= link_to "#{count}", page && page.url %>
+          </li>
+        <% end %>
       <% end %>
-    </li>
-  </ul>
-  <ul class="pagination-numbering">
-    <% (1..num_pages).each do |count| %>
-      <% if page_number == count %>
-        <li class="active">
-          <span><%= count %></span>
-        </li>
-      <% else %>
-        <li>
-          <% page = nil %>
-          <% (count ... page_number).each do page = page ? page.metadata[:locals]['prev_page'] : prev_page; end %>
-          <% (page_number ... count).each do page = page ? page.metadata[:locals]['next_page'] : next_page; end %>
-          <%= link_to "#{count}", page && page.url %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
+<% end %>
