@@ -1,7 +1,7 @@
 ---
 title:  "Seven techniques product leaders can use today to get a project focused"
 author: Spencer Turner
-tags: spencer
+tags: motivation
 ---
 
 ## Are you frustrated by a culture that hasn't caught up with the digital world?
@@ -66,7 +66,7 @@ Not all 'actors' are equally relevant. To prioritise, you want to consider how c
 - __Off-stage actors__, who have an interest in the behaviours, but are not directly benefiting or providing a service, for example regulators or senior decision-makers
 
 ### How?
-Here we're looking for _Jobs to be done_, not solutions to the problem. It's also good to try to show how the job is improved – e.g. 'Print twice as many t-shirts per hour' rather than 'Print more t-shirts'  
+Here we're looking for _Jobs to be done_, not solutions to the problem. It's also good to try to show how the job is improved – e.g. 'Print twice as many t-shirts per hour' rather than 'Print more t-shirts'
 
 ### What?
 What can we do, as a team, to support the required impacts?

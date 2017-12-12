@@ -2,6 +2,7 @@
 title: "Large organisations find Lean UX hard, it’s not them, it’s us! - Part Four: Speak Simply, Teach Gently And Derisk The Process"
 author: Spencer Turner
 description: This is part four of the blog post series "Large organisations find Lean UX hard, it’s not them, it’s us!", based on my talks at UXCambridge and UXScotland. In this post we'll cover more tips, techniques and suggestions that will help you communicate more effectively with large organisations.
+tags: lean ux
 ---
 
 This is part four of the blog post series [Large organisations find Lean UX hard, it’s not them, it’s us!](/posts/lean-ux-in-the-enterprise-is-hard/), based on my talks at UXCambridge and UXScotland.
@@ -27,7 +28,7 @@ When it comes to getting things off the ground, what others don't know can hurt 
 
 Unless you explain the value of failing fast and often, _you're just proposing failing fast and often!_ Who'd want that?
 
-> "Call it fail small, instead of fail fast. If the culture is risk averse."  
+> "Call it fail small, instead of fail fast. If the culture is risk averse."
 > Christiane Gerigk
 
 Alternatively, I like 'Learn fast, learn often [, learn cheap!]'
@@ -64,7 +65,7 @@ Glossaries can also be really useful on projects that have specific 'domain lang
 
 _You just said don't use jargon...What's a specific domain language? A real life example might help..._
 
->**What do you call the thing you put in a light socket?**  
+>**What do you call the thing you put in a light socket?**
 >I call them light-bulbs or bulbs, however my father in law, an electrical engineer finds this infuriating as in his (professional world) they are called lamps.  Who's right? Both of us, but if I'm buiding a system for electrical engineers, I'd want to use the industry term.
 
 ## Reframing tools and approaches
@@ -106,7 +107,7 @@ It's vital, particularly in large organisations, to be lean with your experiment
 
 #### Play Out Scenarios
 
-The ultimate cheap and safe to fail experiment – 
+The ultimate cheap and safe to fail experiment –
 _Act as if the decision is made._
 
 It's that simple. If you're unsure what would happen if you made a certain decision, start acting as though you have. It'll help you think through the consequences, see what actions you might need to take, how people might react, and with no more 'cost' than the effort of pretending.

@@ -2,6 +2,7 @@
 author: Paul Wilson
 title: GenServer call time-outs
 description: What exactly happens when `GenServer.call/3` times out? Let's find out.
+tags: elixir
 ---
 
 There is a [GitHub repository](https://github.com/CultivateHQ/elixir_call_timeouts) that accompanies this post.

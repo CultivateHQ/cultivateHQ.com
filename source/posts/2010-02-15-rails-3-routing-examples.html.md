@@ -2,7 +2,7 @@
 title: "Rails 3: Routing Examples"
 author: Mark Connell
 description: Rails 3 introduced a new routing DSL that is a little bit different from the Rails 2 version. This quick guide covers a few examples of the new routes, and how they compare to Rails 2.
-tags: mark
+tags: ruby
 ---
 
 > This post was written prior to Rails 3 being released and may contain information that is now out of date.

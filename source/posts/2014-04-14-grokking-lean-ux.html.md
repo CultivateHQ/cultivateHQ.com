@@ -2,7 +2,7 @@
 title:  "Grokking Lean UX"
 author: Alan Gardner
 description: I was tidying up my study last week and stumbled across my copy of the Lean UX book. It's a pretty quick read, so I thought I'd go through it again. I'm glad I did, because something struck me that I missed the first time round.
-tags: alan
+tags: lean ux
 ---
 
 I was tidying up my study last week and stumbled across my copy of the Lean UX book. It's a pretty quick read, so I thought I'd go through it again. I'm glad I did, because something struck me that I missed the first time round.

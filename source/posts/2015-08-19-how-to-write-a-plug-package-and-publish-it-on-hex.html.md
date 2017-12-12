@@ -2,7 +2,7 @@
 title:  "How to write a plug package and publish it on hex"
 author: Mark Connell
 description: This is a walkthrough on the process of creating a new plug package and getting it published on Hex.
-tags: mark
+tags: elixir
 ---
 
 Last week, I went through the process of creating a Plug for the first time.
