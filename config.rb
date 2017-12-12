@@ -8,6 +8,7 @@ activate :blog do |blog|
   blog.layout = 'post'
   blog.summary_generator = proc { |post| post.data.description }
   blog.paginate = true
+  blog.taglink = "tag/{tag}.html"
   blog.tag_template = 'posts/tag.html'
   # blog.calendar_template = "calendar.html"
 end
@@ -125,7 +126,6 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
-
 
 activate :syntax, line_numbers: false
 
