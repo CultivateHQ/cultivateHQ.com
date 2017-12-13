@@ -2,7 +2,7 @@
 title:  "Screen Readers"
 author: Mark Connell
 description: "Introducing screen readers: this is the first post in a series of posts focusing on accessibility and user experience considerations when developing for the web."
-tags: mark
+tags: accessibility
 ---
 
 This is the first post in a series of posts focusing on accessibility and user experience considerations when developing for the web.

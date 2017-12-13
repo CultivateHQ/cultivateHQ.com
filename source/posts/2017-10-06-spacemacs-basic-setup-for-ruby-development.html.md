@@ -2,6 +2,7 @@
 author: Valerie Dryden
 title: Spacemacs Basic Setup for Ruby Development
 description: Brief introduction on how to set up Spacemacs for Ruby development, including RSpec and Rubocop.
+tags: text editors
 ---
 
 # Spacemacs: Basic Setup for Ruby Development
@@ -65,7 +66,7 @@ To enable using 2 spaces instead of tabs, add this line to the .spacemacs config
 
 ```lisp
 (setq-default
-	indent-tabs-mode nil
+  indent-tabs-mode nil
 )
 ```
 This helpful [Stack Overflow post](https://stackoverflow.com/questions/2111041/change-emacs-ruby-mode-indent-to-4-spaces) explains what to do if you need 4 spaces per tab. Tab width is set by layer, meaning you can have different settings for Python vs JavaScript vs Ruby etc.

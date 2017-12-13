@@ -3,6 +3,7 @@ author: Paul Wilson
 title: Communicating with C from Elixir using Ports
 description: On occasion your Elixir is going to want to interact with an external program. This may be for speed, but more likely you are going to want to take advantage of a library that has been written in C. The most common options are using Ports and Native Interface Functions (NIFs).
 alias: posts/comminicating-with-c-from-elixir-using-ports/
+tags: elixir
 ---
 
 On occasion your Elixir is going to want to interact with an external program. This may be for speed, but more likely you are going to want to take advantage of a library that has been written in C. The most common options are using [Ports](http://erlang.org/doc/tutorial/c_port.html) and [Native Interface Functions (NIFs)](http://erlang.org/doc/tutorial/nif.html).
@@ -56,13 +57,13 @@ OBJ = $(SRC:.c=.o)
 DEFAULT_TARGETS ?= c_priv priv/c/echo
 
 priv/c/echo: c_priv $(OBJ)
-	$(CC) -I $(HEADER_FILES) -o $@ $(LDFLAGS) $(OBJ) $(LDLIBS)
+  $(CC) -I $(HEADER_FILES) -o $@ $(LDFLAGS) $(OBJ) $(LDLIBS)
 
 c_priv:
-	mkdir -p priv/c
+  mkdir -p priv/c
 
 clean:
-	rm -f priv/c $(OBJ) $(BEAM_FILES)
+  rm -f priv/c $(OBJ) $(BEAM_FILES)
 ```
 
 This will compile C files in the directory `src/` and create an executable in the directory `priv/c`. So, we'd better give it something to compile

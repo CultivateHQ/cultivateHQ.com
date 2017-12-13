@@ -2,7 +2,7 @@
 title: Spacemacs shared configuration - custom private layers
 author: Fernando Briano
 description: How we use a shared configuration file for Spacemacs and managed to add personal configurations on each machine too.
-tags: spacemacs, vim, emacs
+tags: text editors
 ---
 
 Some of us at Cultivate are using [**Spacemacs**](http://spacemacs.org/) as our preferred text editor. It really brings the best of two worlds together: Vim and Emacs. Most people at the office are used to Vim, I'm used to Emacs. With Spacemacs, we can toggle between the two with a single key stroke. Emacs can also be used in the terminal, so it made it easy for us to do pair programming via [tmate](https://tmate.io/) while I was working remotely.
@@ -49,7 +49,7 @@ By creating a private layer, you can install custom packages that are not going 
 ```
 
  You can also add configuration to the packages, such as the location (local packages, ELPA compliant repositories, MELPA). You may define `pre-init`, `init` and `post-init` functions for each package to load and configure stuff. To get Spacemacs to automatically install the packages on boot, you need to define *at least* the `init` function.
- 
+
 ```elisp
 (defun personal-config/init-fireplace())
 ```

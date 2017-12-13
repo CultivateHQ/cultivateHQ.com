@@ -2,6 +2,7 @@
 author: Paul Wilson
 title: Three alternatives to using GenEvent in Elixir
 description: "For various reasons, may people are not fond of GenEvent. Here are some examples of using some good alternatives for broadcasting and subscribing to types of event: gproc, Phoenix PubSub, and the new process registry to be included in Elixir 1.4."
+tags: elixir
 ---
 
 Wojket Gawronski's post [here](http://www.afronski.pl/2015/11/02/what-is-wrong-with-gen-event.html), neatly summarises the issues with [GenEvent](http://elixir-lang.org/docs/stable/elixir/GenEvent.html). Fortunately there are alternatives including [gproc](https://github.com/uwiger/gproc), [phoenix_pubsub](https://github.com/phoenixframework/phoenix_pubsub), and [Elixir 1.4's upcoming Process registry](https://github.com/elixir-lang/registry).
@@ -12,7 +13,7 @@ The code used in these examples is available from [this repository](https://gith
 
 While gproc's main purpose is as a [process registry](http://blog.rusty.io/2009/09/16/g-proc-erlang-global-process-registry/), it can be used as pub/sub framework using a lovely trick.
 
-```
+```elixir
 defmodule PubsubSpike.Gproc do
   use GenServer
 
@@ -58,7 +59,7 @@ The code above (also [here](https://github.com/CultivateHQ/pubsub_spike/blob/mas
 
 This test shows it all working  (code also [here](https://github.com/CultivateHQ/pubsub_spike/blob/master/test/pubsub_spike/gproc_test.exs)):
 
-```
+```elixir
   alias PubsubSpike.Gproc
   test "broadcast messages" do
     {:ok, pid1} = Gproc.start_link("sue")
@@ -78,7 +79,7 @@ This test shows it all working  (code also [here](https://github.com/CultivateHQ
 
 [Registry](https://github.com/elixir-lang/registry) will be in the Elixir 1.4 release, as a more Elixir-like and built-in version of gproc. We can also use it as a pub/sub framework. A registry is a supervisor and must be started, such as in the [application supervisor](https://github.com/CultivateHQ/pubsub_spike/blob/master/lib/pubsub_spike.ex#L11):
 
-```
+```elixir
 def start(_type, _args) do
   import Supervisor.Spec, warn: false
 
@@ -95,7 +96,7 @@ Note that we have called this registry `:pubsub_elixir_registry` and have marked
 
 [Here](https://github.com/CultivateHQ/pubsub_spike/blob/master/lib/pubsub_spike/elixir_registry.ex) is a pub/sub implementation similar to that for gproc:
 
-```
+```elixir
 defmodule PubsubSpike.ElixirRegistry do
   use GenServer
 
@@ -138,7 +139,7 @@ Unlike gproc and Registry, Phoenix PubSub's primary purpose is as a pub/sub fram
 
 Phoenix PubSub supports multiple implementations, such as a [Phoenix PubSub Redis](https://github.com/phoenixframework/phoenix_pubsub_redis), but we will just use the built-in one based on Erlang's [PG2](http://erlang.org/doc/man/pg2.html). We will to start the `Phoenix.PubSub.PG2` supervisor, in the [application supervisor](https://github.com/CultivateHQ/pubsub_spike/blob/master/lib/pubsub_spike.ex):
 
-```
+```elixir
 def start(_type, _args) do
   import Supervisor.Spec, warn: false
 
@@ -156,7 +157,7 @@ Note that we have named the Phoenix PubSub supervisor, `:pubsub_spike`.
 
 Implementing with the same interface as the other examples, we get [this](https://github.com/CultivateHQ/pubsub_spike/blob/master/lib/pubsub_spike/phoenix_pubsub.ex), following:
 
-```
+```elixir
 defmodule PubsubSpike.PhoenixPubsub do
   use GenServer
 
@@ -199,7 +200,7 @@ A bonus of using Phoenix PubSub is that it can easily publish events across conn
 
 A `PubsubSpike.PhoenixPubsub` worker (as above), named `:phoenix_pubsub` and listening on the topic "topic:phoenix_pubsub", is created by its [application supervisor](https://github.com/CultivateHQ/pubsub_spike/blob/master/lib/pubsub_spike.ex):
 
-```
+```elixir
 def start(_type, _args) do
   import Supervisor.Spec, warn: false
 
@@ -217,7 +218,7 @@ end
 
 To try this out, (assuming you're [all set up for Elixir](http://elixir-lang.org/install.html)) open a terminal and type the following.
 
-```
+```bash
 git clone git@github.com:CultivateHQ/pubsub_spike.git
 cd pubsub_spike
 mix deps.get

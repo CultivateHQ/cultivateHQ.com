@@ -2,9 +2,10 @@
 author: Spencer Turner
 title: Large organisations find Lean UX hard, it’s not them, it’s us!
 description: "Many large organisations say they want to use a Lean UX approach. In my experience, they don’t find it easy to execute in reality. Why is this? I believe we’re not helping adoption happen – we’re not following our own advice or approach, I say we can do better."
+tags: lean ux
 ---
 
-Many large organisations say they want to use a Lean UX approach. In my experience, they don’t find it easy to execute in reality. 
+Many large organisations say they want to use a Lean UX approach. In my experience, they don’t find it easy to execute in reality.
 
 Why is this? I believe we’re not helping adoption happen – we’re not following our own advice or approach, I say we can do better.
 
@@ -12,27 +13,27 @@ I talked about this at UXScotland and again at UXCambridge. I promised to write 
 
 This blog post will cover why we're not getting large organisations adopting Lean UX the next will look at what we can do to help.
 
-##So why is Lean UX so hard for large organisations?  
+##So why is Lean UX so hard for large organisations?
 I’d like to start with a short story.
 
 ![X-Corp](lean_illustrations/xcorp.PNG)
-### Your competitors appear to be innovating. 
+### Your competitors appear to be innovating.
 
-They’re talking at conferences about how successful and lean they are, how they’re innovating and iterating on new customer centric products.  
+They’re talking at conferences about how successful and lean they are, how they’re innovating and iterating on new customer centric products.
 
 ![Doomed](lean_illustrations/doomed.PNG)
-### The executives get scared. 
+### The executives get scared.
 
 ![Everyone Else](lean_illustrations/everyone-else.PNG)
-### What’s everyone else doing? 
+### What’s everyone else doing?
 
-“Digital Transformation”, and a “Digital First Strategy”? Why aren’t we doing that?  
+“Digital Transformation”, and a “Digital First Strategy”? Why aren’t we doing that?
 
 ![Elephant](lean_illustrations/elephant.PNG)
 ### No one points out the elephant in the room
 “What *is* an innovative digital first strategy - what does that mean for our business?”
 
-If you’re lucky, someone did point out the elephant, and there are some outcomes or goals defined! 
+If you’re lucky, someone did point out the elephant, and there are some outcomes or goals defined!
 
 ![Innovate](lean_illustrations/innovate.PNG)
 ### The executives initiate a ‘Digital Transformation’ with a ‘Digital First Strategy’ powered by ‘innovation teams.’ Go forth and innovate…
@@ -41,7 +42,7 @@ Then – nothing happens, people are trying to start, but your business have lim
 The executives are informed - and take decisive action.
 
 ![Consultants](lean_illustrations/consultants.PNG)
-### Consultants are hired. In Droves. 
+### Consultants are hired. In Droves.
 
 From different companies with different approaches! (And with no clear direction.)
 
@@ -55,9 +56,9 @@ No-one is entirely sure if Digital Transformation trumps existing KPIs / initiat
 ![Buzzwords](lean_illustrations/buzzwords.PNG)
 ### Consultants attempt to engage with and educate the executives using lots of domain specific terminology.
 
-> Innovation, resonate, customer development, minimum viable product, sprint, story points, iteration, burn down, burn up, assumptions, hypothesis, experiment, kanban, swim-lanes, six-sigma, lean, cynefin, real options. 
+> Innovation, resonate, customer development, minimum viable product, sprint, story points, iteration, burn down, burn up, assumptions, hypothesis, experiment, kanban, swim-lanes, six-sigma, lean, cynefin, real options.
 
-The execs are excited. They talk about experiments, customer centricity, learning, being lean and agile… It’s a top down directive. Yay! Go forth and be lean… 
+The execs are excited. They talk about experiments, customer centricity, learning, being lean and agile… It’s a top down directive. Yay! Go forth and be lean…
 
 ![Books](lean_illustrations/books.PNG)
 ###Books are bought - Lean UX, Sprint, The Lean Enterprise
@@ -76,8 +77,8 @@ But wait...there's some small print!
 
 We’re not a startup, we can’t do all that startup stuff, so:
 
-* You’re not allowed to talk to customers. 
-  * They’re too important/busy/have been over communicated with. 
+* You’re not allowed to talk to customers.
+  * They’re too important/busy/have been over communicated with.
   * You can’t pay customers for their time, even though our customers are professionals
 * We have a brand, we can’t devalue it with incomplete things
 * Don’t cannibalise the existing business
@@ -85,7 +86,7 @@ We’re not a startup, we can’t do all that startup stuff, so:
 
 Sound Familiar?
 
-## The Lean UX 'Principles' 
+## The Lean UX 'Principles'
 So, with this familiar story in mind, let's look at the Lean UX Principles and the issues I've seen in implementing them.
 
 <table>
@@ -122,7 +123,7 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <ul>
-          <li>Small. Hard in a large organisation</li> 
+          <li>Small. Hard in a large organisation</li>
           <li>Dedicated. Often not (this can be changed)</li>
           <li>Co-Located. Geography and makes this hard</li>
         </ul>
@@ -149,12 +150,12 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       <td>
         <ul>
           <li>Very hard for a traditional business to understand</li>
-          <li>Very hard for them to execute on</li> 
+          <li>Very hard for them to execute on</li>
         </ul>
         <p>
-        What have you been doing? 
+        What have you been doing?
         “Learning”...
-        Where’s my product? 
+        Where’s my product?
         </p>
       </td>
     </tr>
@@ -219,7 +220,7 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
       </td>
       <td>
         <p>
-        Everyone wants to see the entire concept and wants their idea included so a small design inventory is very hard to achieve. 
+        Everyone wants to see the entire concept and wants their idea included so a small design inventory is very hard to achieve.
         </p>
       </td>
     </tr>
@@ -293,6 +294,6 @@ So, with this familiar story in mind, let's look at the Lean UX Principles and t
   </tbody>
 </table>
 
-## OK, enough of the problems, how can we fix it? 
+## OK, enough of the problems, how can we fix it?
 
-In the next [blog post](/posts/lean-ux-focus-on-outcomes/)(s), I'll talk about some of the things I think we can do to help get things working. 
+In the next [blog post](/posts/lean-ux-focus-on-outcomes/)(s), I'll talk about some of the things I think we can do to help get things working.

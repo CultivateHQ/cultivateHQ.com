@@ -2,7 +2,7 @@
 title:  "Accessibility Debt: What Happens When You Do Accessibility Last"
 author: Caden Lovelace
 description: "By leaving our assumptions about disabled users unchallenged until the end of a project, we don't only do a bad job, we also create technical debt."
-tags: caden
+tags: accessibility
 ---
 
 Here's how you probably make an accessible website:
@@ -70,13 +70,13 @@ The truth is that you can't make a website accessible just by applying technique
 
 WebAIM has <a href="http://webaim.org/articles/pour/" target="_blank">an excellent series of articles</a> that outline a _people-focused_ approach to accessibility. It's based on four principles, called POUR:
 
-* __Perceivable__  
+* __Perceivable__
   The user has to be able to __perceive__ your interface. For example, a blind user cannot perceive a visual diagram, so some description or alternative content can be provided.
-* __Operable__  
+* __Operable__
   The user needs to have a way of __operating__ your interface. For example, a user who navigates with a keyboard only will be unable to operate an interface that requires a mouse.
-* __Understandable__  
+* __Understandable__
   The user needs to be able to __understand__ your interface. For example, if your instructions use a word that a user does not know and cannot understand from the context, they will be unable to act on your instructions.
-* __Robust__  
+* __Robust__
   The above points should be implemented __robustly__. They should work across as wide a range of devices and technologies — past, present, and future — as is practical.
 
 When you read it, you'll notice that it feels like a much more modern approach. Here's an excerpt:
