@@ -6,11 +6,11 @@ tags: elixir, elm
 ---
 
 <section class="callout">
-  I gave <a href="http://confreaks.tv/videos/elixirconf2015-phoenix-with-elm">a talk at ElixirConf 2015</a> on combining the <a href="http://www.phoenixframework.org/">Phoenix web framework</a> with the <a href="http://elm-lang.org">Elm programming language</a>. This is the tutorial that was referred to in that talk.
+  <p>I gave <a href="http://confreaks.tv/videos/elixirconf2015-phoenix-with-elm">a talk at ElixirConf 2015</a> on combining the <a href="http://www.phoenixframework.org/">Phoenix web framework</a> with the <a href="http://elm-lang.org">Elm programming language</a>. This is the tutorial that was referred to in that talk.</p>
 
-  The tutorial walks through the creation of a very basic seat saving application, like one you'd use when booking a flight for example. The application will do just enough to demonstrate the mechanisms for getting the two technologies talking to each other.
+  <p>The tutorial walks through the creation of a very basic seat saving application, like one you'd use when booking a flight for example. The application will do just enough to demonstrate the mechanisms for getting the two technologies talking to each other.</p>
 
-  There is an <a href="https://github.com/CultivateHQ/seat_saver-017">accompanying repo</a> for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
+  <p>There is an <a href="https://github.com/CultivateHQ/seat_saver-017">accompanying repo</a> for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.</p>
 </section>
 
 

@@ -6,11 +6,11 @@ tags: elixir, elm
 ---
 
 <section class="callout">
-  I gave [a talk at ElixirConf 2015](http://confreaks.tv/videos/elixirconf2015-phoenix-with-elm) on combining the [Phoenix web framework](http://www.phoenixframework.org/) with the [Elm programming language](http://elm-lang.org). This is the tutorial that was referred to in that talk.
+  <p>I gave <a href="http://confreaks.tv/videos/elixirconf2015-phoenix-with-elm">a talk at ElixirConf 2015</a> on combining the <a href="http://www.phoenixframework.org/">Phoenix web framework</a> with the <a href="http://elm-lang.org">Elm programming language</a>. This is the tutorial that was referred to in that talk.</p>
 
-  The tutorial walks through the creation of a very basic seat saving application, like one you'd use when booking a flight for example. The application will do just enough to demonstrate the mechanisms for getting the two technologies talking to each other.
+  <p>The tutorial walks through the creation of a very basic seat saving application, like one you'd use when booking a flight for example. The application will do just enough to demonstrate the mechanisms for getting the two technologies talking to each other.</p>
 
-  There is an [accompanying repo](https://github.com/CultivateHQ/seat_saver-017) for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.
+  <p>There is an <a href="https://github.com/CultivateHQ/seat_saver-017">accompanying repo</a> for this tutorial. Each of the numbered steps has an associated commit so that you can just look at the diffs if you'd rather not read through the whole thing.</p>
 </section>
 
 <section class="callout">
@@ -100,9 +100,9 @@ We now have our `update` function, but we're not using it anywhere. We could at 
 2. We need to change our `main` function to use the `beginnerProgram` function from the Html.App module. This takes as an argument a record with our init, update and view functions, does all the necessary wiring under the covers and returns `Program Never` values.
 
     <div class="callout">
-      A <code>Program</code> in Elm is a way to package up an Elm program. You can find out more in the [Elm docs](http://package.elm-lang.org/packages/elm-lang/core/4.0.1/Platform#Program).
+      A <code>Program</code> in Elm is a way to package up an Elm program. You can find out more in the <a href="http://package.elm-lang.org/packages/elm-lang/core/4.0.1/Platform#Program">Elm docs</a>.
 
-      The <code>Never</code> part just means that this operation can never fail. You can read [more on Never](http://package.elm-lang.org/packages/elm-lang/core/4.0.1/Basics#Never) in the Elm docs.
+      The <code>Never</code> part just means that this operation can never fail. You can read <a href="http://package.elm-lang.org/packages/elm-lang/core/4.0.1/Basics#Never">more on Never</a> in the Elm docs.
     </div>
 
     ```haskell
@@ -134,7 +134,7 @@ We now have our `beginnerProgram` set up, but it doesn't yet _do_ anything.
     We've added an `onClick` function to our attributes, which takes the Msg to be sent, and the current seat, as its argument.
 
     <div class="callout">
-      Our <code>Toggle</code> Msg needs to have the clicked Seat as an argument. However the <code>onClick</code> function can only accept one argument. So how do we get the Seat in there? We can do this in the same way as we would in maths, by denoting precedence of function execution with parentheses. When we write <code>onClick (Toggle seat)</code> what we are doing is creating a [partial function](https://wiki.haskell.org/Partial_functions) that binds the clicked seat to the Toggle function call. In other words, we create a Toggle function where we have already provided the Seat argument. This technique is known as [currying](https://en.wikipedia.org/wiki/Currying).
+      Our <code>Toggle</code> Msg needs to have the clicked Seat as an argument. However the <code>onClick</code> function can only accept one argument. So how do we get the Seat in there? We can do this in the same way as we would in maths, by denoting precedence of function execution with parentheses. When we write <code>onClick (Toggle seat)</code> what we are doing is creating a <a href="https://wiki.haskell.org/Partial_functions">partial function</a> that binds the clicked seat to the Toggle function call. In other words, we create a Toggle function where we have already provided the Seat argument. This technique is known as <a href="https://en.wikipedia.org/wiki/Currying">currying</a>.
     </div>
 
 2. We need to import the onClick event for this to work.
