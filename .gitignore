@@ -17,9 +17,13 @@
 # Ignore .DS_store file
 .DS_Store
 
-# Ignore the bower folder
-/source/bower_components
+# Ignore the npm folder
+/node_modules
 
 .ruby-version
 
 /vendor
+
+/.tmp
+
+/.webpack_build

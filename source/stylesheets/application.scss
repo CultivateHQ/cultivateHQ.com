@@ -1,7 +1,8 @@
 $legacy-ie: false !default;
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+@import 'compass';
 @import 'variables';
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
 @import 'normalize';
 @import 'compass';
 @import 'mixins';

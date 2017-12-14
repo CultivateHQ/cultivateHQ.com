@@ -9,8 +9,8 @@
     <link rel="feed" type="application/atom+xml" href="/feed.xml" title="Atom Feed">
     <link rel="icon" href="/favicon.png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag webpack_asset_path "application.scss" %>
     <!--[if (lt IE 9) & (!IEMobile)]>
       <%= stylesheet_link_tag "ie" %>
     <![endif]-->
-    <%= javascript_include_tag  "all" %>
+    <%= javascript_include_tag webpack_asset_path "site.js" %>

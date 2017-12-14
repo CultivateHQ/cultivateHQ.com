@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "start": "NODE_ENV=development webpack --watch -d --progress --color",
+    "build": "NODE_ENV=production webpack --bail -p"
+  },
+  "dependencies": {
+    "compass-mixins": "^0.12.10",
+    "file": "^0.2.2",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "tether": "^1.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-es2015": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.26.4",
+    "extract-loader": "^0.1.0",
+    "file-loader": "^0.9.0",
+    "node-sass": "^4.5.1",
+    "resolve-url-loader": "^2.0.2",
+    "sass-loader": "^4.1.1",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.16.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.3.1",
+    "webpack-manifest-plugin": "^1.1.0"
+  }
+}
