@@ -43,7 +43,7 @@ for each application in the apps/ directory.
 
 ```bash
 $ cd apps
-$ mix phoenix.new phoenix_app --no-ecto
+$ mix phx.new phoenix_app --no-ecto
 ```
 
 We can now run the web app from the umbrella project root:
@@ -52,9 +52,9 @@ We can now run the web app from the umbrella project root:
 $ mix phx.server
 ```
 
-[\[GITHUB REPO\]:What was added (GitHub)](https://github.com/CultivateHQ/paraguas/commit/20a5716d0cc1a5f08d4b1c0f4186650b3457742d).
+[\[GITHUB REPO\]:What was added](https://github.com/CultivateHQ/paraguas/commit/c8de5d363d18bdc3c3e712780edcc68d92abcfbd).
 
-We're going to add [basic_auth](https://github.com/cultivatehq/basic_auth) to the web app for ExtraSecurity™ (and as an example to document how to use environment variables further ahead). We start by adding the dependency in `paraguas/apps/phoenix_app/mix.exs`:
+We're going to add [basic_auth](https://github.com/cultivatehq/basic_auth) to the web app for ExtraSecurity™ and to have more environment variables to use as an example. We start by adding the dependency in `paraguas/apps/phoenix_app/mix.exs`:
 
 ```elixir
 defp deps do
@@ -88,7 +88,7 @@ config :phoenix_app, authentication: [
 Finally, add BasicAuth to the router pipeline:
 
 ```elixir
-# paraguas/apps/phoenix_app/web/router.ex
+# paraguas/apps/phoenix_app/lib/phoenix_app_web/router.ex
 pipeline :authentication do
   plug BasicAuth, use_config: {:phoenix_app, :authentication}
 end
@@ -101,7 +101,7 @@ end
 
 Run `mix deps.get` and `mix phx.server` again to start the web app with basic auth enabled. As you can see, we set simple credentials for the development environment and will load proper credentials from environment variables in production. Remember to fix your default Phoenix test to use authentication.
 
-[\[GITHUB REPO\]: Adding basic_auth](https://github.com/CultivateHQ/paraguas/commit/240d140badbd092e6d50cb10942b743471a3d9d2)
+[\[GITHUB REPO\]: Adding basic_auth](https://github.com/CultivateHQ/paraguas/commit/517022974b57adcdf577537908a8a8544fb715be)
 
 Now, let's create another app to interact with our web app so we can take advantage of umbrella. Again, we're building a very simple app so we can focus on build details further ahead.
 
@@ -137,7 +137,7 @@ After tying it all together, I created a [Phoenix channel](https://hexdocs.pm/ph
 
 ![Phoenix App](/images/posts/umbrella.gif "Phoenix App")
 
-[\[GITHUB REPO\]: Implement Phoenix channel to send Greeter hello to frontend](https://github.com/CultivateHQ/paraguas/commit/03dbfc4a537b8b00cf6c1437703fb74d2061d6b8).
+[\[GITHUB REPO\]: Implement Phoenix channel to send Greeter hello to frontend](https://github.com/CultivateHQ/paraguas/commit/bc5e0ab4afd24b002ac817a2d3cd5ab07b6590d8).
 
 Now that we have a couple of "functional" Elixir apps in an umbrella project, it's time to work on the release.
 
@@ -187,11 +187,17 @@ config :phoenix_app, PhoenixApp.Endpoint,
   version: Application.spec(:phoenix_app, :vsn)
 ```
 
-Following the distillery guide for Phoenix, we need to build the release, wich requires the static assets to be built. In `paraguas/apps/phoenix_app` run:
+Following the distillery guide for Phoenix, we need to build the release, wich requires the static assets to be built. In `paraguas/apps/phoenix_app/assets` run:
 
 ```bash
+$ npm install
 # build assets in production mode.
 $ ./node_modules/brunch/bin/brunch b -p
+```
+
+In `paraguas/apps/phoenix_app/` run:
+
+```bash
 # compressess and tags assets for proper caching.
 $ MIX_ENV=prod mix phoenix.digest
 ```
@@ -262,7 +268,9 @@ $ REPLACE_OS_VARS=true \
   _build/prod/rel/paraguas/bin/paraguas foreground
 ```
 
-[\[GITHUB REPO\]: Add distillery and configs](https://github.com/CultivateHQ/paraguas/commit/04b0d8658db4ec4469c8e1ec322f7a36021d293f)
+[\[GITHUB REPO\]: Add distillery and configs](https://github.com/CultivateHQ/paraguas/commit/55e6e78c7dba5c607104e0b6de06bbe534232c8e)
+
+
 
 ## Containerize with Docker
 
@@ -301,7 +309,7 @@ RUN mix do deps.get, deps.compile
 COPY apps apps
 
 # Build assets in production mode:
-WORKDIR /paraguas/apps/phoenix_app
+WORKDIR /paraguas/apps/phoenix_app/assets
 RUN npm install && ./node_modules/brunch/bin/brunch build --production
 
 WORKDIR /paraguas/apps/phoenix_app
@@ -344,7 +352,7 @@ CMD ["/paraguas/bin/paraguas", "foreground"]
 We can now build these containers with:
 
 ```bash
-$ docker build -t paraguas:0.1.0
+$ docker build -t paraguas:0.1.0 .
 ```
 
 If everything went well, we now have a working image:
@@ -364,7 +372,7 @@ $ docker run --rm -ti \
              -e BASIC_AUTH_USERNAME=username \
              -e BASIC_AUTH_PASSWORD=password \
              -e BASIC_AUTH_REALM=realm \
-             paraguas
+             paraguas:0.1.0
 ```
 
 You can check the final source code in [cultivateHQ/paraguas](https://github.com/CultivateHQ/paraguas/). And If you have any feedback or questions about this post, tweet at us [@cultivatehq](http://twitter.com/cultivatehq).
