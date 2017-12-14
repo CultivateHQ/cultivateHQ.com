@@ -1,3 +1,10 @@
+require "lib/webpack_asset_helpers"
+
+page '/*.xml', layout: false
+page '/*.json', layout: false
+page '/*.txt', layout: false
+
+
 activate :breadcrumbs do
 end
 
@@ -8,7 +15,6 @@ activate :blog do |blog|
   blog.layout = 'post'
   blog.summary_generator = proc { |post| post.data.description }
   blog.paginate = true
-  blog.taglink = "tag/{tag}.html"
   blog.tag_template = 'posts/tag.html'
   # blog.calendar_template = "calendar.html"
 end
@@ -72,11 +78,6 @@ page '/feed.xml', layout: false
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
-# Reload the browser automatically whenever files change
-configure :development do
-  activate :livereload
-end
-
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
@@ -85,22 +86,7 @@ end
 # end
 
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
-after_configuration do
-  # Ensure bower is run before building
-  puts '** Running bower install'
-  unless system('bower install')
-    puts '*** ERROR running bower install ***'
-    exit(1)
-  end
-  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  sprockets.append_path File.join root.to_s, @bower_config['directory']
-end
-
-activate :sprockets
-
 set :images_dir, 'images'
 
 set :markdown_engine, :redcarpet
@@ -127,10 +113,12 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-activate :syntax, line_numbers: false
 
-# The below will override .html on blog posts as well!!
-activate :directory_indexes
+activate :syntax, line_numbers: false
 
 #Activate the alias(redirect) plugin
 activate :alias
+
+activate :directory_indexes
+
+helpers WebpackAssetHelper
