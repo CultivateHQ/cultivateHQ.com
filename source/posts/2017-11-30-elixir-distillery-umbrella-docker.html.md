@@ -3,6 +3,7 @@ title: Building and configuring a Phoenix app with Umbrella for releasing with D
 author: Fernando Briano
 description: A tutorial to understand how Phoenix, Umbrella, Distillery and Docker fit together.
 tags: elixir
+image: /images/posts/paraguas.jpg
 ---
 
 This tutorial goes through the process of building *Elixir* and *Phoenix* apps within an *Umbrella* project, releasing it with *Distillery* and containerizing it with *Docker*, ready for deploying in production. There's an [accompanying repository](https://github.com/CultivateHQ/paraguas) for this tutorial, but you'll find commits related to each part linked in the article whenever it's relevant.
@@ -327,11 +328,14 @@ $ REPLACE_OS_VARS=true \
   BASIC_AUTH_USERNAME=user \
   BASIC_AUTH_PASSWORD=password \
   BASIC_AUTH_REALM="Our realm" \
-  PARAGUAS=42 \
+  SOMBRILLA=42 \
   _build/prod/rel/paraguas/bin/paraguas foreground
 ```
 
-[Screenshot of what it looks like and link to github]
+And this is what the app looks like in our browser:
+
+![Paraguas](/images/posts/paraguas.jpg "Paraguas")
+
 
 
 ## Containerize with Docker
@@ -434,6 +438,7 @@ $ docker run --rm -ti \
              -e BASIC_AUTH_USERNAME=username \
              -e BASIC_AUTH_PASSWORD=password \
              -e BASIC_AUTH_REALM=realm \
+             -e SOMBRILLA=42 \
              paraguas:0.1.0
 ```
 
