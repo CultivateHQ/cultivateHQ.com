@@ -53,7 +53,7 @@ We can now run the web app from the umbrella project root:
 $ mix phx.server
 ```
 
-[\[GITHUB REPO\]:What was added](https://github.com/CultivateHQ/paraguas/commit/c8de5d363d18bdc3c3e712780edcc68d92abcfbd).
+[\[GITHUB REPO\]: Adding Phoenix](https://github.com/CultivateHQ/paraguas/commit/c8de5d363d18bdc3c3e712780edcc68d92abcfbd).
 
 We're going to add [basic_auth](https://github.com/cultivatehq/basic_auth) to the web app for ExtraSecurity™ and to have more environment variables to use as an example. We start by adding the dependency in `paraguas/apps/phoenix_app/mix.exs`:
 
@@ -80,9 +80,9 @@ I used this same configuration ☝ for `text.exs`.
 ```elixir
 # paraguas/apps/phoenix_app/config/prod.exs
 config :phoenix_app, authentication: [
-  username: "${BASIC_AUTH_USERNAME}",
-  password: "${BASIC_AUTH_PASSWORD}",
-  realm:    "${BASIC_AUTH_REALM}"
+  username: {:system, "BASIC_AUTH_USERNAME"},
+  password: {:system, "BASIC_AUTH_PASSWORD"},
+  realm:    {:system, "BASIC_AUTH_REALM"}
 ]
 ```
 
@@ -102,7 +102,7 @@ end
 
 Run `mix deps.get` and `mix phx.server` again to start the web app with basic auth enabled.
 
-[\[GITHUB REPO\]: Adding basic_auth](https://github.com/CultivateHQ/paraguas/commit/517022974b57adcdf577537908a8a8544fb715be)
+[\[GITHUB REPO\]: Adding basic_auth](https://github.com/CultivateHQ/paraguas/commit/af94967767ce0c97610eaa0c36ac47e882e9183f)
 
 ## Apps interacting under the umbrella
 
@@ -140,7 +140,7 @@ After tying it all together, I created a [Phoenix channel](https://hexdocs.pm/ph
 
 ![Phoenix App](/images/posts/umbrella.gif "Phoenix App")
 
-[\[GITHUB REPO\]: Implement Phoenix channel to send Greeter hello to frontend](https://github.com/CultivateHQ/paraguas/commit/bc5e0ab4afd24b002ac817a2d3cd5ab07b6590d8).
+[\[GITHUB REPO\]: Implement Phoenix channel to send Greeter hello to frontend](https://github.com/CultivateHQ/paraguas/commit/696957f96a64554894c1b91d8d21528c8315f2fc)
 
 Now that we have a couple of "functional" Elixir apps in an umbrella project, it's time to work on the release.
 
@@ -182,7 +182,7 @@ First we need to edit `paraguas/apps/phoenix_app/config/prod.exs` and add the `s
 
 ```elixir
 config :phoenix_app, PhoenixApp.Endpoint,
-  http: [:inet6, port: "${PORT}"],
+  http: [:inet6, port: {:system, "PORT"}],
   url: [host: "localhost", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
@@ -226,11 +226,13 @@ server can't start because :port in config is nil, please use a valid port numbe
 
 So far we have two Elixir apps in an umbrella project and a distillery release which builds. We can run the app in development with `mix phx.server` and run the tests with `mix test` from the root app. But there's still some more set up we need to work on to get it working for production.
 
-## VM Configuration for environment variables
+## Environment variables
 
-If you look at the `config/prod.exs` file in our Phoenix App, there's a PORT variable which we're not setting anywhere. We can load environment variables into our release. We also need to set the authentication variables values for `basic_auth`.
+If you look at the `config/prod.exs` file in our Phoenix App, there's a PORT variable which we're not setting anywhere. We also need to set the authentication variables values for `basic_auth`.
 
-We can pass these variables to the build with the following command:
+We could use `prod.secret.exs`, but it's not practical for the approach we want to use. Since we're going to deploy our app in a Docker container, we want to be able to change the variables without having to rebuild. And we can even start several Docker container with different variables so these have to be passed at runtime.
+
+We can pass environment variables into our release with the following command:
 
 ```bash
 $ PORT=4000 \
@@ -241,102 +243,9 @@ $ PORT=4000 \
   _build/prod/rel/paraguas/bin/paraguas foreground
 ```
 
-The `:system` tuple is supported, which mean `System.get_env` will be called to get the values at runtime. Unfortunately, only strings are supported. What if we need a variable to be a number? Phoenix can take a String as the port number, but if our app depended on a simple Plug running in Cowboy, or if we needed to set a database connection pool size? There's a solution for that.
+The `:system` tuple is supported, which mean `System.get_env` will be called to get the values at runtime. So we now have a production release with environment variables at runtime.
 
-## Introducing vm.args
-
-Another way of setting environment variables is using [Distillery's vm.args](https://hexdocs.pm/distillery/getting-started.html#vm-configuration). We need to replace `{:system, VAR}` with `${VAR}` and set `REPLACE_OS_VARS=true` so we can use environment variables for configuration.
-
-Distillery will automatically generate a vm.args file in the release by default. This configures the VM with a name and cookie. We can provide our own vm.args configuration and take advantage of metadata provided by Distillery. We just need to create a vm.args file and tell Distillery where it is in our release configuration.
-
-We'll add `vm.args` in the `rel` directory and set it in `rel/config.exs`:
-
-```elixir
-release :paraguas do
-  set version: "0.1.0"
-  set applications: [
-    :runtime_tools,
-    greeter: :permanent,
-    phoenix_app: :permanent
-  ]
-  set vm_args: "rel/vm.args"
-end
-```
-
-Our vm.args file:
-
-```
-## Application configuration with REPLACE_OS_VARS=true
--phoenix_app port ${PORT}
-```
-
-We also have to change the `prod.exs` file in `apps/phoenix_app/config`, we need to set the `port` and `basic_auth` variables.
-
-```elixir
-config :phoenix_app, PhoenixAppWeb.Endpoint,
-  ...
-  http: [:inet6, port: "${PORT}"]
-
-config :phoenix_app, authentication: [
-  username: "${BASIC_AUTH_USERNAME}",
-  password: "${BASIC_AUTH_PASSWORD}",
-  realm:    "${BASIC_AUTH_REALM}"
-]
- ```
-
-Let's build a new release to make sure our latest changes are applied:
-
-```bash
-$ MIX_ENV=prod mix release
-```
-
-And now we should run our relase with:
-
-```bash
-$ REPLACE_OS_VARS=true \
-  PORT=4000 \
-  COOKIE=cookie \
-  BASIC_AUTH_USERNAME=user \
-  BASIC_AUTH_PASSWORD=password \
-  BASIC_AUTH_REALM="Our realm" \
-  _build/prod/rel/paraguas/bin/paraguas foreground
-```
-
-[\[GITHUB REPO\]: Add distillery and configs](https://github.com/CultivateHQ/paraguas/commit/ade71ce5200a985da62d9f767c263fb5e37e0be9)
-
-To test integer types through environment variables, I added a numeric variable as an example, and I show it in the Phoenix app frontend. I really didn't want to complicate things further with a database connection pool 😬.
-
-I'm calling this variable `sombrilla`, and the first step is adding it to the `prod.exs`` file:
-
-```elixir
-# paraguas/apps/phoenix_app/config/prod.exs
-config :phoenix_app, sombrilla: "${SOMBRILLA}"
-```
-
-And in `vm.args`:
-
-```
-phoenix_app sombrilla ${SOMBRILLA}
-```
-
-I then wrote some code in the controller and template to display the value and show that it is in fact an integer. To see this, we just need to build the release one more time, and add the environment variable when we run it:
-
-```bash
-$ REPLACE_OS_VARS=true \
-  PORT=4000 \
-  COOKIE=cookie \
-  BASIC_AUTH_USERNAME=user \
-  BASIC_AUTH_PASSWORD=password \
-  BASIC_AUTH_REALM="Our realm" \
-  SOMBRILLA=42 \
-  _build/prod/rel/paraguas/bin/paraguas foreground
-```
-
-And this is what the app looks like in our browser:
-
-![Paraguas](/images/posts/paraguas.jpg "Paraguas")
-
-
+[\[GITHUB REPO\]: Add distillery and configs](https://github.com/CultivateHQ/paraguas/commit/41901e1bcadc8b3dbfe63d7412377515cd638dd5)
 
 ## Containerize with Docker
 
@@ -359,6 +268,7 @@ WORKDIR /paraguas
 ENV MIX_ENV=prod
 
 # Umbrella
+# Copy mix files so we use distillery:
 COPY mix.exs mix.lock ./
 COPY config config
 
@@ -429,7 +339,7 @@ REPOSITORY                        TAG                 IMAGE ID            CREATE
 paraguas                          0.1.0               32146e78bc11        About a minute ago   71.2MB
 ```
 
-Finally, our code is available to run in ac sontainer. Remember we need to pass in the environment variables to our distillery release. So either source them from an .env file, or pass them as parameters to the `docker run` command:
+Finally, our code is available to run in a container. Remember we need to pass in the environment variables to our distillery release. So either source them from an .env file, or pass them as parameters to the `docker run` command:
 
 ```bash
 $ docker run --rm -ti \
@@ -438,8 +348,63 @@ $ docker run --rm -ti \
              -e BASIC_AUTH_USERNAME=username \
              -e BASIC_AUTH_PASSWORD=password \
              -e BASIC_AUTH_REALM=realm \
-             -e SOMBRILLA=42 \
              paraguas:0.1.0
 ```
 
+[\[GITHUB REPO\]: Add Dockerfile](https://github.com/CultivateHQ/paraguas/commit/34a8f577c07932d6b66bdc6a4b068f2444292c0d)
+
+## Introducing vm.args
+
+Using the configuration we saw here, only strings are supported. What if we need a variable to be a number? Phoenix can take a String as the port number, but if our app depended on a simple Plug running in Cowboy, or if we needed to set a database connection pool size? There's a solution for that: [Distillery's vm.args](https://hexdocs.pm/distillery/getting-started.html#vm-configuration).
+
+Distillery will automatically generate a vm.args file in the release by default. This configures the VM with a name and cookie. We can provide our own vm.args configuration and take advantage of metadata provided by Distillery. We just need to create a vm.args file and tell Distillery where it is in our release configuration.
+
+To test integer types through environment variables, I added a numeric variable as an example, and it is displayed in the Phoenix app frontend. I really didn't want to complicate things further with a database connection pool 😬.
+
+ We need to use `${VAR}` instead of `{:system, VAR}` and set `REPLACE_OS_VARS=true` so we can use these environment variables for configuration. I'm calling this variable `sombrilla`, and the first step is adding it to the `prod.exs`` file:
+
+```elixir
+# paraguas/apps/phoenix_app/config/prod.exs
+config :phoenix_app, sombrilla: "${SOMBRILLA}"
+```
+
+We'll add `vm.args` in the `rel` directory and set it in `rel/config.exs`:
+
+```elixir
+release :paraguas do
+  set version: "0.1.0"
+  set applications: [
+    :runtime_tools,
+    greeter: :permanent,
+    phoenix_app: :permanent
+  ]
+  set vm_args: "rel/vm.args"
+end
+```
+
+And our `vm.args` file:
+
+```
+-phoenix_app sombrilla ${SOMBRILLA}
+```
+
+I then wrote some code in the controller and template to display the value and show that it is in fact an integer. To see this, we just need to build the release one more time, and add the environment variable when we run it:
+
+```bash
+$ REPLACE_OS_VARS=true \
+  PORT=4000 \
+  COOKIE=cookie \
+  BASIC_AUTH_USERNAME=user \
+  BASIC_AUTH_PASSWORD=password \
+  BASIC_AUTH_REALM="Our realm" \
+  SOMBRILLA=42 \
+  _build/prod/rel/paraguas/bin/paraguas foreground
+```
+
+And this is what the app looks like in our browser:
+
+![Paraguas](/images/posts/paraguas.jpg "Paraguas")
+
 You can check the final source code in [cultivateHQ/paraguas](https://github.com/CultivateHQ/paraguas/). And If you have any feedback or questions about this post, tweet at us [@cultivatehq](http://twitter.com/cultivatehq).
+
+Acknowledgements: [Configuring Elixir Libraries](http://michal.muskala.eu/2017/07/30/configuring-elixir-libraries.html) by Michał Muskała.
