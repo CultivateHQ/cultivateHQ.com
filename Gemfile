@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'builder'
 gem 'json', '~> 1.8.6'
 
-gem 'font-awesome-sass'
 gem 'middleman'
 gem 'middleman-blog'
 gem 'middleman-breadcrumbs'
