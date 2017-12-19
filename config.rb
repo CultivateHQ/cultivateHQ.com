@@ -1,8 +1,10 @@
 activate :external_pipeline,
          name: :webpack,
-         command: build? ?
-                    './node_modules/webpack/bin/webpack.js --bail -p' :
-                    './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
+         command: if build?
+                    './node_modules/webpack/bin/webpack.js --bail -p'
+                  else
+                    './node_modules/webpack/bin/webpack.js --watch -d --color'
+                  end,
          source: 'build',
          latency: 1
 
@@ -16,7 +18,7 @@ activate :blog do |blog|
   blog.layout = 'post'
   blog.summary_generator = proc { |post| post.data.description }
   blog.paginate = true
-  blog.taglink = "tag/{tag}.html"
+  blog.taglink = 'tag/{tag}.html'
   blog.tag_template = 'posts/tag.html'
   # blog.calendar_template = "calendar.html"
 end
@@ -127,5 +129,5 @@ activate :syntax, line_numbers: false
 # The below will override .html on blog posts as well!!
 activate :directory_indexes
 
-#Activate the alias(redirect) plugin
+# Activate the alias(redirect) plugin
 activate :alias
