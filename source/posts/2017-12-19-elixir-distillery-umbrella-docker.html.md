@@ -272,17 +272,9 @@ ENV MIX_ENV=prod
 COPY mix.exs mix.lock ./
 COPY config config
 
-# Our Greeter App
-COPY apps/greeter/config apps/greeter/config/
-COPY apps/greeter/mix.exs apps/greeter/
-
-# Phoenix App
-COPY apps/phoenix_app/mix.exs apps/phoenix_app/
-COPY apps/phoenix_app/config apps/phoenix_app/config/
+COPY apps apps
 
 RUN mix do deps.get, deps.compile
-
-COPY apps apps
 
 # Build assets in production mode:
 WORKDIR /paraguas/apps/phoenix_app/assets
