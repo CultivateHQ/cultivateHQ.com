@@ -1,3 +1,11 @@
+activate :external_pipeline,
+         name: :webpack,
+         command: build? ?
+                    './node_modules/webpack/bin/webpack.js --bail -p' :
+                    './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
+         source: 'build',
+         latency: 1
+
 activate :breadcrumbs do
 end
 
@@ -87,19 +95,6 @@ end
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
-
-after_configuration do
-  # Ensure bower is run before building
-  puts '** Running bower install'
-  unless system('bower install')
-    puts '*** ERROR running bower install ***'
-    exit(1)
-  end
-  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  sprockets.append_path File.join root.to_s, @bower_config['directory']
-end
-
-activate :sprockets
 
 set :images_dir, 'images'
 

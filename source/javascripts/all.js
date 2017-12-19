@@ -1,10 +1,6 @@
-
-//= require jquery/dist/jquery.js
-//= require modernizr.custom.31571.js
-//= require scripts.js
+require('./scripts.js')
 
 $(function() {
-
   var navigateToHash = function(hash) {
     var selector = '[name="'+hash+'"]';
 
@@ -37,20 +33,21 @@ $(function() {
 $(document).ready(function(){
   // $("#site-header").sticky({topSpacing:0});
 
-  if(!Modernizr.svg) {
+  // Removed Modernizr for this line which checks for SVG compatibility
+  if(!(document.createElementNS && document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect)) {
     $('img[src*="svg"]').attr('src', function() {
       return $(this).attr('src').replace('.svg', '.png');
     });
   }
 
   // Hover events for touch devices
-	$('.services-link, #site-navigation a, .page-content a, .button').bind('touchstart touchend', function() {
-			$(this).toggleClass('hover');
-	});
+  $('.services-link, #site-navigation a, .page-content a, .button').bind('touchstart touchend', function() {
+      $(this).toggleClass('hover');
+  });
 
   // IE9 (or less) detection
   if ( ie9 ) {
-		$("body").addClass("ie9");
+    $("body").addClass("ie9");
   }
 
   if ( $('body').is('.ie9') ) {
@@ -75,5 +72,4 @@ $(document).ready(function(){
       });
     });
   }
-
 });
