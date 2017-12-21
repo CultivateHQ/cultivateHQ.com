@@ -1,3 +1,13 @@
+activate :external_pipeline,
+         name: :webpack,
+         command: if build?
+                    './node_modules/webpack/bin/webpack.js --bail -p'
+                  else
+                    './node_modules/webpack/bin/webpack.js --watch -d --color'
+                  end,
+         source: 'build',
+         latency: 1
+
 activate :breadcrumbs do
 end
 
@@ -8,7 +18,7 @@ activate :blog do |blog|
   blog.layout = 'post'
   blog.summary_generator = proc { |post| post.data.description }
   blog.paginate = true
-  blog.taglink = "tag/{tag}.html"
+  blog.taglink = 'tag/{tag}.html'
   blog.tag_template = 'posts/tag.html'
   # blog.calendar_template = "calendar.html"
 end
@@ -88,19 +98,6 @@ set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
-after_configuration do
-  # Ensure bower is run before building
-  puts '** Running bower install'
-  unless system('bower install')
-    puts '*** ERROR running bower install ***'
-    exit(1)
-  end
-  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  sprockets.append_path File.join root.to_s, @bower_config['directory']
-end
-
-activate :sprockets
-
 set :images_dir, 'images'
 
 set :markdown_engine, :redcarpet
@@ -132,5 +129,5 @@ activate :syntax, line_numbers: false
 # The below will override .html on blog posts as well!!
 activate :directory_indexes
 
-#Activate the alias(redirect) plugin
+# Activate the alias(redirect) plugin
 activate :alias

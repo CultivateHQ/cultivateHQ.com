@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'builder'
-gem 'font-awesome-sass'
 gem 'json', '~> 1.8.6'
 
 gem 'middleman'
+gem 'middleman-alias'
 gem 'middleman-blog'
 gem 'middleman-breadcrumbs'
 gem 'middleman-cli'
@@ -12,9 +12,7 @@ gem 'middleman-compass'
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy',
                         branch: 'master'
 gem 'middleman-livereload'
-gem 'middleman-sprockets', '~> 4.0.0.rc'
 gem 'middleman-syntax'
-gem 'middleman-alias'
 gem 'nokogiri'
 gem 'redcarpet'
 gem 'rubocop'
