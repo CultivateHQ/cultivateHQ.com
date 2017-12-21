@@ -10,7 +10,7 @@ You'll need to make sure you have node and npm installed.
     git clone git@github.com:CultivateHQ/cultivateHQ.com.git
     cd cultivateHQ
     bundle
-    npm install bower -g
+    npm install
     bundle exec middleman server
 
 All being well, you'll have a server running on [localhost - port 4567](http://0.0.0.0:4567)
