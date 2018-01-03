@@ -3,10 +3,12 @@ title: Building and configuring a Phoenix app with Umbrella for releasing with D
 author: Fernando Briano
 description: A tutorial to understand how Phoenix, Umbrella, Distillery and Docker fit together.
 tags: elixir
-image: /images/posts/paraguas.jpg
+image: /images/posts/docker-umbrella-elixir-phoenix.png
 ---
 
 This tutorial goes through the process of building *Elixir* and *Phoenix* apps within an *Umbrella* project, releasing it with *Distillery* and containerizing it with *Docker*, ready for deploying in production. There's an [accompanying repository](https://github.com/CultivateHQ/paraguas) for this tutorial, but you'll find commits related to each part linked in the article whenever it's relevant.
+
+![Docker Whale](/images/posts/docker-umbrella-elixir-phoenix.svg "Docker")
 
 ## Opening the umbrella
 
