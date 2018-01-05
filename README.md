@@ -38,34 +38,47 @@ If you want to create a "Shout out" panel, with the larger text (see About Us) a
 
 You can use this code to create a shout out div...
 
-	<div class="shout-out">
+    <div class="shout-out">
       <p>Content in here</p>
     </div>
-    
+
 If you want a div with a line divider under it, add the `divider` class...
 
     <div class="shout-out divider">
       <p>Content in here</p>
     </div>
-    
+
 Both of these divs must be in inside a `page-layout` div for the font sizes and links to work properly.
 
 e.g.
 
-	<div class="page-content min-width padding-large">
-	  <div class="shout-out divider">
+    <div class="page-content min-width padding-large">
+      <div class="shout-out divider">
         <p>Content in here</p>
       </div>
-	</div>
-	
-### Blog Posts	
+    </div>
 
-For blog posts, I've kept it backwards compatible with all of the posts, code snippets work in the same way and so does the use of 
+### Blog Posts
 
-	<section class="callout">
-		Content in here
-	</section>
-	
+If you want to set an image for Twitter Cards (we're using [Summary with lage image](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image)) and the [Open Graph protocol](http://opengraphprotocol.org/) (the image displayed when a blog post is shared in Facebook and other sites), set the `image` variable in the post's metadata. Example:
+
+```
+---
+title: Getting started with Docker - images and containers
+author: Fernando Briano
+description: A quick guide to get you up and running with Docker.
+tags: docker
+image: /images/posts/docker.jpg
+---
+```
+The image file should be placed in `source/images/posts` (or any other directory you create in `source/images`).
+
+For blog posts, I've kept it backwards compatible with all of the posts, code snippets work in the same way and so does the use of
+
+    <section class="callout">
+        Content in here
+    </section>
+
 Which gets put in a little grey box.
 
 ### Full Width content
@@ -74,24 +87,21 @@ In order to get a full width rows, you need to break the content div. For exampl
 
 #### Row
 
-	<div class="row row--image-feature">IMAGE</div>
-	
+    <div class="row row--image-feature">IMAGE</div>
+
 #### Testimonial
-	<blockquote class="testimonial-quote-macro">
-   	 <div class="min-width">
-    	<div class="testimonial-quote__image">IMAGE</div>
-     	 Quote
-     	 <cite>Cite</cite>
-   	   </div>
-  	</blockquote>	
-  	
+    <blockquote class="testimonial-quote-macro">
+     <div class="min-width">
+        <div class="testimonial-quote__image">IMAGE</div>
+         Quote
+         <cite>Cite</cite>
+       </div>
+    </blockquote>
+
  Then you'll need to re-open the page layout divs again e.g.
- 
- 	<div class="page-content padding-large-top">
-    	<div class="min-width">
-    	Content
-    	</div>
+
+    <div class="page-content padding-large-top">
+        <div class="min-width">
+        Content
+        </div>
     </div>
-    
-  	
-       	
