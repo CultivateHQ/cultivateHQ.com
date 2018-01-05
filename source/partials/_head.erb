@@ -8,6 +8,18 @@
     <link rel="feed" type="application/atom+xml" href="/feed.xml" title="Atom Feed">
     <link rel="icon" href="/favicon.png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@cultivatehq"/>
+    <meta name="twitter:title" content="<%= current_page.data.title || "Cultivate" %>"/>
+    <meta name="twitter:description" content="<%= current_page.data.description %>"/>
+    <meta name="twitter:creator" content="@cultivatehq"/>
+    <meta name="twitter:image:src" content="<%= ImageHelpers.featured_image(current_page, config[:host]) %>"/>
+    <meta name="twitter:domain" content="cultivatehq.com"/>
+    <meta property="og:title" content="<%= current_page.data.title || "Cultivate" %>" />
+    <meta property="og:description" content="<%= current_page.data.description %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://cultivatehq.com" />
+    <meta property="og:image" content="<%= ImageHelpers.featured_image(current_page, config[:host]) %>" />
     <%= stylesheet_link_tag "application" %>
     <!--[if (lt IE 9) & (!IEMobile)]>
       <%= stylesheet_link_tag "ie" %>

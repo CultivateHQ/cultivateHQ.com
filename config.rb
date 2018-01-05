@@ -85,6 +85,7 @@ page '/feed.xml', layout: false
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  config[:host] = 'http://localhost:4567'
 end
 
 # Methods defined in the helpers block are available in templates
@@ -122,6 +123,7 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+  config[:host] = 'http://cultivatehq.com'
 end
 
 activate :syntax, line_numbers: false
