@@ -13,7 +13,7 @@
 # Ignore cache
 /.sass-cache
 /.cache
-
+/.tmp
 # Ignore .DS_store file
 .DS_Store
 
@@ -24,3 +24,4 @@
 
 /vendor
 /node_modules
+/.webpack_build
