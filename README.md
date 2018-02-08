@@ -17,11 +17,20 @@ All being well, you'll have a server running on [localhost - port 4567](http://0
 
 ## Publishing Changes
 
-Once your ready to push changes to the live website, run:
+We have had some issues now with using `middleman-deploy` to deploy over `sftp` to a static site. Issues as in it was missing all the stylesheets
+and javascript or, on upgrading, it fails with a message saying that deploy is an old an usupported plugin type. So to deploy, run
 
-    bundle exec middleman deploy
+```
+./deploy.sh
+```
 
-This will build the project and deploy it to the cultivatehq.github.io repository
+Of course you will have had to have submitted your public ssh key to https://github.com/CultivateHQ/cultivate-infrastructure/blob/master/playbook/user_keys/public_keys
+before the playbook was last run for you to have access to the server.
+
+## Rolling back deployed changes
+
+A dated version of the each deploy is put in `/home/static` on the server. Simply ssh in to `static@cultivatehq.com`, `rm -rf cultivatehq.com` and `tar -zxvf`
+the version you wish to restore.
 
 
 ## Layout Styling

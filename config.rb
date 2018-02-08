@@ -23,16 +23,6 @@ activate :blog do |blog|
   # blog.calendar_template = "calendar.html"
 end
 
-# activate :deploy do |deploy|
-#   deploy.build_before = true
-#   deploy.deploy_method = :sftp
-
-#   deploy.host = "cultivatehq.com"
-#   deploy.port = 22
-#   deploy.user = "static"
-#   deploy.path = "/home/static/cultivatehq.com"
-# end
-
 ###
 # Compass
 ###
@@ -116,7 +106,7 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
-  config[:host] = 'http://cultivatehq.com'
+  config[:host] = 'https://cultivatehq.com'
 end
 
 activate :syntax, line_numbers: false
