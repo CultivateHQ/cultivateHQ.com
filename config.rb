@@ -23,22 +23,15 @@ activate :blog do |blog|
   # blog.calendar_template = "calendar.html"
 end
 
-activate :deploy do |deploy|
-  deploy.build_before = true
-  deploy.deploy_method = :git
-  # Optional Settings
-  deploy.remote   = 'git@github.com:CultivateHQ/cultivatehq.github.io.git'
-  deploy.branch   = 'master'
+# activate :deploy do |deploy|
+#   deploy.build_before = true
+#   deploy.deploy_method = :sftp
 
-  # commit strategy: can be :force_push or :submodule, default: :force_push
-  #
-  # deploy.strategy = :submodule
-
-  # commit message (can be empty),
-  # default: Automated commit at `timestamp` by middleman-deploy `version`
-  #
-  # deploy.commit_message = 'custom-message'
-end
+#   deploy.host = "cultivatehq.com"
+#   deploy.port = 22
+#   deploy.user = "static"
+#   deploy.path = "/home/static/cultivatehq.com"
+# end
 
 ###
 # Compass
