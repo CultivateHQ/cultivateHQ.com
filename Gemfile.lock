@@ -1,13 +1,3 @@
-GIT
-  remote: git://github.com/middleman-contrib/middleman-deploy.git
-  revision: 4d04b550b4c6888265d83ee9689f41e29dbae535
-  branch: master
-  specs:
-    middleman-deploy (2.0.0.pre.alpha)
-      middleman-core (>= 3.2)
-      net-sftp
-      ptools
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -18,10 +8,10 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    ast (2.3.0)
-    backports (3.10.3)
+    ast (2.4.0)
+    backports (3.11.1)
     builder (3.2.3)
-    chunky_png (1.3.8)
+    chunky_png (1.3.10)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -49,7 +39,7 @@ GEM
     execjs (2.7.0)
     fast_blank (1.0.0)
     fastimage (2.1.1)
-    ffi (1.9.18)
+    ffi (1.9.21)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -116,12 +106,9 @@ GEM
       middleman-core (>= 3.2)
       rouge (~> 2.0)
     mini_portile2 (2.3.0)
-    minitest (5.10.3)
-    multi_json (1.12.2)
-    net-sftp (2.1.2)
-      net-ssh (>= 2.6.5)
-    net-ssh (4.2.0)
-    nokogiri (1.8.1)
+    minitest (5.11.3)
+    multi_json (1.13.1)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     padrino-helpers (0.13.3.4)
       i18n (~> 0.6, >= 0.6.7)
@@ -133,9 +120,8 @@ GEM
     parser (2.4.0.2)
       ast (~> 2.3)
     powerpack (0.1.1)
-    ptools (1.3.5)
     public_suffix (3.0.1)
-    rack (2.0.3)
+    rack (2.0.4)
     rack-livereload (0.3.16)
       rack
     rainbow (3.0.0)
@@ -144,7 +130,7 @@ GEM
       ffi (>= 0.5.0, < 2)
     redcarpet (3.4.0)
     rouge (2.2.1)
-    rubocop (0.52.0)
+    rubocop (0.52.1)
       parallel (~> 1.10)
       parser (>= 2.4.0.2, < 3.0)
       powerpack (~> 0.1)
@@ -158,7 +144,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    tzinfo (1.2.4)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
@@ -176,14 +162,11 @@ DEPENDENCIES
   middleman-breadcrumbs
   middleman-cli
   middleman-compass
-  middleman-deploy!
   middleman-livereload
   middleman-syntax
   nokogiri
   redcarpet
   rubocop
-  tzinfo-data
-  wdm (~> 0.1.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

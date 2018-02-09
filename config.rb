@@ -23,23 +23,6 @@ activate :blog do |blog|
   # blog.calendar_template = "calendar.html"
 end
 
-activate :deploy do |deploy|
-  deploy.build_before = true
-  deploy.deploy_method = :git
-  # Optional Settings
-  deploy.remote   = 'git@github.com:CultivateHQ/cultivatehq.github.io.git'
-  deploy.branch   = 'master'
-
-  # commit strategy: can be :force_push or :submodule, default: :force_push
-  #
-  # deploy.strategy = :submodule
-
-  # commit message (can be empty),
-  # default: Automated commit at `timestamp` by middleman-deploy `version`
-  #
-  # deploy.commit_message = 'custom-message'
-end
-
 ###
 # Compass
 ###
@@ -123,7 +106,7 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
-  config[:host] = 'http://cultivatehq.com'
+  config[:host] = 'https://cultivatehq.com'
 end
 
 activate :syntax, line_numbers: false
