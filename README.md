@@ -29,8 +29,14 @@ before the playbook was last run for you to have access to the server.
 
 ## Rolling back deployed changes
 
-A dated version of the each deploy is put in `/home/static` on the server. Simply ssh in to `static@cultivatehq.com`, `rm -rf cultivatehq.com` and `tar -zxvf`
-the version you wish to restore.
+A dated version of the each deploy is put in `/home/static` on the server. Simply ssh in to `static@cultivatehq.com`,
+
+```
+rm -rf cultivatehq.com
+mkdir cultivatehq.com
+cd cultivatehq.com
+tar -zxvf ../[the version you wish to restore]
+```
 
 
 ## Layout Styling
