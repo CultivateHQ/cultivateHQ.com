@@ -37,25 +37,30 @@ the application and deps functions, you should end up with a `mix.exs` file
 that looks a bit like:
 
 ```elixir
-defmodule HelloWorldHeader.Mixfile do
+defmodule HelloWorldHeader.MixProject do
   use Mix.Project
 
   def project do
-    [app: :hello_world_header,
-     version: "0.0.1",
-     elixir: "~> 1.0",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps]
+    [
+      app: :hello_world_header,
+      version: "0.1.0",
+      elixir: "~> 1.6",
+      start_permanent: Mix.env() == :prod,
+      deps: deps()
+    ]
   end
 
   def application do
-    [applications: [:logger, :plug, :cowboy]]
+    [
+      extra_applications: [:logger]
+    ]
   end
 
   defp deps do
-    [{:cowboy, "~> 1.0"},
-     {:plug, "~> 0.14 or ~> 1.0"}]
+    [
+      {:cowboy, "~> 1.0"},
+      {:plug, "~>1.0"}
+    ]
   end
 end
 ```
@@ -117,15 +122,17 @@ defmodule HelloWorldHeaderTest do
   defmodule DemoPlug do
     use Plug.Builder
 
-    plug HelloWorldHeader
+    plug(HelloWorldHeader)
 
-    plug :index
-    defp index(conn, _opts), do: conn |> send_resp(200, "OK")
+    plug(:index)
+    defp index(conn, _opts), do: send_resp(conn, 200, "OK")
   end
 
   test "it works!" do
-    conn = conn(:get, "/")
-    |> DemoPlug.call []
+    conn =
+      :get
+      |> conn("/")
+      |> DemoPlug.call([])
 
     assert conn.status == 200
   end
@@ -139,10 +146,12 @@ Now lets add an additional test for our custom HTTP header:
 
 ```elixir
   test "we receive a custom header with content" do
-    conn = conn(:get, "/")
-    |> DemoPlug.call []
+    conn =
+      :get
+      |> conn("/")
+      |> DemoPlug.call([])
 
-    assert get_resp_header(conn, "x-hello-world") == "YEAH IT WORKS!"
+    assert get_resp_header(conn, "x-hello-world") == ["YEAH IT WORKS!"]
   end
 ```
 
@@ -153,9 +162,9 @@ Running our tests (`mix test`), we can see that the first test passes, and this 
 Lets add our header to our plug:
 
 ```elixir
-def call(conn, _options) do
-  conn |> Plug.Conn.put_resp_header("x-hello-world", "YEAH IT WORKS!")
-end
+  def call(conn, _options) do
+    Plug.Conn.put_resp_header(conn, "x-hello-world", "YEAH IT WORKS!")
+  end
 ```
 
 We now have a plug which injects our new header into every request!
@@ -167,37 +176,44 @@ We now have a plug which injects our new header into every request!
 We need to add some helpful metadata to our project. Lets update our `mix.exs` file:
 
 ```elixir
-defmodule HelloWorldHeader.Mixfile do
+defmodule HelloWorldHeader.MixProject do
   use Mix.Project
 
   def project do
-    [app: :hello_world_header,
-     description: "Demo plug used for tutorial purposes.",
-     package: package,
-     version: "0.0.1",
-     elixir: "~> 1.0",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps]
+    [
+      app: :hello_world_header,
+      version: "0.1.0",
+      elixir: "~> 1.6",
+      start_permanent: Mix.env() == :prod,
+      package: package(),
+      deps: deps()
+    ]
   end
 
+  # Run "mix help compile.app" to learn about applications.
   def application do
-    [applications: [:logger, :plug, :cowboy]]
+    [
+      extra_applications: [:logger]
+    ]
   end
 
+  # Run "mix help deps" to learn about dependencies.
   defp deps do
-    [{:cowboy, "~> 1.0"},
-     {:plug, "~> 0.14 or ~> 1.0"}]
+    [
+      {:cowboy, "~> 1.0"},
+      {:plug, "~>1.0"}
+    ]
   end
 
   defp package do
-    [contributors: ["Mark Connell"],
-     licenses: ["MIT"],
-     links: %{github: "https://github.com/cultivatehq/hello_world_header"},
-     files: ~w(lib mix.exs README.md)]
+    [
+      contributors: ["Mark Connell"],
+      licenses: ["MIT"],
+      links: %{github: "https://github.com/cultivatehq/hello_world_header"},
+      files: ~w(lib mix.exs README.md)
+    ]
   end
 end
-
 ```
 
 ### submit to Hex

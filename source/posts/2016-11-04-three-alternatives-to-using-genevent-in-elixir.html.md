@@ -5,7 +5,7 @@ description: "For various reasons, may people are not fond of GenEvent. Here are
 tags: elixir
 ---
 
-Wojket Gawronski's post [here](http://www.afronski.pl/2015/11/02/what-is-wrong-with-gen-event.html), neatly summarises the issues with [GenEvent](http://elixir-lang.org/docs/stable/elixir/GenEvent.html). Fortunately there are alternatives including [gproc](https://github.com/uwiger/gproc), [phoenix_pubsub](https://github.com/phoenixframework/phoenix_pubsub), and [Elixir 1.4's upcoming Process registry](https://github.com/elixir-lang/registry).
+Wojket Gawronski's post [here](http://www.afronski.pl/2015/11/02/what-is-wrong-with-gen-event.html), neatly summarises the issues with [GenEvent](http://elixir-lang.org/docs/stable/elixir/GenEvent.html). Fortunately there are alternatives including [gproc](https://github.com/uwiger/gproc), [phoenix_pubsub](https://github.com/phoenixframework/phoenix_pubsub), and [Elixir's upcoming Process registry](https://hexdocs.pm/elixir/Registry.html).
 
 The code used in these examples is available from [this repository](https://github.com/CultivateHQ/pubsub_spike).
 
@@ -77,7 +77,7 @@ This test shows it all working  (code also [here](https://github.com/CultivateHQ
 
 ## Elixir Registry
 
-[Registry](https://github.com/elixir-lang/registry) will be in the Elixir 1.4 release, as a more Elixir-like and built-in version of gproc. We can also use it as a pub/sub framework. A registry is a supervisor and must be started, such as in the [application supervisor](https://github.com/CultivateHQ/pubsub_spike/blob/master/lib/pubsub_spike.ex#L11):
+[Registry](https://hexdocs.pm/elixir/Registry.html) is a more Elixir-like and built-in version of gproc. We can also use it as a pub/sub framework. A registry is a supervisor and must be started, such as in the [application supervisor](https://github.com/CultivateHQ/pubsub_spike/blob/master/lib/pubsub_spike.ex#L11):
 
 ```elixir
 def start(_type, _args) do
@@ -196,7 +196,7 @@ There is test code [here](https://github.com/CultivateHQ/pubsub_spike/blob/maste
 
 ## Bonus: distributed events with Phoenix PubSub
 
-A bonus of using Phoenix PubSub is that it can easily publish events across connected nodes. This post's [companion code](https://github.com/CultivateHQ/pubsub_spike) is set up for you to easily play with this.
+A bonus of using Phoenix PubSub is that it can publishes events across connected nodes. This post's [companion code](https://github.com/CultivateHQ/pubsub_spike) is set up for you to easily play with this.
 
 A `PubsubSpike.PhoenixPubsub` worker (as above), named `:phoenix_pubsub` and listening on the topic "topic:phoenix_pubsub", is created by its [application supervisor](https://github.com/CultivateHQ/pubsub_spike/blob/master/lib/pubsub_spike.ex):
 
@@ -247,4 +247,10 @@ That too should return `["Hello all!"]`. The message has been broadcast from the
 
 ## Summary
 
-And there we have it: 3 great alternatives to GenEvent. Registry will be bundled with Elixir 1.4, so you will soon be able to use it without adding any more dedpendencies. You may already be using gproc as a registry for dynamic processes; if so, it may be convenient to also use it's pub/sub capabilities. Phoenix PubSub has the benefits of actually being designed for pub/sub, has a clearer pub/sub interface, and is easy to distribute.
+You may already be using gproc as a registry for dynamic processes; if so, it may be convenient to also use it's pub/sub capabilities. In most cases it would be better to use the built-in `Registry` if you need the events to be propagated locally.
+
+Use `Phoenix.PubSub` if you want events to be propagated to all connected nodes.
+
+## Updates
+
+* **2018-02-27** Update to Elixir 1.6; changed references to `Registry` being an upcoming feature of Elixir 1.4 to it being built-in to Elixir; altered the summary to be clearer about `Phoenix.PubSub` events propagating across all connected nodes, while `Registry` being for local events.
