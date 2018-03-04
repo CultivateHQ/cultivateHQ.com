@@ -14,6 +14,10 @@ Technical capability is important to us. You will care about quality and strive 
 
 Much of our work as a consultancy is in understanding the problem to be solved, so excellent "soft-skills" are required. You will be curious, empathetic, respectful, honest and professional in your approach and interactions at all times.
 
+### The Tech Stack
+
+We are currently primarily a Ruby shop but have used Elixir in a number of projects in recent years and have a deep desire to do more. On the front end we've recently been favouring React.
+
 ### The process
 
 Here is a little about our recruitment process. There are 2 steps.
