@@ -16,11 +16,11 @@ Much of our work as a consultancy is in understanding the problem to be solved, 
 
 ### The Tech Stack
 
-We are currently primarily a Ruby shop but have used Elixir in a number of projects in recent years and have a deep desire to do more. On the front end we've recently been favouring React.
+Most of our work is still in Ruby, but have used Elixir in a number of projects in recent years and have a deep desire to do more. We have worked with, or have in interest in, other technologies such as Rust, Go, Scala, and Swift. On the front-end we've recently been favouring React.
 
 ### The process
 
-Here is a little about our recruitment process. There are 2 steps.
+We constantly iterate on our recruitment process. Currently it consists of two steps:
 
 #### Initial pairing - 30 minutes
 
@@ -36,4 +36,4 @@ We are an equal opportunities employer and value diversity at our company. We do
 
 ### Salary range
 
-Indicative salary range:  £30,000 to £48,000 (depending on experience).
+Indicative salary range: £30,000 to £50,000 (depending on experience).
