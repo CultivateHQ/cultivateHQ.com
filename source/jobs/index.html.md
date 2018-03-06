@@ -12,7 +12,7 @@ Are you a developer who wants to join a friendly team who care deeply about the 
 
 Technical capability is important to us. You will care about quality and strive for simplicity and maintainability in everything you produce. We often pair-program both internally and with client teams, so an ability to work collaboratively and share code ownership is essential.
 
-Much of our work as a consultancy is in understanding the problem to be solved, so excellent "soft skills" are required. You will be curious, empathetic, respectful, honest and professional in your approach and interactions at all times.
+Much of our work as a consultancy is in understanding the problem to be solved, so excellent soft skills are required. You will be curious, empathetic, respectful, honest and professional in your approach and interactions at all times.
 
 You will need to have the right to work in the UK.
 
