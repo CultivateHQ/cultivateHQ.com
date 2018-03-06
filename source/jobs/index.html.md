@@ -16,13 +16,13 @@ Much of our work as a consultancy is in understanding the problem to be solved, 
 
 You will need to have the right to work in the UK.
 
-### The Tech Stack
+### Our Tech Stack
 
-Most of our work is still in Ruby, but we have used Elixir in a number of projects in recent years and have a deep desire to do more. We have worked with, or have in interest in, other technologies such as Rust, Go, Scala, and Swift. On the front-end we've recently been favouring React.
+Our work is still predominantly in Ruby (Rails), but we use Elixir on a number of projects and are actively looking for opportunities to do more. We also work with or are interested in other technologies such as Rust, Go, Scala, and Swift. On the front-end we've been favouring React. We utilise HTML, CSS and Javascript with various pre/post processors and frameworks.
 
 ### The process
 
-We constantly iterate on our recruitment process. Currently it consists of two steps:
+We regularly evolve our recruitment approach. Currently it's a two step process:
 
 #### Initial pairing - 30 minutes
 
