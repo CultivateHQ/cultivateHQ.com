@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%= partial "partials/head" %>
+    <%= stylesheet_link_tag "code_highlight" %>
+  </head>
+  <body class="<%= page_classes %>">
+    <%= partial "partials/header" %>
+    <section id="site-content-area">
+      <%= partial "partials/breadcrumbs" %>
+      <header class="site-content-area-header padding-medium">
+        <div class="mid-width">
+          <h1><%= current_page.data.title %></h1>
+          <% if current_page.data.has_key?('subtitle') %>
+            <h2 class="subtitle"><%= current_page.data.subtitle %></h2>
+          <% end %>
+        </div>
+      </header>
+
+	  <div class="page-content min-width padding-large">
+        <%= yield %>
+	  </div>
+
+    </section>
+    <%= partial "partials/footer" %>
+  </body>
+</html>

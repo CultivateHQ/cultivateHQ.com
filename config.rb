@@ -45,6 +45,7 @@ end
 page 'index.html', layout: :home
 page '/posts/index.html', layout: :blog
 page '/posts/tag.html', layout: :blog
+page '/jobs', layout: :job
 page '/newsletter-signup'
 page '/feed.xml', layout: false
 
