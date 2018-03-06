@@ -12,11 +12,11 @@ Are you a developer who wants to join a friendly team who care deeply about the 
 
 Technical capability is important to us. You will care about quality and strive for simplicity and maintainability in everything you produce. We often pair-program both internally and with client teams, so an ability to work collaboratively and share code ownership is essential.
 
-Much of our work as a consultancy is in understanding the problem to be solved, so excellent "soft-skills" are required. You will be curious, empathetic, respectful, honest and professional in your approach and interactions at all times.
+Much of our work as a consultancy is in understanding the problem to be solved, so excellent "soft skills" are required. You will be curious, empathetic, respectful, honest and professional in your approach and interactions at all times.
 
 ### The Tech Stack
 
-Most of our work is still in Ruby, but have used Elixir in a number of projects in recent years and have a deep desire to do more. We have worked with, or have in interest in, other technologies such as Rust, Go, Scala, and Swift. On the front-end we've recently been favouring React.
+Most of our work is still in Ruby, but we have used Elixir in a number of projects in recent years and have a deep desire to do more. We have worked with, or have in interest in, other technologies such as Rust, Go, Scala, and Swift. On the front-end we've recently been favouring React.
 
 ### The process
 
@@ -24,7 +24,7 @@ We constantly iterate on our recruitment process. Currently it consists of two s
 
 #### Initial pairing - 30 minutes
 
-This can be in person or remotely using screen sharing. You will work an a small problem with one of our team.
+This can be in person or remotely using screen sharing. You will work on a small problem with one of our team.
 
 #### Pair programming half-day
 
