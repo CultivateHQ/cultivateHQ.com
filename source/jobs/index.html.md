@@ -18,7 +18,7 @@ You will need to have the right to work in the UK.
 
 ### Our Tech Stack
 
-Our work is still predominantly in Ruby (Rails), but we use Elixir on a number of projects and are actively looking for opportunities to do more. We also work with or are interested in other technologies such as Rust, Go, Scala, and Swift. On the front-end we've been favouring React. We utilise HTML, CSS and Javascript with various pre/post processors and frameworks.
+Our work is still predominantly in Ruby (Rails), but we use Elixir on a number of projects and are actively looking for opportunities to do more. We also work with, or are interested many other languages including Rust, Go, Scala, and Swift. On the front-end we've been favouring React.
 
 ### The process
 
