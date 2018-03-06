@@ -14,6 +14,8 @@ Technical capability is important to us. You will care about quality and strive 
 
 Much of our work as a consultancy is in understanding the problem to be solved, so excellent "soft skills" are required. You will be curious, empathetic, respectful, honest and professional in your approach and interactions at all times.
 
+You will need to have the right to work in the UK.
+
 ### The Tech Stack
 
 Most of our work is still in Ruby, but we have used Elixir in a number of projects in recent years and have a deep desire to do more. We have worked with, or have in interest in, other technologies such as Rust, Go, Scala, and Swift. On the front-end we've recently been favouring React.
