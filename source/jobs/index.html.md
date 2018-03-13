@@ -38,4 +38,4 @@ We are an equal opportunities employer and value diversity at our company. We do
 
 ### Salary range
 
-Indicative salary range: £30,000 to £50,000 (depending on experience) + 5% pension contribution. Twice a year, 20% of profits are shared among the staff.
+Indicative salary range: £30,000 to £50,000 (depending on experience) + 5% pension contribution + profit share scheme (in which employees share 20% of the profits, twice a year).
