@@ -26,11 +26,19 @@ The first wraps the `middleman article` command:
 
 But remember to add the extra `author` and `description` front matter necessary to support Twitter Cards & OpenGraph (see below).
 
-Or use `gen.rb` which is a wizard:
+Or use `bin/gen.rb` which is a wizard:
 
 ```
-./gen.rb
+$ ./bin/gen.rb
+Tell me your title
+Well I don't have one
+Who the hell are you?
+Me of course
+Ok, give me a brief description
+Well, it will be a bit of this ... a bit of that
 ```
+
+It will then open the new post in whatever editor you have configured in your `EDITOR` environment variable.
 
 ## Publishing Changes
 
