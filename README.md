@@ -21,7 +21,7 @@ We have had some issues now with using `middleman-deploy` to deploy over `sftp` 
 and javascript or, on upgrading, it fails with a message saying that deploy is an old an usupported plugin type. So to deploy, run
 
 ```
-./deploy.sh
+./bin/deploy
 ```
 
 Of course you will have had to have submitted your public ssh key to https://github.com/CultivateHQ/cultivate-infrastructure/blob/master/playbook/user_keys/public_keys
