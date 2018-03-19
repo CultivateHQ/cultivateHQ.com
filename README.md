@@ -9,9 +9,8 @@ You'll need to make sure you have node and npm installed.
 
     git clone git@github.com:CultivateHQ/cultivateHQ.com.git
     cd cultivateHQ
-    bundle
-    npm install
-    bundle exec middleman server
+    ./bin/install_deps
+    ./bin/serve
 
 All being well, you'll have a server running on [localhost - port 4567](http://0.0.0.0:4567)
 
@@ -73,7 +72,30 @@ e.g.
       </div>
     </div>
 
-### Blog Posts
+## Blog Posts
+
+
+### Creating a new blog post
+
+Two options are available.
+
+The first wraps the `middleman article` command:
+
+```
+./bin/new_post "Title of your blog post here"
+```
+
+But remember to add the extra `author` and `description` front matter necessary to support Twitter Cards & OpenGraph (see below).
+
+Or use `gen.rb` which is a wizard:
+
+```
+./gen.rb
+```
+
+### Twitter Cards & OpenGraph
+
+This is about including extra meta tags within a blog post so that when you share a blog URL on Slack, Twitter or Facebook etc. they automatically show a nice feature _card_ with the title, description and optionally an image.
 
 If you want to set an image for Twitter Cards (we're using [Summary with lage image](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image)) and the [Open Graph protocol](http://opengraphprotocol.org/) (the image displayed when a blog post is shared in Facebook and other sites), set the `image` variable in the post's metadata. Example:
 
