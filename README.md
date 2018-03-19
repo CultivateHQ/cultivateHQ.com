@@ -14,6 +14,24 @@ You'll need to make sure you have node and npm installed.
 
 All being well, you'll have a server running on [localhost - port 4567](http://0.0.0.0:4567)
 
+## Creating a new blog post
+
+Two options are available.
+
+The first wraps the `middleman article` command:
+
+```
+./bin/new_post "Title of your blog post here"
+```
+
+But remember to add the extra `author` and `description` front matter necessary to support Twitter Cards & OpenGraph (see below).
+
+Or use `gen.rb` which is a wizard:
+
+```
+./gen.rb
+```
+
 ## Publishing Changes
 
 We have had some issues now with using `middleman-deploy` to deploy over `sftp` to a static site. Issues as in it was missing all the stylesheets
@@ -37,6 +55,23 @@ cd cultivatehq.com
 tar -zxvf ../[the version you wish to restore]
 ```
 
+## Twitter Cards & OpenGraph
+
+This is about including extra meta tags within a blog post so that when you share a blog URL on Slack, Twitter or Facebook etc. they automatically show a nice feature _card_ with the title, description and optionally an image.
+
+If you want to set an image for Twitter Cards (we're using [Summary with lage image](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image)) and the [Open Graph protocol](http://opengraphprotocol.org/) (the image displayed when a blog post is shared in Facebook and other sites), set the `image` variable in the post's metadata. Example:
+
+```
+---
+title: Getting started with Docker - images and containers
+author: Fernando Briano
+description: A quick guide to get you up and running with Docker.
+tags: docker
+image: /images/posts/docker.jpg
+---
+```
+
+The image file should be placed in `source/images/posts` (or any other directory you create in `source/images`).
 
 ## Layout Styling
 
@@ -72,43 +107,7 @@ e.g.
       </div>
     </div>
 
-## Blog Posts
-
-
-### Creating a new blog post
-
-Two options are available.
-
-The first wraps the `middleman article` command:
-
-```
-./bin/new_post "Title of your blog post here"
-```
-
-But remember to add the extra `author` and `description` front matter necessary to support Twitter Cards & OpenGraph (see below).
-
-Or use `gen.rb` which is a wizard:
-
-```
-./gen.rb
-```
-
-### Twitter Cards & OpenGraph
-
-This is about including extra meta tags within a blog post so that when you share a blog URL on Slack, Twitter or Facebook etc. they automatically show a nice feature _card_ with the title, description and optionally an image.
-
-If you want to set an image for Twitter Cards (we're using [Summary with lage image](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image)) and the [Open Graph protocol](http://opengraphprotocol.org/) (the image displayed when a blog post is shared in Facebook and other sites), set the `image` variable in the post's metadata. Example:
-
-```
----
-title: Getting started with Docker - images and containers
-author: Fernando Briano
-description: A quick guide to get you up and running with Docker.
-tags: docker
-image: /images/posts/docker.jpg
----
-```
-The image file should be placed in `source/images/posts` (or any other directory you create in `source/images`).
+### Blog posts
 
 For blog posts, I've kept it backwards compatible with all of the posts, code snippets work in the same way and so does the use of
 
