@@ -18,9 +18,9 @@ p [title, file_suffix, date, file]
 
 File.open(file, 'w') do |f|
   f.puts '---'
-  f.puts "author: #{author}"
-  f.puts "title: #{title}"
-  f.puts "description: #{description}"
+  f.puts "author: \"#{author}\""
+  f.puts "title: \"#{title}\""
+  f.puts "description: \"#{description}\""
   f.puts '---'
   f.puts
 end

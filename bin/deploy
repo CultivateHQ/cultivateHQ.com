@@ -1,21 +1,30 @@
-#/usr/bin/env sh
+#!/usr/bin/env bash
 
 # middleman-deploy with sftp is messed up for me so ¯\_(ツ)_/¯
 # The assets aren't being copied and if I update I get a message about
 # deploy being an extension is no longer supported.
 
-rm -rf build
+# Exit as soon as any subcommand exits with an error
+set -e
+
+bin_dir="$(dirname ${0})"
+proj_dir="$(dirname ${bin_dir})"
+
+cd "$proj_dir"
+
+test -e ./build && rm -rf build
 bundle exec middleman build
 
-mkdir -p ./tmp
-rm tmp/*
-cd build
+test -d ./tmp || mkdir -p ./tmp
+rm -rf tmp/*
 
+cd build
 tar -czvf ../tmp/cultivatehq.tar.gz *
 
 filename="$(date +"%Y_%m_%d_%H_%M_%S").tar.gz"
 
-scp ../tmp/cultivatehq.tar.gz static@cultivatehq.com:$filename  && \
+scp ../tmp/cultivatehq.tar.gz static@cultivatehq.com:$filename
+
 ssh static@cultivatehq.com "rm -rf cultivatehq.com &&  \
     mkdir -p cultivatehq.com && \
     cd cultivatehq.com && \
