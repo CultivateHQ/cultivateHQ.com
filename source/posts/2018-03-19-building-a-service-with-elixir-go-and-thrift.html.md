@@ -19,7 +19,7 @@ And ... we get a really advanced and efficient choice of application protocols f
 
 ### Why Elixir?
 
-Well ... because [Cultivate LOVES Elixir](/posts/tag/elixir/)! Seriously though, [Elixir](https://elixir-lang.org/) is also an excellent language to use for developing backend services. Like Go, it is similarly clear and easy to read, but follows a _functional_ paradigm rather than _imperative_. The two should contrast nicely and most importantly demonstrate the language and paradigm neutral nature of Thrift.
+Well ... because [Cultivate LOVES Elixir](/posts/tag/elixir/)! Seriously though, [Elixir](https://elixir-lang.org/) is also an excellent language to use for developing services. We will imagine the Elixir code is another service that needs to use the service presented by our Go server. Like Go, it is similarly clear and easy to read, but follows a _functional_ paradigm rather than _imperative_. The two should contrast nicely and most importantly demonstrate the language agnostic and paradigm neutral nature of Thrift.
 
 ### Ok I'm in. Show me stuff ...
 
