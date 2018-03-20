@@ -1,7 +1,7 @@
 ---
 author: "Dan Munckton"
 title: "Building a service with Elixir, Go and Thrift"
-description: "A brief tutorial showing how to use Thrift with Go to create a service frontend"
+description: "A tutorial showing how to use Thrift with Go and Elixir to create a cross-language services"
 ---
 # So what's this going to be about?
 
