@@ -32,8 +32,8 @@ end
 
 defp deps do
   [
-    {:ecto, "~> 2.0.4"},
-    {:postgrex, ">= 0.0.0"},
+    {:ecto, "~> 2.2.8"},
+    {:postgrex, ">= 0.0.0"}
   ]
 end
 ```
@@ -108,7 +108,7 @@ defmodule Todos.Repo.Migrations.AddTodos do
       add :item, :string
       add :completed, :boolean, default: false
 
-      timestamps
+      timestamps()
     end
   end
 end
@@ -126,16 +126,12 @@ defmodule Todos.Todo do
     field :item, :string
     field :completed, :boolean, default: false
 
-    timestamps
+    timestamps()
   end
-
-  @required_fields ~w(item completed)
-  @optional_fields ~w()
-
 
   def changeset(record, params \\ :empty) do
     record
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, [:item, :completed])
   end
 end
 ```
@@ -274,3 +270,4 @@ Next up - testing database interaction in other processes.
 **Updates**
 
 * Corrected mistake pointed out by [Henricus Louwhoff](https://twitter.com/zenricus/status/801142515059556353)
+* **2018-02-28** Updated to Elixir 1.6 and Ecto 2.2

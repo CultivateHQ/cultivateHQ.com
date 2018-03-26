@@ -23,23 +23,6 @@ activate :blog do |blog|
   # blog.calendar_template = "calendar.html"
 end
 
-activate :deploy do |deploy|
-  deploy.build_before = true
-  deploy.deploy_method = :git
-  # Optional Settings
-  deploy.remote   = 'git@github.com:CultivateHQ/cultivatehq.github.io.git'
-  deploy.branch   = 'master'
-
-  # commit strategy: can be :force_push or :submodule, default: :force_push
-  #
-  # deploy.strategy = :submodule
-
-  # commit message (can be empty),
-  # default: Automated commit at `timestamp` by middleman-deploy `version`
-  #
-  # deploy.commit_message = 'custom-message'
-end
-
 ###
 # Compass
 ###
@@ -62,6 +45,7 @@ end
 page 'index.html', layout: :home
 page '/posts/index.html', layout: :blog
 page '/posts/tag.html', layout: :blog
+page '/jobs', layout: :job
 page '/newsletter-signup'
 page '/feed.xml', layout: false
 
@@ -85,6 +69,7 @@ page '/feed.xml', layout: false
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  config[:host] = 'http://localhost:4567'
 end
 
 # Methods defined in the helpers block are available in templates
@@ -122,6 +107,7 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+  config[:host] = 'https://cultivatehq.com'
 end
 
 activate :syntax, line_numbers: false

@@ -39,7 +39,7 @@
                     <% end %>
                 </li>
                 <li class="button-pagination">
-                  <% next_article = current_article.next_article %>
+                  <% next_article = current_article.article_next %>
                     <% if next_article %>
                     <a href="<%= next_article.url %>" rel="next" title="Next article: <%= next_article.title %>">Next &gt;</a>
                     <% else %>

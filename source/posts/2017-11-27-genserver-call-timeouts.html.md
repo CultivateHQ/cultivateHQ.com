@@ -47,7 +47,7 @@ In the accompanying code we have a `GenServer`, [Timesout](https://github.com/Cu
 So ..
 
 ```elixir
-$ iex -s mix
+$ iex -S mix
 iex(1)> Timesout.yawn(110)
 ** (exit) exited in: GenServer.call(, {:yawn, 110}, 100)
     ** (EXIT) time out
@@ -184,3 +184,7 @@ When a GenServer times-out:-
 ## Acknowledgement
 
 Thanks to [Tetiana Dushenkivska](https://twitter.com/Tetiana12345678) for helping me out with the syntax for catching exits in Elixir.
+
+## Updates
+
+* **2018-02-27** fixed typo in a `iex -S mix`

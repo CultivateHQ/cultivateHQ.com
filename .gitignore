@@ -24,4 +24,4 @@
 
 /vendor
 /node_modules
-/.webpack_build
+/tmp
