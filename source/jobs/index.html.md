@@ -11,7 +11,6 @@ To apply email [careers@cultivatehq.com](mailto:careers@cultivatehq.com) and tel
 At Cultivate we bring together technical excellence with empathy, honesty and collaboration to deliver world class solutions for our clients. We often pair program both internally and with client teams, using Test Driven Development to solve challenging problems whilst delivering high quality code that is simple and maintainable. As a consultancy, much of our work is in collaboratively understanding the problem to be solved, so excellent soft skills are important.
 
 Our work is rich and varied, you could be working on anything from a new microservice to making a user interface for Marty the Robot.
-![Marty](/images/jobs/marty.jpg "Marty")
 
 If you are enthusiastic, curious, empathetic and looking for somewhere that you will be constantly learning and working on complex, engaging challenges with a highly skilled and friendly team then [get in touch](mailto:careers@cultivatehq.com).
 
