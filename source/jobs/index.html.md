@@ -32,7 +32,7 @@ You will meet a member of the team for a short chat to answer any questions you 
 
 #### Pair programming half-day
 
-The final stage is pair programming with our developers at our Edinburgh office, as well as working on a small UX task. Recruitment is a whole-team decision at Cultivate, and we find this the best way to get to know you and let you get to know us.
+The final stage is pair programming with our developers and designers at the Edinburgh office. Recruitment is a whole-team decision at Cultivate, and we find this the best way to get to know you and let you get to know us.
 
 ### Equal-opportunities
 
