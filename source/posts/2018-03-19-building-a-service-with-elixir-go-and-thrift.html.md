@@ -51,3 +51,17 @@ We're all about the puns here at Cultivate. Anyway ...
 Usually, the Go lang toolset expects a very specific source organisation. Projects must be nested in specific folders within a parent folder listed in the `GOPATH` environment variable. But we're going to keep everything together so our client and server can live within the same overall project folder.
 
 <span style="background-color: yellow">TODO how?</span>
+
+Run the service:
+
+```
+$ go-server/bin/go-service
+Starting the simple server ... on  localhost:9090
+```
+
+Then in a separate shell, run the client that was generated for us:
+
+```
+$ go-server/bin/guitars-remote -P json all
+[Guitar({ID:0 Brand: Model:})] <nil>
+```
