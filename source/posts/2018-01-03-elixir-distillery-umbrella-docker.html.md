@@ -192,7 +192,7 @@ config :phoenix_app, PhoenixApp.Endpoint,
   version: Application.spec(:phoenix_app, :vsn)
 ```
 
-Following the distillery guide for Phoenix, we need to build the release, wich requires the static assets to be built. In `paraguas/apps/phoenix_app/assets` run:
+Following the distillery guide for Phoenix, we need to build the release, which requires the static assets to be built. In `paraguas/apps/phoenix_app/assets` run:
 
 ```bash
 $ npm install
