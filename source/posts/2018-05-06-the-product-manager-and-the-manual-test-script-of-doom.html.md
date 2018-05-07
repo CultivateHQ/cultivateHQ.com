@@ -12,7 +12,7 @@ We chose another road: we buckled down and did the work. We did not prepare manu
 
 Six weeks later we had a retrospective with that PM. He was delighted with the high quality of our work (naturally). He was also very pleased with our manual test logs, and asked us if we had found them useful. Then we said that we did not believe that they added much value. We showed him our automated test suite and this time he was receptive to our arguments. The intensive manual testing was stopped. By working with the PM to build trust were we able to change his mind.
 
-One of my favourite parts of this story is how it ties back into Cultivate's values:
+One of my favourite parts of this story is how it ties back into most of Cultivate's values:
 
 * Professionalism - we were courteous with the PM even though we disagreed.
 * Empathy - we worked to understand and ultimately allay his fears of working without the manual test scripts he expected.
