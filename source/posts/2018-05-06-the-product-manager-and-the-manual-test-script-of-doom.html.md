@@ -4,13 +4,15 @@ title: "The Product Manager and The Manual Test Script of Doom"
 description: "Winning an argument by conceding in good faith"
 ---
 
-Once upon a time we were six months into a contract to provide an additional development team to an organisation when we were assigned a new product manager. One of this triumvirate was formerly a project manager at one of the huge consultancies. He wanted to focus on quality, which to him meant having a detailed manual test script which would be executed and logged before each release. We were unable to persuade him that there are other ways to work.
+Once upon a time we were six months into a contract to provide an additional development team to an organisation when we were assigned a new product manager who was formerly a project manager at one of the big consultancies. He wanted to focus on quality, which to him meant executing and logging a detailed manual text script before each release. We were unable to persuade him that there are other ways to work.
 
-One option we had was conflict. We could have refused and appealed to the client's technical director, who may have sided with us. This might have been gratifying in the short term but would not have helped the relationship with the client PMs. We would also be vulnerable to any perceived issue being proof of a slap-dash attitude to quality.
+There were various ways we could have dealt with this; one option was conflict. We could have refused and appealed to the client's technical director, who may have sided with us. This might have been gratifying in the short term but would not have helped the relationship with the client PMs. We would also be vulnerable to any perceived issue being seen as proof of a slap-dash attitude to quality.
 
-We chose another road: we buckled down and did the work. We did not prepare manual test scripts in advance but carefully checked each screen affected by a change, logging what was done and the result. It was tedious; it slowed us down; it was frustrating. But we carefully followed the process, in good faith.
+We chose another way: we buckled down and did the work. We carefully checked each screen affected by a change, logging what was done and the result. It was tedious; it slowed us down; it was frustrating. But we carefully followed the process, in good faith.
 
-Six weeks later we had a retrospective with that PM. He was delighted with the high quality of our work (naturally). He was also very pleased with our manual test logs, and asked us if we had found them useful. Then we said that we did not believe that they added much value. We showed him our automated test suite and this time he was receptive to our arguments. The intensive manual testing was stopped. By working with the PM to build trust were we able to change his mind.
+Six weeks later we had a retrospective with that PM. He was delighted with the high quality of our work. He was also very pleased with our manual test logs, and asked us if we had found them useful. We seized the opportunity to tell him that we did not believe that they added much value.
+
+We showed him our automated test suite and this time he was receptive to our arguments. The intensive manual testing was stopped. By working with the PM to deliver value, it built trust. Only then were we able to change his mind.
 
 One of my favourite parts of this story is how it ties back into most of Cultivate's values:
 
