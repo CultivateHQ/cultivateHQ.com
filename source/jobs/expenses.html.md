@@ -24,6 +24,8 @@ If you are traveling a reasonable distance, we will try and arrange the pairing 
 
 # Interview Expenses
 
+*You must have receipts.*
+
 * Lunch up to £10
 * Dinner up to £30. No alcohol.
 * Standard class train, bus, or economy air travel up to £250
