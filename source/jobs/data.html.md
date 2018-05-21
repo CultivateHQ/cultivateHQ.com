@@ -1,6 +1,6 @@
 ---
-title: "Jobs"
-subtitle: "Data policy"
+title: "Data policy"
+subtitle: "jobs"
 layout: "job"
 ---
 
