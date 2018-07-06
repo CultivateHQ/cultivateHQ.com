@@ -6,7 +6,7 @@ description: "Cultivate do not differentiate between Front End and Back End Deve
 
 I have been seeing a few things on Twitter recently decrying the concept of Full Stack (web) Developers (such as [this](https://twitter.com/lenar_io/status/1011984130135842816)).
 
-The argument is that Full Stack (web) Developers are generally back-end experts who suffer from [Denning-Kruger](https://en.wikipedia.org/wiki/Dunning–Kruger_effect) relating to their front-end skills. This devalues front-end web work as just slapping some html together; maybe copy pasting a bit of JavaScript from Stack Overflow. Modern front-end development is difficult and highly nuanced task and it is impossible to fully master both fields.
+The argument is that Full Stack (web) Developers are generally back-end experts who suffer from [Dunning-Kruger](https://en.wikipedia.org/wiki/Dunning–Kruger_effect) relating to their front-end skills. This devalues front-end web work as just slapping some html together; maybe copy pasting a bit of JavaScript from Stack Overflow. Modern front-end development is difficult and highly nuanced task and it is impossible to fully master both fields.
 
 This leaves us with some [cognitive dissonance](https://en.wikipedia.org/wiki/Cognitive_dissonance): it is a compelling argument; yet, we do not strongly differentiate between front-end and back-end development at Cultivate. Wherever we have seen the separation of Front End Developers and Back End Developers we have witnessed bottlenecks develop as workload changes between the two groups.
 
