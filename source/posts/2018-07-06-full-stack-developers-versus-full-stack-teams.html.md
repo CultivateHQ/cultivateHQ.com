@@ -4,7 +4,7 @@ title: "Full stack developers versus full stack teams"
 description: "Cultivate do not differentiate between Front End and Back End Developers, yet we acknowledge that expertise in either field is too difficult for most people to achieve. How do we resolve this apparent contradiction?"
 ---
 
-I have been seeing a few things on Twitter recently decrying the concept of Full Stack (web) Developers, for example [this](https://twitter.com/lenar_io/status/1011984130135842816).
+I have been seeing a few things on Twitter recently decrying the concept of Full Stack (web) Developers, such as [this](https://twitter.com/lenar_io/status/1011984130135842816).
 
 The argument is that Full Stack Developers are generally back-end experts who suffer from [Dunning-Kruger](https://en.wikipedia.org/wiki/Dunning–Kruger_effect) relating to their front-end skills. This devalues front-end web work as just slapping some html together; maybe copy pasting a bit of JavaScript from Stack Overflow. Modern front-end development is a difficult and highly nuanced task and it is impossible to fully master both fields.
 
