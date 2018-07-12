@@ -11,14 +11,16 @@ A while ago we decided to open source this shared configuration project, in the 
 
 ## Text Editors
 
-Having Vim and Emacs users amoung the developers, we decided to use [Spacemacs](http://spacemacs.org/), an Emacs distribution _"with Vim built-in"_. We tinkered around with a single `.spacemacs` file and added features, layers and different configurations. It became Spacemacs' default dot file plus a few things we knew most of us would use. Eventually it grew into something more customizable that you can read about here:
+Having Vim and Emacs users among the developers, we decided to use [Spacemacs](http://spacemacs.org/), an Emacs distribution _"with Vim built-in"_. We tinkered around with a single `.spacemacs` file and added features, layers and different configurations. It became Spacemacs' default dot file plus a few things we knew most of us would use. Eventually it grew into something more customisable that you can read about here:
 [Spacemacs shared configuration - custom private layers](/posts/spacemacs-shared-config/)
 
 We also have configuration files for <a href="https://neovim.io/" target="_blank">Neovim</a>, because there's nothing like a text editor holy war to get your morning started.
 
 ## Remote sharing
 
-We tried a few different tools for interacting remotely. Sharing your screen is rather easy nowadays thanks to WebRTC, all you need is a proper web browser. But we needed a way to colaborate on the same source code. We tried a few tools, and they really didn't work as smoothly as we expected. One of the biggest issues we found is most of them are not multi-platform. We use Mac and Linux in the team, so at least these operative systems needed to be supported.
+We tried a few different tools for interacting remotely. Sharing your screen is rather easy nowadays thanks to WebRTC, all you need is a proper web browser. There are many services that provide audio and video calls and screen sharing such as [talky](https://talky.io/). But we needed a way to collaborate on the same source code.
+
+We tried a few tools, and they really didn't work as smoothly as we expected. One of the biggest issues we found is most of them are not multi-platform. We use Mac and Linux in the team, so at least these operating systems needed to be supported.
 
 We found out about [`tmate`](https://tmate.io/), a fork of `tmux` that allows you to share your terminal remotely. tmux is a terminal multiplexer which allows you to use several sessions inside a single terminal. Some of us already used tmux by the time we found tmate, so we added that tool to our set.
 
@@ -28,11 +30,11 @@ tmate behaves just like tmux, except when you start a session it gives you an ss
 
 By default, tmate will use `tmate.io` as a server for the connection. But the [server side code](https://github.com/tmate-io/tmate-slave) is also free software, so you can host your own tmate server. The communication goes through ssh so it's mostly safe, but it's always a good idea not to rely on third parties for such important services. We set up a tmate server in our infrastructure, and we can all use it by default using our shared configuration.
 
-I recently learned you can also share an Emacs server and open multiple ``emacsclients`` in different systems, having several cursors in the same file. I think this is interesting enough to check out eventually. But tmate has been working fine for us so far.
+I recently learned you can also share an Emacs server and open multiple `emacsclients` in different systems, having several cursors in the same file. I think this is interesting enough to check out eventually. But tmate has been working fine for us so far.
 
 ## Conclusion
 
-Sharing a common configuration in a team makes pairing easier, both remote and locally, since everyone becomes familiar with a common set of tools. Even when you are unfamiliar with the operative system, keyboard, or general setup on a co-worker's computer, there's a common ground.
+Sharing a common configuration in a team makes pairing easier, both remote and locally, since everyone becomes familiar with a common set of tools. Even when you are unfamiliar with the operating system, keyboard, or general setup on a co-worker's computer, there's a common ground.
 
 If you're interested, check out the repository and let us know what you think: [Cultivate Shared Config on GitHub](https://github.com/CultivateHQ/cultivate_shared_config). And If you have any feedback or questions about this post, tweet at us [@cultivatehq](https://twitter.com/cultivatehq).
 
