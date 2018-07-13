@@ -1,7 +1,7 @@
 ---
 title: How we built a Visual Studio Code extension for IoT prototyping
 author: "Dan Munckton"
-date: 2018-07-13 10:40 UTC
+date: 2018-07-13 10:00 UTC
 description: "We recently had the opportunity to make a Visual Studio Code extension that needed to communicate with an embedded device. This post explains the architecture we chose to achieve that and the decisions that led to it."
 tags: rust,iot,vscode
 image: /images/posts/vscode-rust-iot/Artboard.svg
