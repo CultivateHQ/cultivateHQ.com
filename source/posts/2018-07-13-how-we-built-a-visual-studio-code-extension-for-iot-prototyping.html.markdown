@@ -32,9 +32,7 @@ Some native code was going to be necessary somewhere in the architecture in orde
 
 One option was to use the [serialport Node.js extension](https://www.npmjs.com/package/serialport). This is a native Node.js extension written in C++. It presents a JavaScript API binding to call into its native code directly from JavaScript executing in the Node.js virtual machine. Its C++ code interfaces with operating system services to perform serial I/O and port discovery for JavaScript.
 
-This would be very convenient for the extension as the API is relatively simple and even supports notifications for hotplugging of devices.
-
-However, it had two important costs:
+However it had two important costs:
 
 * It complicated the build process - we could not rely on the normal native compilation that happens when npm installs the package on your system. The C++ code needs to be recompiled separately for the exact ABI (application binary interface) version of the Node.js embedded in the version of Electron currently used by VSCode. See [Using Native Node Modules](https://github.com/electron/electron/blob/master/docs/tutorial/using-native-node-modules.md) for more.
 * If and when VSCode updates the version of Electron it depends upon, the extension would need to be recompiled. This could force our customer to make a maintenance release of their extension, possibly at a point in time when they would not otherwise have needed to. Even if this might be an infrequent occurrence, it is an inconvenience we preferred not to pass on to their maintenance team.
