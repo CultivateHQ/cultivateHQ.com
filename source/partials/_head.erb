@@ -18,7 +18,7 @@
     <meta property="og:title" content="<%= current_page.data.title || "Cultivate" %>" />
     <meta property="og:description" content="<%= current_page.data.description %>" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://cultivatehq.com" />
+    <meta property="og:url" content="<%= config[:host] + current_page.url %>" />
     <meta property="og:image" content="<%= ImageHelpers.featured_image(current_page, config[:host]) %>" />
     <%= stylesheet_link_tag "application" %>
     <!--[if (lt IE 9) & (!IEMobile)]>
