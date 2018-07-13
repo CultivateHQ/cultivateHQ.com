@@ -3,7 +3,7 @@ title: How we built a Visual Studio Code extension for IoT prototyping
 author: "Dan Munckton"
 description: "We recently had the opportunity to make a Visual Studio Code extension that needed to communicate with an embedded device. This post explains the architecture we chose to achieve that and the decisions that led to it."
 tags: rust,iot,vscode
-image: /images/posts/vscode-rust-iot/Artboard.svg
+image: /images/posts/vscode-rust-iot/Artboard.png
 ---
 
 We recently had the opportunity to make a [Visual Studio Code](https://code.visualstudio.com/) extension that needed to communicate with an embedded device. This post explains the architecture we chose to achieve that and the decisions that led to it. We will also talk about how the [Rust language](https://www.rust-lang.org/) with standard I/O streams and the [serialport-rs crate](https://crates.io/crates/serialport) allowed us to glue everything together.
