@@ -43,7 +43,7 @@ It will then open the new post in whatever editor you have configured in your `E
 ## Publishing Changes
 
 We have had some issues now with using `middleman-deploy` to deploy over `sftp` to a static site. Issues as in it was missing all the stylesheets
-and javascript or, on upgrading, it fails with a message saying that deploy is an old an usupported plugin type. So to deploy, run
+and JavaScript or, on upgrading, it fails with a message saying that deploy is an old an usupported plugin type. So to deploy, run
 
 ```
 ./bin/deploy
@@ -51,6 +51,15 @@ and javascript or, on upgrading, it fails with a message saying that deploy is a
 
 Of course you will have had to have submitted your public ssh key to https://github.com/CultivateHQ/cultivate-infrastructure/blob/master/playbook/user_keys/public_keys
 before the playbook was last run for you to have access to the server.
+
+## Testing the deploy
+
+Do a quick test to check the deploy has gone well:
+
+* Go to https://cultivatehq.com. Does it look ok? Click round a few pages.
+* Is the new content there?
+* Check the console with developer tools. Any errors? Any resources failing to load?
+* Check it on mobile
 
 ## Rolling back deployed changes
 
