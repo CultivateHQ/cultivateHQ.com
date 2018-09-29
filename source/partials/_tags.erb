@@ -1,7 +1,7 @@
 <p class="page-content">
-  <% blog.tags.each do |t| %>
-    <a href="<%= tag_path(t[0]) %>">
-      <%= t[0].capitalize %>
+  <% current_page.data.tags.split(',').each do |t| %>
+    <a href="<%= tag_path(t) %>">
+      <%= t.capitalize %>
     </a>
   <% end %>
 </p>
