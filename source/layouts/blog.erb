@@ -33,8 +33,16 @@
         </div>
         <div class="layout-two-column__right padding">
           <aside class="widget">
-            <h3>Tags</h3>
+            <h3>Posts by tag</h3>
             <%= partial "partials/tags" %>
+          </aside>
+          <aside class="widget">
+            <h3>Posts by year</h3>
+          <% [2018, 2017, 2016, 2015, 2014, 2013, 2012].each do |year| %>
+              <p>
+                <%= link_to year, blog_year_path(year) %>
+              </p>
+          <% end %>
           </aside>
         </div>
     </section>

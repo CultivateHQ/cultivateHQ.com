@@ -1,0 +1,16 @@
+---
+pageable: true
+per_page: 10
+---
+<% current_page.data.title =  "Posts from " + year.to_s %>
+<% page_articles.each_with_index do |article, i| %>
+      <article class="blog-post">
+        <h2><%= link_to article.title, article %></h2>
+        <div class="blog-post__summary"><%= article.summary %></div>
+        <div class="meta">
+          <span class="blog-post__author">By <%= article.data.author %></span>
+          - <span class="blog-post__date"><%= article.date.strftime('%d %B, %Y') %></span>
+        </div>
+      </article>
+  <% end %>
+</html>

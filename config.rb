@@ -20,7 +20,7 @@ activate :blog do |blog|
   blog.paginate = true
   blog.taglink = 'tag/{tag}.html'
   blog.tag_template = 'posts/tag.html'
-  # blog.calendar_template = "calendar.html"
+  blog.calendar_template = "posts/calendar.html"
 end
 
 ###
@@ -45,6 +45,7 @@ end
 page 'index.html', layout: :home
 page '/posts/index.html', layout: :blog
 page '/posts/tag.html', layout: :blog
+page '/posts/calendar.html', layout: :blog
 page '/jobs', layout: :job
 page '/newsletter-signup'
 page '/feed.xml', layout: false
