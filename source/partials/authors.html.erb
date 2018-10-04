@@ -1,0 +1,8 @@
+<aside class="widget">
+  <h3>Posts by author</h3>
+  <% data.authors.each do | author | %>
+    <p>
+    <%= link_to author.name, author_path(author) %>
+    </p>
+  <% end %>
+</aside>

@@ -1,28 +1,28 @@
-adam:
-  name: Adam Buckland
-alan:
+#- Adam Buckland:
+  #name: Adam Buckland
+- Alan Gardner:
   name: Alan Gardner
-andy: 
-  name: Andy Robinson
-dan:
+#- Andy Robinson:
+  #name: Andy Robinson
+- Dan Munckton:
   name: Dan Munckton
-erik:
-  name: Erik Igelström
-fernando:
+#- Erik Igelström:
+  #name: Erik Igelström
+- Fernando Briano:
   name: Fernando Briano
-katep:
-  Kate Preston
-katew:
-  Kate Wilkinson
-paul:
+#- Kate Preston:
+  #name: Kate Preston
+#- Kate Wilkinson:
+  #name: Kate Wilkinson
+- Paul Wilson:
   name: Paul Wilson
-spencer:
+- Spencer Turner:
   name: Spencer Turner
-stephen
-  name: Stephen Haley
-valerie:
+#- Stephen Haley:
+  #name: Stephen Haley
+- Valerie Dryden:
   name: Valerie Dryden
-mark:
+- Mark Connell:
   name: Mark Connell
-peter:
+- Peter Aitken:
   name: Peter Aitken

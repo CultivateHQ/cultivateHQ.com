@@ -1,7 +1,10 @@
-<p class="page-content">
-  <% blog.tags.each do |t| %>
-    <a href="<%= tag_path(t[0]) %>">
-      <%= t[0].capitalize %>
-    </a>
-  <% end %>
-</p>
+<aside class="widget">
+  <h3>Posts by tag</h3>
+  <p class="page-content">
+    <% blog.tags.each do |t| %>
+      <a href="<%= tag_path(t[0]) %>">
+        <%= t[0].capitalize %>
+      </a>
+    <% end %>
+  </p>
+</aside>
