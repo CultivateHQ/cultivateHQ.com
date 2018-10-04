@@ -23,6 +23,24 @@
   }
 }
 
+.link-list {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    padding-right: 0.25em; 
+
+    a { 
+      color: $pink_brand;
+      font-weight: 200;
+      text-decoration: underline;
+    }
+  }
+
+  li:last-of-type { border: 0;}
+}
+
 .layout-two-column {
   @include em-min-width($breakpoint_small_desktop) {
     display: table;
