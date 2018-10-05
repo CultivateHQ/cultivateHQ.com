@@ -1,0 +1,13 @@
+<aside class="widget">
+  <h3>By tag</h3>
+  <ul class="link-list">
+    <% sorted_tags = sorted_by_key = Hash[blog.tags.sort] %>
+    <% sorted_tags.each do |t| %>
+      <li>
+        <a href="<%= tag_path(t[0]) %>">
+          <%= t[0] %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</aside>

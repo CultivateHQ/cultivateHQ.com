@@ -1,0 +1,10 @@
+<aside class="widget">
+  <h3>By author</h3>
+  <ul class="link-list">
+    <% data.authors.each do | author | %>
+      <li>
+        <%= link_to author.name, author_path(author) %>
+      </li>
+    <% end %>
+  </ul>
+</aside>

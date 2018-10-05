@@ -1,0 +1,8 @@
+<aside class="widget">
+  <h3>By year</h3>
+  <ul class="link-list">
+  <% [2018, 2017, 2016, 2015, 2014, 2013, 2012].each do |year| %>
+    <li> <%= link_to year, blog_year_path(year) %> </li>
+  <% end %>
+  </ul>
+</aside>

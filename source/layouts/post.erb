@@ -17,7 +17,14 @@
               <%= current_page.date.strftime('%d %B, %Y') %>
             </span>
           <% end %>
-
+          <% if defined? current_page.data.tags %> -
+            <span class="blog-post__tags subtitle">
+              (
+              <% page_tags = current_page.data.tags.split(',') %>
+              <%= page_tags.map { |t| "<a href=\"#{tag_path(t)}\"> #{t}</a>"}.join(', ').html_safe %>
+            <% end %>
+            )
+            </span>
         </div>
       </header>
 
@@ -51,11 +58,12 @@
           </div>
         </div>
         <div class="layout-two-column__right padding">
+          <%= partial "partials/authors" %>
+          <%= partial "partials/tags" %>
+          <%= partial "partials/years" %>
           <aside class="widget">
             <h3>Share this article</h3>
             <%= partial "partials/social_share" %>
-            <h3>Tags</h3>
-            <%= partial "partials/tags" %>
           </aside>
         </div>
       </div>
