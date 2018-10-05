@@ -46,15 +46,15 @@ page 'index.html', layout: :home
 page '/posts/index.html', layout: :blog
 page '/posts/tag.html', layout: :blog
 page '/posts/calendar.html', layout: :blog
-page '/posts/author.html', layout: :author
+page '/posts/author/template.html', layout: :author
 page '/jobs', layout: :job
 page '/newsletter-signup'
 page '/feed.xml', layout: false
 
 
 data.authors.collect {|author| author.keys.first }.each do |author_slug|
-  proxy "/posts/author/#{author_slug.gsub(/\s/,'-').downcase}",
-    '/posts/author.html',
+  proxy "/posts/author/#{author_slug.gsub(/\s/,'-').downcase}/index.html",
+    '/posts/author/template.html',
         locals: { author_slug: author_slug },
         ignore: true
 end
@@ -77,7 +77,7 @@ end
 helpers do
   def author_path(author)
     @name = author.keys.first.gsub(/\s/,'-').downcase
-    "/posts/author/#{@name}"
+    "/posts/author/#{@name}/"
   end
 end
 
@@ -129,5 +129,3 @@ activate :directory_indexes
 
 # Activate the alias(redirect) plugin
 activate :alias
-
-

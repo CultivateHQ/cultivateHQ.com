@@ -3,7 +3,7 @@ title: Phoenix with Elm - part 7
 author: Alan Gardner
 description: Let's take a moment to talk about what is happening behind the scenes in our Elm application.
 tags: elixir, elm
-date 2015/10/30
+date: 2015/10/30
 ---
 
 <section class="callout">
