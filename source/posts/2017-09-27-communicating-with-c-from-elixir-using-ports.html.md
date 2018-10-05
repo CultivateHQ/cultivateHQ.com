@@ -1,8 +1,7 @@
 ---
 author: Paul Wilson
-title: Communicating with C from Elixir using Ports
-description: On occasion your Elixir is going to want to interact with an external program. This may be for speed, but more likely you are going to want to take advantage of a library that has been written in C. The most common options are using Ports and Native Interface Functions (NIFs).
-alias: posts/comminicating-with-c-from-elixir-using-ports/
+title: "Communicating with C from Elixir using Ports"
+description: "On occasion your Elixir is going to want to interact with an external program. This may be for speed, but more likely you are going to want to take advantage of a library that has been written in C. The most common options are using Ports and Native Interface Functions (NIFs)."
 tags: elixir
 date: 2017/09/27
 ---

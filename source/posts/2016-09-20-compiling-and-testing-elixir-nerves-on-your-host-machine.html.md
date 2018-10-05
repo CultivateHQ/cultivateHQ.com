@@ -1,7 +1,7 @@
 ---
 author: Paul Wilson
-title: Compiling and testing Elixir Nerves on your host machine
-description: Elixir Nerves is awesome, but it make it awkward to test your code on your development computer - especially if it is not Linux. Here I explain how to overcome that hurdle.
+title: "Compiling and testing Elixir Nerves on your host machine"
+description: "Elixir Nerves is awesome, but it make it awkward to test your code on your development computer - especially if it is not Linux. Here I explain how to overcome that hurdle."
 tags: elixir
 date: 2016/09/20
 ---

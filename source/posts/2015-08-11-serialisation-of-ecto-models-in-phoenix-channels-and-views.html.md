@@ -1,7 +1,7 @@
 ---
 author: Paul Wilson
-title: JSON Serialisation of Ecto Models in Phoenix Channels (and views)
-description: This week I upgraded from 0.13.x to 0.15.0 (through 0.14.x) and hit problems with models that I'd been sending over channels to the Javascript client. Here's how it panned out.
+title: "JSON Serialisation of Ecto Models in Phoenix Channels (and views)"
+description: "This week I upgraded from 0.13.x to 0.15.0 (through 0.14.x) and hit problems with models that I'd been sending over channels to the Javascript client. Here's how it panned out."
 tags: elixir
 date: 2015/08/11
 ---

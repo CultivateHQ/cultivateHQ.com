@@ -1,6 +1,6 @@
 ---
 author: Paul Wilson
-title: Using Ecto 2, without Phoenix, but with tests
+title: "Using Ecto 2, without Phoenix, but with tests"
 description: Using Ecto without Phoenix is a bit fiddly to set up. This is a step-by-step tutorial to getting through that.
 tags: elixir
 date: 2016/08/17

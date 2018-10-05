@@ -1,6 +1,6 @@
 ---
 author: Paul Wilson
-title: Three alternatives to using GenEvent in Elixir
+title: "Three alternatives to using GenEvent in Elixir"
 description: "For various reasons, may people are not fond of GenEvent. Here are some examples of using some good alternatives for broadcasting and subscribing to types of event: gproc, Phoenix PubSub, and the new process registry to be included in Elixir 1.4."
 tags: elixir
 date: 2016/11/04

@@ -1,7 +1,7 @@
 <% current_page.data.title = author_slug %>
 <% current_page.data.subtitle = "Articles from our blog by <em>#{author_slug}</em>" %>
 
-<% articles_by_author(author_slug).each do |article| %>
+<% articles_by_author(author_slug).reverse.each do |article| %>
   <article class="blog-post">
     <h2><%= link_to article.title, article %></h2>
     <div class="blog-post__summary"><%= article.summary %></div>

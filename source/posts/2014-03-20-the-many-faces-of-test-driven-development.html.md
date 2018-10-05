@@ -1,5 +1,5 @@
 ---
-title:  "The Many Faces of Test Driven Development"
+title: "The Many Faces of Test Driven Development"
 author: Paul Wilson
 description: Like many religious wars, the Test Driven Development debate seems interminable, unpleasant, and not a little tedious. "Mocks Suck and cause brittle tests." "No, including real collaborators in your tests makes them brittle." "That's not a unit test". "It's not about testing, it's about design." "No, it's about documentation."
 tags: tdd

@@ -3,7 +3,7 @@ title: Phoenix with Elm - part 9
 author: Alan Gardner
 description: This part of the tutorial is actually going to be a bit of a detour. We're going to fetch the initial data for our Elm application over HTTP from a data API that we'll create in our Phoenix application.
 tags: elixir, elm
-date 2015/11/05
+date: 2015/11/05
 ---
 
 <section class="callout">
