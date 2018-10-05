@@ -3,6 +3,7 @@ title: Phoenix with Elm - part 3
 author: Alan Gardner
 description: Adding a simple View to the Elm application.
 tags: elixir, elm
+date: 2015/10/17
 ---
 
 <section class="callout">

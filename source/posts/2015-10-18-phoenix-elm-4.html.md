@@ -3,6 +3,7 @@ title: Phoenix with Elm - part 4
 author: Alan Gardner
 description: Adding a Model and enhancing the View.
 tags: elixir, elm
+date: 2015/10/18
 ---
 
 <section class="callout">

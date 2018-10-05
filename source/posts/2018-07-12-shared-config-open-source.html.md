@@ -3,6 +3,7 @@ title: Open sourcing our shared configuration for remote pairing
 author: Fernando Briano
 description: We open sourced our shared configuration for tmux, Spacemacs and other tools we use daily for development
 tags: tools, open source
+date: 2018/07/12
 ---
 
 We do pair programming a lot at Cultivate. Sometimes remotely, sometimes on the same computer. Looking for solutions to make remote pairing a smooth experience, we built our own shared configuration repository. This is a way to get a consistent experience across different systems with common tools. Switching computers should be cheap.

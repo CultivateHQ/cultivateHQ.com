@@ -3,6 +3,7 @@ title: Using HTTPS with Elixir on Cowboy
 author: Fernando Briano
 description: How to serve https from a simple Elixir app running locally with Cowboy in development mode
 tags: elixir
+date: 2017/10/31
 ---
 
 We recently needed to serve requests via HTTPS locally in our Elixir app. We found several ways of doing it in a Phoenix app, but we just had a [Plug](https://github.com/elixir-plug/plug) running on Cowboy. We had to go into some source code and documentation to figure out how to make this work. Here's how we learned to serve https in our local development environments.

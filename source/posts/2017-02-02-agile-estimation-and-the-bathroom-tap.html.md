@@ -3,6 +3,7 @@ title: "So how much is it going to cost? Agile Estimation and the Bathroom tap..
 author: Spencer Turner
 description: A 'non-technical' explanation as to why Agile Estimation is hard.
 tags: agile
+date: 2017/02/02
 ---
 
 ## So, how much is it going to cost?

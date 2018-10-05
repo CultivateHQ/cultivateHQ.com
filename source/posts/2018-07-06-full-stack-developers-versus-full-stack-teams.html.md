@@ -2,6 +2,8 @@
 author: "Paul Wilson"
 title: "Full stack developers versus full stack teams"
 description: "Cultivate do not differentiate between Front End and Back End Developers, yet we acknowledge that expertise in either field is too difficult for most people to achieve. How do we resolve this apparent contradiction?"
+tags: teams
+date: 2018/07/06
 ---
 
 I have been seeing a few things on Twitter recently decrying the concept of Full Stack (web) Developers, such as [this](https://twitter.com/lenar_io/status/1011984130135842816).

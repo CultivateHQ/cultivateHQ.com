@@ -2,6 +2,8 @@
 author: "Paul Wilson"
 title: "The Product Manager and The Manual Test Script of Doom"
 description: "Winning an argument by conceding in good faith"
+tags: product, values
+date: 2018/05/10
 ---
 
 Once upon a time we were six months into a contract to provide an additional development team to an organisation when we were assigned a new product manager. This PM was formerly at one of the big consultancies. He wanted to focus on quality, which to him meant executing and logging a detailed manual text script before each release. We were unable to persuade him that there are other ways to work.

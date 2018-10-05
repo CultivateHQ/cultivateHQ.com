@@ -3,6 +3,7 @@ title:  "How to add and test HTTP basic authentication in a Phoenix web applicat
 author: Mark Connell
 description: Short tutorial on how to add basic authentication to a phoenix web app.
 tags: elixir
+date: 2015/08/14
 ---
 
 If you are coming from a Rails background, you'll be used to having a convenience

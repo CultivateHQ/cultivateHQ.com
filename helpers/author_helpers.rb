@@ -8,5 +8,5 @@ end
 def articles_by_author(author_name)
   sitemap.resources.select do |resource|
   resource.data.author == author_name
-  end.sort_by { |resource| resource.data.date }
+  end.sort_by { |resource| resource.date.date }
 end

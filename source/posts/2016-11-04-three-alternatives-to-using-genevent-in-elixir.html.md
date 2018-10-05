@@ -3,6 +3,7 @@ author: Paul Wilson
 title: Three alternatives to using GenEvent in Elixir
 description: "For various reasons, may people are not fond of GenEvent. Here are some examples of using some good alternatives for broadcasting and subscribing to types of event: gproc, Phoenix PubSub, and the new process registry to be included in Elixir 1.4."
 tags: elixir
+date: 2016/11/04
 ---
 
 Wojket Gawronski's post [here](http://www.afronski.pl/2015/11/02/what-is-wrong-with-gen-event.html), neatly summarises the issues with [GenEvent](http://elixir-lang.org/docs/stable/elixir/GenEvent.html). Fortunately there are alternatives including [gproc](https://github.com/uwiger/gproc), [phoenix_pubsub](https://github.com/phoenixframework/phoenix_pubsub), and [Elixir's upcoming Process registry](https://hexdocs.pm/elixir/Registry.html).

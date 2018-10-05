@@ -3,6 +3,7 @@ title:  "On the Scaled Agile Framework"
 author: Paul Wilson
 description: A few months a ago a I successfully completed the Scaled Agilist Certification course and exam, for the Scaled Agile Framework (SAFe). These are my thoughts on SAFe.
 tags: agile
+date: 2014/06/06
 ---
 
 A few months a ago a I successfully completed the Scaled Agilist Certification course and exam, for the Scaled Agile Framework (SAFe). These are my thoughts on SAFe.

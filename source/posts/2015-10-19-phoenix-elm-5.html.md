@@ -3,6 +3,7 @@ title: Phoenix with Elm - part 5
 author: Alan Gardner
 description: So far Elm has been happily inferring the types that we are using in our application, and it will continue to do so. However let's take a moment to look at how we can make it more obvious to others who might read our code what types we are expecting.
 tags: elixir, elm
+date: 2015/10/19
 ---
 
 <section class="callout">

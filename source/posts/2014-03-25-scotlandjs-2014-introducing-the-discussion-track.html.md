@@ -3,6 +3,7 @@ title:  "ScotlandJS 2014 — Introducing the Discussion Track"
 author: Peter Aitken
 description: This year at ScotlandJS we are introducing the Discussion Track as an integral part of the event experience.
 tags: conferences
+date: 2014/03/25
 ---
 
 ## Discussion Track

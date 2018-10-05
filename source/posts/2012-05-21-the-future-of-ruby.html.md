@@ -3,6 +3,7 @@ title:  "The future of Ruby"
 author: Paul Wilson
 description: I am not a very old-school Rubyist. My involvement dates from 2005 when I, along with many of my Extreme Programming (XP) colleagues, joined the Great Rails Bandwagon. It is telling that so many of the people who became involved around that time were from the Agile/XP community. We were sick of the mountains of glue code and XML configuration that stood in the way of us getting things done in Enterprise Java.
 tags: ruby
+date: 2012/05/21
 ---
 
 > originally published with [.net magazine](http://www.netmagazine.com/opinions/future-ruby)

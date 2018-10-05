@@ -8,6 +8,7 @@ description: >
   post I want to explore the similarities and differences to see how true this
   may be.
 tags: scala, swift
+date: 2014/11/03
 ---
 
 [Swift](https://developer.apple.com/swift/) is a modern multi-paradigm

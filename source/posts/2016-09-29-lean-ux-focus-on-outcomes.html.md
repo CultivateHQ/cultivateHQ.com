@@ -3,6 +3,7 @@ author: Spencer Turner
 title: "Large organisations find Lean UX hard, it’s not them, it’s us! - Part Two: Outcomes!"
 description: In this post, I'd like to share my number one approach to improve our situation today. Outcomes.
 tags: lean ux
+date: 2016/09/29
 ---
 
 In the [previous blog post](/posts/lean-ux-in-the-enterprise-is-hard/) we looked at the reasons large organisations are struggling to implement Lean UX successfully.

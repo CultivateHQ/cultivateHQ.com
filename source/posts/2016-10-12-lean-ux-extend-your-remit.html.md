@@ -3,6 +3,7 @@ author: Spencer Turner
 title: "Large organisations find Lean UX hard, it’s not them, it’s us! Part Three - Extend Your Remit"
 description: This post will cover some ways we can extend our remit and elevate the conversation to a more strategic level.
 tags: lean ux
+date: 2016/10/12
 ---
 
 In the previous post in this series, we covered why you need to [focus on oucomes](/posts/lean-ux-focus-on-outcomes). In this post we'll look at a couple of techniques I like to use to elevate the conversation to a more strategic level.

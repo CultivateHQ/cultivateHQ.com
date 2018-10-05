@@ -1,8 +1,9 @@
 ---
-  title  : How to clear an elasticsearch index
-  author : Mark Connell
-  description : "In the event you need to tear down your elasticsearch index, there is a web API that you can take advantage of to make this fairly straight forward."
-  tags: elasticsearch
+title  : How to clear an elasticsearch index
+author : Mark Connell
+description : "In the event you need to tear down your elasticsearch index, there is a web API that you can take advantage of to make this fairly straight forward."
+tags: elasticsearch
+date: 2013/02/03
 ---
 
 In the event you need to tear down your elasticsearch index, there is a web API that you can take

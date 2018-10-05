@@ -3,6 +3,7 @@ title: Spacemacs shared configuration - custom private layers
 author: Fernando Briano
 description: How we use a shared configuration file for Spacemacs and managed to add personal configurations on each machine too.
 tags: text editors
+date: 2017/11/15
 ---
 
 Some of us at Cultivate are using [**Spacemacs**](http://spacemacs.org/) as our preferred text editor. It really brings the best of two worlds together: Vim and Emacs. Most people at the office are used to Vim, I'm used to Emacs. With Spacemacs, we can toggle between the two with a single key stroke. Emacs can also be used in the terminal, so it made it easy for us to do pair programming via [tmate](https://tmate.io/) while I was working remotely.

@@ -2,6 +2,7 @@
 title:  "Seven techniques product leaders can use today to get a project focused"
 author: Spencer Turner
 tags: motivation
+date: 2015/07/23
 ---
 
 ## Are you frustrated by a culture that hasn't caught up with the digital world?

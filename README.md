@@ -24,7 +24,9 @@ The first wraps the `middleman article` command:
 ./bin/new_post "Title of your blog post here"
 ```
 
-But remember to add the extra `author` and `description` front matter necessary to support Twitter Cards & OpenGraph (see below).
+But remember to add the extra `date`, `author` and `description` front matter necessary to support Twitter Cards & OpenGraph (see below).
+
+Also, if it's your first blog-post, add yourself to, or uncomment yourself from the `data/authors.yml`
 
 Or use `bin/gen.rb` which is a wizard:
 

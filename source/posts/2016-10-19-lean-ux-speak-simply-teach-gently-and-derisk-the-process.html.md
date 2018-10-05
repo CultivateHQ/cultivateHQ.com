@@ -3,6 +3,7 @@ title: "Large organisations find Lean UX hard, it’s not them, it’s us! - Par
 author: Spencer Turner
 description: This is part four of the blog post series "Large organisations find Lean UX hard, it’s not them, it’s us!", based on my talks at UXCambridge and UXScotland. In this post we'll cover more tips, techniques and suggestions that will help you communicate more effectively with large organisations.
 tags: lean ux
+date: 2016/10/19
 ---
 
 This is part four of the blog post series [Large organisations find Lean UX hard, it’s not them, it’s us!](/posts/lean-ux-in-the-enterprise-is-hard/), based on my talks at UXCambridge and UXScotland.

@@ -4,19 +4,20 @@ author: "Dan Munckton"
 description: "We recently had the opportunity to make a Visual Studio Code extension that needed to communicate with an embedded device. This post explains the architecture we chose to achieve that and the decisions that led to it."
 tags: rust,iot,vscode
 image: /images/posts/vscode-rust-iot/Artboard.png
+date: 2018/07/13
 ---
 
 We recently had the opportunity to make a [Visual Studio Code](https://code.visualstudio.com/) extension that needed to communicate with an embedded device. This post explains the architecture we chose to achieve that and the decisions that led to it. We will also talk about how the [Rust language](https://www.rust-lang.org/) with standard I/O streams and the [serialport-rs crate](https://crates.io/crates/serialport) allowed us to glue everything together.
 
 ![Banner showing Rust, VSCode and a development board](/images/posts/vscode-rust-iot/Artboard.svg)
 
-# The brief
+## The brief
 
 Our client wanted us to build a VSCode extension that would provide an IDE, with a good user experience, for their customers prototyping firmware with JavaScript on their IoT devices.
 
 Our client's firmware already supported a serial protocol for uploading, deleting, listing and running scripts. We needed to make these use cases possible from within the Visual Studio Code IDE.
 
-# How does a Visual Studio Code extension work?
+## How does a Visual Studio Code extension work?
 
 In case you've not come across it yet, [Visual Studio Code](https://code.visualstudio.com/) is an advanced text editor, armed with features to make developers' lives easier. It is written in the [TypeScript](http://www.typescriptlang.org/) superset of JavaScript, on top of the [Electron](https://electronjs.org/) platform. Electron makes it possible to use JavaScript, HTML and CSS for cross-platform development of desktop applications, and is essentially an integration of [Chromium](https://www.chromium.org/) and [Node.js](https://nodejs.org/en/).
 
@@ -47,7 +48,7 @@ So we chose the second option and built an out-of-process executable to handle t
 
 An added benefit was that the command line executable would easily enable other integrations. Indeed, before our project was finished our customer had already started using the command line tool in parts of their hardware test harness and created a proof of concept Emacs extension.
 
-# Problem: distributing the native code
+## Problem: distributing the native code
 
 Because we need to ship native code, we have to find a way to bundle a build of the executable compiled for each platform we want to support.
 
@@ -60,7 +61,7 @@ Both are very nice because they avoid shipping redundant binaries to users. Howe
 
 Also, for the initial release our client wanted to ship the extension to their customers outside of the public marketplace. So for the sake of simplicity, we decided to bundle the executable within the extension package, and build a package for each of the three supported platforms.
 
-# Why Rust?
+## Why Rust?
 
 The next decision was whether to use C/C++ or Rust for the command line executable.
 
@@ -70,7 +71,7 @@ Both appreciated the extra comfort, guidance and security provided by the Rust c
 
 Additionally, Rust's tooling ([rustup](https://doc.rust-lang.org/book/second-edition/ch01-01-installation.html) and [cargo](https://doc.rust-lang.org/book/second-edition/ch01-03-hello-cargo.html)) made cross platform development a breeze. No complicated Makefiles, no need to adapt for different compilers from platform to platform and easy standardised integration of third-party libraries from [crates.io](https://crates.io/). [Cargo](https://doc.rust-lang.org/cargo/) got us from zero to code quickly and [Rust's built-in testing facilities](https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html) gave us all we needed to test-drive our features.
 
-# The outcome
+## The outcome
 
 ![End to end architecture diagram](/images/posts/vscode-rust-iot/Diagram.svg)
 

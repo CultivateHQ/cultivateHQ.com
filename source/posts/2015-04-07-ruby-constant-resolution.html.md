@@ -3,6 +3,7 @@ title: "Ruby constant resolution"
 author: Paul Wilson
 description: "Module and class nesting is how Ruby does namespacing, but it's not always that well known how constants are resolved."
 tags: ruby
+date: 2015/04/07
 ---
 
 Module and class nesting is how Ruby does namespacing, but it's not always that well known how constants are resolved when we're not using the fully qualified names. Bearing in mind that Ruby classes and modules are themselves constant, it's quite handy to know this stuff.

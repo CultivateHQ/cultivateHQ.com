@@ -3,6 +3,7 @@ title: Phoenix with Elm - part 1
 author: Alan Gardner
 description: Installing prerequisites and generating a base Phoenix project
 tags: elixir, elm
+date: 2015/10/15
 ---
 
 <section class="callout">
