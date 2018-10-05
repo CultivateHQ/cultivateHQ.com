@@ -29,9 +29,9 @@
   text-align: center;
   li {
     display: inline-block;
-    padding-right: 0.25em; 
+    padding-right: 0.25em;
 
-    a { 
+    a {
       color: $pink_brand;
       font-weight: 200;
       text-decoration: underline;
@@ -90,11 +90,11 @@
     }
   }
 
-  table { 
+  table {
     margin-bottom: 2em;
   }
 
-  td, th { 
+  td, th {
     border: 1px solid #DDD;
     vertical-align: middle;
     padding: 0.25em;
@@ -114,3 +114,5 @@
 
   th { padding: 1em;}
 }
+
+.subtitle a { color: white; text-decoration: underline; text-transform: uppercase;}
