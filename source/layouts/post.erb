@@ -38,7 +38,7 @@
               <div class="pagination">
                <ul>
                 <li class="button-pagination">
-                  <% prev_article = current_article.previous_article %>
+                  <% prev_article = current_article.article_previous %>
                     <% if prev_article %>
                     <a href="<%= prev_article.url %>" rel="prev" title="Previous article: <%= prev_article.title %>">&lt; Previous</a>
                     <% else %>
