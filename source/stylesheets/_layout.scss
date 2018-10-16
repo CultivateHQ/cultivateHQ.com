@@ -103,6 +103,8 @@ img, svg {
   max-width: 860px;
 }
 
+#site-content-area {background: white;}
+
 .site-content-area-header {
   background: url(/images/svg/structure-sub.svg) center center no-repeat $pink_brand;
   background-size: cover;
@@ -133,7 +135,6 @@ img, svg {
       &:before {
         content: '• ';
         color: $pink_brand;
-
       }
     }
   }
@@ -197,18 +198,18 @@ img, svg {
 }
 
 .video-wrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
 }
 
 .video-wrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .case-study-image {

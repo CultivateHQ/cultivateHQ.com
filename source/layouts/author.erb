@@ -5,30 +5,32 @@
     <%= stylesheet_link_tag "code_highlight" %>
   </head>
   <body class="<%= page_classes %>">
-    <%= partial "partials/header" %>
-    <section id="site-content-area">
-      <%= partial "partials/breadcrumbs" %>
-      <header class="site-content-area-header padding-medium">
-        <div class="mid-width">
-          <h1><%= current_page.data.title %></h1>
-          <% if current_page.data.has_key?('subtitle') %>
-            <h2 class="subtitle"><%= current_page.data.subtitle %></h2>
-          <% end %>
-        </div>
-      </header>
+    <%= partial "partials/menu" %>
+    <div id="panel">
+      <%= partial "partials/header" %>
+      <section id="site-content-area">
+        <%= partial "partials/breadcrumbs" %>
+        <header class="site-content-area-header padding-medium">
+          <div class="mid-width">
+            <h1><%= current_page.data.title %></h1>
+            <% if current_page.data.has_key?('subtitle') %>
+              <h2 class="subtitle"><%= current_page.data.subtitle %></h2>
+            <% end %>
+          </div>
+        </header>
 
-      <div class="layout-two-column max-width">
-        <div class="layout-two-column__left">
-          <article class="page-content min-width padding-large page-content--blog-post">
-            <%= yield %>
-          </article>
-        </div>
-        <div class="layout-two-column__right padding">
-          <%= partial "partials/authors" %>
-          <%= partial "partials/tags" %>
-          <%= partial "partials/years" %> 
-        </div>
-    </section>
-    <%= partial "partials/footer" %>
+        <div class="layout-two-column max-width">
+          <div class="layout-two-column__left">
+            <article class="page-content min-width padding-large page-content--blog-post">
+              <%= yield %>
+            </article>
+          </div>
+          <div class="layout-two-column__right padding">
+            <%= partial "partials/authors" %>
+            <%= partial "partials/tags" %>
+            <%= partial "partials/years" %> 
+          </div>
+      </section>
+      <%= partial "partials/footer" %>
   </body>
 </html>

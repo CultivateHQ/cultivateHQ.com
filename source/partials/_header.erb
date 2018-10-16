@@ -4,19 +4,9 @@
   <header id="masthead" class="padding">
     <div class="max-width masthead--inner">
       <a id="site-logo" href="/"><%= image_tag "svg/logo-white.svg", alt: "Cultivate logo", width: "114", height: "26" %></a>
-      <div id="site-navigation">
-        <a id="mobile-menu-trigger" href="#site-navigation"><span>Menu </span></a>
-        <nav>
-          <ul>
-            <li><%= link_to 'Services', '/services/', class: 'nav-services' %></li>
-            <li><%= link_to 'Testimonials', '/testimonials/', class: 'nav-testimonials' %></li>
-            <li><%= link_to 'Clients', '/clients/', class: 'nav-clients' %></li>
-            <li><%= link_to 'About Us', '/about/', class: 'nav-about' %></li>
-            <li><%= link_to 'Jobs', '/jobs/', class: 'nav-jobs' %></li>
-            <li><%= link_to 'Blog', '/posts/', class: 'nav-posts' %></li>
-            <li><%= link_to 'Contact Us', '/contact/', class: 'nav-contact' %></li>
-          </ul>
-        </nav>
-      </div>
+      <a id="menu-button">
+        <i class="fa fa-bars"></i>
+        menu
+      </a>
     </div>
   </header>
