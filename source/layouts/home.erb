@@ -4,23 +4,25 @@
     <%= partial "partials/head" %>
   </head>
   <body class="<%= page_classes %>">
-    <%= partial "partials/header" %>
-    <section class="home-testimonial padding-large">
-      <div class="mid-width">
-        <%= javascript_include_tag  "home.bundle" %>
-        <noscript>
-          <blockquote class="testimonial-quote testimonial-quote--home">
-            <span class="testimonial-quote__inner">
-              The team at Cultivate combine the best of agile software delivery with an in-depth knowledge of product development. It’s hard to find a team as experienced and passionate as they are.
-            </span>
-            <cite class="testimonial-quote__left"><%= image_tag "images/testimonials/large/evan-henshaw-plath.jpg", alt: "Photo of Evan Henshaw-Plath" %>Evan Henshaw-Plath<br> Co-creator, Twitter</cite>
-          </blockquote>
-        </noscript>
-        <a class="button button--on-dark" href="/services/">View our core services</a>
-      </div>
-    </section>
-    <%# "yield" pulls in index.html.erb %>
-    <%= yield %>
-    <%= partial "partials/footer" %>
+    <%= partial "partials/menu" %> 
+    <div id="panel">
+      <%= partial "partials/header" %>
+      <section class="home-testimonial padding-large">
+        <div class="mid-width">
+          <%= javascript_include_tag  "home.bundle" %>
+          <noscript>
+            <blockquote class="testimonial-quote testimonial-quote--home">
+              <span class="testimonial-quote__inner">
+                The team at Cultivate combine the best of agile software delivery with an in-depth knowledge of product development. It’s hard to find a team as experienced and passionate as they are.
+              </span>
+              <cite class="testimonial-quote__left"><%= image_tag "images/testimonials/large/evan-henshaw-plath.jpg", alt: "Photo of Evan Henshaw-Plath" %>Evan Henshaw-Plath<br> Co-creator, Twitter</cite>
+            </blockquote>
+          </noscript>
+          <a class="button button--on-dark" href="/services/">View our core services</a>
+        </div>
+      </section>
+      <%# "yield" pulls in index.html.erb %>
+      <%= yield %>
+      <%= partial "partials/footer" %>
   </body>
 </html>

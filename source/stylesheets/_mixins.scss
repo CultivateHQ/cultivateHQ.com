@@ -1,98 +1,64 @@
 //Responsive Widths
 @mixin em-min-width($minWidth)
 {
-
   @if $legacy-ie {
-
     @content;
-
   }
 
   @else {
-
     @media screen and (min-width: $minWidth/16+em) { /* #{$minWidth}px */
       @content;
     }
-
   }
-
 }
 
 
 @mixin em-min-height($minHeight)
 {
-
   @if $legacy-ie {
-
-
   }
-
   @else {
-
     @media screen and (min-height: $minHeight/16+em) { /* #{$minHeight}px */
       @content;
     }
-
   }
-
 }
 
 
 @mixin em-min-width-and-height($minWidth,$minHeight)
 {
-
     @if $legacy-ie {
-
-
     }
-
     @else {
-
         @media screen and (min-width: $minWidth/16+em) and (min-height: $minHeight/16+em) { /* #{$minWidth}px / #{$minHeight}px */
           @content;
     }
-
   }
-
 }
 
 @mixin em-max-width-and-height($maxWidth,$maxHeight)
 {
-
     @if $legacy-ie {
-
-
     }
-
     @else {
-
         @media screen and (max-width: $maxWidth/16+em) and (max-height: $maxHeight/16+em) { /* #{$maxWidth}px / #{$maxHeight}px */
           @content;
     }
-
   }
-
 }
-
 
 
 @mixin em-max-width($maxWidth)
 {
-
   @if $legacy-ie {
-
     @content;
-
   }
 
   @else {
-
     @media screen and (max-width: $maxWidth/16+em) { /* #{$maxWidth}px */
       @content;
     }
-
   }
-
 }
 
 
@@ -146,43 +112,29 @@
 
 //Font Sizes
 @mixin font-size($size) {
-
   @if $legacy-ie {
-
     font-size: $size+px;
-
   }
-
   @else
-
   {
-
     font-size: $size+px;
     font-size: ($size/10)+rem;
-
   }
-
 }
 
 
 // Hardware acceleration
 @mixin gpu() {
-
   @if $legacy-ie {
-
   }
-
   @else
-
   {
-
     -webkit-transform: translateZ(0);
       -moz-transform: translateZ(0);
        -ms-transform: translateZ(0);
         -o-transform: translateZ(0);
            transform: translateZ(0);
   }
-
 }
 
 

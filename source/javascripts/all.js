@@ -1,4 +1,17 @@
-require('./scripts.js')
+import Slideout from 'slideout';
+
+$(function() {
+  var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 200,
+    'tolerance': 70,
+    'side': 'right'
+  })
+ document.querySelector('#menu-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+});
 
 $(function() {
   var navigateToHash = function(hash) {
