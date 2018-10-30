@@ -58,7 +58,7 @@ body {
 .slideout-open,
 .slideout-open body,
 .slideout-open .slideout-panel {
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .slideout-open .slideout-menu {
