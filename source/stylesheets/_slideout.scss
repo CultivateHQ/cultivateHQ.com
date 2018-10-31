@@ -53,6 +53,8 @@ body {
   will-change: transform;
   background-color: #1d2223; /* A background-color is required */
   min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .slideout-open,
