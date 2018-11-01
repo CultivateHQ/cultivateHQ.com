@@ -4,8 +4,6 @@ title: "Circuit Breakers"
 description: "A short introduction to the concept of circuit breaking in programming"
 ---
 
-# Circuit Breakers
-
 By the end of this article you should have an understanding of:
 
 - What we mean by the term 'circuit breaker' in programming.
@@ -22,8 +20,7 @@ This article assumes the reader has:
 
 In this example we have an app, CatTastic, that collects cat gifs from lots of sources, then serves them up to users. It also serves up its own api for other apps to consume, one of which is the CatTastic Mobile App.
 
-CatTasticMobile apps ---------------->  CatTastic Web / Api ----> Third party Gif sites.
-Third party apps hitting the api ---->  CatTastic Web / Api ----> Third party Gif sites
+![Introduction-Diagram](2018-10-30-circuit-breakers/01-intro-explainer.svg)
 
 If everything is healthy, the third party gif site will return quickly, say less than a second, and CatTastic will continue doing its job of sending back gifs to users in the web app and results back from it's api to the mobile app and third party apps.
 
@@ -31,8 +28,7 @@ If everything is healthy, the third party gif site will return quickly, say less
 
 Imagine that one of the third party gif sites, Gifatron, goes down and each request from CatTastic takes a minute to timeout. That's a minute before we can respond to anything calling the api, or the user of the web app.
 
-CatTasticMobile apps ✅ ----------------> CatTastic Web / Api ✅ ----> Gifatron 💀.
-Third party apps hitting the api ✅ ----> CatTastic Web / Api ✅ ----> Gifatron 💀
+![Introduction-Diagram](2018-10-30-circuit-breakers/02-gifatron-fail.svg)
 
 In the meantime the caller of CatTastic web has sent us many more requests which are all stacking up to be processed. This is further compounded if we retry the failed attempts, because not only are we receiving new responses we are retrying the old ones as well which will again timeout after a minute.
 
@@ -42,13 +38,11 @@ Eventually we are going to run out of memory and processing power on the CatTast
 
 When we run out of resources on the CatTastic app, the caller is going to start receiving timeouts from our app too, so now both Gifatron AND CatTastic web are down and timing out. Again we have to wait a minute for any user of the CatTastic api to find this out, meaning new requests to it are continually stacking up.
 
-CatTasticMobile apps ✅ ----------------> CatTastic Web / Api 💀 ----> Gifatron 💀.
-Third party apps hitting the api ✅ ----> CatTastic Web / Api 💀 ----> Gifatron 💀.
+![Introduction-Diagram](2018-10-30-circuit-breakers/03-api-fail.svg)
 
 Eventually the mobile app will stop responding and the third party apps hitting the api are now also getting timeouts and falling over too, then any app that calls them also go down and so on...
 
-CatTastic Mobile 💀 ------------------------------> CatTastic Web 💀 ------------------> Gifatron 💀.
-Service that uses third party app api 💀 ----> Third party app hitting api 💀 ----> CatTastic Web 💀 ----> Gifatron 💀.
+![Introduction-Diagram](2018-10-30-circuit-breakers/04-everything-fail.svg)
 
 We call this a _cascading failure_ where the result of one system going down brings down everything that depends on it.
 
@@ -66,8 +60,7 @@ In programming, we can use this same concept to stop our app from keeling over w
 
 Let's return to our CatTastic example at the point where Gifatron goes down, but this time CatTastic Web is protected by a circuit breaker.
 
-CatTasticMobile apps ✅ ----------------> ⚡️[CatTastic Web / Api ✅]⚡️ ----> Gifatron 💀
-Third party apps hitting the api ✅ ----> ⚡️[CatTastic Web / Api ✅]⚡️ ----> Gifatron 💀
+![Introduction-Diagram](2018-10-30-circuit-breakers/05-circuit-breakers-win.svg)
 
 Gifatron is down and initially nothing is different. We get timeouts that we need to wait a minute for, and we can't respond to our callers. However, after a certain threshold of calls and errors received from Gifatron we 'open' the circuit so that no more requests are being made to that service.
 
