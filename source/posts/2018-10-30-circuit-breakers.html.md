@@ -1,24 +1,26 @@
 ---
 author: "Valerie Dryden"
 title: "Circuit Breakers"
-description: "A short introduction to the concept of circuit breaking in programming"
+description: "A short introduction to the concept of circuit breaking in programming."
+tags: tools, patterns
 ---
 
 By the end of this article you should have an understanding of:
 
-- What we mean by the term 'circuit breaker' in programming.
-- What some of the terminology around circuit breaking means.
-- What the benefits of a circuit breaker are.
+* What we mean by the term 'circuit breaker' in programming.
+* What some of the terminology around circuit breaking means.
+* What the benefits of a circuit breaker are.
 
 ### Assumed Knowledge
 
 This article assumes the reader has:
-- A high level understanding of how apis are consumed.
-- A basic understanding of the request / response lifecycle.
+
+* A high level understanding of how apis are consumed.  
+* A basic understanding of the request / response lifecycle.
 
 ## Scenario
 
-In this example we have an app, CatTastic, that collects cat gifs from lots of sources, then serves them up to users. It also serves up its own api for other apps to consume, one of which is the CatTastic Mobile App.
+In this example we have an app, CatTastic, that collects cat gifs from lots of sources then serves them up to users. It also serves up its own api for other apps to consume, one of which is the CatTastic Mobile App.
 
 ![Introduction-Diagram](2018-10-30-circuit-breakers/01-intro-explainer.svg)
 
@@ -32,7 +34,7 @@ Imagine that one of the third party gif sites, Gifatron, goes down and each requ
 
 In the meantime the caller of CatTastic web has sent us many more requests which are all stacking up to be processed. This is further compounded if we retry the failed attempts, because not only are we receiving new responses we are retrying the old ones as well which will again timeout after a minute.
 
-In the meantime, we are still hammering the Gifatron service which is already struggling to process anything, reducing its chances of recovery.
+We are still hammering the Gifatron service which is already struggling to process anything, reducing its chances of recovery.
 
 Eventually we are going to run out of memory and processing power on the CatTastic web app because we are not freeing up any resources and continually queuing up more work.
 
@@ -91,7 +93,7 @@ Martin Fowler has an article on [how to make your own circuit breaker](https://m
 
 There are circuit breaking libraries for most modern programming languages, here are some examples that we have used successfully in production that you can look at:
 
-[Go - Hystrix](https://github.com/Netflix/Hystrix).
+[Go - Hystrix](https://github.com/Netflix/Hystrix)  
 [Ruby - Circuit Box](https://github.com/yammer/circuitbox)
 
 
