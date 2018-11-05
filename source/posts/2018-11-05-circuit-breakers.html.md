@@ -3,7 +3,7 @@ author: "Valerie Dryden"
 title: "Circuit Breakers"
 description: "A short introduction to the concept of circuit breaking in programming."
 tags: tools, patterns
-date: 2018/10/30
+date: 2018/11/05
 ---
 
 By the end of this article you should have an understanding of:
