@@ -15,56 +15,36 @@ jobs:
           name: Which bundler?
           command: bundle -v
 
-      # # Restore bundle cache
-      # - restore_cache:
-      #     keys:
-      #       - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
-      #       - rails-demo-bundle-v2-
+      # Restore bundle cache
+      - restore_cache:
+          keys:
+            - bundle-v2-{{ checksum "Gemfile.lock" }}
+            - bundle-v2-
 
       - run:
           name: Bundle Install
           command: bundle check || bundle install
 
-      # # Store bundle cache
-      # - save_cache:
-      #     key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
-      #     paths:
-      #       - vendor/bundle
+      - save_cache:
+          key: bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
 
-      # # Only necessary if app uses webpacker or yarn in some other way
-      # - restore_cache:
-      #     keys:
-      #       - rails-demo-yarn-{{ checksum "yarn.lock" }}
-      #       - rails-demo-yarn-
+      - restore_cache:
+          keys:
+            - npm-{{ checksum "package-lock.json" }}
+            - npm-
 
-      # - run:
-      #     name: Yarn Install
-      #     command: yarn install --cache-folder ~/.cache/yarn
+      - run:
+          name: npm Install
+          command: npm install 
 
-      # # Store yarn / webpacker cache
-      # - save_cache:
-      #     key: rails-demo-yarn-{{ checksum "yarn.lock" }}
-      #     paths:
-      #       - ~/.cache/yarn
-
-      # - run:
-      #     name: Wait for DB
-      #     command: dockerize -wait tcp://localhost:5432 -timeout 1m
-
-      # - run:
-      #     name: Database setup
-      #     command: bin/rails db:schema:load --trace
-
-      # - run:
-      #     name: Run rspec in parallel
-      #     command: |
-      #       bundle exec rspec --profile 10 \
-      #                         --format RspecJunitFormatter \
-      #                         --out test_results/rspec.xml \
-      #                         --format progress \
-      #                         $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
-
-      # # Save test results for timing analysis
-      # - store_test_results:
-      #     path: test_results
-      # See https://circleci.com/docs/2.0/deployment-integrations/ for example deploy configs    
+      # Store npm / webpacker cache
+      - save_cache:
+          key: npm-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/node-modules
+      
+      - run:
+          name: build
+          command: bundle exec middleman build --verbose
