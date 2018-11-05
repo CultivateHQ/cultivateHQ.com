@@ -8,9 +8,12 @@ $(function() {
     'tolerance': 70,
     'side': 'right'
   })
- document.querySelector('#menu-button').addEventListener('click', function() {
-        slideout.toggle();
-      });
+
+  slideout.disableTouch();
+
+  document.querySelector('#menu-button').addEventListener('click', function() {
+    slideout.toggle();
+  });
 });
 
 $(function() {
