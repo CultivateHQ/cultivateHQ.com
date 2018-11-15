@@ -3,7 +3,9 @@ author: "Paul Wilson"
 title: "Elixir nested modules, imports, and aliases"
 description: "Module nesting in Elixir is syntactic sugar with some unexpected (undocumented) alias and import behaviours"
 tags: elixir, today_i_learned
+date: 2018/11/15
 ---
+
 
 Elixir dotted namespacing is not sophisticated. As in Erlang, a module name is just an [`atom`](https://elixir-lang.org/getting-started/basic-types.html#atoms). A namespaced module name like `Nesting.Nested` is really just an alias to the atom `:"Elixir.Nesting.Nested`; the namespacing is a convention rather than something built into the language.
 
@@ -64,7 +66,7 @@ defmodule Nesting do
 end
 ```
 
-I can not find this documented anywhere but it may be worth knowing.
+I can not find this documented anywhere but it may be worth knowing, especially if trying to figure out import or alias clashes.
 
 
 
