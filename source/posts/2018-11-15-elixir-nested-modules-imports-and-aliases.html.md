@@ -25,7 +25,7 @@ end
 
 The sugar has given us the automatic "namespacing" of `Nested` and the implicit alias of `Nesting.Nested` to `Nested` within the rest of the module.
 
-This is all [documented](https://hexdocs.pm/elixir/Kernel.html#defmodule/2). It is also the extent of the sugar; this below does not compile.
+This is all [documented](https://hexdocs.pm/elixir/Kernel.html#defmodule/2). It is also the extent of the sugar: the code below does not compile.
 
 ```elixir
 
@@ -44,7 +44,10 @@ defmodule Deep.Nesting do
 end
 ```
 
-Ok, I lied. There are some other surprising aspects to nested modules: while the outer modules functions are not imported to the inner, any imports to the outer module are also available to the inner one; while the outer module is not implicitly aliased in the inner module, any modules aliased in the outer module are also aliased in the inner.
+Ok, I lied. There are some other surprising aspects to nested modules: 
+
+* While the outer module's functions are not imported to the inner, any imports to the outer module are also available to the inner one. 
+* While the outer module is not implicitly aliased in the inner module, any modules aliased in the outer module are also aliased in the inner.
 
 ```elixir
 defmodule Namespace.InNamespace do
@@ -61,11 +64,7 @@ defmodule Nesting do
 
     # Alias also available
     def inner_thing, do: InNamespace.a_thing()
-
-    def inner_hello, do: :inner_hello
   end
-
-  def inner_outer_hello, do: Nested.inner_hello()
 end
 ```
 
