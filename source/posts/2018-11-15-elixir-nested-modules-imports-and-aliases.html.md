@@ -70,6 +70,12 @@ end
 
 I can not find this behaviour documented anywhere but it may be worth knowing, especially if trying to figure out import or alias clashes.
 
+## Update - 2018-11-16
 
+José Valim [has pointed out](https://elixirforum.com/t/cultivates-elixir-posts/17948/4?u=paulanthonywilson) that the behaviour is (sort of) documented:
+
+> ... we say that alias, import and require are lexical ... At the moment they are defined, everything below the declaration in the same code branch will have the same aliases, imports, etc
+
+The documentation is [here](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#alias/2-lexical-scope).
 
 
