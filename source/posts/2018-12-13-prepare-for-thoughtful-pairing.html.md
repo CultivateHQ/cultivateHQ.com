@@ -18,7 +18,11 @@ The first step in that process was something that we had affectionately referred
 
 It turned out, when we went through the participant feedback afterwards, that the “pre-pairation” was highly appreciated, and singled out by many participants as the most useful thing they’d learned.
 
-Now, here’s the funny (and possibly somewhat embarrassing) thing: We rarely make the time to actually do this in our day-to-day work. Granted, we’re a small team and we’ve already worked together for a long time, in various permutations. But based on the enthusiastic response to this technique from workshop participants, it seems like there’s a good case to be made for implementing it more systematically, even for an experienced team.
+<div class="callout">
+  Now, here’s the funny (and possibly somewhat embarrassing) thing: We rarely make the time to actually do this in our day-to-day work.
+</div>
+
+Granted, we’re a small team and we’ve already worked together for a long time, in various permutations. But based on the enthusiastic response to this technique from our workshop participants, it seems like there’s a good case to be made for implementing it more systematically, even for an experienced team.
 
 When pairing gets difficult or awkward, it’s often because of issues with communication styles and power dynamics. These might seem like very personal and intangible things, but we’ve learned from experience that the same types of problems tend to come up again and again. The questions above might give some hints as to what they are, and if you can acknowledge them, explicitly and empathetically, they’re often eminently solvable, even preventable.
 
