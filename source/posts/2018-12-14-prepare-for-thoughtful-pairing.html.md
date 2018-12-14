@@ -3,7 +3,7 @@ author: Erik Igelström
 title: Prepare for thoughtful pairing
 description: We introduced participants at a pairing workshop to a framework for “pre-pairing” conversations, designed to help anticipate and prevent communication difficulties during pairing. The overwhelmingly positive feedback from the workshop reinforced to us how valuable this technique can be.
 tags: pairing
-date: 2018/12/13
+date: 2018/12/14
 ---
 
 We [pair](http://wiki.c2.com/?PairProgramming) a lot at Cultivate, and we know that pairing isn’t something you can just do and expect to be effective at straight away – it’s a skill that needs to be developed. Recently, we’ve started more actively teaching other people how to do it, and in the process, we’re also teaching ourselves how to do it better.
