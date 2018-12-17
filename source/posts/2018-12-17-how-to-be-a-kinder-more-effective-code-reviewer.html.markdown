@@ -42,7 +42,7 @@ In teams with a long history and a lot of trust, this kind of feedback may be to
 
 ## What does good look like?
 
-When it's clear from the first comment exactly how the reviewee should respond. 
+When it's clear from the first comment exactly how the reviewee should respond.
 
 When it's clear whether the reviewee can decide for themselves what to do, or whether they _must_ make a change.
 
@@ -50,7 +50,7 @@ When, with no further discussion, they can go directly to a code change.
 
 When the reviewee is shown trust and respect.
 
-When the reviewer shows an appreciation of the effort it took to get the work ready for review. 
+When the reviewer shows an appreciation of the effort it took to get the work ready for review.
 
 When the reviewer is open to discussion and new ways of looking at things.
 
@@ -64,15 +64,15 @@ The most efficient use of both parties' time is when the feedback given is **act
 
 It seems to me that all **actionable** feedback I would ever **need** to give on a pull request, can be expressed as one of the following types of statement:
 
-*   A question
-*   A Suggestion
-*   A change request
+- A question
+- A Suggestion
+- A change request
 
 These kinds of comments can very often be crafted so that it is immediately obvious what action the reviewee should take.
 
 There is a fourth category of **un-actionable** feedback that I sometimes **want** to give:
 
-*   A reaction
+- A reaction
 
 Let's look at each in detail.
 
@@ -86,9 +86,9 @@ This maybe for your own benefit in understanding. Or because you suspect there i
 
 When:
 
-*   You know another, possibly better, way to achieve the same outcome
-*   You may have misunderstood, but think an outcome should be achieved differently
-*   You are unsure if the reviewee has already evaluated the approach you want to suggest. But you want to check in case they were not aware of an alternative
+- You know another, possibly better, way to achieve the same outcome
+- You may have misunderstood, but think an outcome should be achieved differently
+- You are unsure if the reviewee has already evaluated the approach you want to suggest. But you want to check in case they were not aware of an alternative
 
 But most importantly: **when you don't mind if the author chooses not to use what you're suggesting.**
 
@@ -96,9 +96,9 @@ But most importantly: **when you don't mind if the author chooses not to use wha
 
 When you definitely need the author to make change. Happily, I find I use this mode the least. Use it if:
 
-*   You can prove a bug exists
-*   You know of a stylistic change, that will make the code more consistent with the project/team approach
-*   You know of a design change, that will make the code more consistent with the project/team approach
+- You can prove a bug exists
+- You know of a stylistic change, that will make the code more consistent with the project/team approach
+- You know of a design change, that will make the code more consistent with the project/team approach
 
 **Always use "suggestion" instead when there are minor things that you would personally have done differently.**
 
@@ -118,19 +118,31 @@ So while we should _definitely_ leave comments like this, we should sprinkle the
 
 To start with, something that helped me was to prefix my comments explicitly:
 
-> "Question: could you explain why this ended up having to be here?"
+<blockquote class="pullquote">
+Question: could you explain why this ended up having to be here?"
+</blockquote>
 
-> "Suggestion: you may have come across this already, but we might be able to use XYZ for this."
+<blockquote class="pullquote">
+Suggestion: you may have come across this already, but we might be able to use XYZ for this.
+</blockquote>
 
-> "Change request: sorry, I appreciate the effort it took to get it this far. But the team already agreed to solve this using XYZ. So I'm going to have to ask you to rework this. Let me know if I can help."
+<blockquote class="pullquote">
+Change request: sorry, I appreciate the effort it took to get it this far. But the team already agreed to solve this using XYZ. So I'm going to have to ask you to rework this. Let me know if I can help.
+</blockquote>
 
 Or drop to abbreviations if everyone is used to your approach.
 
-> "[Q] could you explain why this ended up having to be here?"
+<blockquote class="pullquote">
+[Q] could you explain why this ended up having to be here?
+</blockquote>
 
-> "[S] you may have come across this already, but we might be able to use XYZ for this."
+<blockquote class="pullquote">
+[S] you may have come across this already, but we might be able to use XYZ for this.
+</blockquote>
 
-> "[CR] sorry, I appreciate the effort it took to get it this far. But the team already agreed to solve this using XYZ. So I'm going to have to ask you to rework this. Let me know if I can help."
+<blockquote class="pullquote">
+[CR] sorry, I appreciate the effort it took to get it this far. But the team already agreed to solve this using XYZ. So I'm going to have to ask you to rework this. Let me know if I can help.
+</blockquote>
 
 The value in the prefixes is that the reviewee can easily see what kind of action they are going to need to take. The value to you as the reviewer is to keep yourself in the right mode as you craft your comment.
 
@@ -140,19 +152,28 @@ Often it is necessary to back up your request with some kind of rationale or dis
 
 For the best of both worlds pull the **actionable** part of your comment to the top once you know what it is. Then add any discussion below. Like this:
 
-> [type]: [actionable request]
+<blockquote class="pullquote">
+[type]: [actionable request]
+</blockquote>
 
-> [rationale or discussion]
+<blockquote class="pullquote">
+[rationale or discussion]
+</blockquote>
 
 For example:
 
-> "Suggestion: you may have come across this already, but we might be able to use XYZ for this _because blah blah blah etc_."
+<blockquote class="pullquote">
+Suggestion: you may have come across this already, but we might be able to use XYZ for this _because blah blah blah etc_.
+</blockquote>
 
 becomes
 
-> "Suggestion: use XYZ.
+<blockquote class="pullquote">
+Suggestion: use XYZ.
 
-> You may have come across this already, but we might be able to use XYZ for this because blah blah blah etc."
+You may have come across this already, but we might be able to use XYZ for this because blah blah blah etc."
+
+</blockquote>
 
 ## Other do's and don'ts
 
