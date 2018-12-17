@@ -1,225 +1,235 @@
 /* Setup */
+
 html {
-  font-size: 62.5%;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-a, a:hover {
-  text-decoration: none;
-  font-weight: 700;
+a,
+a:hover {
+    text-decoration: none;
+    font-weight: 700;
 }
 
 body {
-  font-family: 'Overpass', Arial, sans-serif;
-  font-weight: 300;
-  color: $grey_default;
-  line-height: 1.5;
+    font-family: 'Overpass', Arial, sans-serif;
+    font-weight: 300;
+    color: $grey_default;
+    line-height: 1.5;
 }
 
-strong { font-weight: normal; }
-
 #page {
-  @include font-size(19);
+    @include font-size(19);
 }
 
 .case-study__meta {
-  @include font-size(17);
+    @include font-size(17);
 }
 
 p {
-  margin: 0 0 20px 0;
-  padding: 0;
+    margin: 0 0 20px 0;
+    padding: 0;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
-  font-weight: 200;
-  color: $grey_dark;
-  margin: 0 0 20px 0;
-  padding: 0;
-  line-height: 1.1
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 200;
+    color: $grey_dark;
+    margin: 0 0 20px 0;
+    padding: 0;
+    line-height: 1.1
 }
 
 .site-content-area-header h1 {
-  margin-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 .work-with-us {
-  font-weight: 300;
-  color: $grey_dark;
+    font-weight: 300;
+    color: $grey_dark;
 }
 
 h1 {
-  @include font-size(36);
-  @include em-min-width($breakpoint_tablet) {
-    @include font-size(45);
-  }
-  @include em-min-width($breakpoint_small_desktop) {
-    @include font-size(55);
-  }
+    @include font-size(36);
+    @include em-min-width($breakpoint_tablet) {
+        @include font-size(45);
+    }
+    @include em-min-width($breakpoint_small_desktop) {
+        @include font-size(55);
+    }
 }
 
 h2 {
-  @include font-size(27);
-  @include em-min-width($breakpoint_small_desktop) {
-    @include font-size(29);
-  }
+    @include font-size(27);
+    @include em-min-width($breakpoint_small_desktop) {
+        @include font-size(29);
+    }
 }
 
-
-.page-content, .cta {
-  h2 {
-    @include font-size(25);
-    @include em-min-width($breakpoint_tablet) {
-      @include font-size(27);
+.page-content,
+.cta {
+    h2 {
+        @include font-size(25);
+        @include em-min-width($breakpoint_tablet) {
+            @include font-size(27);
+        }
+        @include em-min-width($breakpoint_small_desktop) {
+            @include font-size(29);
+        }
+        @include em-min-width($breakpoint_medium_desktop) {
+            @include font-size(35);
+        }
     }
-    @include em-min-width($breakpoint_small_desktop) {
-      @include font-size(29);
+    h3 {
+        @include font-size(22);
+        font-weight: 600;
+        @include em-min-width($breakpoint_small_desktop) {
+            @include font-size(27);
+            font-weight: normal;
+        }
+        @include em-min-width($breakpoint_medium_desktop) {
+            @include font-size(27);
+        }
     }
-    @include em-min-width($breakpoint_medium_desktop) {
-      @include font-size(35);
+    h4 {
+        @include font-size(19);
+        font-weight: normal;
+        @include em-min-width($breakpoint_tablet) {
+            @include font-size(21);
+            font-weight: 200;
+        }
+        @include em-min-width($breakpoint_small_desktop) {
+            @include font-size(27);
+        }
     }
-  }
-  h3 {
-    @include font-size(22);
-		font-weight: 600;
-    @include em-min-width($breakpoint_small_desktop) {
-      @include font-size(27);
-			font-weight: normal;
+    h5 {
+        @include font-size(18);
+        @include em-min-width($breakpoint_tablet) {
+            @include font-size(20);
+        }
+        @include em-min-width($breakpoint_small_desktop) {
+            @include font-size(25);
+        }
     }
-    @include em-min-width($breakpoint_medium_desktop) {
-      @include font-size(27);
-    }
-  }
-  h4 {
-    @include font-size(19);
-		font-weight: normal;
-    @include em-min-width($breakpoint_tablet) {
-      @include font-size(21);
-			font-weight: 200;
-    }
-    @include em-min-width($breakpoint_small_desktop) {
-      @include font-size(27);
-    }
-  }
-
-  h5 {
-    @include font-size(18);
-    @include em-min-width($breakpoint_tablet) {
-      @include font-size(20);
-    }
-    @include em-min-width($breakpoint_small_desktop) {
-      @include font-size(25);
-    }
-  }
 }
 
-.page-content, .shout-out {
-  a, a:visited {
-    color: $pink_brand;
-    padding-bottom: 2px;
-    text-decoration: underline;
-    font-weight: 400;
-    &:hover, &:focus, &:active {
+.page-content,
+.shout-out {
+    a,
+    a:visited {
+        color: $pink_brand;
+        padding-bottom: 2px;
+        text-decoration: underline;
+        font-weight: 400;
+        &:hover,
+        &:focus,
+        &:active {}
     }
-  }
-  h2, h3, h4, h5, h6 {
-    a {
-      line-height: 1.4;
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        a {
+            line-height: 1.4;
+        }
     }
-  }
-
 }
 
 .page-content:not(.page-content--blog) {
-  p {
-    line-height: 1.6;
-  }
-  a, a:visited {
-    display: inline-block;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: bottom;
-    position: relative;
-    padding-bottom: 0;
-  }
-  li a {
-    display: inline;
-    top: auto;
-    vertical-align: inherit;
-    overflow: auto;
-    white-space: normal;
-  }
+    p {
+        line-height: 1.6;
+    }
+    a,
+    a:visited {
+        display: inline-block;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: bottom;
+        position: relative;
+        padding-bottom: 0;
+    }
+    li a {
+        display: inline;
+        top: auto;
+        vertical-align: inherit;
+        overflow: auto;
+        white-space: normal;
+    }
 }
 
-.subtitle, h2.subtitle {
-  text-transform: uppercase;
-  font-weight: 400;
-  @include font-size(14);
-  @include em-min-width($breakpoint_tablet) {
-    @include font-size(19);
-  }
-  @include em-min-width($breakpoint_small_desktop) {
-    @include font-size(21);
-  }
+.subtitle,
+h2.subtitle {
+    text-transform: uppercase;
+    font-weight: 400;
+    @include font-size(14);
+    @include em-min-width($breakpoint_tablet) {
+        @include font-size(19);
+    }
+    @include em-min-width($breakpoint_small_desktop) {
+        @include font-size(21);
+    }
 }
 
 .breadcrumbs {
-  @include font-size(13);
+    @include font-size(13);
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 
 .shout-out {
-  text-align: center;
-  @include font-size(21);
-  @include em-min-width($breakpoint_tablet) {
-    @include font-size(25);
-  }
+    text-align: center;
+    @include font-size(21);
+    @include em-min-width($breakpoint_tablet) {
+        @include font-size(25);
+    }
 }
 
 .work-with-us {
-  @include font-size(19);
-  @include em-min-width($breakpoint_tablet) {
-    @include font-size(25);
-  }
+    @include font-size(19);
+    @include em-min-width($breakpoint_tablet) {
+        @include font-size(25);
+    }
 }
 
 .blog-post__summary {
-  @include font-size(17);
+    @include font-size(17);
 }
 
 .meta {
-  @include font-size(15);
+    @include font-size(15);
 }
 
 #site-footer {
-  @include font-size(15);
-  h6 {
-    @include font-size(17);
-    font-weight: 700;
-    color: $white;
-  }
+    @include font-size(15);
+    h6 {
+        @include font-size(17);
+        font-weight: 700;
+        color: $white;
+    }
 }
 
 .widget h3 {
-  @include font-size(27);
+    @include font-size(27);
 }
 
-
 #site-navigation a {
-  text-transform: uppercase;
-  font-weight: 700;
-  color: $white;
-  @include font-size(14);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $white;
+    @include font-size(14);
 }
