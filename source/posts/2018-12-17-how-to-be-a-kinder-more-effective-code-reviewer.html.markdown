@@ -1,6 +1,6 @@
 ---
 title: How to be a kinder more effective code reviewer
-date: 2018-12-17 18:14 UTC
+date: 2018/12/17
 author: Dan Munckton
 description: The reviewer holds the balance of power in code reviews. Here is a simple framework we can follow to become kind and helpful reviewers.
 tags: compassionate-coding
