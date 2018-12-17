@@ -2,7 +2,7 @@
 title: How to be a kinder more effective code reviewer
 date: 2018/12/17
 author: Dan Munckton
-description: The reviewer holds the balance of power in code reviews. Here is a simple framework we can follow to become kind and helpful reviewers.
+description: How can we change our behaviour to have more positive code review experiences? Here is a simple framework we can follow.
 tags: compassionate-coding
 ---
 
@@ -10,7 +10,7 @@ Over the years, I've had both good and bad experiences with code reviews. A.k.a 
 
 Although a code review takes place between a reviewer and a reviewee (code author), for this article I am going to focus on the role of the reviewer. There is definitely a whole other post to write about how to be a good reviewee. But, I want start with the reviewer because they have the most "power" and thus the most influence on the outcome.
 
-I am going to suggest a simple framework we can follow to get us into a good habits as reviewers.
+I am going to suggest a simple framework we can follow to get us into good habits as reviewers.
 
 ## What does bad look like?
 
