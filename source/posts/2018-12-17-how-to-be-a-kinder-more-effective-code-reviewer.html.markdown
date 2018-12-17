@@ -56,7 +56,7 @@ When the reviewer is open to discussion and new ways of looking at things.
 
 ## Ok how can we do this? 
 
-Some people have natural talent for delivering feedback. Others have to work at things. If you're in the latter camp like me, it's a confusing sometimes anxiety inducing journey trying to work out what how to get good outcomes. If you're not sure how to be a good reviewer, I suggest trying the following framework. It has helped me.
+Some people have natural talent for delivering feedback. Others have to work at things. If you're in the latter camp, like me, it's a confusing sometimes anxiety inducing journey trying to work out what how to get good outcomes. If you're not sure how to be a good reviewer, I suggest trying the following framework. It has helped me.
 
 ## The framework
 
@@ -154,16 +154,15 @@ For the best of both worlds pull the **actionable** part of your comment to the 
 
 <blockquote class="pullquote">
 [type]: [actionable request]
-</blockquote>
-
-<blockquote class="pullquote">
+<br />
+<br />
 [rationale or discussion]
 </blockquote>
 
 For example:
 
 <blockquote class="pullquote">
-Suggestion: you may have come across this already, but we might be able to use XYZ for this _because blah blah blah etc_.
+Suggestion: you may have come across this already, but we might be able to use XYZ for this because blah blah blah etc.
 </blockquote>
 
 becomes
@@ -183,7 +182,7 @@ As a parting shot, here's a mixed bag of other tips I've learned the hard way.
 
 If you find yourself pointing out white-space errors, or telling people to use single-quoted strings, you are wasting your time.
 
-Look to see if you can use a tool like Rubocop or ESLint that can deal with these issues automatically.
+Look to see if you can use a tool like [Rubocop](https://github.com/rubocop-hq/rubocop) or [ESLint](https://eslint.org/) that can deal with these issues automatically.
 
 ### Use a friendly avatar
 
@@ -199,7 +198,9 @@ Sure it was tolerable. But it made the situation that bit more stressful.
 
 Sometimes a big issue comes up that needs more lengthy discussion. Don't be that person who plasters the entire review with their opinion and offers no actionable way forward.
 
-Suggest a face-to-face discussion. Try to offer ways forward. Don't respond if you're feeling angry.
+Suggest a face-to-face discussion. If that is not feasible try a video call, or even an IM discussion.
+
+Try to offer ways forward. Don't respond if you're feeling angry.
 
 ### Scope creep
 
