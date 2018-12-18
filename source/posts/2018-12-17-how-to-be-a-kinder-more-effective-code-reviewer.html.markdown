@@ -54,9 +54,9 @@ When the reviewer shows an appreciation of the effort it took to get the work re
 
 When the reviewer is open to discussion and new ways of looking at things.
 
-## Ok how can we do this? 
+## Ok how can we do this?
 
-Some people have natural talent for delivering feedback. Others have to work at things. If you're in the latter camp, like me, it's a confusing sometimes anxiety inducing journey trying to work out what how to get good outcomes. If you're not sure how to be a good reviewer, I suggest trying the following framework. It has helped me.
+Some people have natural talent for delivering feedback. Others have to work at things. If you're in the latter camp, like me, it's a confusing sometimes anxiety inducing journey trying to work out how to get good outcomes. If you're not sure how to be a good reviewer, I suggest trying the following framework. It has helped me.
 
 ## The framework
 
@@ -169,9 +169,9 @@ becomes
 
 <blockquote class="pullquote">
 Suggestion: use XYZ.
-
+<br />
+<br />
 You may have come across this already, but we might be able to use XYZ for this because blah blah blah etc."
-
 </blockquote>
 
 ## Other do's and don'ts
