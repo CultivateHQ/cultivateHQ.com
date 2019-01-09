@@ -16,5 +16,6 @@ Already we have posts on:
 * [Elixir: Map Puts Shortand](https://bytesize.cultivatehq.com/elixir/2018/12/17/map-puts-shorthand.html)
 * [Debounce with Elixir and GenServer timeout](https://bytesize.cultivatehq.com/elixir/otp/nerves/2019/01/03/debounce-with-elixir.html)
 * [Ruby reduce to object gotcha](https://bytesize.cultivatehq.com/ruby/2019/01/03/ruby-reduce-to-object-gotcha.html)
+* [Server-side testing with Jest, but without jsdom](https://bytesize.cultivatehq.com/javascript/testing/jest/2019/01/09/server-side-testing-with-jest-without-jsdom.html)
 
 Take a look at https://bytesize.cultivatehq.com. We hope you find it useful.
