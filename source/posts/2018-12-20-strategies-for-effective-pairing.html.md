@@ -8,7 +8,7 @@ tags: pairing
 
 Here at Cultivate we spend the majority of our time pairing, as it helps us to problem solve, share expertise, and craft solutions. We believe that pairing is a skill that can be developed and improved like any other, and that it takes active effort to do so.
 
-In this blog I’m going to talk about some strategies that we are experimenting with to help us improve this skill and work more effectively together. Whilst suggestions to help improve pairing often focus on behaviours whilst pairing, I’m going to focus on things that you and your pair can do before and after pairing to plan and review how you work together.
+In this blog I’m going to talk about some strategies that we are experimenting with to help us improve this skill and work more effectively together. Whilst suggestions to help improve pairing often focus on behaviours during pairing, I’m going to focus on things that you and your pair can do before and after pairing to plan and review how you work together.
 
 
 ## Working with someone for the first time
@@ -20,9 +20,9 @@ As mentioned in [Erik’s post](https://cultivatehq.com/posts/prepare-for-though
 
 ### Bring a simple list of questions to work through
 Create a shared document where you can both write any questions that you think it would be useful to answer before beginning your work together. Try to include questions that cover communication styles and how you prefer to investigate problems or approach knowledge that is entirely new. Here are some example questions to get you started:
-How do you prefer to investigate something that is new to you?
-In what conditions do you find it easiest to speak your mind?
-Is there anything you’re hoping to better understand through this piece of work?
+* How do you prefer to investigate something that is new to you?
+* In what conditions do you find it easiest to speak your mind?
+* Is there anything you’re hoping to better understand through this piece of work?
 
 ### Use the Searls-Briggs Type Indicator
 I have used the categories in [this](http://blog.testdouble.com/posts/2017-05-11-how-to-program) blogpost about types of programmers to frame a discussion about working styles with a pair. It gave us a really useful language to describe how we work, as well as making us reflect on things that we may not have considered before. We went through each category and discussed which letter we most strongly identified with, and what this might then mean in the context of pairing.
