@@ -2,7 +2,7 @@
 author: "Paul Wilson"
 title: "Introducing Cultivate's Bytesize Blog"
 author: "Paul Wilson"
-date: 2019/01/09
+date: 2019/01/10
 description: "We have launched a new blog for small nuggets of technical information ('bytesized' - geddit?)  that we have picked up along the way."
 tags: news
 ---
