@@ -2,7 +2,7 @@
 author: "Kate Preston"
 title: "Strategies for effective pairing"
 description: "In this blog I’m going to talk about some strategies that we are experimenting with to help us improve our pairing and work more effectively together. Whilst suggestions to help improve pairing often focus on behaviours whilst pairing, I’m going to focus on things that you and your pair can do before and after pairing to plan and review how you work together."
-date: 2018/12/20
+date: 2019/01/09
 tags: pairing
 ---
 
