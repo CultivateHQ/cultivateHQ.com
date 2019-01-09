@@ -25,7 +25,7 @@ Create a shared document where you can both write any questions that you think i
 * Is there anything you’re hoping to better understand through this piece of work?
 
 ### Use the Searls-Briggs Type Indicator
-I have used the categories in [this](http://blog.testdouble.com/posts/2017-05-11-how-to-program) blogpost about types of programmers to frame a discussion about working styles with a pair. It gave us a really useful language to describe how we work, as well as making us reflect on things that we may not have considered before. We went through each category and discussed which letter we most strongly identified with, and what this might then mean in the context of pairing.
+I have used the categories in [this](http://blog.testdouble.com/posts/2017-05-11-how-to-program) blogpost about types of programmers to frame a discussion about working styles. It gave us a really useful language to describe how we work, as well as making us reflect on things that we may not have considered before. We went through each category and discussed which letter we most strongly identified with, and what this might then mean in the context of pairing.
 
 Once you’ve talked about your individual styles, you can then come up with approaches that will help you work well together. One example of this might be that you and your pair have very different ways of investigating a problem: you like to experiment your way to understanding the big picture, without worrying too much about getting to grips with each small element of a potential solution. Your partner might prefer to thoroughly explore each of the key components before they’re comfortable moving on to thinking about the overall solution. By highlighting this difference up front you could avoid getting frustrated by agreeing that you’ll investigate separately before coming together to share findings.
 
@@ -55,7 +55,7 @@ The final piece of the puzzle is to ensure that you and your pair take time to r
 
 The point at which you choose to do have a retro is entirely up to you: It will depend both on how long you’re pairing together and whether or not there are any pain points that need immediate attention. The important thing is that you focus on your pairing, not the work that you paired on.
 
-* Here are a few questions that could act as a broad structure for your review session:
+Here are a few questions that could act as a broad structure for your review session:
 * Did we meet our goals for the session/time period in question?
 * Next pairing session, what are the things you might like to work on?
 * What did we do well?
