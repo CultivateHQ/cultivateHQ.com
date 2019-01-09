@@ -20,6 +20,7 @@ As mentioned in [Erik’s post](https://cultivatehq.com/posts/prepare-for-though
 
 ### Bring a simple list of questions to work through
 Create a shared document where you can both write any questions that you think it would be useful to answer before beginning your work together. Try to include questions that cover communication styles and how you prefer to investigate problems or approach knowledge that is entirely new. Here are some example questions to get you started:
+
 * How do you prefer to investigate something that is new to you?
 * In what conditions do you find it easiest to speak your mind?
 * Is there anything you’re hoping to better understand through this piece of work?
