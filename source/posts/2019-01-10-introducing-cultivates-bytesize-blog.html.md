@@ -7,7 +7,7 @@ description: "We have launched a new blog for small nuggets of technical informa
 tags: news
 ---
 
-We have launched [a new blog](https://bytesize.cultivatehq.com) for small nuggets of technical information ('bytesized' - geddit?)  that we have picked up along the way.
+We have launched [Bytesize](https://bytesize.cultivatehq.com), a new blog for small nuggets of technical information that we have picked up along the way.
 
 Already we have posts on:
 
