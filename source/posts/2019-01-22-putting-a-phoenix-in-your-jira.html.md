@@ -66,7 +66,7 @@ Note that we have appended `staging` to the name so that we can run different ve
 }
 ```
 
-Whatever value we put in `modules -> generalPages -> name -> value` will appear on a button on the side bar. The top level 'name' will only appear on the admin screen where we upload the app.
+The 'baseUrl' should match the public url that we choose to host our app on, Heroku in our case. Whatever value we put in `modules -> generalPages -> name -> value` will appear on a button on the side bar. The top level 'name' will only appear on the admin screen where we upload the app.
 
 Next we need to make this file publicly available by adding the following code to `apps/phoenix_in_jira_web/lib/see_ra_web/end_point.ex`
 
