@@ -10,6 +10,8 @@ gem 'less'
 gem 'therubyracer'
 gem 'stylus'
 
+gem 'sassc'
+
 gem 'middleman'
 gem 'middleman-alias'
 gem 'middleman-blog'
