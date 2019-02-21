@@ -9,7 +9,6 @@ gem 'slim'
 gem 'less'
 gem 'therubyracer'
 gem 'stylus'
-gem 'font-awesome-sass'
 
 gem 'middleman'
 gem 'middleman-alias'
