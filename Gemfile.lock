@@ -102,6 +102,8 @@ GEM
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
       rack-livereload (~> 0.3.15)
+    middleman-sitemap (0.0.13)
+      middleman-core (>= 3.2.2)
     middleman-syntax (3.0.0)
       middleman-core (>= 3.2)
       rouge (~> 2.0)
@@ -163,10 +165,11 @@ DEPENDENCIES
   middleman-cli
   middleman-compass
   middleman-livereload
+  middleman-sitemap
   middleman-syntax
   nokogiri
   redcarpet
   rubocop
 
 BUNDLED WITH
-   1.16.1
+   1.16.6
