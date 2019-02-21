@@ -3,6 +3,13 @@ source 'https://rubygems.org'
 gem 'builder'
 gem 'json', '~> 1.8.6'
 
+#add non-required template engines to make this build (:rolleyes:)
+gem 'liquid'
+gem 'slim'
+gem 'less'
+gem 'therubyracer'
+gem 'stylus'
+
 gem 'middleman'
 gem 'middleman-alias'
 gem 'middleman-blog'
