@@ -4,7 +4,7 @@ subtitle: "Senior Product Manager, Payments Deposits - Deliveroo Project"
 layout: "job"
 ---
 
-We’re looking for an experienced Product Manager to join our Edinburgh team, with specific focus on Cultivate’s work with Deliveroo on their restaurant payouts platform.
+We’re looking for an experienced Product Manager to join our Edinburgh team, with a specific focus on Cultivate’s work with Deliveroo on their restaurant payouts platform.
 
 The scale and impact of this role is considerable. Deliveroo are Europe’s fastest growing company (FT 2018), currently serving millions of customers in 14 countries with over 50,000 riders delivering orders from 50,000 restaurants in over 200 cities worldwide.
 
