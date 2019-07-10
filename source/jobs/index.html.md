@@ -48,3 +48,7 @@ You’ll work closely both internally and with client teams to solve fun and cha
 We are an equal opportunities employer and value diversity at our company. We do not discriminate on the basis of race, religion, colour, national origin, gender, gender identity, sexual orientation, age, marital status, or disability status.
 
 Please send us an email at [careers@cultivatehq.com](mailto:careers@cultivatehq.com)
+
+---
+
+Recruitment data policy is [here](data.html)
